@@ -1,0 +1,114 @@
+{
+  "uuid": "4749e9a7-0bc3-4472-88a8-b95a62e6afb9",
+  "baseSpans": [
+    {
+      "uuid": "f308dfa7-4594-40ab-805f-db7eb81e2911",
+      "name": "kickoff",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-02-15T10:19:58.943Z",
+      "endTime": "2026-02-15T10:20:00.992Z",
+      "input": {
+        "question": "What city does John live in and how old is he?"
+      },
+      "output": "I'm sorry, but I don't have any information about John, including what city he lives in or how old he is.",
+      "integration": "CrewAI"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "782d07ac-6735-4fcc-8426-eb3b9df66b2b",
+      "name": "execute_task",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "f308dfa7-4594-40ab-805f-db7eb81e2911",
+      "startTime": "2026-02-15T10:19:58.947Z",
+      "endTime": "2026-02-15T10:20:00.985Z",
+      "input": "Answer the following questions about the user: What city does John live in and how old is he?\n\nThis is the expected criteria for your final answer: An answer to the question.\nyou MUST return the actual complete content as the final answer, not a summary.",
+      "output": "John lives in San Francisco and he is 30 years old.",
+      "toolsCalled": [
+        {
+          "name": "knowledge_retrieval",
+          "output": "",
+          "inputParameters": {
+            "output": "Retrieve information about John, specifically his city of residence and age."
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": [],
+      "integration": "CrewAI"
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "352dba10-ed63-45d2-bcc6-15516af874a6",
+      "name": "call",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "782d07ac-6735-4fcc-8426-eb3b9df66b2b",
+      "startTime": "2026-02-15T10:19:59.973Z",
+      "endTime": "2026-02-15T10:20:00.983Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are About User. You are a master at understanding people and their preferences.\nYour personal goal is: You know everything about the user."
+        },
+        {
+          "role": "user",
+          "content": "\nCurrent Task: Answer the following questions about the user: What city does John live in and how old is he?\n\nThis is the expected criteria for your final answer: An answer to the question.\nyou MUST return the actual complete content as the final answer, not a summary.\n\nProvide your complete response:"
+        }
+      ],
+      "output": "I'm sorry, but I don't have any information about John, including what city he lives in or how old he is.",
+      "model": "gpt-4o-mini",
+      "integration": "CrewAI",
+      "provider": "OpenAI"
+    },
+    {
+      "uuid": "82736372-9030-4b02-b90e-906680d55d37",
+      "name": "call",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "782d07ac-6735-4fcc-8426-eb3b9df66b2b",
+      "startTime": "2026-02-15T10:19:58.950Z",
+      "endTime": "2026-02-15T10:19:59.937Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "Your goal is to rewrite the user query so that it is optimized for retrieval from a vector database. Consider how the query will be used to find relevant documents, and aim to make it more specific and context-aware. \n\n Do not include any other text than the rewritten query, especially any preamble or postamble and only add expected output format if its relevant to the rewritten query. \n\n Focus on the key words of the intended task and to retrieve the most relevant information. \n\n There will be some extra context provided that might need to be removed such as expected_output formats structured_outputs and other instructions."
+        },
+        {
+          "role": "user",
+          "content": "The original query is: Answer the following questions about the user: What city does John live in and how old is he?\n\nThis is the expected criteria for your final answer: An answer to the question.\nyou MUST return the actual complete content as the final answer, not a summary.."
+        }
+      ],
+      "output": "Retrieve information about John, specifically his city of residence and age.",
+      "model": "gpt-4o-mini",
+      "integration": "CrewAI",
+      "provider": "OpenAI"
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "4f9a9791-0293-49f7-9d58-8e702fbfa274",
+      "name": "knowledge_retrieval",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "782d07ac-6735-4fcc-8426-eb3b9df66b2b",
+      "startTime": "2026-02-15T10:19:58.948Z",
+      "endTime": "2026-02-15T10:19:59.971Z",
+      "input": "Retrieve information about John, specifically his city of residence and age.",
+      "output": "",
+      "integration": "CrewAI"
+    }
+  ],
+  "startTime": "2026-02-15T10:19:58.943Z",
+  "endTime": "2026-02-15T10:20:00.992Z",
+  "environment": "development",
+  "input": {
+    "question": "What city does John live in and how old is he?"
+  },
+  "output": "I'm sorry, but I don't have any information about John, including what city he lives in or how old he is.",
+  "status": "SUCCESS"
+}

@@ -1,0 +1,230 @@
+{
+  "uuid": "trace_3cbb263f822244d69c436db42ec53b79",
+  "baseSpans": [
+    {
+      "uuid": "cacbd7d4-03f2-4e6e-9aa6-0a6c6de835bc",
+      "name": "Handoff \u2192 Spanish agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "593886ac-597d-4e46-9c88-35f668f992b9",
+      "startTime": "2026-05-07T08:15:20.973Z",
+      "endTime": "2026-05-07T08:15:20.973Z",
+      "metadata": {
+        "from_agent": "Triage agent",
+        "to_agent": "Spanish agent"
+      },
+      "input": {},
+      "integration": "OpenAI Agents"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "7b472ead-19d9-4ef3-971a-7cec46e97eb7",
+      "name": "Spanish agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-05-07T08:15:20.973Z",
+      "endTime": "2026-05-07T08:15:22.743Z",
+      "metadata": {
+        "output_type": "str"
+      },
+      "input": [
+        {
+          "arguments": "{}",
+          "call_id": "call_aF5rJHgM6zQT5OqhkWyN8WRT",
+          "name": "transfer_to_spanish_agent",
+          "type": "function_call",
+          "id": "fc_001de2f2a18ff6aa0069fc4a18749c819caed2e17fe3e6227a",
+          "namespace": null,
+          "status": "completed"
+        },
+        {
+          "call_id": "call_aF5rJHgM6zQT5OqhkWyN8WRT",
+          "output": "{\"assistant\": \"Spanish agent\"}",
+          "type": "function_call_output"
+        }
+      ],
+      "output": "\u00a1Hola! Estoy bien, gracias. \u00bfY t\u00fa?",
+      "integration": "OpenAI Agents",
+      "availableTools": [],
+      "agentHandoffs": []
+    },
+    {
+      "uuid": "593886ac-597d-4e46-9c88-35f668f992b9",
+      "name": "Triage agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-05-07T08:15:18.931Z",
+      "endTime": "2026-05-07T08:15:20.973Z",
+      "metadata": {
+        "output_type": "str"
+      },
+      "input": "Hola, \u00bfc\u00f3mo est\u00e1s?",
+      "output": {
+        "call_id": "call_aF5rJHgM6zQT5OqhkWyN8WRT",
+        "name": "transfer_to_spanish_agent",
+        "arguments": "{}"
+      },
+      "integration": "OpenAI Agents",
+      "availableTools": [],
+      "agentHandoffs": [
+        "Spanish agent",
+        "English agent"
+      ]
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "09ffca09-92ad-46f1-941a-2bc96d45807c",
+      "name": "LLM Generation",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "7b472ead-19d9-4ef3-971a-7cec46e97eb7",
+      "startTime": "2026-05-07T08:15:20.974Z",
+      "endTime": "2026-05-07T08:15:22.742Z",
+      "metadata": {
+        "cached_input_tokens": 0,
+        "ouptut_reasoning_tokens": 0,
+        "invocation_params": {
+          "parallel_tool_calls": true,
+          "temperature": 1.0,
+          "tool_choice": "auto",
+          "tools": [],
+          "top_p": 0.98,
+          "reasoning": {
+            "effort": "none"
+          },
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "low"
+          },
+          "truncation": "disabled"
+        }
+      },
+      "input": [
+        {
+          "type": "message",
+          "role": "system",
+          "content": "You only speak Spanish."
+        },
+        {
+          "type": "message",
+          "role": "user",
+          "content": "Hola, \u00bfc\u00f3mo est\u00e1s?"
+        },
+        {
+          "call_id": "call_aF5rJHgM6zQT5OqhkWyN8WRT",
+          "name": "transfer_to_spanish_agent",
+          "arguments": "{}"
+        },
+        {
+          "role": "tool",
+          "call_id": "call_aF5rJHgM6zQT5OqhkWyN8WRT",
+          "output": "{\"assistant\": \"Spanish agent\"}"
+        }
+      ],
+      "output": "\u00a1Hola! Estoy bien, gracias. \u00bfY t\u00fa?",
+      "integration": "OpenAI Agents",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "provider": "OpenAI",
+      "inputTokenCount": 59.0,
+      "outputTokenCount": 16.0
+    },
+    {
+      "uuid": "12dfea8c-d017-43d8-854f-c00edaa6d351",
+      "name": "LLM Generation",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "593886ac-597d-4e46-9c88-35f668f992b9",
+      "startTime": "2026-05-07T08:15:18.940Z",
+      "endTime": "2026-05-07T08:15:20.971Z",
+      "metadata": {
+        "cached_input_tokens": 0,
+        "ouptut_reasoning_tokens": 0,
+        "invocation_params": {
+          "parallel_tool_calls": true,
+          "temperature": 1.0,
+          "tool_choice": "auto",
+          "tools": [
+            {
+              "name": "transfer_to_spanish_agent",
+              "parameters": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {},
+                "required": []
+              },
+              "strict": true,
+              "type": "function",
+              "description": "Handoff to the Spanish agent agent to handle the request. "
+            },
+            {
+              "name": "transfer_to_english_agent",
+              "parameters": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {},
+                "required": []
+              },
+              "strict": true,
+              "type": "function",
+              "description": "Handoff to the English agent agent to handle the request. "
+            }
+          ],
+          "top_p": 0.98,
+          "reasoning": {
+            "effort": "none"
+          },
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "low"
+          },
+          "truncation": "disabled"
+        }
+      },
+      "input": [
+        {
+          "type": "message",
+          "role": "system",
+          "content": "Handoff to the appropriate agent based on the language of the request."
+        },
+        {
+          "type": "message",
+          "role": "user",
+          "content": "Hola, \u00bfc\u00f3mo est\u00e1s?"
+        }
+      ],
+      "output": "{\"call_id\": \"call_aF5rJHgM6zQT5OqhkWyN8WRT\", \"name\": \"transfer_to_spanish_agent\", \"arguments\": \"{}\"}",
+      "integration": "OpenAI Agents",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "provider": "OpenAI",
+      "inputTokenCount": 92.0,
+      "outputTokenCount": 17.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-05-07T08:15:18.928Z",
+  "endTime": "2026-05-07T08:15:22.743Z",
+  "name": "Agent workflow",
+  "environment": "development",
+  "threadId": "None",
+  "input": [
+    {
+      "type": "message",
+      "role": "system",
+      "content": "Handoff to the appropriate agent based on the language of the request."
+    },
+    {
+      "type": "message",
+      "role": "user",
+      "content": "Hola, \u00bfc\u00f3mo est\u00e1s?"
+    }
+  ],
+  "output": "\u00a1Hola! Estoy bien, gracias. \u00bfY t\u00fa?",
+  "status": "SUCCESS"
+}
