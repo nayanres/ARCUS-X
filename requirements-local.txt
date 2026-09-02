@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------
+# OPTIONAL dependencies for LOCAL model inference (GPU / vLLM) and richer
+# tokenization. These are NOT required for the default API-only evaluation
+# path (OpenRouter / Azure-compatible endpoints). Install them only when you
+# run local models.
+#
+#   requirements.txt        = API evaluation / lightweight benchmark execution
+#                             (runtime dependency: requests only)
+#   requirements-local.txt  = optional local model inference
+#                             (torch / transformers / vllm / tiktoken / accelerate)
+#
+# ARCUS-X does NOT require local inference. The benchmark runs against remote
+# API endpoints with only `requests` installed.
+# ---------------------------------------------------------------------------
+# Install with:  pip install -r requirements-local.txt
+
+# Core local-inference stack (supported by arcus.evaluation.evaluator / token_accounting).
+torch>=2.1.0
+transformers>=4.40.0
+vllm>=0.4.0
+accelerate>=0.29.0
+
+# Optional, higher-fidelity tokenizer used by arcus.evaluation.token_accounting
+# when an OpenAI-family model name is detected (falls back to a heuristic otherwise).
+tiktoken>=0.5.0

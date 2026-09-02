@@ -1,0 +1,68 @@
+{
+  "experiment_id": "ARCUS-X-exp-local_MAI_Thinking_1_20260901T180235",
+  "benchmark_version": "1.0.0",
+  "models": [
+    "MAI-Thinking-1"
+  ],
+  "parameters": {
+    "probes": 5,
+    "seed": 42,
+    "seeds": [
+      219,
+      472,
+      2190,
+      5396,
+      6430
+    ],
+    "gravity_levels": [
+      0.5,
+      3.0,
+      15.0
+    ],
+    "horizons": [
+      3,
+      150
+    ],
+    "grid_size_levels": null
+  },
+  "task_seed_manifest": {
+    "base_probe_0": {
+      "seed": 42,
+      "index": 0
+    },
+    "base_probe_1": {
+      "seed": 42,
+      "index": 1
+    },
+    "base_probe_2": {
+      "seed": 42,
+      "index": 2
+    },
+    "base_probe_3": {
+      "seed": 42,
+      "index": 3
+    },
+    "base_probe_4": {
+      "seed": 42,
+      "index": 4
+    }
+  },
+  "software": {
+    "arcus_version": "1.0.0",
+    "taxonomy_version": "2.0"
+  },
+  "api_compatibility": {
+    "capabilities": [],
+    "adaptations": []
+  },
+  "latency_diagnostics": {
+    "enabled": true,
+    "note": "Latency is a systems-level diagnostic, NOT a model capability score. It is excluded from CRI/GBI/trajectory/fracture metrics."
+  },
+  "artifacts": {
+    "raw_log": "absolute_raw_data_local_MAI_Thinking_1.txt",
+    "results": "benchmark_results.json",
+    "metrics": "metrics_MAI-Thinking-1.json"
+  },
+  "created": "2026-09-01"
+}

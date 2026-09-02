@@ -1,0 +1,26 @@
+ARCUS-X Metric Dependency Graph
+
+Adaptive Search Controller (Bisection Search for Fracture Depth)
+  - Inputs: step_accuracy, exact_match (from TrajectoryResult)
+  - Usage: Computes trajectory fidelity (TF) = 0.5 * step_accuracy + 0.3 * continuity_score + 0.2 * exact_match
+  - Decision: Uses TF to determine if model is above MIN_ACCURACY_THRESHOLD (0.5) at a given depth.
+  - Output: Adjusts search depth (z) based on TF.
+
+Reporting Layer
+  - PRIMARY_METRICS (directly measure trajectory compliance):
+      * exact_match_rate      — fraction of trajectories exactly matching GT
+      * mean_step_accuracy    — fraction of GT positions reproduced
+      * mean_continuity       — longest correct prefix / GT length
+  - SECONDARY_METRICS (diagnostic / efficiency context):
+      * mean_final_state      — final coordinate correctness
+      * horizon_compliance_rate — did the model emit the requested depth?
+      * parse_failure_rate    — fraction of outputs that failed path parsing
+
+Dependencies:
+  - step_accuracy -> used in both Adaptive Search (via TF) and Reporting (mean_step_accuracy)
+  - exact_match   -> used in both Adaptive Search (via TF) and Reporting (exact_match_rate)
+  - raw_output    -> used only for parsing (extract_model_path) and then for reporting (parse_failure_rate) and output compliance classification
+  - parse_failure -> derived from parsed flag in TrajectoryResult, used only in Reporting (parse_failure_rate)
+  - error_mode    -> used only in taxonomy classification (legacy_mode) and reporting (as part of failure breakdown)
+
+Note: The adaptive search controller must remain unchanged unless a bug is found. It uses step_accuracy and exact_match (via TF) only.

@@ -1,0 +1,140 @@
+{
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "run_status": "PARTIAL",
+  "completed_probes": 1163,
+  "total_probes": 2072,
+  "accuracy": 43.5,
+  "per_horizon_accuracy": {
+    "1": 0.0,
+    "2": 0.2,
+    "3": 0.8,
+    "4": 0.8,
+    "5": 0.5,
+    "6": 0.7,
+    "7": 0.7,
+    "8": 0.5,
+    "9": 0.6,
+    "10": 0.4,
+    "11": 0.5,
+    "12": 0.5,
+    "13": 0.5,
+    "14": 0.5,
+    "15": 0.3,
+    "20": 0.3
+  },
+  "per_gravity_accuracy": {
+    "0.0": 0.8,
+    "0.5": 0.4,
+    "3.0": 0.5,
+    "15.0": 0.4
+  },
+  "per_tier_accuracy": {
+    "tier_0": 0.6,
+    "tier_1": 0.4,
+    "tier_2": 0.5,
+    "tier_3": 0.2
+  },
+  "avg_output_tokens": 3041.6,
+  "max_output_tokens": 8192.0,
+  "avg_latency": 106565.958,
+  "total_cost": 0.0,
+  "failure_taxonomy": {
+    "Wraparound errors": 803,
+    "State drift": 123,
+    "Formatting failures": 419,
+    "Unknown": 727
+  },
+  "latency_diagnostics": {
+    "mean_latency_ms": 106565.9582,
+    "median_latency_ms": 39760.0725,
+    "p95_latency_ms": 433188.3624,
+    "max_latency_ms": 1290893.836,
+    "mean_output_tokens_per_sec": 55.88,
+    "mean_correct_steps_per_sec": 0.5529,
+    "ale": 0.0641,
+    "correct_steps_per_sec": 0.5529,
+    "per_horizon": [
+      {
+        "horizon": "1",
+        "mean_latency_ms": 13.7328,
+        "correct_steps_per_sec": 0.0
+      },
+      {
+        "horizon": "2",
+        "mean_latency_ms": 718.1991,
+        "correct_steps_per_sec": 0.3224
+      },
+      {
+        "horizon": "3",
+        "mean_latency_ms": 16882.2028,
+        "correct_steps_per_sec": 1.161
+      },
+      {
+        "horizon": "4",
+        "mean_latency_ms": 17338.6082,
+        "correct_steps_per_sec": 1.274
+      },
+      {
+        "horizon": "5",
+        "mean_latency_ms": 43987.4039,
+        "correct_steps_per_sec": 0.6843
+      },
+      {
+        "horizon": "6",
+        "mean_latency_ms": 24852.6656,
+        "correct_steps_per_sec": 1.0668
+      },
+      {
+        "horizon": "7",
+        "mean_latency_ms": 92281.2396,
+        "correct_steps_per_sec": 1.0131
+      },
+      {
+        "horizon": "8",
+        "mean_latency_ms": 130145.6637,
+        "correct_steps_per_sec": 0.6901
+      },
+      {
+        "horizon": "9",
+        "mean_latency_ms": 116898.0624,
+        "correct_steps_per_sec": 0.8998
+      },
+      {
+        "horizon": "10",
+        "mean_latency_ms": 123104.9987,
+        "correct_steps_per_sec": 0.3026
+      },
+      {
+        "horizon": "11",
+        "mean_latency_ms": 145391.4244,
+        "correct_steps_per_sec": 0.6619
+      },
+      {
+        "horizon": "12",
+        "mean_latency_ms": 148549.9334,
+        "correct_steps_per_sec": 0.4957
+      },
+      {
+        "horizon": "13",
+        "mean_latency_ms": 82642.811,
+        "correct_steps_per_sec": 0.9181
+      },
+      {
+        "horizon": "14",
+        "mean_latency_ms": 138678.7997,
+        "correct_steps_per_sec": 0.5866
+      },
+      {
+        "horizon": "15",
+        "mean_latency_ms": 159205.6989,
+        "correct_steps_per_sec": 0.3035
+      },
+      {
+        "horizon": "20",
+        "mean_latency_ms": 131097.2589,
+        "correct_steps_per_sec": 0.2609
+      }
+    ],
+    "diagnostic_note": "Latency is a systems-level diagnostic (provider infrastructure, architecture, batching, deployment). It is NOT a model capability score and is excluded from CRI/GBI/trajectory/fracture metrics."
+  }
+}

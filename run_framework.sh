@@ -1,51 +1,109 @@
 #!/usr/bin/env bash
+# run_framework.sh - Public entry point for the ARCUS-X benchmark
+#
+# Usage:
+#   ./run_framework.sh [--model MODEL] [--probes N] [--output FILE] [--baselines] [--master-seeds S...] [--dev]
+#
+# Examples:
+#   ./run_framework.sh --model google/gemini-2.5-flash-lite --probes 5
+#   ./run_framework.sh --baselines                 # model-free baselines only
+#   ./run_framework.sh --model ... --baselines     # model + baselines in report
+#   ./run_framework.sh --model ... --master-seeds all
+#   ./run_framework.sh --model ... --master-seeds 42 1337 2026 9001 123456
 
-# Framework v1 - Automated Linux Execution Plug & Verification Pipeline
-set -e
+set -euo pipefail
 
-# ANSI escape codes for clean terminal logging
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
-echo -e "${GREEN}[*] Launching Framework v1 Linux Integration Engine...${NC}"
+# Default values
+MODEL="google/gemini-2.5-flash-lite"
+PROBES=5
+OUTPUT="outputs/benchmark_results.json"
+BASELINES=""
+MASTER_SEEDS=""
+DEV=""
+API_BASE=""
 
-# Initialize Directories
-mkdir -p outputs logs
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --model)
+            MODEL="$2"
+            shift 2
+            ;;
+        --probes)
+            PROBES="$2"
+            shift 2
+            ;;
+        --output)
+            OUTPUT="$2"
+            shift 2
+            ;;
+        --api-base)
+            API_BASE="--api-base $2"
+            shift 2
+            ;;
+        --baselines)
+            BASELINES="--baselines"
+            shift
+            ;;
+        --dev)
+            DEV="--dev"
+            shift
+            ;;
+        --master-seeds)
+            # Collect all following non-flag tokens as seeds.
+            shift
+            MASTER_SEEDS="--master-seeds"
+            while [[ $# -gt 0 && "$1" != --* ]]; do
+                MASTER_SEEDS="$MASTER_SEEDS $1"
+                shift
+            done
+            ;;
+        --help|-h)
+            echo "Usage: $0 [--model MODEL] [--probes N] [--output FILE] [--baselines] [--master-seeds S...]"
+            echo ""
+            echo "Runs the ARCUS-X benchmark with the specified model."
+            echo ""
+            echo "Options:"
+            echo "  --model MODEL        Model name (default: google/gemini-2.5-flash-lite)"
+            echo "  --probes N           Number of probes (default: 5)"
+            echo "  --output FILE        Output JSON file (default: outputs/benchmark_results.json)"
+            echo "  --baselines          Also run model-free baseline evaluators (oracle /"
+            echo "                       random / initial-state) and include them in the report."
+            echo "  --master-seeds S...  Master seeds for variance measurement. Space-separated"
+            echo "                       integers, or 'all' for the canonical paper seed list."
+            echo "  --help               Show this help message"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
 
-# 2. Check Dependencies
-if ! command -v python3 &> /dev/null; then
-    echo -e "${RED}[×] FATAL: python3 could not be found. Please install Python 3.8+.${NC}"
-    exit 1
-fi
+# Ensure outputs directory exists
+mkdir -p outputs
 
-# handle Python Environment Paths
-export PYTHONPATH="${PYTHONPATH}:${PWD}"
+# The interactive UX (startup banner, live progress bar, transient status line,
+# and the final metrics/taxonomy chart) is rendered by BenchmarkRunner.run(),
+# which the quickstart module invokes below. No extra wiring is required here —
+# just launch it and the runner prints the banner, drives the progress display,
+# and renders the chart on stdout (ANSI cursor control when run in a TTY,
+# throttled plain lines when piped/redirected).
+echo "Configuration: model=$MODEL probes=$PROBES output=$OUTPUT${API_BASE:+ api-base=on}${DEV:+ dev=on}${BASELINES:+ baselines=on}${MASTER_SEEDS:+ master-seeds=on}"
+echo ""
 
-# Execute Data Generation & Model Benchmarking Matrix
-echo -e "${GREEN}[*] Executing Isomorphic Logic Probe evaluation suites...${NC}"
-python3 generator.py
+python -m arcus.experiments.quickstart \
+    --model "$MODEL" \
+    --n-probes "$PROBES" \
+    --output "$OUTPUT" \
+    $API_BASE \
+    $DEV \
+    $BASELINES \
+    $MASTER_SEEDS
 
-# Locate the newest generated evaluation trace artifact
-LATEST_TRACE=$(ls -t outputs/trace_seed_*.json 2>/dev/null | head -n 1)
-
-if [ -z "$LATEST_TRACE" ]; then
-    echo -e "${RED}[×] SYSTEM FAILURE: No cryptographic execution trace log emitted by the generator engine.${NC}"
-    exit 1
-fi
-
-echo -e "${GREEN}[✓] Target trace log located: ${LATEST_TRACE}${NC}"
-
-# 6. Automated Verification Pipeline (The Decentralized Referee)
-echo -e "${YELLOW}[*] Routing trace payload directly to verify_trace.py referee...${NC}"
-python3 verify_trace.py --trace "$LATEST_TRACE"
-
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}================================================================${NC}"
-    echo -e "${GREEN}[✓] SUCCESS: Framework v1 successfully executed and validated on Linux.${NC}"
-    echo -e "${GREEN}================================================================${NC}"
-else
-    echo -e "${RED}[×] CRITICAL ERROR: Execution trace failed mathematical verification.${NC}"
-    exit 1
-fi
+echo ""
+echo "Benchmark completed. Results saved to: $OUTPUT"

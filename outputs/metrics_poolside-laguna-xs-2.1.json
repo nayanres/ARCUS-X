@@ -1,0 +1,78 @@
+{
+  "model": "poolside/laguna-xs-2.1",
+  "run_status": "COMPLETE",
+  "completed_probes": 242,
+  "total_probes": 222,
+  "accuracy": 21.6,
+  "per_horizon_accuracy": {
+    "1": 0.8,
+    "2": 0.6,
+    "3": 0.0,
+    "5": 0.1,
+    "10": 0.1,
+    "20": 0.1
+  },
+  "per_gravity_accuracy": {
+    "0.0": 0.0,
+    "0.5": 0.2
+  },
+  "per_tier_accuracy": {
+    "tier_0": 0.1,
+    "tier_1": 0.2,
+    "tier_2": 0.3,
+    "tier_3": 0.2
+  },
+  "avg_output_tokens": 5750.9,
+  "max_output_tokens": 8192.0,
+  "avg_latency": 43752.953,
+  "total_cost": 0.0,
+  "failure_taxonomy": {
+    "Wraparound errors": 147,
+    "State drift": 0,
+    "Formatting failures": 27,
+    "Unknown": 48
+  },
+  "latency_diagnostics": {
+    "mean_latency_ms": 43752.9528,
+    "median_latency_ms": 45031.3274,
+    "p95_latency_ms": 90021.6918,
+    "max_latency_ms": 173263.3443,
+    "mean_output_tokens_per_sec": 131.8438,
+    "mean_correct_steps_per_sec": 0.0793,
+    "ale": 0.026,
+    "correct_steps_per_sec": 0.0793,
+    "per_horizon": [
+      {
+        "horizon": "1",
+        "mean_latency_ms": 12514.5598,
+        "correct_steps_per_sec": 0.235
+      },
+      {
+        "horizon": "2",
+        "mean_latency_ms": 24668.0487,
+        "correct_steps_per_sec": 0.2223
+      },
+      {
+        "horizon": "3",
+        "mean_latency_ms": 48417.2118,
+        "correct_steps_per_sec": 0.0
+      },
+      {
+        "horizon": "5",
+        "mean_latency_ms": 48557.9166,
+        "correct_steps_per_sec": 0.0473
+      },
+      {
+        "horizon": "10",
+        "mean_latency_ms": 57047.7238,
+        "correct_steps_per_sec": 0.0204
+      },
+      {
+        "horizon": "20",
+        "mean_latency_ms": 55459.8467,
+        "correct_steps_per_sec": 0.0329
+      }
+    ],
+    "diagnostic_note": "Latency is a systems-level diagnostic (provider infrastructure, architecture, batching, deployment). It is NOT a model capability score and is excluded from CRI/GBI/trajectory/fracture metrics."
+  }
+}

@@ -1,0 +1,4 @@
+# Development / lock-generation dependencies.
+# Used only to (re)generate the pinned lockfiles via pip-compile.
+# Not required at runtime or for local inference.
+pip-tools>=7.4.0

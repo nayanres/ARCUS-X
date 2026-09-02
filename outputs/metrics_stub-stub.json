@@ -1,0 +1,67 @@
+{
+  "model": "stub/stub",
+  "run_status": "COMPLETE",
+  "completed_probes": 65,
+  "total_probes": 65,
+  "accuracy": 100.0,
+  "per_horizon_accuracy": {
+    "3": 1.0,
+    "5": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0
+  },
+  "per_gravity_accuracy": {
+    "0.0": 1.0,
+    "1.0": 1.0
+  },
+  "per_tier_accuracy": {
+    "tier_0": 1.0,
+    "tier_1": 1.0,
+    "tier_2": 1.0,
+    "tier_3": 1.0
+  },
+  "avg_output_tokens": 53.3,
+  "max_output_tokens": 72.0,
+  "avg_latency": 1.0,
+  "total_cost": 0.0,
+  "failure_taxonomy": {},
+  "latency_diagnostics": {
+    "mean_latency_ms": 1.0,
+    "median_latency_ms": 1.0,
+    "p95_latency_ms": 1.0,
+    "max_latency_ms": 1.0,
+    "mean_output_tokens_per_sec": 53276.9231,
+    "mean_correct_steps_per_sec": 8923.0769,
+    "ale": 1000.0,
+    "correct_steps_per_sec": 8923.0769,
+    "per_horizon": [
+      {
+        "horizon": "3",
+        "mean_latency_ms": 1.0,
+        "correct_steps_per_sec": 4000.0
+      },
+      {
+        "horizon": "5",
+        "mean_latency_ms": 1.0,
+        "correct_steps_per_sec": 6000.0
+      },
+      {
+        "horizon": "8",
+        "mean_latency_ms": 1.0,
+        "correct_steps_per_sec": 9000.0
+      },
+      {
+        "horizon": "9",
+        "mean_latency_ms": 1.0,
+        "correct_steps_per_sec": 10000.0
+      },
+      {
+        "horizon": "10",
+        "mean_latency_ms": 1.0,
+        "correct_steps_per_sec": 11000.0
+      }
+    ],
+    "diagnostic_note": "Latency is a systems-level diagnostic (provider infrastructure, architecture, batching, deployment). It is NOT a model capability score and is excluded from CRI/GBI/trajectory/fracture metrics."
+  }
+}
