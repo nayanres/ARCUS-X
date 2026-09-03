@@ -134,6 +134,7 @@ primary metrics but never used as the sole success criterion):
   `Semantic Interpretation Failure`, `Horizon Collapse`, `Formatting Failure`.
 - **Fracture Depth** — horizon where step accuracy drops below 0.5 and stays
   there (with look-ahead to avoid transient dips).
+- **Adaptive Fracture Search (AFS) Operational Filtering** — AFS bisection searches compute batch accuracy using operationally valid probes only, excluding infrastructure and execution errors (`is_infra`). When an entire batch consists of failed probes, batch accuracy returns `None` (insufficient evidence) rather than `0.0`, ensuring bisection retreats gracefully without treating operational outages as cognitive failure. Resumed/cached runs enforce identical validity filtering.
 - **ARCUS Robustness Index (CRI)** — *secondary aggregate* robustness indicator
   (NOT a primary metric). It summarises correctness retention across horizons,
   semantic perturbations, and efficiency:

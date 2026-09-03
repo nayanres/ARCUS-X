@@ -1,0 +1,253 @@
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225271: trailing whitespace.
+[32m+[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225272: trailing whitespace.
+[32m+[m[32m=== RAW STREAM ENTRY (Tokens: 65) ===[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225273: trailing whitespace.
+[32m+[m[32mParameters: z=84, gravity=0.5, tier=1, grid=default[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225274: trailing whitespace.
+[32m+[m[32mGrid: 10x10[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225275: trailing whitespace.
+[32m+[m[32mInitialState: (6, 4)[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225276: trailing whitespace.
+[32m+[m[32mActions: ['east', 'east', 'west', 'south', 'south', 'west', 'north', 'north', 'south', 'east', 'north', 'west', 'north', 'north', 'north', 'east', 'south', 'west', 'west', 'north', 'south', 'south', 'north', 'north', 'south', 'north', 'south', 'north', 'south', 'north', 'east', 'east', 'west', 'north', 'north', 'west', 'south', 'west', 'north', 'west', 'east', 'west', 'west', 'south', 'north', 'east', 'south', 'east', 'south', 'south', 'west', 'south', 'east', 'east', 'east', 'north', 'west', 'east', 'west', 'west', 'west', 'south', 'west', 'south', 'west', 'north', 'west', 'east', 'east', 'north', 'south', 'east', 'west', 'east', 'east', 'east', 'west', 'south', 'east', 'south', 'west', 'west', 'south', 'west'][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225277: trailing whitespace.
+[32m+[m[32mTransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225278: trailing whitespace.
+[32m+[m[32mEnvironmentMetadata: seed=5396, tier=1, gravity=0.5, z=84, grid_key=default, tier_name=semantic_disruption, experiment_hash=080d30e91447e6485355ff5ee6c40f2c8b8e6c6a7214e030083a0358f42a087b[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225279: trailing whitespace.
+[32m+[m[32mLatency(ms): 408872.574[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225280: trailing whitespace.
+[32m+[m[32mInputTokens: 2706[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225281: trailing whitespace.
+[32m+[m[32mOutputTokens: 8192[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225282: trailing whitespace.
+[32m+[m[32m------------------------------[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225283: trailing whitespace.
+[32m+[m[32m[MODEL OUTPUT]:[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225284: trailing whitespace.
+[32m+[m[32m[OUTPUT_TRUNCATED] Partial:[m[41m [m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225285: trailing whitespace.
+[32m+[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225286: trailing whitespace.
+[32m+[m[32m[GROUND TRUTH EXPECTED]:[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225287: trailing whitespace.
+[32m+[m[32m[6,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225288: trailing whitespace.
+[32m+[m[32m[7,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225289: trailing whitespace.
+[32m+[m[32m[8,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225290: trailing whitespace.
+[32m+[m[32m[7,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225291: trailing whitespace.
+[32m+[m[32m[7,3][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225292: trailing whitespace.
+[32m+[m[32m[7,2][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225293: trailing whitespace.
+[32m+[m[32m[6,2][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225294: trailing whitespace.
+[32m+[m[32m[6,3][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225295: trailing whitespace.
+[32m+[m[32m[6,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225296: trailing whitespace.
+[32m+[m[32m[6,3][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225297: trailing whitespace.
+[32m+[m[32m[7,3][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225298: trailing whitespace.
+[32m+[m[32m[7,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225299: trailing whitespace.
+[32m+[m[32m[6,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225300: trailing whitespace.
+[32m+[m[32m[6,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225301: trailing whitespace.
+[32m+[m[32m[6,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225302: trailing whitespace.
+[32m+[m[32m[6,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225303: trailing whitespace.
+[32m+[m[32m[7,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225304: trailing whitespace.
+[32m+[m[32m[7,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225305: trailing whitespace.
+[32m+[m[32m[6,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225306: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225307: trailing whitespace.
+[32m+[m[32m[5,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225308: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225309: trailing whitespace.
+[32m+[m[32m[5,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225310: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225311: trailing whitespace.
+[32m+[m[32m[5,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225312: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225313: trailing whitespace.
+[32m+[m[32m[5,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225314: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225315: trailing whitespace.
+[32m+[m[32m[5,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225316: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225317: trailing whitespace.
+[32m+[m[32m[5,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225318: trailing whitespace.
+[32m+[m[32m[6,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225319: trailing whitespace.
+[32m+[m[32m[7,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225320: trailing whitespace.
+[32m+[m[32m[6,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225321: trailing whitespace.
+[32m+[m[32m[6,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225322: trailing whitespace.
+[32m+[m[32m[6,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225323: trailing whitespace.
+[32m+[m[32m[5,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225324: trailing whitespace.
+[32m+[m[32m[5,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225325: trailing whitespace.
+[32m+[m[32m[4,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225326: trailing whitespace.
+[32m+[m[32m[4,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225327: trailing whitespace.
+[32m+[m[32m[3,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225328: trailing whitespace.
+[32m+[m[32m[4,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225329: trailing whitespace.
+[32m+[m[32m[3,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225330: trailing whitespace.
+[32m+[m[32m[2,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225331: trailing whitespace.
+[32m+[m[32m[2,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225332: trailing whitespace.
+[32m+[m[32m[2,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225333: trailing whitespace.
+[32m+[m[32m[3,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225334: trailing whitespace.
+[32m+[m[32m[3,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225335: trailing whitespace.
+[32m+[m[32m[4,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225336: trailing whitespace.
+[32m+[m[32m[4,7][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225337: trailing whitespace.
+[32m+[m[32m[4,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225338: trailing whitespace.
+[32m+[m[32m[3,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225339: trailing whitespace.
+[32m+[m[32m[3,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225340: trailing whitespace.
+[32m+[m[32m[4,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225341: trailing whitespace.
+[32m+[m[32m[5,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225342: trailing whitespace.
+[32m+[m[32m[6,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225343: trailing whitespace.
+[32m+[m[32m[6,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225344: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225345: trailing whitespace.
+[32m+[m[32m[6,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225346: trailing whitespace.
+[32m+[m[32m[5,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225347: trailing whitespace.
+[32m+[m[32m[4,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225348: trailing whitespace.
+[32m+[m[32m[3,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225349: trailing whitespace.
+[32m+[m[32m[3,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225350: trailing whitespace.
+[32m+[m[32m[2,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225351: trailing whitespace.
+[32m+[m[32m[2,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225352: trailing whitespace.
+[32m+[m[32m[1,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225353: trailing whitespace.
+[32m+[m[32m[1,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225354: trailing whitespace.
+[32m+[m[32m[0,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225355: trailing whitespace.
+[32m+[m[32m[1,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225356: trailing whitespace.
+[32m+[m[32m[2,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225357: trailing whitespace.
+[32m+[m[32m[2,6][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225358: trailing whitespace.
+[32m+[m[32m[2,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225359: trailing whitespace.
+[32m+[m[32m[3,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225360: trailing whitespace.
+[32m+[m[32m[2,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225361: trailing whitespace.
+[32m+[m[32m[3,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225362: trailing whitespace.
+[32m+[m[32m[4,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225363: trailing whitespace.
+[32m+[m[32m[5,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225364: trailing whitespace.
+[32m+[m[32m[4,5][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225365: trailing whitespace.
+[32m+[m[32m[4,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225366: trailing whitespace.
+[32m+[m[32m[5,4][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225367: trailing whitespace.
+[32m+[m[32m[5,3][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225368: trailing whitespace.
+[32m+[m[32m[4,3][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225369: trailing whitespace.
+[32m+[m[32m[3,3][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225370: trailing whitespace.
+[32m+[m[32m[3,2][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225371: trailing whitespace.
+[32m+[m[32m[2,2][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225372: trailing whitespace.
+[32m+[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225373: trailing whitespace.
+[32m+[m[32m==============================[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225374: trailing whitespace.
+[32m+[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225375: trailing whitespace.
+[32m+[m[32m=== RAW STREAM ENTRY (Tokens: 199) ===[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225376: trailing whitespace.
+[32m+[m[32mParameters: z=84, gravity=0.5, tier=2, grid=default[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225377: trailing whitespace.
+[32m+[m[32mGrid: 11x11[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225378: trailing whitespace.
+[32m+[m[32mInitialState: (4, 9)[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225379: trailing whitespace.
+[32m+[m[32mActions: ['north', 'south', 'north', 'south', 'north', 'west', 'east', 'east', 'south', 'east', 'west', 'west', 'east', 'north', 'south', 'east', 'west', 'south', 'east', 'east', 'south', 'north', 'west', 'north', 'north', 'north', 'south', 'west', 'east', 'west', 'west', 'east', 'north', 'north', 'north', 'east', 'south', 'east', 'north', 'west', 'east', 'east', 'north', 'west', 'east', 'east', 'east', 'east', 'west', 'south', 'north', 'north', 'north', 'east', 'north', 'south', 'east', 'east', 'north', 'south', 'south', 'north', 'south', 'south', 'north', 'east', 'south', 'east', 'west', 'east', 'south', 'west', 'west', 'north', 'south', 'west', 'north', 'east', 'south', 'west', 'south', 'south', 'north', 'west'][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225380: trailing whitespace.
+[32m+[m[32mTransitionRules: {'north': {'dx': 0, 'dy': -1}, 'south': {'dx': 0, 'dy': 1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225381: trailing whitespace.
+[32m+[m[32mEnvironmentMetadata: seed=5396, tier=2, gravity=0.5, z=84, grid_key=default, tier_name=attribute_inversion, experiment_hash=9622b918b9f2eb53647aeedb650d5fa4580baca4f4578fe84660aabed2be8780[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225382: trailing whitespace.
+[32m+[m[32mLatency(ms): 144682.709[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225383: trailing whitespace.
+[32m+[m[32mInputTokens: 2338[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225384: trailing whitespace.
+[32m+[m[32mOutputTokens: 6372[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225385: trailing whitespace.
+[32m+[m[32m------------------------------[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225386: trailing whitespace.
+[32m+[m[32m[MODEL OUTPUT]:[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225387: trailing whitespace.
+[32m+[m[32mThe action sequence has 84 actions, so the full trajectory has 85 coordinates:[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225388: trailing whitespace.
+[32m+[m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225389: trailing whitespace.
+[32m+[m[32m[4,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225390: trailing whitespace.
+[32m+[m[32m[4,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225391: trailing whitespace.
+[32m+[m[32m[4,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225392: trailing whitespace.
+[32m+[m[32m[4,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225393: trailing whitespace.
+[32m+[m[32m[4,9][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225394: trailing whitespace.
+[32m+[m[32m[4,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225395: trailing whitespace.
+[32m+[m[32m[3,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.3_flash.txt:225396: trailing whitespace.
+[32m+[m[32m[4,8][m[41m[m
+outputs/absolute_raw_data_z_ai_glm_5.

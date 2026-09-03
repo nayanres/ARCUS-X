@@ -1480,6 +1480,14 @@ class BenchmarkRunner:
                 )
                 horizon_accuracies[mid_z] = batch_acc
 
+                if batch_acc is None:
+                    logger.info(
+                        f"  Result: INSUFFICIENT EVIDENCE (No valid probes at z={mid_z}). "
+                        f"Retreating search profile."
+                    )
+                    high = mid_z - 1
+                    continue
+
                 if batch_acc >= self.MIN_ACCURACY_THRESHOLD:
                     logger.info(
                         f"  Result: SUCCESS (Acc: {batch_acc:.3f} >= Floor). Shifting deeper."
@@ -1728,7 +1736,7 @@ class BenchmarkRunner:
         """
         results_matrix = results_matrix if results_matrix is not None else self.results_matrix
         skip_set = skip_set if skip_set is not None else set()
-        all_accuracies = []
+        valid_accuracies = []
         context_exhausted_count = 0
         probes_to_test = base_probes
 
@@ -1758,9 +1766,10 @@ class BenchmarkRunner:
                             )
                         )
                         if prior is not None:
-                            all_accuracies.append(
-                                self._coerce_float(prior.get("step_accuracy", 0.0))
-                            )
+                            acc_val = self._coerce_float(prior.get("step_accuracy", 0.0))
+                            is_infra = prior.get("is_infrastructure_failure", False) or prior.get("provider_failure", False) or prior.get("api_error") is not None or prior.get("finish_reason") == "error"
+                            if not is_infra:
+                                valid_accuracies.append(acc_val)
                         continue
 
                     task_index = self._task_index_for(
@@ -1975,12 +1984,14 @@ class BenchmarkRunner:
                     # default (None) keeps the original 4-tuple key for identical output.
                     grid_suffix = (grid_key,) if self.grid_size_levels is not None else ()
                     results_matrix[(z, gravity_target, tier, probe_idx) + grid_suffix] = result
-                    all_accuracies.append(acc)
+                    is_infra = result.get("is_infrastructure_failure", False) or result.get("provider_failure", False) or result.get("api_error") is not None or result.get("finish_reason") == "error"
+                    if not is_infra:
+                        valid_accuracies.append(acc)
 
                     # --- UX: advance the live probe counter ---
                     self._progress_increment()
 
-        batch_acc = sum(all_accuracies) / len(all_accuracies) if all_accuracies else 0.0
+        batch_acc = (sum(valid_accuracies) / len(valid_accuracies)) if valid_accuracies else None
         return batch_acc, context_exhausted_count
 
     def run_metric_unit_tests(self):
