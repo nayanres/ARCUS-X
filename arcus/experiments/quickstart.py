@@ -84,6 +84,8 @@ def parse_args():
                               '(e.g. absolute_raw_stream_xxx.txt). Completed probes '
                               'are detected by identity and skipped; only missing '
                               'probes are run. Appends to the same file.'))
+    parser.add_argument('--offline', action='store_true', default=False,
+                        help='Reuse exact observations from --resume and acquire only missing probes')
     parser.add_argument('--dev', action='store_true', default=False,
                         help='Developer mode: seeds=1, gravity=[0.5], tier=1, max horizon=3, no adaptive expansion, 1 probe')
     parser.add_argument('--tiers', type=str, default=None, help='Target tiers (comma separated)')
@@ -140,6 +142,10 @@ def _run_baselines(n_probes: int, gravity_levels: List[float]) -> Dict:
 
 def main():
     args = parse_args()
+
+    if args.offline and not args.resume:
+        logger.error("❌ --offline requires --resume FILE")
+        return 2
 
     if args.dev:
         args.n_probes = 1
@@ -210,6 +216,7 @@ def main():
             output_filepath=output_file,
             parallel_seeds=args.parallel_seeds,
             resume_path=args.resume,
+            offline=args.offline,
         )
 
         # Merge baselines into the model report when both were requested.

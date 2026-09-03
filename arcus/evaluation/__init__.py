@@ -33,3 +33,6 @@ __all__ = [
     "ModelEvaluator",
     "measure_tokens",
 ]
+from .observations import ObservationKey, ObservationRecord, ResumeObservationStore
+
+__all__ = ["ObservationKey", "ObservationRecord", "ResumeObservationStore"]

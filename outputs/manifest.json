@@ -1,12 +1,12 @@
 {
-  "experiment_id": "ARCUS-X-exp-local_MAI_Thinking_1_20260902T210108",
+  "experiment_id": "ARCUS-X-exp-local_MAI_Thinking_1_20260902T234159",
   "benchmark_version": "1.0.0",
   "models": [
     "MAI-Thinking-1"
   ],
   "parameters": {
     "probes": 5,
-    "seed": 6430,
+    "seed": 42,
     "seeds": [
       219,
       472,
@@ -27,23 +27,23 @@
   },
   "task_seed_manifest": {
     "base_probe_0": {
-      "seed": 6430,
+      "seed": 42,
       "index": 0
     },
     "base_probe_1": {
-      "seed": 6430,
+      "seed": 42,
       "index": 1
     },
     "base_probe_2": {
-      "seed": 6430,
+      "seed": 42,
       "index": 2
     },
     "base_probe_3": {
-      "seed": 6430,
+      "seed": 42,
       "index": 3
     },
     "base_probe_4": {
-      "seed": 6430,
+      "seed": 42,
       "index": 4
     }
   },
@@ -52,58 +52,8 @@
     "taxonomy_version": "2.0"
   },
   "api_compatibility": {
-    "capabilities": [
-      {
-        "provider": "azure",
-        "model": "MAI-Thinking-1",
-        "capabilities": {
-          "token_parameter": {
-            "name": "token_parameter",
-            "supported": true,
-            "param": "max_completion_tokens",
-            "supports_custom_values": true,
-            "default_value": null
-          },
-          "temperature": {
-            "name": "temperature",
-            "supported": true,
-            "param": "temperature",
-            "supports_custom_values": true,
-            "default_value": 0.0
-          },
-          "top_p": {
-            "name": "top_p",
-            "supported": true,
-            "param": "top_p",
-            "supports_custom_values": true,
-            "default_value": 1.0
-          },
-          "frequency_penalty": {
-            "name": "frequency_penalty",
-            "supported": true,
-            "param": "frequency_penalty",
-            "supports_custom_values": true,
-            "default_value": 0.0
-          },
-          "presence_penalty": {
-            "name": "presence_penalty",
-            "supported": true,
-            "param": "presence_penalty",
-            "supports_custom_values": true,
-            "default_value": 0.0
-          }
-        }
-      }
-    ],
-    "adaptations": [
-      {
-        "provider": "azure",
-        "model": "MAI-Thinking-1",
-        "adjustment": "max_tokens -> max_completion_tokens",
-        "reason": "[UNSUPPORTED_PARAMETER] provider=azure model=MAI-Thinking-1 time=2026-09-01T22:02:37.609165 status=400 code=invalid_request_error retryable=False recoverable=True feature=max_tokens: `max_tokens` is not supported; use `max_completion_tokens` instead.",
-        "kind": "parameter_name"
-      }
-    ]
+    "capabilities": [],
+    "adaptations": []
   },
   "latency_diagnostics": {
     "enabled": true,

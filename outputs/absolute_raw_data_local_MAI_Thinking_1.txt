@@ -267365,3 +267365,805 @@ Completed: 3105/2945
 Failures: 1783
 End Time: 2026-09-02T21:01:08
 ==================================================
+
+==================================================
+ARCUS-X RUN START
+Run ID: 2026-09-02T23:40:23
+Model: MAI-Thinking-1
+Total Probes: 2700
+==================================================
+
+------------------------------
+EXECUTION COMPATIBILITY
+Provider: azure
+Model: MAI-Thinking-1
+Adaptations:
+- max_tokens -> max_completion_tokens
+  (reason: [UNSUPPORTED_PARAMETER] provider=azure model=MAI-Thinking-1 time=2026-09-03T03:40:24.270731 status=400 code=invalid_request_error retryable=False recoverable=True feature=max_tokens: `max_tokens` is not supported; use `max_completion_tokens` instead.)
+------------------------------
+
+==================================================
+ARCUS-X RUN START
+Run ID: 2026-09-02T23:41:59
+Model: MAI-Thinking-1
+Total Probes: 2700
+==================================================
+
+------------------------------
+EXECUTION COMPATIBILITY
+Provider: azure
+Model: MAI-Thinking-1
+Adaptations:
+- max_tokens -> max_completion_tokens
+  (reason: [UNSUPPORTED_PARAMETER] provider=azure model=MAI-Thinking-1 time=2026-09-03T03:42:00.890052 status=400 code=invalid_request_error retryable=False recoverable=True feature=max_tokens: `max_tokens` is not supported; use `max_completion_tokens` instead.)
+------------------------------
+
+=== RAW STREAM ENTRY (Tokens: 65) ===
+Parameters: z=3, gravity=0.0, tier=1, grid=default
+Grid: 8x5
+InitialState: (6, 1)
+Actions: ['north', 'north', 'south']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=1, gravity=0.0, z=3, grid_key=default, tier_name=semantic_disruption, experiment_hash=19f2641099863c08cc03d53e8c88b8a182a2d31ccc68ce295401851cbdb6941f
+Latency(ms): 15932.353
+InputTokens: 234
+OutputTokens: 764
+------------------------------
+[MODEL OUTPUT]:
+[6,1]
+[6,2]
+[6,3]
+[6,2]
+
+[GROUND TRUTH EXPECTED]:
+[6,1]
+[6,2]
+[6,3]
+[6,2]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 89) ===
+Parameters: z=20, gravity=0.5, tier=0, grid=default
+Grid: 6x9
+InitialState: (3, 1)
+Actions: ['east', 'south', 'east', 'east', 'east', 'south', 'north', 'south', 'east', 'west', 'west', 'north', 'south', 'east', 'west', 'north', 'south', 'west', 'west', 'north']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=0, gravity=0.5, z=20, grid_key=default, tier_name=baseline, experiment_hash=24693b3188315adaa9d8c7c95897998b17505c272e7f36adc49fda3c7fa79a23
+Latency(ms): 28387.970
+InputTokens: 668
+OutputTokens: 1798
+------------------------------
+[MODEL OUTPUT]:
+[3,1]
+[4,1]
+[4,0]
+[5,0]
+[0,0]
+[1,0]
+[1,8]
+[1,0]
+[1,8]
+[2,8]
+[1,8]
+[0,8]
+[0,0]
+[0,8]
+[1,8]
+[0,8]
+[0,0]
+[0,8]
+[5,8]
+[4,8]
+[4,0]
+
+[GROUND TRUTH EXPECTED]:
+[3,1]
+[4,1]
+[4,0]
+[5,0]
+[0,0]
+[1,0]
+[1,8]
+[1,0]
+[1,8]
+[2,8]
+[1,8]
+[0,8]
+[0,0]
+[0,8]
+[1,8]
+[0,8]
+[0,0]
+[0,8]
+[5,8]
+[4,8]
+[4,0]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 89) ===
+Parameters: z=20, gravity=0.5, tier=1, grid=default
+Grid: 7x7
+InitialState: (0, 1)
+Actions: ['north', 'west', 'east', 'south', 'south', 'south', 'west', 'west', 'south', 'north', 'west', 'south', 'west', 'west', 'south', 'west', 'north', 'west', 'south', 'south']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=1, gravity=0.5, z=20, grid_key=default, tier_name=semantic_disruption, experiment_hash=e01e5752423930de656d587c801499a3a4fe5a376cb1dd71441ceae14f1a7b38
+Latency(ms): 24374.251
+InputTokens: 738
+OutputTokens: 1546
+------------------------------
+[MODEL OUTPUT]:
+[0,1]
+[0,2]
+[6,2]
+[0,2]
+[0,1]
+[0,0]
+[0,6]
+[6,6]
+[5,6]
+[5,5]
+[5,6]
+[4,6]
+[4,5]
+[3,5]
+[2,5]
+[2,4]
+[1,4]
+[1,5]
+[0,5]
+[0,4]
+[0,3]
+
+[GROUND TRUTH EXPECTED]:
+[0,1]
+[0,2]
+[6,2]
+[0,2]
+[0,1]
+[0,0]
+[0,6]
+[6,6]
+[5,6]
+[5,5]
+[5,6]
+[4,6]
+[4,5]
+[3,5]
+[2,5]
+[2,4]
+[1,4]
+[1,5]
+[0,5]
+[0,4]
+[0,3]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 90) ===
+Parameters: z=20, gravity=0.5, tier=2, grid=default
+Grid: 11x9
+InitialState: (9, 1)
+Actions: ['east', 'east', 'north', 'west', 'north', 'south', 'west', 'south', 'north', 'east', 'west', 'north', 'north', 'east', 'west', 'east', 'west', 'north', 'north', 'north']
+TransitionRules: {'north': {'dx': 0, 'dy': -1}, 'south': {'dx': 0, 'dy': 1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=2, gravity=0.5, z=20, grid_key=default, tier_name=attribute_inversion, experiment_hash=b9f4fab32c881ed5902ee02afc2a2618a0e5d88373a9b1bdaabad00e227a74fe
+Latency(ms): 24124.605
+InputTokens: 668
+OutputTokens: 1564
+------------------------------
+[MODEL OUTPUT]:
+[9,1]
+[10,1]
+[0,1]
+[0,0]
+[10,0]
+[10,8]
+[10,0]
+[9,0]
+[9,1]
+[9,0]
+[10,0]
+[9,0]
+[9,8]
+[9,7]
+[10,7]
+[9,7]
+[10,7]
+[9,7]
+[9,6]
+[9,5]
+[9,4]
+
+[GROUND TRUTH EXPECTED]:
+[9,1]
+[10,1]
+[0,1]
+[0,0]
+[10,0]
+[10,8]
+[10,0]
+[9,0]
+[9,1]
+[9,0]
+[10,0]
+[9,0]
+[9,8]
+[9,7]
+[10,7]
+[9,7]
+[10,7]
+[9,7]
+[9,6]
+[9,5]
+[9,4]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 89) ===
+Parameters: z=20, gravity=0.5, tier=3, grid=default
+Grid: 6x5
+InitialState: (3, 4)
+Actions: ['west', 'west', 'east', 'east', 'west', 'west', 'west', 'west', 'east', 'west', 'south', 'east', 'south', 'south', 'west', 'east', 'south', 'north', 'east', 'west']
+TransitionRules: {'north': {'dx': -1, 'dy': 0}, 'south': {'dx': 1, 'dy': 0}, 'east': {'dx': 0, 'dy': 1}, 'west': {'dx': 0, 'dy': -1}}
+EnvironmentMetadata: seed=219, tier=3, gravity=0.5, z=20, grid_key=default, tier_name=coordinate_transformation, experiment_hash=0659117adeae7141712f1d502700b11671b79f7e96061069d67d4ca8017ebd8c
+Latency(ms): 21157.271
+InputTokens: 668
+OutputTokens: 1480
+------------------------------
+[MODEL OUTPUT]:
+[3,4]
+[3,3]
+[3,2]
+[3,3]
+[3,4]
+[3,3]
+[3,2]
+[3,1]
+[3,0]
+[3,1]
+[3,0]
+[4,0]
+[4,1]
+[5,1]
+[0,1]
+[0,0]
+[0,1]
+[1,1]
+[0,1]
+[0,2]
+[0,1]
+
+[GROUND TRUTH EXPECTED]:
+[3,4]
+[3,3]
+[3,2]
+[3,3]
+[3,4]
+[3,3]
+[3,2]
+[3,1]
+[3,0]
+[3,1]
+[3,0]
+[4,0]
+[4,1]
+[5,1]
+[0,1]
+[0,0]
+[0,1]
+[1,1]
+[0,1]
+[0,2]
+[0,1]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 89) ===
+Parameters: z=20, gravity=0.5, tier=0, grid=default
+Grid: 7x5
+InitialState: (3, 1)
+Actions: ['east', 'north', 'south', 'east', 'west', 'north', 'south', 'east', 'north', 'north', 'east', 'north', 'south', 'west', 'west', 'north', 'west', 'north', 'east', 'east']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=0, gravity=0.5, z=20, grid_key=default, tier_name=baseline, experiment_hash=7270069cbf07127adc919579e9b79fe094ed22c159c68b45de1de2331e7f9201
+Latency(ms): 20420.657
+InputTokens: 668
+OutputTokens: 1259
+------------------------------
+[MODEL OUTPUT]:
+[3,1]
+[4,1]
+[4,2]
+[4,1]
+[5,1]
+[4,1]
+[4,2]
+[4,1]
+[5,1]
+[5,2]
+[5,3]
+[6,3]
+[6,4]
+[6,3]
+[5,3]
+[4,3]
+[4,4]
+[3,4]
+[3,0]
+[4,0]
+[5,0]
+
+[GROUND TRUTH EXPECTED]:
+[3,1]
+[4,1]
+[4,2]
+[4,1]
+[5,1]
+[4,1]
+[4,2]
+[4,1]
+[5,1]
+[5,2]
+[5,3]
+[6,3]
+[6,4]
+[6,3]
+[5,3]
+[4,3]
+[4,4]
+[3,4]
+[3,0]
+[4,0]
+[5,0]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 89) ===
+Parameters: z=20, gravity=0.5, tier=1, grid=default
+Grid: 8x9
+InitialState: (6, 8)
+Actions: ['north', 'north', 'north', 'south', 'south', 'west', 'south', 'west', 'south', 'south', 'north', 'north', 'south', 'west', 'north', 'south', 'west', 'west', 'north', 'west']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=1, gravity=0.5, z=20, grid_key=default, tier_name=semantic_disruption, experiment_hash=5913b002d309b4d77c85aba1799ef884dac64339fa09f8e9119dfb4308af7a54
+Latency(ms): 39241.460
+InputTokens: 744
+OutputTokens: 2775
+------------------------------
+[MODEL OUTPUT]:
+[6,8]
+[6,0]
+[6,1]
+[6,2]
+[6,1]
+[6,0]
+[5,0]
+[5,8]
+[4,8]
+[4,7]
+[4,6]
+[4,7]
+[4,8]
+[4,7]
+[3,7]
+[3,8]
+[3,7]
+[2,7]
+[1,7]
+[1,8]
+[0,8]
+
+[GROUND TRUTH EXPECTED]:
+[6,8]
+[6,0]
+[6,1]
+[6,2]
+[6,1]
+[6,0]
+[5,0]
+[5,8]
+[4,8]
+[4,7]
+[4,6]
+[4,7]
+[4,8]
+[4,7]
+[3,7]
+[3,8]
+[3,7]
+[2,7]
+[1,7]
+[1,8]
+[0,8]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 90) ===
+Parameters: z=20, gravity=0.5, tier=2, grid=default
+Grid: 12x12
+InitialState: (2, 4)
+Actions: ['south', 'east', 'west', 'north', 'east', 'east', 'west', 'south', 'north', 'west', 'west', 'west', 'north', 'west', 'south', 'south', 'west', 'north', 'south', 'east']
+TransitionRules: {'north': {'dx': 0, 'dy': -1}, 'south': {'dx': 0, 'dy': 1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=2, gravity=0.5, z=20, grid_key=default, tier_name=attribute_inversion, experiment_hash=b3f75a89101844ced1a6953dac0f90766939c4821754ad43938bfa9df9f899d6
+Latency(ms): 30546.950
+InputTokens: 668
+OutputTokens: 1095
+------------------------------
+[MODEL OUTPUT]:
+[2,4]
+[2,5]
+[3,5]
+[2,5]
+[2,4]
+[3,4]
+[4,4]
+[3,4]
+[3,5]
+[3,4]
+[2,4]
+[1,4]
+[0,4]
+[0,3]
+[11,3]
+[11,4]
+[11,5]
+[10,5]
+[10,4]
+[10,5]
+[11,5]
+
+[GROUND TRUTH EXPECTED]:
+[2,4]
+[2,5]
+[3,5]
+[2,5]
+[2,4]
+[3,4]
+[4,4]
+[3,4]
+[3,5]
+[3,4]
+[2,4]
+[1,4]
+[0,4]
+[0,3]
+[11,3]
+[11,4]
+[11,5]
+[10,5]
+[10,4]
+[10,5]
+[11,5]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 62) ===
+Parameters: z=20, gravity=0.5, tier=3, grid=default
+Grid: 8x9
+InitialState: (5, 3)
+Actions: ['north', 'north', 'east', 'east', 'west', 'north', 'east', 'east', 'west', 'west', 'south', 'west', 'east', 'north', 'east', 'east', 'north', 'north', 'south', 'south']
+TransitionRules: {'north': {'dx': -1, 'dy': 0}, 'south': {'dx': 1, 'dy': 0}, 'east': {'dx': 0, 'dy': 1}, 'west': {'dx': 0, 'dy': -1}}
+EnvironmentMetadata: seed=219, tier=3, gravity=0.5, z=20, grid_key=default, tier_name=coordinate_transformation, experiment_hash=02cb2a84d1d855d44d501eeb520992b89b7bb891a12b9965618d9e0c4fb98caf
+Latency(ms): 60601.236
+InputTokens: 526
+OutputTokens: 2
+------------------------------
+[MODEL OUTPUT]:
+[EXCEPTION]
+
+[GROUND TRUTH EXPECTED]:
+[5,3]
+[4,3]
+[3,3]
+[3,4]
+[3,5]
+[3,4]
+[2,4]
+[2,5]
+[2,6]
+[2,5]
+[2,4]
+[3,4]
+[3,3]
+[3,4]
+[2,4]
+[2,5]
+[2,6]
+[1,6]
+[0,6]
+[1,6]
+[2,6]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 88) ===
+Parameters: z=20, gravity=0.5, tier=0, grid=default
+Grid: 8x10
+InitialState: (3, 7)
+Actions: ['east', 'south', 'south', 'north', 'north', 'east', 'west', 'south', 'south', 'east', 'east', 'east', 'south', 'north', 'north', 'north', 'west', 'north', 'north', 'east']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=0, gravity=0.5, z=20, grid_key=default, tier_name=baseline, experiment_hash=476e0f8dca6d56bfdd8e4dfd54f127c341251cc6d7d68e3e2ce82ccc510e79d1
+Latency(ms): 36902.223
+InputTokens: 668
+OutputTokens: 1379
+------------------------------
+[MODEL OUTPUT]:
+[3,7]
+[4,7]
+[4,6]
+[4,5]
+[4,6]
+[4,7]
+[5,7]
+[4,7]
+[4,6]
+[4,5]
+[5,5]
+[6,5]
+[7,5]
+[7,4]
+[7,5]
+[7,6]
+[7,7]
+[6,7]
+[6,8]
+[6,9]
+
+[GROUND TRUTH EXPECTED]:
+[3,7]
+[4,7]
+[4,6]
+[4,5]
+[4,6]
+[4,7]
+[5,7]
+[4,7]
+[4,6]
+[4,5]
+[5,5]
+[6,5]
+[7,5]
+[7,4]
+[7,5]
+[7,6]
+[7,7]
+[6,7]
+[6,8]
+[6,9]
+[7,9]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 89) ===
+Parameters: z=20, gravity=0.5, tier=1, grid=default
+Grid: 7x6
+InitialState: (0, 2)
+Actions: ['north', 'east', 'west', 'north', 'south', 'west', 'south', 'west', 'west', 'south', 'south', 'east', 'east', 'south', 'west', 'south', 'west', 'east', 'south', 'north']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=1, gravity=0.5, z=20, grid_key=default, tier_name=semantic_disruption, experiment_hash=820feb68f4277baf8e28a2f6dfcc386fe8c1d8b29d188b383a7df9001cd95a50
+Latency(ms): 24146.874
+InputTokens: 776
+OutputTokens: 1791
+------------------------------
+[MODEL OUTPUT]:
+[0,2]
+[0,3]
+[1,3]
+[0,3]
+[0,4]
+[0,3]
+[6,3]
+[6,2]
+[5,2]
+[4,2]
+[4,1]
+[4,0]
+[5,0]
+[6,0]
+[6,5]
+[5,5]
+[5,4]
+[4,4]
+[5,4]
+[5,3]
+[5,4]
+
+[GROUND TRUTH EXPECTED]:
+[0,2]
+[0,3]
+[1,3]
+[0,3]
+[0,4]
+[0,3]
+[6,3]
+[6,2]
+[5,2]
+[4,2]
+[4,1]
+[4,0]
+[5,0]
+[6,0]
+[6,5]
+[5,5]
+[5,4]
+[4,4]
+[5,4]
+[5,3]
+[5,4]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 88) ===
+Parameters: z=20, gravity=0.5, tier=2, grid=default
+Grid: 6x5
+InitialState: (2, 1)
+Actions: ['south', 'south', 'north', 'west', 'south', 'south', 'west', 'west', 'south', 'north', 'east', 'west', 'west', 'south', 'north', 'south', 'east', 'north', 'east', 'west']
+TransitionRules: {'north': {'dx': 0, 'dy': -1}, 'south': {'dx': 0, 'dy': 1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=2, gravity=0.5, z=20, grid_key=default, tier_name=attribute_inversion, experiment_hash=50b1335dca350869a1733a741b00a183d555dd4f134933a50f9248ff61ae7896
+Latency(ms): 27052.436
+InputTokens: 668
+OutputTokens: 1891
+------------------------------
+[MODEL OUTPUT]:
+[2,1]
+[2,2]
+[2,3]
+[2,2]
+[1,2]
+[1,3]
+[1,4]
+[0,4]
+[5,4]
+[5,0]
+[5,4]
+[0,4]
+[5,4]
+[4,4]
+[4,0]
+[4,4]
+[4,0]
+[5,0]
+[5,4]
+[0,4]
+
+[GROUND TRUTH EXPECTED]:
+[2,1]
+[2,2]
+[2,3]
+[2,2]
+[1,2]
+[1,3]
+[1,4]
+[0,4]
+[5,4]
+[5,0]
+[5,4]
+[0,4]
+[5,4]
+[4,4]
+[4,0]
+[4,4]
+[4,0]
+[5,0]
+[5,4]
+[0,4]
+[5,4]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 90) ===
+Parameters: z=20, gravity=0.5, tier=3, grid=default
+Grid: 11x9
+InitialState: (3, 0)
+Actions: ['west', 'east', 'west', 'north', 'east', 'north', 'south', 'west', 'south', 'east', 'north', 'east', 'east', 'west', 'west', 'north', 'north', 'east', 'north', 'east']
+TransitionRules: {'north': {'dx': -1, 'dy': 0}, 'south': {'dx': 1, 'dy': 0}, 'east': {'dx': 0, 'dy': 1}, 'west': {'dx': 0, 'dy': -1}}
+EnvironmentMetadata: seed=219, tier=3, gravity=0.5, z=20, grid_key=default, tier_name=coordinate_transformation, experiment_hash=9debad4d8ba9cb3a3cbfc2e73eb88aebbc6b88a6f677995f579d27b533f4618d
+Latency(ms): 24814.319
+InputTokens: 668
+OutputTokens: 1825
+------------------------------
+[MODEL OUTPUT]:
+[3,0]
+[3,8]
+[3,0]
+[3,8]
+[2,8]
+[2,0]
+[1,0]
+[2,0]
+[2,8]
+[3,8]
+[3,0]
+[2,0]
+[2,1]
+[2,2]
+[2,1]
+[2,0]
+[1,0]
+[0,0]
+[0,1]
+[10,1]
+[10,2]
+
+[GROUND TRUTH EXPECTED]:
+[3,0]
+[3,8]
+[3,0]
+[3,8]
+[2,8]
+[2,0]
+[1,0]
+[2,0]
+[2,8]
+[3,8]
+[3,0]
+[2,0]
+[2,1]
+[2,2]
+[2,1]
+[2,0]
+[1,0]
+[0,0]
+[0,1]
+[10,1]
+[10,2]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 89) ===
+Parameters: z=20, gravity=0.5, tier=0, grid=default
+Grid: 5x5
+InitialState: (1, 1)
+Actions: ['east', 'north', 'west', 'east', 'west', 'north', 'south', 'south', 'west', 'west', 'north', 'south', 'east', 'west', 'west', 'north', 'east', 'south', 'east', 'north']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=219, tier=0, gravity=0.5, z=20, grid_key=default, tier_name=baseline, experiment_hash=f53ddb3efb4b72f1da351625e9e76aaf715ddc8b26e274862982ac88b45ff31d
+Latency(ms): 30954.364
+InputTokens: 668
+OutputTokens: 1894
+------------------------------
+[MODEL OUTPUT]:
+[1,1]
+[2,1]
+[2,2]
+[1,2]
+[2,2]
+[1,2]
+[1,3]
+[1,2]
+[1,1]
+[0,1]
+[4,1]
+[4,2]
+[4,1]
+[0,1]
+[4,1]
+[3,1]
+[3,2]
+[4,2]
+[4,1]
+[0,1]
+[0,2]
+
+[GROUND TRUTH EXPECTED]:
+[1,1]
+[2,1]
+[2,2]
+[1,2]
+[2,2]
+[1,2]
+[1,3]
+[1,2]
+[1,1]
+[0,1]
+[4,1]
+[4,2]
+[4,1]
+[0,1]
+[4,1]
+[3,1]
+[3,2]
+[4,2]
+[4,1]
+[0,1]
+[0,2]
+
+==============================

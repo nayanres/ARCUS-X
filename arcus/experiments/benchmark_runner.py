@@ -23,6 +23,7 @@ fracture metrics.
 
 import os
 import ast
+import glob
 import json
 import hashlib
 import logging
@@ -175,6 +176,9 @@ class BenchmarkRunner:
         # Experiment manifest (single sidecar every result points back to).
         self.experiment_id = None
         self.manifest_path = None
+        self._resume_sources: List[str] = []
+        self._resume_metadata: Dict[Tuple, Dict[str, Any]] = {}
+        self._offline = False
 
         # Live progress display (created in run()); None until then so that
         # direct calls to scoring/aggregation helpers stay UX-free (e.g. tests).
@@ -256,6 +260,18 @@ class BenchmarkRunner:
                 return (parts[0], parts[1], parts[2], parts[3], "default")
         return (key[0], key[1], key[2], key[3], "default")
 
+    @staticmethod
+    def _is_cognitive_valid(result: Dict[str, Any]) -> bool:
+        """Return whether a result is valid/recoverable cognitive evidence."""
+        classification = result.get("probe_classification")
+        return (
+            not result.get("is_infrastructure_failure", False)
+            and not result.get("provider_failure", False)
+            and result.get("api_error") is None
+            and result.get("finish_reason") != "error"
+            and (not isinstance(classification, dict) or classification.get("valid", True))
+        )
+
     def _get_expected_completion_tokens(self, z: int) -> Dict[str, Any]:
         """Helper to return expected completion tokens, with fallback mechanism."""
         measured_expected_tokens = estimated_optimal_path_length(z)
@@ -293,6 +309,7 @@ class BenchmarkRunner:
         completed: Dict[Tuple, Dict[str, Any]] = {}
         if not raw_stream_path or not os.path.exists(raw_stream_path):
             return completed
+
         try:
             with open(raw_stream_path, "r", encoding="utf-8") as f:
                 lines = f.readlines()
@@ -302,6 +319,12 @@ class BenchmarkRunner:
 
         run_starts = [idx for idx, line in enumerate(lines) if "ARCUS-X RUN START" in line]
         detected_sessions = len(run_starts)
+        declared_models = {
+            line.strip().split(":", 1)[1].strip()
+            for line in lines
+            if line.strip().startswith("Model:") and ":" in line
+        }
+        declared_model = next(iter(declared_models)) if len(declared_models) == 1 else None
 
         def _parse_lines(target_lines):
             parsed = {}
@@ -327,6 +350,8 @@ class BenchmarkRunner:
                 tier = None
                 z = None
                 grid_key = "default"
+                model_id = None
+                experiment_hash = None
                 for bl in block_lines:
                     s = bl.strip()
                     if s.startswith("EnvironmentMetadata:"):
@@ -350,11 +375,17 @@ class BenchmarkRunner:
                                     z = int(v)
                                 elif k == "grid_key":
                                     grid_key = v
+                                elif k == "model_id":
+                                    model_id = v
+                                elif k == "experiment_hash":
+                                    experiment_hash = v
                             except ValueError:
                                 continue
                 if seed is None or gravity is None or tier is None or z is None:
                     # Entry lacks the required identity fields; skip it.
                     continue
+                if model_id is None:
+                    model_id = declared_model
                 combo = (seed, gravity, tier, z, grid_key)
                 probe_idx = combo_counts.get(combo, 0)
                 combo_counts[combo] = probe_idx + 1
@@ -362,7 +393,9 @@ class BenchmarkRunner:
                 ident = (seed, gravity, tier, z, probe_idx, grid_key)
                 # Probe index tracked correctly per combo occurrence, reproducing fresh run ordering.
                 parsed[ident] = {"seed": seed, "gravity": gravity, "tier": tier,
-                                    "z": z, "grid_key": grid_key}
+                                    "z": z, "grid_key": grid_key,
+                                    "model_id": model_id,
+                                    "experiment_hash": experiment_hash}
             return parsed
 
         completed: Dict[Tuple, Dict[str, Any]] = {}
@@ -396,6 +429,12 @@ class BenchmarkRunner:
         if completed:
             logger.info(f"  First 3 completed probe identities: {list(completed.keys())[:3]}")
         return completed
+
+    def _resume_input_paths(self, resume_path: str) -> List[str]:
+        """Return the immutable resume artifact followed by prior supplements."""
+        if self._resume_sources:
+            return list(self._resume_sources)
+        return [resume_path]
 
     @staticmethod
     def _parse_raw_stream_blocks(raw_stream_path: str) -> List[Dict[str, Any]]:
@@ -537,7 +576,9 @@ class BenchmarkRunner:
         prior: Dict[Tuple, Any] = {}
         if not resume_path:
             return prior
-        entries = self._parse_raw_stream_blocks(resume_path)
+        entries: List[Dict[str, Any]] = []
+        for source in self._resume_input_paths(resume_path):
+            entries.extend(self._parse_raw_stream_blocks(source))
         # Recover per-combo probe index (runner emits probes in a fixed order,
         # so the Nth occurrence of a (seed, gravity, tier, z, grid_key) combo is
         # probe_idx N -- matching the fresh-run ordering exactly).
@@ -694,7 +735,31 @@ class BenchmarkRunner:
         skip_sets: Dict[int, set] = {s: set() for s in self.seeds}
         if not resume_path:
             return skip_sets, 0, False
-        completed = self.parse_completed_probes(resume_path)
+        completed: Dict[Tuple, Dict[str, Any]] = {}
+        self._resume_metadata = {}
+        combo_counts: Dict[Tuple, int] = {}
+        for source in self._resume_input_paths(resume_path):
+            parsed = self.parse_completed_probes(source)
+            for ident, metadata in parsed.items():
+                cached_model = metadata.get("model_id")
+                if cached_model and cached_model != self.model_name:
+                    raise ValueError(
+                        f"Resume model mismatch for {ident}: "
+                        f"cached={cached_model!r}, requested={self.model_name!r}"
+                    )
+                if self._offline and (not cached_model or not metadata.get("experiment_hash")):
+                    raise ValueError(
+                        f"Offline resume observation {ident} lacks exact model_id "
+                        "and experiment_hash metadata"
+                    )
+                combo = (ident[0], ident[1], ident[2], ident[3], ident[5])
+                probe_idx = combo_counts.get(combo, 0)
+                combo_counts[combo] = probe_idx + 1
+                merged_ident = (ident[0], ident[1], ident[2], ident[3], probe_idx, ident[5])
+                if merged_ident in completed:
+                    raise ValueError(f"Duplicate resume observation key: {merged_ident}")
+                completed[merged_ident] = metadata
+                self._resume_metadata[merged_ident] = metadata
         completed_count = 0
         for ident in completed.keys():
             seed = ident[0]
@@ -784,7 +849,7 @@ class BenchmarkRunner:
         n_seeds = len(self.seeds)
         workers = self._resolve_worker_count(parallel_seeds, user_max_workers)
         skip_sets, completed_count, is_complete = self._build_resume_skip_sets(resume_path)
-        total_parsed = len(self.parse_completed_probes(resume_path)) if resume_path else 0
+        total_parsed = completed_count
         remaining_probes = max(0, total_parsed - completed_count)
 
         if resume_path:
@@ -966,6 +1031,9 @@ class BenchmarkRunner:
         r.evaluator = self.evaluator
         # All seeds append to the one shared raw stream file.
         r.raw_log_filename = self.raw_log_filename
+        r._offline = self._offline
+        r._resume_sources = list(self._resume_sources)
+        r._resume_metadata = dict(self._resume_metadata)
         return r
 
     def _run_single_seed(self, seed_idx: int, master_seed: int, n_seeds: int,
@@ -1062,7 +1130,8 @@ class BenchmarkRunner:
             grid_size_levels: Optional[List[tuple]] = None,
             parallel_seeds: str = "1",
             resume_path: Optional[str] = None,
-            user_max_workers: Optional[int] = None) -> Dict:
+            user_max_workers: Optional[int] = None,
+            offline: bool = False) -> Dict:
         """Execute full benchmark with bisection search and complexity scaling.
 
         New parameters (runtime/scheduling only -- no benchmark-semantics change):
@@ -1079,6 +1148,18 @@ class BenchmarkRunner:
         """
         if grid_size_levels is not None:
             self.grid_size_levels = grid_size_levels
+        if offline and not resume_path:
+            raise ValueError("offline mode requires resume_path")
+        if offline and resume_path:
+            self._offline = True
+            source = os.path.abspath(resume_path)
+            stem, ext = os.path.splitext(source)
+            supplements = sorted(
+                path for path in glob.glob(f"{stem}.resume_*{ext or '.txt'}")
+                if os.path.abspath(path) != source
+            )
+            self._resume_sources = [source] + supplements
+            self.raw_log_filename = f"{stem}.resume_{datetime.now():%Y%m%d_%H%M%S}{ext or '.txt'}"
         logger.info(f"Starting benchmark execution for {self.model_name}")
         logger.info(f"Parameters: {self.n_probes} probes, gravities={self.gravity_levels}"
                     f"{', grid_sizes=' + str(self.grid_size_levels) if self.grid_size_levels else ''}")
@@ -1434,7 +1515,11 @@ class BenchmarkRunner:
                 anchor_probes, gravity_target=0.0, z=3, tiers=self.tiers if self.tiers is not None else [1],
                 results_matrix=results_matrix, skip_set=skip_set,
             )
-            logger.info(f"  [BASELINE CALIBRATION ANCHOR] Result Accuracy: {anchor_acc:.3f}")
+            logger.info(
+                f"  [BASELINE CALIBRATION ANCHOR] Result Accuracy: "
+                f"{anchor_acc:.3f}" if anchor_acc is not None else
+                "  [BASELINE CALIBRATION ANCHOR] Result Accuracy: N/A (no valid observations)"
+            )
         except Exception as e:
             msg = f"Benchmark Stopped - Check {e}"
             logger.error(f"  [BASELINE CALIBRATION ANCHOR] {msg}")
@@ -1449,7 +1534,9 @@ class BenchmarkRunner:
                     tiers=self.tiers,
                     results_matrix=results_matrix, skip_set=skip_set,
                 )
-                final_fracture_depth = target_z if batch_acc >= self.MIN_ACCURACY_THRESHOLD else 0
+                final_fracture_depth = target_z if (
+                    batch_acc is not None and batch_acc >= self.MIN_ACCURACY_THRESHOLD
+                ) else 0
                 self.fracture_cache[(gravity_target, "final")] = final_fracture_depth
                 logger.info(
                     f"--- Final Profile for Gravity {gravity_target}: "
@@ -1480,17 +1567,9 @@ class BenchmarkRunner:
                 )
                 horizon_accuracies[mid_z] = batch_acc
 
-                if batch_acc is None:
+                if batch_acc is None or batch_acc >= self.MIN_ACCURACY_THRESHOLD:
                     logger.info(
-                        f"  Result: INSUFFICIENT EVIDENCE (No valid probes at z={mid_z}). "
-                        f"Retreating search profile."
-                    )
-                    high = mid_z - 1
-                    continue
-
-                if batch_acc >= self.MIN_ACCURACY_THRESHOLD:
-                    logger.info(
-                        f"  Result: SUCCESS (Acc: {batch_acc:.3f} >= Floor). Shifting deeper."
+                        f"  Result: {'INSUFFICIENT EVIDENCE' if batch_acc is None else f'SUCCESS (Acc: {batch_acc:.3f} >= Floor)'}. Shifting deeper."
                     )
                     low = mid_z + 1
 
@@ -1736,7 +1815,7 @@ class BenchmarkRunner:
         """
         results_matrix = results_matrix if results_matrix is not None else self.results_matrix
         skip_set = skip_set if skip_set is not None else set()
-        valid_accuracies = []
+        all_accuracies = []
         context_exhausted_count = 0
         probes_to_test = base_probes
 
@@ -1757,21 +1836,6 @@ class BenchmarkRunner:
                     ident = self._probe_identity(
                         self.seed, gravity_target, tier, z, probe_idx, grid_key
                     )
-                    if ident in skip_set:
-                        # Count the already-completed probe toward accuracy so the
-                        # bisection decision uses the full (resumed) dataset.
-                        prior = results_matrix.get(
-                            (z, gravity_target, tier, probe_idx) + (
-                                (grid_key,) if self.grid_size_levels is not None else ()
-                            )
-                        )
-                        if prior is not None:
-                            acc_val = self._coerce_float(prior.get("step_accuracy", 0.0))
-                            is_infra = prior.get("is_infrastructure_failure", False) or prior.get("provider_failure", False) or prior.get("api_error") is not None or prior.get("finish_reason") == "error"
-                            if not is_infra:
-                                valid_accuracies.append(acc_val)
-                        continue
-
                     task_index = self._task_index_for(
                         base_probe.get("id", f"probe_{probe_idx}"), tier, z
                     )
@@ -1788,6 +1852,26 @@ class BenchmarkRunner:
                         **gravity_layer,
                         **ood_layer
                     }
+                    if ident in skip_set:
+                        metadata = self._resume_metadata.get(ident, {})
+                        cached_hash = metadata.get("experiment_hash")
+                        expected_hash = final_probe_payload.get("experiment_hash")
+                        if self._offline and cached_hash != str(expected_hash):
+                            raise ValueError(
+                                f"Resume experiment hash mismatch for {ident}: "
+                                f"cached={cached_hash!r}, expected={expected_hash!r}"
+                            )
+                        # Count the cached result only when it is cognitive evidence.
+                        prior = results_matrix.get(
+                            (z, gravity_target, tier, probe_idx) + (
+                                (grid_key,) if self.grid_size_levels is not None else ()
+                            )
+                        )
+                        if prior is not None and self._is_cognitive_valid(prior):
+                            all_accuracies.append(
+                                self._coerce_float(prior.get("step_accuracy", 0.0))
+                            )
+                        continue
 
                     # --- UX: live progress + status line ---
                     self._progress_set_context(
@@ -1834,6 +1918,7 @@ class BenchmarkRunner:
                                 f.write(f"TransitionRules: {final_probe_payload.get('transition_rules')}\n")
                                 f.write(f"EnvironmentMetadata: seed={self.seed}, tier={tier}, gravity={gravity_target}, "
                                         f"z={z}, grid_key={grid_key}, "
+                                        f"model_id={self.model_name}, "
                                         f"tier_name={final_probe_payload.get('tier_name')}, "
                                         f"experiment_hash={final_probe_payload.get('experiment_hash')}\n")
                                 # Latency diagnostics (systems-level only; never a
@@ -1884,6 +1969,14 @@ class BenchmarkRunner:
                         result["first_divergence"] = None
                         result["final_state_correct"] = False
                         result["error_mode"] = ErrorMode.HORIZON_COLLAPSE.value
+                        result["probe_classification"] = {
+                            "valid": False,
+                            "exception_code": "E104_UNKNOWN_INVALID",
+                            "mechanism": "None",
+                            "trajectory_correct": False,
+                            "step_accuracy": 0.0,
+                            "exact_match": False,
+                        }
                         result["horizon_compliance"] = 0.0
                         result["generation_bloat_index"] = 0.0
                         result["generation_efficiency"] = 0.0
@@ -1984,14 +2077,15 @@ class BenchmarkRunner:
                     # default (None) keeps the original 4-tuple key for identical output.
                     grid_suffix = (grid_key,) if self.grid_size_levels is not None else ()
                     results_matrix[(z, gravity_target, tier, probe_idx) + grid_suffix] = result
-                    is_infra = result.get("is_infrastructure_failure", False) or result.get("provider_failure", False) or result.get("api_error") is not None or result.get("finish_reason") == "error"
-                    if not is_infra:
-                        valid_accuracies.append(acc)
+                    if self._is_cognitive_valid(result):
+                        all_accuracies.append(acc)
 
                     # --- UX: advance the live probe counter ---
                     self._progress_increment()
 
-        batch_acc = (sum(valid_accuracies) / len(valid_accuracies)) if valid_accuracies else None
+        # ``None`` means insufficient valid/recoverable evidence, not cognitive
+        # accuracy of zero. The fracture search treats this as non-fracturing.
+        batch_acc = sum(all_accuracies) / len(all_accuracies) if all_accuracies else None
         return batch_acc, context_exhausted_count
 
     def run_metric_unit_tests(self):
@@ -2541,21 +2635,56 @@ class BenchmarkRunner:
             "None": 0,
         }
         valid_failure_count = 0
+        valid_count = 0
+        invalid_count = 0
+        taxonomy_counts = {
+            "State Tracking Failure": 0,
+            "Transition Rule Failure": 0,
+            "Semantic Interpretation Failure": 0,
+            "Horizon Collapse": 0,
+            "Formatting Failure": 0,
+            "Unknown / Unmapped": 0,
+            "None": 0,
+        }
         for res in self.results_matrix.values():
             mode = res.get("error_mode", "Unknown")
             pc = res.get("probe_classification")
-            is_infra = res.get("is_infrastructure_failure", False) or res.get("provider_failure", False) or res.get("api_error") is not None or res.get("finish_reason") == "error"
-            is_valid = True
-            if pc and isinstance(pc, dict) and not pc.get("valid", True):
-                is_valid = False
-            if mode == "Unknown" or not is_valid or is_infra:
+            is_valid = self._is_cognitive_valid(res)
+            if not is_valid:
+                invalid_count += 1
                 continue
+            valid_count += 1
+
+            fully_correct = bool(res.get("exact_match", False)) or bool(
+                isinstance(pc, dict) and (
+                    pc.get("exact_match", False) or pc.get("trajectory_correct", False)
+                )
+            ) or self._coerce_float(res.get("step_accuracy", 0.0)) >= 1.0
+            if fully_correct:
+                canonical_mode = "None"
+            else:
+                canonical_mode = {
+                    "State Tracking": "State Tracking Failure",
+                    "State Tracking Failure": "State Tracking Failure",
+                    "Transition": "Transition Rule Failure",
+                    "Transition Failure": "Transition Rule Failure",
+                    "Transition Rule Failure": "Transition Rule Failure",
+                    "Semantic": "Semantic Interpretation Failure",
+                    "Semantic Failure": "Semantic Interpretation Failure",
+                    "Semantic Interpretation Failure": "Semantic Interpretation Failure",
+                    "Horizon": "Horizon Collapse",
+                    "Horizon Failure": "Horizon Collapse",
+                    "Horizon Collapse": "Horizon Collapse",
+                    "Formatting Failure": "Formatting Failure",
+                    "Output Format Failure": "Formatting Failure",
+                }.get(str(mode), "Unknown / Unmapped")
+            taxonomy_counts[canonical_mode] += 1
 
             valid_failure_count += 1
             if mode in failure_analysis:
                 failure_analysis[mode] += 1
-            else:
-                failure_analysis["None"] += 1
+            elif canonical_mode == "Unknown / Unmapped":
+                failure_analysis["Unknown / Unmapped"] = failure_analysis.get("Unknown / Unmapped", 0) + 1
 
         denom = valid_failure_count if valid_failure_count > 0 else 1
         for k in failure_analysis:
@@ -2568,9 +2697,10 @@ class BenchmarkRunner:
             if tier not in per_tier:
                 per_tier[tier] = {"accuracies": [], "token_density_values": [], "depth_acc": {}}
 
-            per_tier[tier]["accuracies"].append(
-                self._coerce_float(result.get("step_accuracy", 0.0))
-            )
+            if self._is_cognitive_valid(result):
+                per_tier[tier]["accuracies"].append(
+                    self._coerce_float(result.get("step_accuracy", 0.0))
+                )
 
             # Raw token-density ratio (tokens per depth step), distinct from
             # ``GenerationBloatIndex`` (which is (actual - expected) / expected).
@@ -2586,9 +2716,10 @@ class BenchmarkRunner:
                 zi = int(float(z))
             except (TypeError, ValueError):
                 zi = 0
-            per_tier[tier]["depth_acc"].setdefault(zi, []).append(
-                self._coerce_float(result.get("step_accuracy", 0.0))
-            )
+            if self._is_cognitive_valid(result):
+                per_tier[tier]["depth_acc"].setdefault(zi, []).append(
+                    self._coerce_float(result.get("step_accuracy", 0.0))
+                )
 
         fracture_finder = FracturePointFinder(look_ahead_step=2)
         per_tier_summary = {}
@@ -2613,10 +2744,11 @@ class BenchmarkRunner:
             z, gravity, tier, probe_idx, grid_key = self._unpack_matrix_key(key)
             if gravity not in per_gravity_fracture:
                 per_gravity_fracture[gravity] = {"depths": [], "accuracies": []}
-            per_gravity_fracture[gravity]["depths"].append(z)
-            per_gravity_fracture[gravity]["accuracies"].append(
-                self._coerce_float(result.get("step_accuracy", 0.0))
-            )
+            if self._is_cognitive_valid(result):
+                per_gravity_fracture[gravity]["depths"].append(z)
+                per_gravity_fracture[gravity]["accuracies"].append(
+                    self._coerce_float(result.get("step_accuracy", 0.0))
+                )
 
         per_gravity_summary = {}
         for gravity, data in per_gravity_fracture.items():
@@ -2655,6 +2787,14 @@ class BenchmarkRunner:
             "efficiency": round((sum(all_ge) / len(all_ge) if all_ge else 0.0) * 100.0, 1),
             "protocol_accuracy": round(protocol_accuracy * 100.0, 1),
             "failure_analysis": failure_analysis,
+            "valid_probes": valid_count,
+            "invalid_probes": invalid_count,
+            "operational_validity": {
+                "valid_count": valid_count,
+                "invalid_count": invalid_count,
+                "completed_count": valid_count + invalid_count,
+            },
+            "cognitive_taxonomy": taxonomy_counts,
             "fracture_depth": fracture_depth,
             "per_tier": per_tier_summary,
             "per_gravity_fracture_curve": per_gravity_summary,
