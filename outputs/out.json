@@ -1,6 +1,6 @@
 {
   "model": "stub/stub",
-  "timestamp": "2026-09-02T20:52:04.810917",
+  "timestamp": "2026-09-03T00:23:16.675788",
   "results_count": 65,
   "metrics": {
     "step_accuracy": 100.0,
@@ -17,6 +17,22 @@
       "Horizon Collapse": 0.0,
       "Formatting Failure": 0.0,
       "None": 100.0
+    },
+    "valid_probes": 65,
+    "invalid_probes": 0,
+    "operational_validity": {
+      "valid_count": 65,
+      "invalid_count": 0,
+      "completed_count": 65
+    },
+    "cognitive_taxonomy": {
+      "State Tracking Failure": 0,
+      "Transition Rule Failure": 0,
+      "Semantic Interpretation Failure": 0,
+      "Horizon Collapse": 0,
+      "Formatting Failure": 0,
+      "Unknown / Unmapped": 0,
+      "None": 65
     },
     "fracture_depth": 10,
     "per_tier": {

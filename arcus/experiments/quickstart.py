@@ -34,6 +34,7 @@ import os
 import sys
 import logging
 import argparse
+import re
 from datetime import datetime
 import json
 from typing import Dict, List, Optional
@@ -53,6 +54,18 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+
+def _normalize_windows_continuations(argv: List[str]) -> List[str]:
+    """Split an option accidentally joined to the preceding seed by ``^``."""
+    normalized: List[str] = []
+    for arg in argv:
+        match = re.match(r"^(-?\d+)(--(?:resume|offline|parallel-seeds|tiers|max-horizon)(?:=.*)?)$", arg)
+        if match:
+            normalized.extend(match.groups())
+        else:
+            normalized.append(arg)
+    return normalized
 
 
 def parse_args():
@@ -92,7 +105,7 @@ def parse_args():
     parser.add_argument('--max-horizon', type=int, default=None, help='Maximum depth horizon z')
     parser.add_argument('--no-adaptive-expansion', action='store_true', default=False, help='Disable adaptive expansion')
 
-    return parser.parse_args()
+    return parser.parse_args(_normalize_windows_continuations(sys.argv[1:]))
 
 
 def resolve_master_seeds(raw) -> Optional[List[int]]:

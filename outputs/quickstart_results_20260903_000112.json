@@ -1,0 +1,267 @@
+{
+  "model": "MAI-Thinking-1",
+  "timestamp": "2026-09-03T00:01:13.155002",
+  "parameters": {
+    "n_probes": 5,
+    "gravity_levels": [
+      0.5,
+      3.0,
+      15.0
+    ],
+    "seed": 42,
+    "seeds": [
+      219,
+      472,
+      2190,
+      5396,
+      6430
+    ],
+    "grid_size_levels": null
+  },
+  "results_matrix": {
+    "219_3_0.0_1_0": {
+      "z": 3,
+      "gravity": 0.0,
+      "tier": 1,
+      "grid_key": "default",
+      "step_accuracy": 1.0,
+      "exact_match": true,
+      "continuity_score": 1.0,
+      "first_divergence": null,
+      "final_state_correct": true,
+      "predicted_length": 4,
+      "ground_truth_length": 4,
+      "correct_transitions": 4,
+      "error_mode": "None",
+      "probe_classification": {
+        "valid": true,
+        "exception_code": null,
+        "mechanism": "None",
+        "first_failure_step": null,
+        "secondary_flags": [],
+        "trajectory_correct": true,
+        "step_accuracy": 1.0,
+        "exact_match": true,
+        "output_compliance": "Perfect Format",
+        "formatting_subcode": ""
+      },
+      "horizon_compliance": 1.0,
+      "generation_bloat_index": 10.74,
+      "generation_efficiency": 0.08517887563884156,
+      "fol_depth": 3,
+      "latency_ms": 11073.508,
+      "output_tokens": 587,
+      "completion_tokens": 587,
+      "total_tokens": 587,
+      "input_tokens": 234,
+      "finish_reason": "stop",
+      "raw_output": "[6,1]\n[6,2]\n[6,3]\n[6,2]\n\n",
+      "fracture_depth": 0
+    },
+    "219_20_0.5_0_0": {
+      "z": 20,
+      "gravity": 0.5,
+      "tier": 0,
+      "grid_key": "default",
+      "step_accuracy": 1.0,
+      "exact_match": true,
+      "continuity_score": 1.0,
+      "first_divergence": null,
+      "final_state_correct": true,
+      "predicted_length": 21,
+      "ground_truth_length": 21,
+      "correct_transitions": 21,
+      "error_mode": "None",
+      "probe_classification": {
+        "valid": true,
+        "exception_code": null,
+        "mechanism": "None",
+        "first_failure_step": null,
+        "secondary_flags": [],
+        "trajectory_correct": true,
+        "step_accuracy": 1.0,
+        "exact_match": true,
+        "output_compliance": "Perfect Format",
+        "formatting_subcode": ""
+      },
+      "horizon_compliance": 1.0,
+      "generation_bloat_index": 7.363636363636363,
+      "generation_efficiency": 0.11956521739130435,
+      "fol_depth": 20,
+      "latency_ms": 26415.084,
+      "output_tokens": 1840,
+      "completion_tokens": 1840,
+      "total_tokens": 1840,
+      "input_tokens": 668,
+      "finish_reason": "stop",
+      "raw_output": "[3,1]\n[4,1]\n[4,0]\n[5,0]\n[0,0]\n[1,0]\n[1,8]\n[1,0]\n[1,8]\n[2,8]\n[1,8]\n[0,8]\n[0,0]\n[0,8]\n[1,8]\n[0,8]\n[0,0]\n[0,8]\n[5,8]\n[4,8]\n[4,0]\n\n",
+      "fracture_depth": 0
+    }
+  },
+  "token_density_matrix": {},
+  "fracture_cache": {},
+  "metrics": {
+    "step_accuracy": 100.0,
+    "exact_match": 100.0,
+    "continuity": 100.0,
+    "horizon_compliance": 100.0,
+    "generation_bloat_index": 9.05,
+    "efficiency": 10.2,
+    "protocol_accuracy": 100.0,
+    "failure_analysis": {
+      "State Tracking Failure": 0.0,
+      "Transition Rule Failure": 0.0,
+      "Semantic Interpretation Failure": 0.0,
+      "Horizon Collapse": 0.0,
+      "Formatting Failure": 0.0,
+      "None": 100.0
+    },
+    "valid_probes": 2,
+    "invalid_probes": 0,
+    "operational_validity": {
+      "valid_count": 2,
+      "invalid_count": 0,
+      "completed_count": 2
+    },
+    "cognitive_taxonomy": {
+      "State Tracking Failure": 0,
+      "Transition Rule Failure": 0,
+      "Semantic Interpretation Failure": 0,
+      "Horizon Collapse": 0,
+      "Formatting Failure": 0,
+      "Unknown / Unmapped": 0,
+      "None": 2
+    },
+    "fracture_depth": 0,
+    "cri": {
+      "cri": 0.9551186023257536,
+      "trajectory_fidelity": 1.0,
+      "horizon_robustness": 1.0,
+      "semantic_robustness": 1.0,
+      "generation_efficiency": 0.10237204651507295,
+      "components": {
+        "trajectory_fidelity": 1.0,
+        "horizon_robustness": 1.0,
+        "semantic_robustness": 1.0,
+        "generation_efficiency": 0.10237204651507295
+      }
+    },
+    "seed_variance": {
+      "n_seeds": 5,
+      "cri": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "fracture_depth": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "master_seeds": [
+      219,
+      472,
+      2190,
+      5396,
+      6430
+    ],
+    "per_seed": {
+      "219": {
+        "cri": {
+          "cri": 1.0
+        },
+        "cri_value": 1.0,
+        "fracture_depth": 0.0
+      },
+      "472": {
+        "cri": {
+          "cri": 1.0
+        },
+        "cri_value": 1.0,
+        "fracture_depth": 0.0
+      },
+      "2190": {
+        "cri": {
+          "cri": 1.0
+        },
+        "cri_value": 1.0,
+        "fracture_depth": 0.0
+      },
+      "5396": {
+        "cri": {
+          "cri": 1.0
+        },
+        "cri_value": 1.0,
+        "fracture_depth": 0.0
+      },
+      "6430": {
+        "cri": {
+          "cri": 1.0
+        },
+        "cri_value": 1.0,
+        "fracture_depth": 0.0
+      }
+    },
+    "latency_diagnostics": {
+      "mean_latency_ms": 18744.296,
+      "median_latency_ms": 18744.296,
+      "p95_latency_ms": 25648.0052,
+      "max_latency_ms": 26415.084,
+      "mean_output_tokens_per_sec": 61.3333,
+      "mean_correct_steps_per_sec": 0.5781,
+      "ale": 0.0641,
+      "correct_steps_per_sec": 0.5781,
+      "per_horizon": [
+        {
+          "horizon": "3",
+          "mean_latency_ms": 11073.508,
+          "correct_steps_per_sec": 0.3612
+        },
+        {
+          "horizon": "20",
+          "mean_latency_ms": 26415.084,
+          "correct_steps_per_sec": 0.795
+        }
+      ],
+      "diagnostic_note": "Latency is a systems-level diagnostic (provider infrastructure, architecture, batching, deployment). It is NOT a model capability score and is excluded from CRI/GBI/trajectory/fracture metrics."
+    }
+  },
+  "per_tier": {
+    "tier_1": {
+      "accuracy": 1.0,
+      "token_density": 195.66666666666666,
+      "fracture_depth": 0.0
+    },
+    "tier_0": {
+      "accuracy": 1.0,
+      "token_density": 92.0,
+      "fracture_depth": 0.0
+    }
+  },
+  "per_gravity_fracture_curve": {
+    "0.0": {
+      "depths": [
+        3
+      ],
+      "accuracies": [
+        1.0
+      ]
+    },
+    "0.5": {
+      "depths": [
+        20
+      ],
+      "accuracies": [
+        1.0
+      ]
+    }
+  },
+  "token_accounting_summary": {
+    "total_results": 2,
+    "by_source": {
+      "unknown": 2
+    },
+    "by_confidence": {
+      "unknown": 2
+    }
+  }
+}

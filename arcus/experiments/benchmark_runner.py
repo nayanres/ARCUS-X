@@ -477,7 +477,8 @@ class BenchmarkRunner:
 
                 entry: Dict[str, Any] = {
                     "seed": None, "gravity": None, "tier": None, "z": None,
-                    "grid_key": "default", "grid": "", "actions": "",
+                    "grid_key": "default", "model_id": None,
+                    "experiment_hash": None, "grid": "", "actions": "",
                     "transition_rules": "", "raw_output": "", "ground_truth": "",
                     "latency_ms": None, "input_tokens": None, "output_tokens": None,
                 }
@@ -503,6 +504,10 @@ class BenchmarkRunner:
                                     entry["z"] = int(v)
                                 elif k == "grid_key":
                                     entry["grid_key"] = v
+                                elif k == "model_id":
+                                    entry["model_id"] = v
+                                elif k == "experiment_hash":
+                                    entry["experiment_hash"] = v
                             except ValueError:
                                 continue
                     elif s.startswith("Grid:"):
@@ -583,9 +588,21 @@ class BenchmarkRunner:
         # so the Nth occurrence of a (seed, gravity, tier, z, grid_key) combo is
         # probe_idx N -- matching the fresh-run ordering exactly).
         combo_counts: Dict[Tuple, int] = {}
+        seen_observations = set()
         for entry in entries:
             if entry["seed"] != master_seed:
                 continue
+            observation_key = (
+                entry["seed"], entry["gravity"], entry["tier"], entry["z"],
+                entry["grid_key"], entry.get("experiment_hash"),
+            )
+            if observation_key in seen_observations:
+                logger.warning(
+                    f"[RESUME] Ignoring duplicate cached observation: "
+                    f"{observation_key}"
+                )
+                continue
+            seen_observations.add(observation_key)
             combo = (entry["seed"], entry["gravity"], entry["tier"],
                      entry["z"], entry["grid_key"])
             probe_idx = combo_counts.get(combo, 0)
@@ -738,6 +755,7 @@ class BenchmarkRunner:
         completed: Dict[Tuple, Dict[str, Any]] = {}
         self._resume_metadata = {}
         combo_counts: Dict[Tuple, int] = {}
+        seen_observations = set()
         for source in self._resume_input_paths(resume_path):
             parsed = self.parse_completed_probes(source)
             for ident, metadata in parsed.items():
@@ -752,6 +770,17 @@ class BenchmarkRunner:
                         f"Offline resume observation {ident} lacks exact model_id "
                         "and experiment_hash metadata"
                     )
+                observation_key = (
+                    ident[0], ident[1], ident[2], ident[3], ident[5],
+                    metadata.get("experiment_hash"),
+                )
+                if observation_key in seen_observations:
+                    logger.warning(
+                        f"[RESUME] Ignoring duplicate cached observation: "
+                        f"{observation_key}"
+                    )
+                    continue
+                seen_observations.add(observation_key)
                 combo = (ident[0], ident[1], ident[2], ident[3], ident[5])
                 probe_idx = combo_counts.get(combo, 0)
                 combo_counts[combo] = probe_idx + 1
@@ -855,28 +884,6 @@ class BenchmarkRunner:
         if resume_path:
             self._write_run_start()
             self._write_experiment_manifest()
-
-        if resume_path and is_complete and remaining_probes == 0 and completed_count > 0:
-            logger.info("[RESUME] All probes already completed. Exiting cleanly without evaluation.")
-            merged_matrix: Dict[Tuple, Any] = {}
-            merged_fracture: Dict[Tuple, Any] = {}
-            for seed_idx, master_seed in enumerate(self.seeds):
-                prior = self._load_prior_results(resume_path, master_seed)
-                self._per_seed_full[master_seed] = {
-                    "cri": {"cri": 1.0},
-                    "cri_value": 1.0,
-                    "fracture_depth": 0.0,
-                }
-                self._per_seed_metrics.append({"cri": 1.0, "fracture_depth": 0.0})
-                for k, v in prior.items():
-                    key = (master_seed,) + k if len(self.seeds) > 1 else k
-                    merged_matrix[key] = v
-            self.results_matrix = merged_matrix
-            self.fracture_cache = merged_fracture
-            self.actual_probe_count = completed_count
-            if self._per_seed_full:
-                self.seeds = sorted(list(self._per_seed_full.keys()))
-            return
 
         if workers == 1:
             logger.info(f"[SCHEDULER] Serial execution ({n_seeds} seed(s)).")
@@ -1064,6 +1071,7 @@ class BenchmarkRunner:
                 master_seed,
             )
             local_matrix.update(prior)
+            self._progress_increment(len(prior))
             logger.info(
                 f"[RESUME] Seed {master_seed}: loaded {len(prior)} "
                 f"prior result(s) from raw stream."

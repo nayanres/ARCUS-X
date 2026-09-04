@@ -1,8 +1,8 @@
 {
-  "experiment_id": "ARCUS-X-exp-local_MAI_Thinking_1_20260902T234159",
+  "experiment_id": "ARCUS-X-exp-local_mistral_large_2512_20260904T191336",
   "benchmark_version": "1.0.0",
   "models": [
-    "MAI-Thinking-1"
+    "mistral-large-2512"
   ],
   "parameters": {
     "probes": 5,
@@ -60,9 +60,9 @@
     "note": "Latency is a systems-level diagnostic, NOT a model capability score. It is excluded from CRI/GBI/trajectory/fracture metrics."
   },
   "artifacts": {
-    "raw_log": "absolute_raw_data_local_MAI_Thinking_1.txt",
+    "raw_log": "absolute_raw_data_local_mistral_large_2512.txt",
     "results": "benchmark_results.json",
-    "metrics": "metrics_MAI-Thinking-1.json"
+    "metrics": "metrics_mistral-large-2512.json"
   },
-  "created": "2026-09-02"
+  "created": "2026-09-04"
 }
