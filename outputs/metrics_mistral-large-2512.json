@@ -1,0 +1,411 @@
+{
+  "model": "mistral-large-2512",
+  "run_status": "COMPLETE",
+  "completed_probes": 3405,
+  "total_probes": 3385,
+  "accuracy": 56.6,
+  "per_horizon_accuracy": {
+    "3": 0.5,
+    "5": 0.6,
+    "6": 0.5,
+    "7": 0.5,
+    "8": 0.5,
+    "9": 0.4,
+    "10": 0.5,
+    "15": 0.6,
+    "17": 0.8,
+    "18": 0.6,
+    "19": 0.4,
+    "20": 0.6,
+    "30": 0.8,
+    "35": 0.8,
+    "38": 0.7,
+    "39": 0.6,
+    "40": 0.6,
+    "60": 0.6,
+    "65": 0.5,
+    "67": 0.8,
+    "68": 0.5,
+    "69": 0.7,
+    "70": 0.6,
+    "72": 0.6,
+    "73": 0.6,
+    "74": 0.7,
+    "75": 0.5,
+    "78": 0.6,
+    "79": 0.6,
+    "80": 0.5,
+    "86": 0.5,
+    "88": 0.6,
+    "89": 0.6,
+    "90": 0.4,
+    "92": 0.5,
+    "93": 0.6,
+    "94": 0.3,
+    "95": 0.4,
+    "97": 0.4,
+    "104": 0.4,
+    "107": 0.6,
+    "108": 0.6,
+    "109": 0.4,
+    "110": 0.5,
+    "111": 0.5,
+    "112": 0.2,
+    "113": 0.5,
+    "114": 0.5,
+    "115": 0.4,
+    "116": 0.4,
+    "117": 0.2,
+    "118": 0.5,
+    "119": 0.4,
+    "120": 0.4,
+    "122": 0.4,
+    "123": 0.5,
+    "124": 0.4,
+    "125": 0.3,
+    "127": 0.3,
+    "130": 0.3,
+    "133": 0.4,
+    "135": 0.3
+  },
+  "per_gravity_accuracy": {
+    "0.0": 0.5,
+    "0.5": 0.6017,
+    "3.0": 0.558,
+    "15.0": 0.5441
+  },
+  "per_tier_accuracy": {
+    "tier_0": 0.5676,
+    "tier_1": 0.4937,
+    "tier_2": 0.5937,
+    "tier_3": 0.6108
+  },
+  "avg_output_tokens": 2770.1,
+  "max_output_tokens": 7574.0,
+  "avg_latency": 26847.882,
+  "total_cost": 0.0,
+  "failure_taxonomy": {},
+  "latency_diagnostics": {
+    "mean_latency_ms": 26847.8823,
+    "median_latency_ms": 26674.6581,
+    "p95_latency_ms": 52683.483,
+    "max_latency_ms": 63295.2876,
+    "mean_output_tokens_per_sec": 104.0526,
+    "mean_correct_steps_per_sec": 1.2031,
+    "ale": 0.0315,
+    "correct_steps_per_sec": 1.2031,
+    "per_horizon": [
+      {
+        "horizon": "3",
+        "mean_latency_ms": 3754.9713,
+        "correct_steps_per_sec": 0.5194
+      },
+      {
+        "horizon": "5",
+        "mean_latency_ms": 4825.0434,
+        "correct_steps_per_sec": 0.77
+      },
+      {
+        "horizon": "6",
+        "mean_latency_ms": 5539.921,
+        "correct_steps_per_sec": 0.6251
+      },
+      {
+        "horizon": "7",
+        "mean_latency_ms": 5987.0374,
+        "correct_steps_per_sec": 0.6753
+      },
+      {
+        "horizon": "8",
+        "mean_latency_ms": 5986.8464,
+        "correct_steps_per_sec": 0.6878
+      },
+      {
+        "horizon": "9",
+        "mean_latency_ms": 7218.9938,
+        "correct_steps_per_sec": 0.6035
+      },
+      {
+        "horizon": "10",
+        "mean_latency_ms": 6923.244,
+        "correct_steps_per_sec": 0.7742
+      },
+      {
+        "horizon": "15",
+        "mean_latency_ms": 11469.5661,
+        "correct_steps_per_sec": 1.0536
+      },
+      {
+        "horizon": "17",
+        "mean_latency_ms": 15548.8639,
+        "correct_steps_per_sec": 0.9526
+      },
+      {
+        "horizon": "18",
+        "mean_latency_ms": 15228.5756,
+        "correct_steps_per_sec": 0.7983
+      },
+      {
+        "horizon": "19",
+        "mean_latency_ms": 15253.1462,
+        "correct_steps_per_sec": 0.403
+      },
+      {
+        "horizon": "20",
+        "mean_latency_ms": 14467.9341,
+        "correct_steps_per_sec": 0.9208
+      },
+      {
+        "horizon": "30",
+        "mean_latency_ms": 21333.3504,
+        "correct_steps_per_sec": 1.2406
+      },
+      {
+        "horizon": "35",
+        "mean_latency_ms": 25091.8865,
+        "correct_steps_per_sec": 1.2314
+      },
+      {
+        "horizon": "38",
+        "mean_latency_ms": 25182.6915,
+        "correct_steps_per_sec": 1.2139
+      },
+      {
+        "horizon": "39",
+        "mean_latency_ms": 25602.6192,
+        "correct_steps_per_sec": 1.1038
+      },
+      {
+        "horizon": "40",
+        "mean_latency_ms": 26948.1872,
+        "correct_steps_per_sec": 1.0325
+      },
+      {
+        "horizon": "60",
+        "mean_latency_ms": 27535.2499,
+        "correct_steps_per_sec": 1.4044
+      },
+      {
+        "horizon": "65",
+        "mean_latency_ms": 34433.2942,
+        "correct_steps_per_sec": 1.0312
+      },
+      {
+        "horizon": "67",
+        "mean_latency_ms": 33137.8569,
+        "correct_steps_per_sec": 1.7788
+      },
+      {
+        "horizon": "68",
+        "mean_latency_ms": 41154.2029,
+        "correct_steps_per_sec": 1.0938
+      },
+      {
+        "horizon": "69",
+        "mean_latency_ms": 32305.7749,
+        "correct_steps_per_sec": 1.9596
+      },
+      {
+        "horizon": "70",
+        "mean_latency_ms": 33029.0478,
+        "correct_steps_per_sec": 1.5321
+      },
+      {
+        "horizon": "72",
+        "mean_latency_ms": 33865.2573,
+        "correct_steps_per_sec": 1.3996
+      },
+      {
+        "horizon": "73",
+        "mean_latency_ms": 31936.728,
+        "correct_steps_per_sec": 1.4743
+      },
+      {
+        "horizon": "74",
+        "mean_latency_ms": 32369.5326,
+        "correct_steps_per_sec": 1.5775
+      },
+      {
+        "horizon": "75",
+        "mean_latency_ms": 31212.1392,
+        "correct_steps_per_sec": 1.4275
+      },
+      {
+        "horizon": "78",
+        "mean_latency_ms": 31533.7914,
+        "correct_steps_per_sec": 1.6063
+      },
+      {
+        "horizon": "79",
+        "mean_latency_ms": 33620.3993,
+        "correct_steps_per_sec": 1.5293
+      },
+      {
+        "horizon": "80",
+        "mean_latency_ms": 32188.097,
+        "correct_steps_per_sec": 1.4643
+      },
+      {
+        "horizon": "86",
+        "mean_latency_ms": 34602.9772,
+        "correct_steps_per_sec": 1.332
+      },
+      {
+        "horizon": "88",
+        "mean_latency_ms": 31610.9465,
+        "correct_steps_per_sec": 1.7653
+      },
+      {
+        "horizon": "89",
+        "mean_latency_ms": 34771.3992,
+        "correct_steps_per_sec": 1.7452
+      },
+      {
+        "horizon": "90",
+        "mean_latency_ms": 32111.8017,
+        "correct_steps_per_sec": 1.3928
+      },
+      {
+        "horizon": "92",
+        "mean_latency_ms": 33716.1357,
+        "correct_steps_per_sec": 1.7175
+      },
+      {
+        "horizon": "93",
+        "mean_latency_ms": 33621.6091,
+        "correct_steps_per_sec": 1.8845
+      },
+      {
+        "horizon": "94",
+        "mean_latency_ms": 34683.4796,
+        "correct_steps_per_sec": 0.884
+      },
+      {
+        "horizon": "95",
+        "mean_latency_ms": 32562.2648,
+        "correct_steps_per_sec": 1.1912
+      },
+      {
+        "horizon": "97",
+        "mean_latency_ms": 32996.2398,
+        "correct_steps_per_sec": 1.251
+      },
+      {
+        "horizon": "104",
+        "mean_latency_ms": 39083.1871,
+        "correct_steps_per_sec": 1.2357
+      },
+      {
+        "horizon": "107",
+        "mean_latency_ms": 42720.2069,
+        "correct_steps_per_sec": 1.6233
+      },
+      {
+        "horizon": "108",
+        "mean_latency_ms": 35947.2684,
+        "correct_steps_per_sec": 1.8846
+      },
+      {
+        "horizon": "109",
+        "mean_latency_ms": 40999.6673,
+        "correct_steps_per_sec": 1.16
+      },
+      {
+        "horizon": "110",
+        "mean_latency_ms": 41524.1279,
+        "correct_steps_per_sec": 1.2625
+      },
+      {
+        "horizon": "111",
+        "mean_latency_ms": 40304.1162,
+        "correct_steps_per_sec": 1.3865
+      },
+      {
+        "horizon": "112",
+        "mean_latency_ms": 33748.3765,
+        "correct_steps_per_sec": 0.8279
+      },
+      {
+        "horizon": "113",
+        "mean_latency_ms": 45998.0203,
+        "correct_steps_per_sec": 1.3694
+      },
+      {
+        "horizon": "114",
+        "mean_latency_ms": 41497.1579,
+        "correct_steps_per_sec": 1.4355
+      },
+      {
+        "horizon": "115",
+        "mean_latency_ms": 40715.3073,
+        "correct_steps_per_sec": 1.1618
+      },
+      {
+        "horizon": "116",
+        "mean_latency_ms": 35401.1288,
+        "correct_steps_per_sec": 1.3856
+      },
+      {
+        "horizon": "117",
+        "mean_latency_ms": 36516.0088,
+        "correct_steps_per_sec": 0.8161
+      },
+      {
+        "horizon": "118",
+        "mean_latency_ms": 42376.6888,
+        "correct_steps_per_sec": 1.4917
+      },
+      {
+        "horizon": "119",
+        "mean_latency_ms": 37925.7376,
+        "correct_steps_per_sec": 1.415
+      },
+      {
+        "horizon": "120",
+        "mean_latency_ms": 42360.6558,
+        "correct_steps_per_sec": 1.1341
+      },
+      {
+        "horizon": "122",
+        "mean_latency_ms": 36685.1323,
+        "correct_steps_per_sec": 1.4437
+      },
+      {
+        "horizon": "123",
+        "mean_latency_ms": 39963.0132,
+        "correct_steps_per_sec": 1.7541
+      },
+      {
+        "horizon": "124",
+        "mean_latency_ms": 40647.0429,
+        "correct_steps_per_sec": 1.1182
+      },
+      {
+        "horizon": "125",
+        "mean_latency_ms": 43211.4115,
+        "correct_steps_per_sec": 0.9755
+      },
+      {
+        "horizon": "127",
+        "mean_latency_ms": 37106.4419,
+        "correct_steps_per_sec": 0.9743
+      },
+      {
+        "horizon": "130",
+        "mean_latency_ms": 40362.8388,
+        "correct_steps_per_sec": 0.8838
+      },
+      {
+        "horizon": "133",
+        "mean_latency_ms": 41399.0667,
+        "correct_steps_per_sec": 1.3105
+      },
+      {
+        "horizon": "135",
+        "mean_latency_ms": 42331.9099,
+        "correct_steps_per_sec": 1.0318
+      }
+    ],
+    "diagnostic_note": "Latency is a systems-level diagnostic (provider infrastructure, architecture, batching, deployment). It is NOT a model capability score and is excluded from CRI/GBI/trajectory/fracture metrics."
+  }
+}

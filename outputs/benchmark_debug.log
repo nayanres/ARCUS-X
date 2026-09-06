@@ -164428,3 +164428,2001 @@ Latency by Horizon:
     }
   }
 ]
+2026-09-05T13:26:28.835858 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=0.974, GBI=0.000, GE=1.000
+  Horizon z=15: HC=0.974, GBI=0.000, GE=1.000
+  Horizon z=16: HC=0.966, GBI=0.000, GE=1.000
+  Horizon z=17: HC=0.958, GBI=0.000, GE=1.000
+  Horizon z=18: HC=0.981, GBI=0.000, GE=1.000
+  Horizon z=19: HC=0.979, GBI=0.000, GE=1.000
+  Horizon z=20: HC=0.966, GBI=0.000, GE=1.000
+  Horizon z=21: HC=0.963, GBI=0.001, GE=0.999
+  Horizon z=22: HC=0.962, GBI=0.000, GE=1.000
+  Horizon z=23: HC=0.971, GBI=0.000, GE=1.000
+  Horizon z=24: HC=0.968, GBI=0.000, GE=1.000
+  Horizon z=25: HC=0.971, GBI=0.000, GE=0.994
+  Horizon z=26: HC=0.976, GBI=0.000, GE=1.000
+  Horizon z=29: HC=0.972, GBI=0.000, GE=1.000
+  Horizon z=30: HC=0.964, GBI=0.106, GE=0.994
+  Horizon z=32: HC=0.913, GBI=0.000, GE=0.975
+2026-09-05T13:26:28.853326 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 0.5: HC=0.969, GBI=0.027, GE=0.999, FractureDepth=0.0
+  Gravity 3.0: HC=0.970, GBI=0.000, GE=0.998, FractureDepth=0.0
+  Gravity 15.0: HC=0.963, GBI=0.000, GE=0.998, FractureDepth=0.0
+2026-09-05T13:26:28.859106 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 48.4
+Exact Match              | 5.2
+Continuity               | 43.5
+Horizon Compliance       | 96.8
+GBI                      | 0.01
+Efficiency               | 99.8
+Fracture Depth           | 19
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=21.0, accuracy=0.5
+- tier_0                        : fracture_depth=24.0, accuracy=0.6
+- tier_2                        : fracture_depth=24.0, accuracy=0.5
+- tier_3                        : fracture_depth=16.0, accuracy=0.4
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 0.581
+- Trajectory Fidelity: 0.383
+- Horizon Robustness: 0.656
+- Semantic Robustness: 0.810
+- Generation Efficiency: 0.998
+
+Failure Analysis:
+- State Tracking Failure        : 93.0%
+- Transition Rule Failure       : 1.1%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.6%
+- Formatting Failure            : 0.2%
+- None                          : 5.2%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        2321.117 ms
+- Median Latency:      2071.683 ms
+- P95 Latency:         3833.331 ms
+- Maximum Latency:     52912.429 ms
+- Mean Output Tokens/sec: 51.490
+- Mean Correct Steps/sec: 4.767
+- ALE: 0.2327
+- Correct Steps/sec: 4.767
+============================================================
+2026-09-05T13:26:28.891126 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               nvidia.nemotron-super-3-120b
+Run Status:          COMPLETE
+Completed Probes:    2265 / 2105
+Master Seeds:        219, 472, 2190, 5396, 6430
+Accuracy:            48.4%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=10  : 80.0%
+  z=15  : 60.0%
+  z=16  : 60.0%
+  z=17  : 50.0%
+  z=18  : 50.0%
+  z=19  : 50.0%
+  z=20  : 50.0%
+  z=21  : 50.0%
+  z=22  : 40.0%
+  z=23  : 50.0%
+  z=24  : 40.0%
+  z=25  : 40.0%
+  z=26  : 40.0%
+  z=29  : 30.0%
+  z=30  : 30.0%
+  z=32  : 30.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=0.5 : 45.4%
+  gravity=3.0 : 51.6%
+  gravity=15.0: 47.1%
+
+Per-Tier Accuracy:
+  tier_0  : 56.7%
+  tier_1  : 46.8%
+  tier_2  : 51.0%
+  tier_3  : 39.1%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 120.6
+Maximum Output Tokens: 8192.0
+Average Latency:       2321.117
+Failure Count:         1995
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [219, 472, 2190, 5396, 6430]
+  CRI:                 0.570 +/- 0.023
+  Fracture Depth:      20.2 +/- 0.8
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        2321.117 ms
+Median Latency:      2071.683 ms
+P95 Latency:         3833.331 ms
+Maximum Latency:     52912.429 ms
+Mean Output Tokens/sec: 51.490
+Mean Correct Steps/sec: 4.767
+
+Normalized Efficiency:
+  ALE: 0.2327
+  Correct Steps/sec: 4.767
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1394.060 ms
+    Correct Steps/sec: 2.994
+  z=10:
+    Mean Latency: 1982.185 ms
+    Correct Steps/sec: 4.627
+  z=15:
+    Mean Latency: 2376.664 ms
+    Correct Steps/sec: 4.616
+  z=16:
+    Mean Latency: 1727.003 ms
+    Correct Steps/sec: 5.718
+  z=17:
+    Mean Latency: 2258.025 ms
+    Correct Steps/sec: 4.690
+  z=18:
+    Mean Latency: 2252.550 ms
+    Correct Steps/sec: 4.745
+  z=19:
+    Mean Latency: 2318.818 ms
+    Correct Steps/sec: 4.705
+  z=20:
+    Mean Latency: 2140.206 ms
+    Correct Steps/sec: 5.188
+  z=21:
+    Mean Latency: 2165.626 ms
+    Correct Steps/sec: 4.910
+  z=22:
+    Mean Latency: 2190.800 ms
+    Correct Steps/sec: 4.954
+  z=23:
+    Mean Latency: 2320.294 ms
+    Correct Steps/sec: 5.100
+  z=24:
+    Mean Latency: 2314.569 ms
+    Correct Steps/sec: 4.483
+  z=25:
+    Mean Latency: 2567.661 ms
+    Correct Steps/sec: 4.785
+  z=26:
+    Mean Latency: 2572.682 ms
+    Correct Steps/sec: 4.132
+  z=29:
+    Mean Latency: 2513.446 ms
+    Correct Steps/sec: 4.180
+  z=30:
+    Mean Latency: 2691.527 ms
+    Correct Steps/sec: 4.613
+  z=32:
+    Mean Latency: 3965.707 ms
+    Correct Steps/sec: 4.179
+============================================================
+2026-09-05T13:26:30.966723 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.5,
+    "distribution": {
+      "20": {
+        "State Tracking Failure": 93.0,
+        "None": 4.0,
+        "Transition Rule Failure": 1.0,
+        "Horizon Collapse": 2.0
+      },
+      "10": {
+        "None": 40.0,
+        "State Tracking Failure": 60.0
+      },
+      "15": {
+        "None": 15.0,
+        "State Tracking Failure": 85.0
+      },
+      "17": {
+        "State Tracking Failure": 100.0
+      },
+      "18": {
+        "State Tracking Failure": 95.0,
+        "None": 5.0
+      },
+      "19": {
+        "State Tracking Failure": 90.0,
+        "None": 10.0
+      },
+      "29": {
+        "State Tracking Failure": 90.0,
+        "Transition Rule Failure": 10.0
+      },
+      "24": {
+        "State Tracking Failure": 100.0
+      },
+      "21": {
+        "State Tracking Failure": 96.0,
+        "None": 2.0,
+        "Transition Rule Failure": 1.0,
+        "Horizon Collapse": 1.0
+      },
+      "30": {
+        "State Tracking Failure": 100.0
+      },
+      "25": {
+        "State Tracking Failure": 98.75,
+        "Transition Rule Failure": 1.25
+      },
+      "22": {
+        "State Tracking Failure": 96.25,
+        "Transition Rule Failure": 2.5,
+        "Horizon Collapse": 1.25
+      },
+      "32": {
+        "State Tracking Failure": 100.0
+      },
+      "26": {
+        "State Tracking Failure": 100.0
+      },
+      "23": {
+        "State Tracking Failure": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 3.0,
+    "distribution": {
+      "20": {
+        "State Tracking Failure": 93.0,
+        "None": 3.0,
+        "Horizon Collapse": 3.0,
+        "Transition Rule Failure": 1.0
+      },
+      "10": {
+        "None": 40.0,
+        "State Tracking Failure": 57.49999999999999,
+        "Transition Rule Failure": 1.25,
+        "Horizon Collapse": 1.25
+      },
+      "15": {
+        "State Tracking Failure": 83.75,
+        "None": 13.750000000000002,
+        "Transition Rule Failure": 2.5
+      },
+      "17": {
+        "State Tracking Failure": 96.25,
+        "Horizon Collapse": 1.25,
+        "None": 2.5
+      },
+      "18": {
+        "State Tracking Failure": 96.25,
+        "None": 3.75
+      },
+      "19": {
+        "State Tracking Failure": 98.75,
+        "None": 1.25
+      },
+      "29": {
+        "State Tracking Failure": 96.66666666666667,
+        "Transition Rule Failure": 3.3333333333333335
+      },
+      "24": {
+        "State Tracking Failure": 96.66666666666667,
+        "Transition Rule Failure": 3.3333333333333335
+      },
+      "21": {
+        "State Tracking Failure": 96.25,
+        "Formatting Failure": 1.25,
+        "Transition Rule Failure": 1.25,
+        "None": 1.25
+      },
+      "30": {
+        "State Tracking Failure": 100.0
+      },
+      "25": {
+        "State Tracking Failure": 90.0,
+        "Transition Rule Failure": 5.0,
+        "Horizon Collapse": 5.0
+      },
+      "22": {
+        "State Tracking Failure": 97.5,
+        "None": 2.5
+      },
+      "16": {
+        "None": 10.0,
+        "State Tracking Failure": 90.0
+      }
+    }
+  },
+  {
+    "gravity": 15.0,
+    "distribution": {
+      "20": {
+        "State Tracking Failure": 96.0,
+        "None": 2.0,
+        "Transition Rule Failure": 1.0,
+        "Formatting Failure": 1.0
+      },
+      "10": {
+        "None": 32.5,
+        "State Tracking Failure": 62.5,
+        "Horizon Collapse": 5.0
+      },
+      "15": {
+        "None": 12.5,
+        "State Tracking Failure": 85.0,
+        "Formatting Failure": 2.5
+      },
+      "17": {
+        "State Tracking Failure": 95.0,
+        "Horizon Collapse": 2.5,
+        "None": 2.5
+      },
+      "18": {
+        "State Tracking Failure": 97.5,
+        "None": 2.5
+      },
+      "19": {
+        "State Tracking Failure": 95.0,
+        "None": 5.0
+      },
+      "29": {
+        "State Tracking Failure": 90.0,
+        "Transition Rule Failure": 10.0
+      },
+      "24": {
+        "State Tracking Failure": 100.0
+      },
+      "21": {
+        "State Tracking Failure": 96.25,
+        "Formatting Failure": 1.25,
+        "Transition Rule Failure": 1.25,
+        "None": 1.25
+      },
+      "30": {
+        "State Tracking Failure": 100.0
+      },
+      "25": {
+        "State Tracking Failure": 98.33333333333333,
+        "Transition Rule Failure": 1.6666666666666667
+      },
+      "22": {
+        "State Tracking Failure": 95.0,
+        "None": 3.3333333333333335,
+        "Unknown": 1.6666666666666667
+      },
+      "32": {
+        "State Tracking Failure": 90.0,
+        "Horizon Collapse": 5.0,
+        "Transition Rule Failure": 5.0
+      },
+      "26": {
+        "State Tracking Failure": 100.0
+      },
+      "23": {
+        "None": 5.0,
+        "State Tracking Failure": 95.0
+      }
+    }
+  }
+]
+2026-09-05T20:32:53.736083 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=0.521, GBI=3.948, GE=0.207
+  Horizon z=5: HC=0.489, GBI=4.314, GE=0.192
+  Horizon z=6: HC=0.445, GBI=4.739, GE=0.179
+  Horizon z=7: HC=0.467, GBI=4.774, GE=0.177
+  Horizon z=8: HC=0.532, GBI=4.386, GE=0.194
+  Horizon z=9: HC=0.523, GBI=4.597, GE=0.195
+  Horizon z=10: HC=0.572, GBI=4.133, GE=0.213
+  Horizon z=15: HC=0.473, GBI=5.934, GE=0.192
+  Horizon z=17: HC=0.353, GBI=7.816, GE=0.135
+  Horizon z=18: HC=0.397, GBI=7.058, GE=0.167
+  Horizon z=19: HC=0.424, GBI=6.484, GE=0.170
+  Horizon z=20: HC=0.483, GBI=5.556, GE=0.205
+  Horizon z=30: HC=0.385, GBI=6.089, GE=0.170
+  Horizon z=35: HC=0.337, GBI=6.218, GE=0.159
+  Horizon z=38: HC=0.360, GBI=5.657, GE=0.172
+  Horizon z=39: HC=0.376, GBI=5.803, GE=0.173
+  Horizon z=40: HC=0.336, GBI=5.919, GE=0.158
+  Horizon z=60: HC=0.489, GBI=3.704, GE=0.246
+  Horizon z=65: HC=0.320, GBI=3.266, GE=0.396
+  Horizon z=67: HC=0.394, GBI=3.577, GE=0.291
+  Horizon z=68: HC=0.317, GBI=2.593, GE=0.484
+  Horizon z=69: HC=0.464, GBI=3.076, GE=0.315
+  Horizon z=70: HC=0.462, GBI=3.868, GE=0.237
+  Horizon z=72: HC=0.418, GBI=3.365, GE=0.274
+  Horizon z=73: HC=0.505, GBI=3.747, GE=0.223
+  Horizon z=74: HC=0.565, GBI=3.448, GE=0.239
+  Horizon z=75: HC=0.486, GBI=3.504, GE=0.250
+  Horizon z=78: HC=0.550, GBI=3.274, GE=0.251
+  Horizon z=79: HC=0.484, GBI=3.352, GE=0.267
+  Horizon z=80: HC=0.548, GBI=3.378, GE=0.253
+  Horizon z=86: HC=0.446, GBI=2.528, GE=0.399
+  Horizon z=88: HC=0.539, GBI=2.948, GE=0.301
+  Horizon z=89: HC=0.515, GBI=3.446, GE=0.245
+  Horizon z=90: HC=0.568, GBI=2.690, GE=0.340
+  Horizon z=92: HC=0.523, GBI=2.661, GE=0.346
+  Horizon z=93: HC=0.497, GBI=2.732, GE=0.300
+  Horizon z=94: HC=0.582, GBI=2.828, GE=0.306
+  Horizon z=95: HC=0.534, GBI=2.940, GE=0.264
+  Horizon z=97: HC=0.603, GBI=2.739, GE=0.298
+  Horizon z=104: HC=0.462, GBI=2.384, GE=0.424
+  Horizon z=107: HC=0.429, GBI=3.033, GE=0.313
+  Horizon z=108: HC=0.520, GBI=2.664, GE=0.306
+  Horizon z=109: HC=0.519, GBI=2.557, GE=0.339
+  Horizon z=110: HC=0.471, GBI=2.950, GE=0.299
+  Horizon z=111: HC=0.532, GBI=2.771, GE=0.302
+  Horizon z=112: HC=0.565, GBI=2.325, GE=0.341
+  Horizon z=113: HC=0.505, GBI=3.055, GE=0.310
+  Horizon z=114: HC=0.501, GBI=2.634, GE=0.333
+  Horizon z=115: HC=0.535, GBI=2.774, GE=0.307
+  Horizon z=116: HC=0.554, GBI=2.524, GE=0.326
+  Horizon z=117: HC=0.572, GBI=2.009, GE=0.364
+  Horizon z=118: HC=0.419, GBI=2.016, GE=0.475
+  Horizon z=119: HC=0.547, GBI=2.421, GE=0.363
+  Horizon z=120: HC=0.456, GBI=2.176, GE=0.430
+  Horizon z=122: HC=0.584, GBI=2.469, GE=0.322
+  Horizon z=123: HC=0.427, GBI=1.887, GE=0.459
+  Horizon z=124: HC=0.595, GBI=2.175, GE=0.383
+  Horizon z=125: HC=0.506, GBI=2.453, GE=0.361
+  Horizon z=127: HC=0.539, GBI=2.367, GE=0.353
+  Horizon z=130: HC=0.509, GBI=2.018, GE=0.460
+  Horizon z=133: HC=0.526, GBI=2.178, GE=0.419
+  Horizon z=135: HC=0.561, GBI=2.686, GE=0.288
+2026-09-05T20:32:53.797499 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=0.521, GBI=3.948, GE=0.207, FractureDepth=0.0
+  Gravity 0.5: HC=0.435, GBI=4.919, GE=0.213, FractureDepth=0.0
+  Gravity 3.0: HC=0.469, GBI=3.967, GE=0.261, FractureDepth=0.0
+  Gravity 15.0: HC=0.472, GBI=4.196, GE=0.248, FractureDepth=0.0
+2026-09-05T20:32:53.810194 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 56.6
+Exact Match              | 1.1
+Continuity               | 53.8
+Horizon Compliance       | 46.0
+GBI                      | 4.29
+Efficiency               | 24.4
+Fracture Depth           | 6
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=108.0, accuracy=0.5
+- tier_0                        : fracture_depth=9.0, accuracy=0.6
+- tier_2                        : fracture_depth=94.0, accuracy=0.6
+- tier_3                        : fracture_depth=8.0, accuracy=0.6
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 0.552
+- Trajectory Fidelity: 0.447
+- Horizon Robustness: 0.505
+- Semantic Robustness: 0.935
+- Generation Efficiency: 0.244
+
+Failure Analysis:
+- State Tracking Failure        : 14.9%
+- Transition Rule Failure       : 24.9%
+- Semantic Interpretation Failure: 10.1%
+- Horizon Collapse              : 45.0%
+- Formatting Failure            : 4.0%
+- None                          : 1.1%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        26847.882 ms
+- Median Latency:      26674.658 ms
+- P95 Latency:         52683.483 ms
+- Maximum Latency:     63295.288 ms
+- Mean Output Tokens/sec: 104.053
+- Mean Correct Steps/sec: 1.203
+- ALE: 0.0315
+- Correct Steps/sec: 1.203
+============================================================
+2026-09-05T20:32:53.847082 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               mistral-large-2512
+Run Status:          COMPLETE
+Completed Probes:    3405 / 3385
+Master Seeds:        219, 472, 2190, 5396, 6430
+Accuracy:            56.6%
+
+Per-Horizon Accuracy:
+  z=3   : 50.0%
+  z=5   : 60.0%
+  z=6   : 50.0%
+  z=7   : 50.0%
+  z=8   : 50.0%
+  z=9   : 40.0%
+  z=10  : 50.0%
+  z=15  : 60.0%
+  z=17  : 80.0%
+  z=18  : 60.0%
+  z=19  : 40.0%
+  z=20  : 60.0%
+  z=30  : 80.0%
+  z=35  : 80.0%
+  z=38  : 70.0%
+  z=39  : 60.0%
+  z=40  : 60.0%
+  z=60  : 60.0%
+  z=65  : 50.0%
+  z=67  : 80.0%
+  z=68  : 50.0%
+  z=69  : 70.0%
+  z=70  : 60.0%
+  z=72  : 60.0%
+  z=73  : 60.0%
+  z=74  : 70.0%
+  z=75  : 50.0%
+  z=78  : 60.0%
+  z=79  : 60.0%
+  z=80  : 50.0%
+  z=86  : 50.0%
+  z=88  : 60.0%
+  z=89  : 60.0%
+  z=90  : 40.0%
+  z=92  : 50.0%
+  z=93  : 60.0%
+  z=94  : 30.0%
+  z=95  : 40.0%
+  z=97  : 40.0%
+  z=104 : 40.0%
+  z=107 : 60.0%
+  z=108 : 60.0%
+  z=109 : 40.0%
+  z=110 : 50.0%
+  z=111 : 50.0%
+  z=112 : 20.0%
+  z=113 : 50.0%
+  z=114 : 50.0%
+  z=115 : 40.0%
+  z=116 : 40.0%
+  z=117 : 20.0%
+  z=118 : 50.0%
+  z=119 : 40.0%
+  z=120 : 40.0%
+  z=122 : 40.0%
+  z=123 : 50.0%
+  z=124 : 40.0%
+  z=125 : 30.0%
+  z=127 : 30.0%
+  z=130 : 30.0%
+  z=133 : 40.0%
+  z=135 : 30.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 50.0%
+  gravity=0.5 : 60.2%
+  gravity=3.0 : 55.8%
+  gravity=15.0: 54.4%
+
+Per-Tier Accuracy:
+  tier_0  : 56.8%
+  tier_1  : 49.4%
+  tier_2  : 59.4%
+  tier_3  : 61.1%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 2770.1
+Maximum Output Tokens: 7574.0
+Average Latency:       26847.882
+Failure Count:         3348
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [219, 472, 2190, 5396, 6430]
+  CRI:                 0.550 +/- 0.021
+  Fracture Depth:      13.8 +/- 13.1
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        26847.882 ms
+Median Latency:      26674.658 ms
+P95 Latency:         52683.483 ms
+Maximum Latency:     63295.288 ms
+Mean Output Tokens/sec: 104.053
+Mean Correct Steps/sec: 1.203
+
+Normalized Efficiency:
+  ALE: 0.0315
+  Correct Steps/sec: 1.203
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 3754.971 ms
+    Correct Steps/sec: 0.519
+  z=5:
+    Mean Latency: 4825.043 ms
+    Correct Steps/sec: 0.770
+  z=6:
+    Mean Latency: 5539.921 ms
+    Correct Steps/sec: 0.625
+  z=7:
+    Mean Latency: 5987.037 ms
+    Correct Steps/sec: 0.675
+  z=8:
+    Mean Latency: 5986.846 ms
+    Correct Steps/sec: 0.688
+  z=9:
+    Mean Latency: 7218.994 ms
+    Correct Steps/sec: 0.604
+  z=10:
+    Mean Latency: 6923.244 ms
+    Correct Steps/sec: 0.774
+  z=15:
+    Mean Latency: 11469.566 ms
+    Correct Steps/sec: 1.054
+  z=17:
+    Mean Latency: 15548.864 ms
+    Correct Steps/sec: 0.953
+  z=18:
+    Mean Latency: 15228.576 ms
+    Correct Steps/sec: 0.798
+  z=19:
+    Mean Latency: 15253.146 ms
+    Correct Steps/sec: 0.403
+  z=20:
+    Mean Latency: 14467.934 ms
+    Correct Steps/sec: 0.921
+  z=30:
+    Mean Latency: 21333.350 ms
+    Correct Steps/sec: 1.241
+  z=35:
+    Mean Latency: 25091.887 ms
+    Correct Steps/sec: 1.231
+  z=38:
+    Mean Latency: 25182.692 ms
+    Correct Steps/sec: 1.214
+  z=39:
+    Mean Latency: 25602.619 ms
+    Correct Steps/sec: 1.104
+  z=40:
+    Mean Latency: 26948.187 ms
+    Correct Steps/sec: 1.032
+  z=60:
+    Mean Latency: 27535.250 ms
+    Correct Steps/sec: 1.404
+  z=65:
+    Mean Latency: 34433.294 ms
+    Correct Steps/sec: 1.031
+  z=67:
+    Mean Latency: 33137.857 ms
+    Correct Steps/sec: 1.779
+  z=68:
+    Mean Latency: 41154.203 ms
+    Correct Steps/sec: 1.094
+  z=69:
+    Mean Latency: 32305.775 ms
+    Correct Steps/sec: 1.960
+  z=70:
+    Mean Latency: 33029.048 ms
+    Correct Steps/sec: 1.532
+  z=72:
+    Mean Latency: 33865.257 ms
+    Correct Steps/sec: 1.400
+  z=73:
+    Mean Latency: 31936.728 ms
+    Correct Steps/sec: 1.474
+  z=74:
+    Mean Latency: 32369.533 ms
+    Correct Steps/sec: 1.577
+  z=75:
+    Mean Latency: 31212.139 ms
+    Correct Steps/sec: 1.427
+  z=78:
+    Mean Latency: 31533.791 ms
+    Correct Steps/sec: 1.606
+  z=79:
+    Mean Latency: 33620.399 ms
+    Correct Steps/sec: 1.529
+  z=80:
+    Mean Latency: 32188.097 ms
+    Correct Steps/sec: 1.464
+  z=86:
+    Mean Latency: 34602.977 ms
+    Correct Steps/sec: 1.332
+  z=88:
+    Mean Latency: 31610.946 ms
+    Correct Steps/sec: 1.765
+  z=89:
+    Mean Latency: 34771.399 ms
+    Correct Steps/sec: 1.745
+  z=90:
+    Mean Latency: 32111.802 ms
+    Correct Steps/sec: 1.393
+  z=92:
+    Mean Latency: 33716.136 ms
+    Correct Steps/sec: 1.718
+  z=93:
+    Mean Latency: 33621.609 ms
+    Correct Steps/sec: 1.885
+  z=94:
+    Mean Latency: 34683.480 ms
+    Correct Steps/sec: 0.884
+  z=95:
+    Mean Latency: 32562.265 ms
+    Correct Steps/sec: 1.191
+  z=97:
+    Mean Latency: 32996.240 ms
+    Correct Steps/sec: 1.251
+  z=104:
+    Mean Latency: 39083.187 ms
+    Correct Steps/sec: 1.236
+  z=107:
+    Mean Latency: 42720.207 ms
+    Correct Steps/sec: 1.623
+  z=108:
+    Mean Latency: 35947.268 ms
+    Correct Steps/sec: 1.885
+  z=109:
+    Mean Latency: 40999.667 ms
+    Correct Steps/sec: 1.160
+  z=110:
+    Mean Latency: 41524.128 ms
+    Correct Steps/sec: 1.262
+  z=111:
+    Mean Latency: 40304.116 ms
+    Correct Steps/sec: 1.387
+  z=112:
+    Mean Latency: 33748.376 ms
+    Correct Steps/sec: 0.828
+  z=113:
+    Mean Latency: 45998.020 ms
+    Correct Steps/sec: 1.369
+  z=114:
+    Mean Latency: 41497.158 ms
+    Correct Steps/sec: 1.435
+  z=115:
+    Mean Latency: 40715.307 ms
+    Correct Steps/sec: 1.162
+  z=116:
+    Mean Latency: 35401.129 ms
+    Correct Steps/sec: 1.386
+  z=117:
+    Mean Latency: 36516.009 ms
+    Correct Steps/sec: 0.816
+  z=118:
+    Mean Latency: 42376.689 ms
+    Correct Steps/sec: 1.492
+  z=119:
+    Mean Latency: 37925.738 ms
+    Correct Steps/sec: 1.415
+  z=120:
+    Mean Latency: 42360.656 ms
+    Correct Steps/sec: 1.134
+  z=122:
+    Mean Latency: 36685.132 ms
+    Correct Steps/sec: 1.444
+  z=123:
+    Mean Latency: 39963.013 ms
+    Correct Steps/sec: 1.754
+  z=124:
+    Mean Latency: 40647.043 ms
+    Correct Steps/sec: 1.118
+  z=125:
+    Mean Latency: 43211.412 ms
+    Correct Steps/sec: 0.976
+  z=127:
+    Mean Latency: 37106.442 ms
+    Correct Steps/sec: 0.974
+  z=130:
+    Mean Latency: 40362.839 ms
+    Correct Steps/sec: 0.884
+  z=133:
+    Mean Latency: 41399.067 ms
+    Correct Steps/sec: 1.310
+  z=135:
+    Mean Latency: 42331.910 ms
+    Correct Steps/sec: 1.032
+============================================================
+2026-09-05T20:32:58.756566 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.5,
+    "distribution": {
+      "20": {
+        "Horizon Collapse": 47.0,
+        "Transition Rule Failure": 22.0,
+        "Semantic Interpretation Failure": 20.0,
+        "Formatting Failure": 5.0,
+        "None": 4.0,
+        "State Tracking Failure": 2.0
+      },
+      "30": {
+        "Transition Rule Failure": 21.25,
+        "Horizon Collapse": 68.75,
+        "Semantic Interpretation Failure": 5.0,
+        "State Tracking Failure": 2.5,
+        "Formatting Failure": 2.5
+      },
+      "35": {
+        "Horizon Collapse": 71.25,
+        "State Tracking Failure": 12.5,
+        "Transition Rule Failure": 11.25,
+        "Semantic Interpretation Failure": 3.75,
+        "Formatting Failure": 1.25
+      },
+      "38": {
+        "Transition Rule Failure": 25.0,
+        "Horizon Collapse": 57.49999999999999,
+        "State Tracking Failure": 10.0,
+        "None": 2.5,
+        "Semantic Interpretation Failure": 1.25,
+        "Formatting Failure": 2.5,
+        "Unknown": 1.25
+      },
+      "39": {
+        "Horizon Collapse": 53.75,
+        "Semantic Interpretation Failure": 6.25,
+        "Transition Rule Failure": 28.749999999999996,
+        "State Tracking Failure": 7.5,
+        "None": 2.5,
+        "Formatting Failure": 1.25
+      },
+      "40": {
+        "Horizon Collapse": 58.333333333333336,
+        "Transition Rule Failure": 31.666666666666664,
+        "State Tracking Failure": 5.0,
+        "Formatting Failure": 1.6666666666666667,
+        "Semantic Interpretation Failure": 3.3333333333333335
+      },
+      "60": {
+        "Horizon Collapse": 42.5,
+        "Semantic Interpretation Failure": 17.5,
+        "Transition Rule Failure": 25.0,
+        "State Tracking Failure": 10.0,
+        "Formatting Failure": 5.0
+      },
+      "70": {
+        "Horizon Collapse": 57.49999999999999,
+        "State Tracking Failure": 10.0,
+        "Unknown": 5.0,
+        "Transition Rule Failure": 17.5,
+        "None": 2.5,
+        "Semantic Interpretation Failure": 5.0,
+        "Formatting Failure": 2.5
+      },
+      "75": {
+        "State Tracking Failure": 25.0,
+        "Horizon Collapse": 32.5,
+        "Transition Rule Failure": 32.5,
+        "Formatting Failure": 5.0,
+        "Semantic Interpretation Failure": 5.0
+      },
+      "72": {
+        "Horizon Collapse": 60.0,
+        "Unknown": 5.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Transition Rule Failure": 30.0
+      },
+      "73": {
+        "Semantic Interpretation Failure": 5.0,
+        "Horizon Collapse": 50.0,
+        "State Tracking Failure": 10.0,
+        "Transition Rule Failure": 30.0,
+        "None": 5.0
+      },
+      "74": {
+        "Horizon Collapse": 50.0,
+        "State Tracking Failure": 20.0,
+        "Transition Rule Failure": 30.0
+      },
+      "111": {
+        "Unknown": 5.0,
+        "Horizon Collapse": 35.0,
+        "State Tracking Failure": 20.0,
+        "Transition Rule Failure": 35.0,
+        "Semantic Interpretation Failure": 5.0
+      },
+      "130": {
+        "State Tracking Failure": 40.0,
+        "Transition Rule Failure": 30.0,
+        "Semantic Interpretation Failure": 10.0,
+        "Unknown": 10.0,
+        "Horizon Collapse": 5.0,
+        "Formatting Failure": 5.0
+      },
+      "120": {
+        "Formatting Failure": 5.0,
+        "State Tracking Failure": 40.0,
+        "Horizon Collapse": 15.0,
+        "Semantic Interpretation Failure": 15.0,
+        "Transition Rule Failure": 15.0,
+        "Unknown": 10.0
+      },
+      "115": {
+        "Transition Rule Failure": 35.0,
+        "Semantic Interpretation Failure": 10.0,
+        "State Tracking Failure": 35.0,
+        "Horizon Collapse": 15.0,
+        "Unknown": 5.0
+      },
+      "113": {
+        "Horizon Collapse": 30.0,
+        "Transition Rule Failure": 35.0,
+        "State Tracking Failure": 10.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Unknown": 10.0,
+        "None": 10.0
+      },
+      "114": {
+        "State Tracking Failure": 35.0,
+        "Transition Rule Failure": 30.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Horizon Collapse": 25.0,
+        "Formatting Failure": 5.0
+      },
+      "78": {
+        "Horizon Collapse": 45.0,
+        "State Tracking Failure": 10.0,
+        "Transition Rule Failure": 30.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Formatting Failure": 5.0,
+        "Unknown": 5.0
+      },
+      "79": {
+        "State Tracking Failure": 20.0,
+        "Horizon Collapse": 45.0,
+        "Transition Rule Failure": 25.0,
+        "Semantic Interpretation Failure": 10.0
+      },
+      "80": {
+        "Transition Rule Failure": 40.0,
+        "Horizon Collapse": 40.0,
+        "Semantic Interpretation Failure": 15.0,
+        "Unknown": 5.0
+      },
+      "10": {
+        "Transition Rule Failure": 20.0,
+        "Semantic Interpretation Failure": 15.0,
+        "None": 15.0,
+        "Horizon Collapse": 35.0,
+        "Formatting Failure": 15.0
+      },
+      "15": {
+        "Formatting Failure": 10.0,
+        "Horizon Collapse": 55.00000000000001,
+        "Transition Rule Failure": 20.0,
+        "Semantic Interpretation Failure": 10.0,
+        "State Tracking Failure": 5.0
+      },
+      "17": {
+        "Horizon Collapse": 80.0,
+        "Semantic Interpretation Failure": 10.0,
+        "Formatting Failure": 10.0
+      },
+      "18": {
+        "Horizon Collapse": 50.0,
+        "Transition Rule Failure": 35.0,
+        "State Tracking Failure": 5.0,
+        "Semantic Interpretation Failure": 10.0
+      },
+      "19": {
+        "Semantic Interpretation Failure": 20.0,
+        "Horizon Collapse": 30.0,
+        "Transition Rule Failure": 35.0,
+        "Formatting Failure": 15.0
+      }
+    }
+  },
+  {
+    "gravity": 3.0,
+    "distribution": {
+      "20": {
+        "Semantic Interpretation Failure": 18.0,
+        "Transition Rule Failure": 22.0,
+        "Horizon Collapse": 54.0,
+        "State Tracking Failure": 2.0,
+        "None": 1.0,
+        "Formatting Failure": 3.0
+      },
+      "10": {
+        "Horizon Collapse": 25.0,
+        "Transition Rule Failure": 35.0,
+        "Semantic Interpretation Failure": 25.0,
+        "Formatting Failure": 10.0,
+        "State Tracking Failure": 5.0
+      },
+      "5": {
+        "Semantic Interpretation Failure": 15.0,
+        "Transition Rule Failure": 35.0,
+        "Horizon Collapse": 50.0
+      },
+      "7": {
+        "Horizon Collapse": 50.0,
+        "Semantic Interpretation Failure": 20.0,
+        "Transition Rule Failure": 15.0,
+        "Formatting Failure": 15.0
+      },
+      "8": {
+        "Horizon Collapse": 30.0,
+        "State Tracking Failure": 15.0,
+        "Transition Rule Failure": 20.0,
+        "Semantic Interpretation Failure": 30.0,
+        "Formatting Failure": 5.0
+      },
+      "30": {
+        "Horizon Collapse": 76.25,
+        "Transition Rule Failure": 15.0,
+        "Semantic Interpretation Failure": 3.75,
+        "State Tracking Failure": 3.75,
+        "None": 1.25
+      },
+      "35": {
+        "Transition Rule Failure": 17.5,
+        "Horizon Collapse": 66.25,
+        "Formatting Failure": 2.5,
+        "Semantic Interpretation Failure": 6.25,
+        "Unknown": 1.25,
+        "State Tracking Failure": 6.25
+      },
+      "38": {
+        "Transition Rule Failure": 22.5,
+        "State Tracking Failure": 7.5,
+        "Horizon Collapse": 63.74999999999999,
+        "Semantic Interpretation Failure": 2.5,
+        "Formatting Failure": 3.75
+      },
+      "39": {
+        "Transition Rule Failure": 23.75,
+        "Horizon Collapse": 55.00000000000001,
+        "State Tracking Failure": 12.5,
+        "Formatting Failure": 2.5,
+        "Semantic Interpretation Failure": 6.25
+      },
+      "40": {
+        "Horizon Collapse": 53.75,
+        "Transition Rule Failure": 30.0,
+        "Formatting Failure": 3.75,
+        "Semantic Interpretation Failure": 2.5,
+        "State Tracking Failure": 8.75,
+        "Unknown": 1.25
+      },
+      "60": {
+        "State Tracking Failure": 15.0,
+        "Horizon Collapse": 46.666666666666664,
+        "Semantic Interpretation Failure": 6.666666666666667,
+        "None": 3.3333333333333335,
+        "Transition Rule Failure": 25.0,
+        "Formatting Failure": 1.6666666666666667,
+        "Unknown": 1.6666666666666667
+      },
+      "70": {
+        "Transition Rule Failure": 28.333333333333332,
+        "Horizon Collapse": 45.0,
+        "State Tracking Failure": 16.666666666666664,
+        "Semantic Interpretation Failure": 3.3333333333333335,
+        "Formatting Failure": 3.3333333333333335,
+        "Unknown": 1.6666666666666667,
+        "None": 1.6666666666666667
+      },
+      "65": {
+        "Transition Rule Failure": 25.0,
+        "Unknown": 25.0,
+        "Horizon Collapse": 35.0,
+        "State Tracking Failure": 15.0
+      },
+      "67": {
+        "Horizon Collapse": 65.0,
+        "State Tracking Failure": 10.0,
+        "Unknown": 10.0,
+        "Transition Rule Failure": 15.0
+      },
+      "68": {
+        "Transition Rule Failure": 20.0,
+        "Horizon Collapse": 40.0,
+        "Unknown": 35.0,
+        "State Tracking Failure": 5.0
+      },
+      "69": {
+        "Transition Rule Failure": 15.0,
+        "Horizon Collapse": 65.0,
+        "State Tracking Failure": 5.0,
+        "Unknown": 10.0,
+        "None": 5.0
+      },
+      "104": {
+        "Semantic Interpretation Failure": 17.5,
+        "Formatting Failure": 5.0,
+        "Unknown": 15.0,
+        "Transition Rule Failure": 15.0,
+        "State Tracking Failure": 27.500000000000004,
+        "Horizon Collapse": 20.0
+      },
+      "86": {
+        "Horizon Collapse": 35.0,
+        "Unknown": 20.0,
+        "Formatting Failure": 10.0,
+        "Transition Rule Failure": 15.0,
+        "State Tracking Failure": 15.0,
+        "Semantic Interpretation Failure": 5.0
+      },
+      "95": {
+        "Horizon Collapse": 35.0,
+        "State Tracking Failure": 15.0,
+        "Formatting Failure": 20.0,
+        "Transition Rule Failure": 20.0,
+        "Semantic Interpretation Failure": 10.0
+      },
+      "90": {
+        "Formatting Failure": 2.5,
+        "Transition Rule Failure": 32.5,
+        "None": 5.0,
+        "Horizon Collapse": 30.0,
+        "Semantic Interpretation Failure": 12.5,
+        "Unknown": 5.0,
+        "State Tracking Failure": 12.5
+      },
+      "88": {
+        "Unknown": 2.5,
+        "Semantic Interpretation Failure": 10.0,
+        "State Tracking Failure": 25.0,
+        "Horizon Collapse": 42.5,
+        "Transition Rule Failure": 20.0
+      },
+      "89": {
+        "Semantic Interpretation Failure": 7.5,
+        "State Tracking Failure": 22.5,
+        "Transition Rule Failure": 17.5,
+        "Horizon Collapse": 47.5,
+        "Formatting Failure": 5.0
+      },
+      "120": {
+        "Horizon Collapse": 25.0,
+        "Transition Rule Failure": 17.5,
+        "State Tracking Failure": 27.500000000000004,
+        "Semantic Interpretation Failure": 12.5,
+        "Unknown": 15.0,
+        "Formatting Failure": 2.5
+      },
+      "135": {
+        "Transition Rule Failure": 45.0,
+        "State Tracking Failure": 40.0,
+        "Formatting Failure": 5.0,
+        "Horizon Collapse": 10.0
+      },
+      "127": {
+        "Transition Rule Failure": 25.0,
+        "Formatting Failure": 5.0,
+        "State Tracking Failure": 40.0,
+        "Semantic Interpretation Failure": 25.0,
+        "Horizon Collapse": 5.0
+      },
+      "123": {
+        "State Tracking Failure": 25.0,
+        "Horizon Collapse": 30.0,
+        "Unknown": 20.0,
+        "Transition Rule Failure": 10.0,
+        "None": 5.0,
+        "Semantic Interpretation Failure": 10.0
+      },
+      "125": {
+        "State Tracking Failure": 35.0,
+        "Transition Rule Failure": 30.0,
+        "Semantic Interpretation Failure": 15.0,
+        "Unknown": 10.0,
+        "Formatting Failure": 5.0,
+        "Horizon Collapse": 5.0
+      },
+      "124": {
+        "State Tracking Failure": 22.5,
+        "Unknown": 10.0,
+        "Transition Rule Failure": 35.0,
+        "Horizon Collapse": 25.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Formatting Failure": 2.5
+      },
+      "75": {
+        "Horizon Collapse": 37.5,
+        "Transition Rule Failure": 32.5,
+        "State Tracking Failure": 25.0,
+        "Formatting Failure": 2.5,
+        "Semantic Interpretation Failure": 2.5
+      },
+      "78": {
+        "Horizon Collapse": 40.0,
+        "Transition Rule Failure": 37.5,
+        "State Tracking Failure": 20.0,
+        "Semantic Interpretation Failure": 2.5
+      },
+      "79": {
+        "Horizon Collapse": 40.0,
+        "Transition Rule Failure": 37.5,
+        "State Tracking Failure": 17.5,
+        "Unknown": 2.5,
+        "Semantic Interpretation Failure": 2.5
+      },
+      "80": {
+        "Transition Rule Failure": 40.0,
+        "Horizon Collapse": 37.5,
+        "State Tracking Failure": 12.5,
+        "Semantic Interpretation Failure": 2.5,
+        "Formatting Failure": 2.5,
+        "None": 5.0
+      },
+      "115": {
+        "Transition Rule Failure": 30.0,
+        "State Tracking Failure": 40.0,
+        "Horizon Collapse": 22.5,
+        "Semantic Interpretation Failure": 5.0,
+        "Unknown": 2.5
+      },
+      "97": {
+        "State Tracking Failure": 50.0,
+        "Semantic Interpretation Failure": 10.0,
+        "Transition Rule Failure": 25.0,
+        "Horizon Collapse": 10.0,
+        "Unknown": 5.0
+      },
+      "92": {
+        "State Tracking Failure": 35.0,
+        "Formatting Failure": 5.0,
+        "Semantic Interpretation Failure": 15.0,
+        "Horizon Collapse": 20.0,
+        "Transition Rule Failure": 20.0,
+        "None": 5.0
+      },
+      "112": {
+        "Transition Rule Failure": 50.0,
+        "Horizon Collapse": 15.0,
+        "Semantic Interpretation Failure": 20.0,
+        "State Tracking Failure": 10.0,
+        "Formatting Failure": 5.0
+      },
+      "108": {
+        "Horizon Collapse": 50.0,
+        "Transition Rule Failure": 25.0,
+        "State Tracking Failure": 20.0,
+        "Semantic Interpretation Failure": 5.0
+      },
+      "110": {
+        "Semantic Interpretation Failure": 15.0,
+        "State Tracking Failure": 45.0,
+        "Transition Rule Failure": 25.0,
+        "Horizon Collapse": 10.0,
+        "Unknown": 5.0
+      },
+      "109": {
+        "State Tracking Failure": 25.0,
+        "Unknown": 10.0,
+        "Horizon Collapse": 25.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Transition Rule Failure": 35.0
+      },
+      "133": {
+        "Transition Rule Failure": 15.0,
+        "State Tracking Failure": 40.0,
+        "Semantic Interpretation Failure": 20.0,
+        "Horizon Collapse": 15.0,
+        "Unknown": 10.0
+      },
+      "119": {
+        "Transition Rule Failure": 15.0,
+        "Semantic Interpretation Failure": 20.0,
+        "Horizon Collapse": 25.0,
+        "State Tracking Failure": 40.0
+      },
+      "117": {
+        "Semantic Interpretation Failure": 20.0,
+        "Horizon Collapse": 5.0,
+        "Transition Rule Failure": 40.0,
+        "Unknown": 5.0,
+        "State Tracking Failure": 30.0
+      },
+      "116": {
+        "State Tracking Failure": 50.0,
+        "Transition Rule Failure": 30.0,
+        "Horizon Collapse": 15.0,
+        "Semantic Interpretation Failure": 5.0
+      }
+    }
+  },
+  {
+    "gravity": 15.0,
+    "distribution": {
+      "20": {
+        "Semantic Interpretation Failure": 20.0,
+        "Transition Rule Failure": 23.0,
+        "Horizon Collapse": 46.0,
+        "Formatting Failure": 7.000000000000001,
+        "Unknown": 2.0,
+        "None": 1.0,
+        "State Tracking Failure": 1.0
+      },
+      "30": {
+        "Horizon Collapse": 62.5,
+        "State Tracking Failure": 12.5,
+        "Formatting Failure": 2.5,
+        "Transition Rule Failure": 17.5,
+        "Unknown": 2.5,
+        "Semantic Interpretation Failure": 2.5
+      },
+      "35": {
+        "Horizon Collapse": 67.5,
+        "None": 5.0,
+        "Semantic Interpretation Failure": 7.5,
+        "State Tracking Failure": 10.0,
+        "Transition Rule Failure": 7.5,
+        "Unknown": 2.5
+      },
+      "38": {
+        "Horizon Collapse": 65.0,
+        "State Tracking Failure": 2.5,
+        "Transition Rule Failure": 25.0,
+        "Unknown": 5.0,
+        "None": 2.5
+      },
+      "39": {
+        "Transition Rule Failure": 30.0,
+        "State Tracking Failure": 5.0,
+        "Horizon Collapse": 50.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Formatting Failure": 7.5,
+        "Unknown": 2.5
+      },
+      "40": {
+        "Horizon Collapse": 60.0,
+        "Semantic Interpretation Failure": 10.0,
+        "State Tracking Failure": 10.0,
+        "Transition Rule Failure": 20.0
+      },
+      "60": {
+        "State Tracking Failure": 20.0,
+        "Horizon Collapse": 40.0,
+        "Transition Rule Failure": 15.0,
+        "Semantic Interpretation Failure": 10.0,
+        "Formatting Failure": 5.0,
+        "Unknown": 10.0
+      },
+      "70": {
+        "Horizon Collapse": 40.0,
+        "State Tracking Failure": 40.0,
+        "Transition Rule Failure": 15.0,
+        "Unknown": 5.0
+      },
+      "75": {
+        "Transition Rule Failure": 20.0,
+        "Semantic Interpretation Failure": 15.0,
+        "Horizon Collapse": 45.0,
+        "State Tracking Failure": 15.0,
+        "Formatting Failure": 5.0
+      },
+      "78": {
+        "Transition Rule Failure": 20.0,
+        "Horizon Collapse": 65.0,
+        "State Tracking Failure": 15.0
+      },
+      "79": {
+        "Unknown": 10.0,
+        "Transition Rule Failure": 20.0,
+        "State Tracking Failure": 40.0,
+        "Horizon Collapse": 30.0
+      },
+      "80": {
+        "Horizon Collapse": 40.0,
+        "None": 10.0,
+        "State Tracking Failure": 15.0,
+        "Transition Rule Failure": 20.0,
+        "Semantic Interpretation Failure": 15.0
+      },
+      "115": {
+        "State Tracking Failure": 35.0,
+        "Transition Rule Failure": 30.0,
+        "Semantic Interpretation Failure": 10.0,
+        "Horizon Collapse": 10.0,
+        "None": 5.0,
+        "Formatting Failure": 5.0,
+        "Unknown": 5.0
+      },
+      "97": {
+        "Semantic Interpretation Failure": 20.0,
+        "Transition Rule Failure": 15.0,
+        "Formatting Failure": 25.0,
+        "Horizon Collapse": 30.0,
+        "State Tracking Failure": 10.0
+      },
+      "88": {
+        "Formatting Failure": 10.0,
+        "Semantic Interpretation Failure": 20.0,
+        "State Tracking Failure": 35.0,
+        "Horizon Collapse": 30.0,
+        "Transition Rule Failure": 5.0
+      },
+      "92": {
+        "State Tracking Failure": 25.0,
+        "Transition Rule Failure": 20.0,
+        "Horizon Collapse": 30.0,
+        "Semantic Interpretation Failure": 10.0,
+        "Unknown": 10.0,
+        "None": 5.0
+      },
+      "94": {
+        "Semantic Interpretation Failure": 25.0,
+        "State Tracking Failure": 20.0,
+        "Unknown": 5.0,
+        "Transition Rule Failure": 25.0,
+        "Horizon Collapse": 15.0,
+        "Formatting Failure": 10.0
+      },
+      "93": {
+        "State Tracking Failure": 25.0,
+        "Semantic Interpretation Failure": 20.0,
+        "Horizon Collapse": 45.0,
+        "Unknown": 5.0,
+        "Formatting Failure": 5.0
+      },
+      "122": {
+        "Transition Rule Failure": 15.0,
+        "State Tracking Failure": 35.0,
+        "Horizon Collapse": 20.0,
+        "Semantic Interpretation Failure": 30.0
+      },
+      "107": {
+        "State Tracking Failure": 25.0,
+        "Horizon Collapse": 45.0,
+        "Transition Rule Failure": 10.0,
+        "Formatting Failure": 10.0,
+        "Unknown": 10.0
+      },
+      "114": {
+        "Horizon Collapse": 30.0,
+        "Formatting Failure": 10.0,
+        "Transition Rule Failure": 20.0,
+        "State Tracking Failure": 25.0,
+        "Unknown": 10.0,
+        "Semantic Interpretation Failure": 5.0
+      },
+      "118": {
+        "State Tracking Failure": 35.0,
+        "Horizon Collapse": 25.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Unknown": 20.0,
+        "Transition Rule Failure": 15.0
+      },
+      "120": {
+        "Horizon Collapse": 10.0,
+        "Unknown": 30.0,
+        "State Tracking Failure": 35.0,
+        "Transition Rule Failure": 15.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Formatting Failure": 5.0
+      },
+      "119": {
+        "State Tracking Failure": 40.0,
+        "Horizon Collapse": 15.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Transition Rule Failure": 30.0,
+        "Unknown": 10.0
+      },
+      "10": {
+        "Horizon Collapse": 35.0,
+        "Semantic Interpretation Failure": 20.0,
+        "Transition Rule Failure": 30.0,
+        "None": 1.6666666666666667,
+        "Formatting Failure": 11.666666666666666,
+        "State Tracking Failure": 1.6666666666666667
+      },
+      "5": {
+        "Horizon Collapse": 50.0,
+        "Transition Rule Failure": 35.0,
+        "Semantic Interpretation Failure": 6.666666666666667,
+        "State Tracking Failure": 5.0,
+        "Formatting Failure": 3.3333333333333335
+      },
+      "7": {
+        "Semantic Interpretation Failure": 30.0,
+        "Transition Rule Failure": 16.666666666666664,
+        "Horizon Collapse": 31.666666666666664,
+        "Formatting Failure": 16.666666666666664,
+        "State Tracking Failure": 5.0
+      },
+      "6": {
+        "Formatting Failure": 15.0,
+        "Horizon Collapse": 32.5,
+        "Semantic Interpretation Failure": 35.0,
+        "Transition Rule Failure": 17.5
+      },
+      "9": {
+        "Semantic Interpretation Failure": 20.0,
+        "Transition Rule Failure": 30.0,
+        "Horizon Collapse": 30.0,
+        "State Tracking Failure": 5.0,
+        "Formatting Failure": 15.0
+      },
+      "8": {
+        "Semantic Interpretation Failure": 20.0,
+        "Horizon Collapse": 30.0,
+        "State Tracking Failure": 5.0,
+        "Transition Rule Failure": 30.0,
+        "Formatting Failure": 10.0,
+        "None": 5.0
+      }
+    }
+  }
+]
+2026-09-06T00:59:03.293564 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=0.771, GBI=4.000, GE=0.205
+  Horizon z=10: HC=0.599, GBI=3.408, GE=0.236
+  Horizon z=15: HC=0.677, GBI=2.709, GE=0.295
+  Horizon z=17: HC=0.696, GBI=2.294, GE=0.375
+  Horizon z=18: HC=0.690, GBI=2.214, GE=0.392
+  Horizon z=19: HC=0.650, GBI=2.269, GE=0.361
+  Horizon z=20: HC=0.798, GBI=1.520, GE=0.597
+  Horizon z=21: HC=0.819, GBI=1.312, GE=0.696
+  Horizon z=22: HC=0.816, GBI=1.457, GE=0.631
+  Horizon z=23: HC=0.799, GBI=1.371, GE=0.614
+  Horizon z=24: HC=0.870, GBI=0.907, GE=0.751
+  Horizon z=25: HC=0.909, GBI=0.914, GE=0.763
+  Horizon z=26: HC=0.899, GBI=0.759, GE=0.770
+  Horizon z=29: HC=0.890, GBI=0.835, GE=0.758
+  Horizon z=30: HC=0.916, GBI=0.384, GE=0.891
+  Horizon z=31: HC=0.877, GBI=0.712, GE=0.774
+  Horizon z=34: HC=0.922, GBI=0.166, GE=0.941
+2026-09-06T00:59:03.327819 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=0.771, GBI=4.000, GE=0.205, FractureDepth=0.0
+  Gravity 0.5: HC=0.802, GBI=1.431, GE=0.620, FractureDepth=0.0
+  Gravity 3.0: HC=0.802, GBI=1.538, GE=0.595, FractureDepth=0.0
+  Gravity 15.0: HC=0.806, GBI=1.466, GE=0.616, FractureDepth=0.0
+2026-09-06T00:59:03.333222 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 51.8
+Exact Match              | 4.9
+Continuity               | 48.5
+Horizon Compliance       | 80.4
+GBI                      | 1.48
+Efficiency               | 61.0
+Fracture Depth           | 22
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=34.0, accuracy=0.7
+- tier_0                        : fracture_depth=21.0, accuracy=0.5
+- tier_2                        : fracture_depth=24.0, accuracy=0.5
+- tier_3                        : fracture_depth=23.0, accuracy=0.5
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 0.556
+- Trajectory Fidelity: 0.414
+- Horizon Robustness: 0.480
+- Semantic Robustness: 0.976
+- Generation Efficiency: 0.610
+
+Failure Analysis:
+- State Tracking Failure        : 52.7%
+- Transition Rule Failure       : 17.6%
+- Semantic Interpretation Failure: 0.3%
+- Horizon Collapse              : 24.4%
+- Formatting Failure            : 0.0%
+- None                          : 4.9%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        3557.468 ms
+- Median Latency:      3410.894 ms
+- P95 Latency:         6187.162 ms
+- Maximum Latency:     13036.648 ms
+- Mean Output Tokens/sec: 125.431
+- Mean Correct Steps/sec: 3.485
+- ALE: 0.1557
+- Correct Steps/sec: 3.485
+============================================================
+2026-09-06T00:59:03.351380 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               mistral-small-2603
+Run Status:          COMPLETE
+Completed Probes:    2185 / 2185
+Master Seeds:        219, 472, 2190, 5396, 6430
+Accuracy:            51.8%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=10  : 60.0%
+  z=15  : 70.0%
+  z=17  : 70.0%
+  z=18  : 70.0%
+  z=19  : 60.0%
+  z=20  : 50.0%
+  z=21  : 50.0%
+  z=22  : 50.0%
+  z=23  : 50.0%
+  z=24  : 50.0%
+  z=25  : 40.0%
+  z=26  : 30.0%
+  z=29  : 50.0%
+  z=30  : 40.0%
+  z=31  : 40.0%
+  z=34  : 30.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=0.5 : 51.4%
+  gravity=3.0 : 52.2%
+  gravity=15.0: 51.3%
+
+Per-Tier Accuracy:
+  tier_0  : 48.8%
+  tier_1  : 65.0%
+  tier_2  : 47.6%
+  tier_3  : 45.4%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 505.2
+Maximum Output Tokens: 2486.0
+Average Latency:       3557.468
+Failure Count:         2077
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [219, 472, 2190, 5396, 6430]
+  CRI:                 0.597 +/- 0.029
+  Fracture Depth:      23.0 +/- 1.4
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        3557.468 ms
+Median Latency:      3410.894 ms
+P95 Latency:         6187.162 ms
+Maximum Latency:     13036.648 ms
+Mean Output Tokens/sec: 125.431
+Mean Correct Steps/sec: 3.485
+
+Normalized Efficiency:
+  ALE: 0.1557
+  Correct Steps/sec: 3.485
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 2265.218 ms
+    Correct Steps/sec: 1.819
+  z=10:
+    Mean Latency: 3585.389 ms
+    Correct Steps/sec: 1.946
+  z=15:
+    Mean Latency: 3923.276 ms
+    Correct Steps/sec: 2.807
+  z=17:
+    Mean Latency: 3956.501 ms
+    Correct Steps/sec: 3.070
+  z=18:
+    Mean Latency: 4013.363 ms
+    Correct Steps/sec: 3.272
+  z=19:
+    Mean Latency: 4249.657 ms
+    Correct Steps/sec: 3.248
+  z=20:
+    Mean Latency: 3554.605 ms
+    Correct Steps/sec: 3.622
+  z=21:
+    Mean Latency: 3649.902 ms
+    Correct Steps/sec: 3.431
+  z=22:
+    Mean Latency: 3774.435 ms
+    Correct Steps/sec: 3.592
+  z=23:
+    Mean Latency: 3773.080 ms
+    Correct Steps/sec: 3.797
+  z=24:
+    Mean Latency: 3133.014 ms
+    Correct Steps/sec: 4.125
+  z=25:
+    Mean Latency: 3361.738 ms
+    Correct Steps/sec: 3.510
+  z=26:
+    Mean Latency: 3282.845 ms
+    Correct Steps/sec: 3.181
+  z=29:
+    Mean Latency: 3430.310 ms
+    Correct Steps/sec: 4.135
+  z=30:
+    Mean Latency: 3000.808 ms
+    Correct Steps/sec: 3.790
+  z=31:
+    Mean Latency: 3184.881 ms
+    Correct Steps/sec: 4.391
+  z=34:
+    Mean Latency: 2487.342 ms
+    Correct Steps/sec: 4.492
+============================================================
+2026-09-06T00:59:04.970680 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.5,
+    "distribution": {
+      "20": {
+        "State Tracking Failure": 47.0,
+        "Transition Rule Failure": 19.0,
+        "Horizon Collapse": 28.000000000000004,
+        "None": 6.0
+      },
+      "10": {
+        "Horizon Collapse": 52.5,
+        "Transition Rule Failure": 42.5,
+        "None": 2.5,
+        "State Tracking Failure": 2.5
+      },
+      "15": {
+        "Transition Rule Failure": 35.0,
+        "Horizon Collapse": 40.0,
+        "State Tracking Failure": 20.0,
+        "None": 5.0
+      },
+      "17": {
+        "Horizon Collapse": 42.5,
+        "Transition Rule Failure": 30.0,
+        "State Tracking Failure": 25.0,
+        "None": 2.5
+      },
+      "18": {
+        "Horizon Collapse": 45.0,
+        "Transition Rule Failure": 22.5,
+        "State Tracking Failure": 30.0,
+        "None": 2.5
+      },
+      "19": {
+        "Horizon Collapse": 45.0,
+        "Transition Rule Failure": 30.0,
+        "State Tracking Failure": 20.0,
+        "None": 5.0
+      },
+      "29": {
+        "State Tracking Failure": 70.0,
+        "Transition Rule Failure": 5.0,
+        "None": 12.5,
+        "Horizon Collapse": 12.5
+      },
+      "24": {
+        "State Tracking Failure": 71.66666666666667,
+        "Horizon Collapse": 15.0,
+        "Transition Rule Failure": 6.666666666666667,
+        "None": 6.666666666666667
+      },
+      "26": {
+        "State Tracking Failure": 70.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Horizon Collapse": 10.0,
+        "Transition Rule Failure": 15.0
+      },
+      "25": {
+        "State Tracking Failure": 71.25,
+        "Transition Rule Failure": 13.750000000000002,
+        "Horizon Collapse": 8.75,
+        "None": 6.25
+      },
+      "30": {
+        "State Tracking Failure": 86.25,
+        "Horizon Collapse": 7.5,
+        "Transition Rule Failure": 5.0,
+        "None": 1.25
+      },
+      "22": {
+        "Transition Rule Failure": 13.333333333333334,
+        "State Tracking Failure": 55.00000000000001,
+        "Horizon Collapse": 28.333333333333332,
+        "None": 3.3333333333333335
+      },
+      "21": {
+        "State Tracking Failure": 70.0,
+        "Horizon Collapse": 15.0,
+        "Transition Rule Failure": 15.0
+      },
+      "23": {
+        "State Tracking Failure": 57.49999999999999,
+        "Horizon Collapse": 25.0,
+        "Transition Rule Failure": 12.5,
+        "None": 5.0
+      },
+      "34": {
+        "State Tracking Failure": 95.0,
+        "Horizon Collapse": 5.0
+      },
+      "31": {
+        "State Tracking Failure": 75.0,
+        "Horizon Collapse": 15.0,
+        "Transition Rule Failure": 10.0
+      }
+    }
+  },
+  {
+    "gravity": 3.0,
+    "distribution": {
+      "20": {
+        "State Tracking Failure": 49.0,
+        "Transition Rule Failure": 19.0,
+        "Horizon Collapse": 28.999999999999996,
+        "None": 2.0,
+        "Semantic Interpretation Failure": 1.0
+      },
+      "10": {
+        "Horizon Collapse": 52.5,
+        "Transition Rule Failure": 40.0,
+        "None": 5.0,
+        "State Tracking Failure": 2.5
+      },
+      "15": {
+        "Transition Rule Failure": 32.5,
+        "Horizon Collapse": 40.0,
+        "State Tracking Failure": 17.5,
+        "None": 10.0
+      },
+      "17": {
+        "Horizon Collapse": 37.5,
+        "Transition Rule Failure": 30.0,
+        "State Tracking Failure": 27.500000000000004,
+        "None": 5.0
+      },
+      "18": {
+        "Horizon Collapse": 40.0,
+        "Transition Rule Failure": 25.0,
+        "State Tracking Failure": 27.500000000000004,
+        "None": 7.5
+      },
+      "19": {
+        "Horizon Collapse": 37.5,
+        "Transition Rule Failure": 32.5,
+        "State Tracking Failure": 22.5,
+        "None": 7.5
+      },
+      "29": {
+        "State Tracking Failure": 67.5,
+        "Transition Rule Failure": 5.0,
+        "None": 12.5,
+        "Horizon Collapse": 15.0
+      },
+      "24": {
+        "State Tracking Failure": 65.0,
+        "Horizon Collapse": 21.666666666666668,
+        "Transition Rule Failure": 10.0,
+        "None": 3.3333333333333335
+      },
+      "26": {
+        "State Tracking Failure": 70.0,
+        "Semantic Interpretation Failure": 5.0,
+        "Horizon Collapse": 10.0,
+        "Transition Rule Failure": 15.0
+      },
+      "25": {
+        "State Tracking Failure": 75.0,
+        "Transition Rule Failure": 13.750000000000002,
+        "Horizon Collapse": 6.25,
+        "None": 5.0
+      },
+      "30": {
+        "State Tracking Failure": 88.33333333333333,
+        "Horizon Collapse": 8.333333333333332,
+        "None": 3.3333333333333335
+      },
+      "22": {
+        "Transition Rule Failure": 15.0,
+        "State Tracking Failure": 56.25,
+        "Horizon Collapse": 22.5,
+        "None": 6.25
+      },
+      "23": {
+        "Horizon Collapse": 18.333333333333332,
+        "None": 8.333333333333332,
+        "State Tracking Failure": 50.0,
+        "Transition Rule Failure": 21.666666666666668,
+        "Semantic Interpretation Failure": 1.6666666666666667
+      },
+      "21": {
+        "State Tracking Failure": 60.0,
+        "Horizon Collapse": 20.0,
+        "Transition Rule Failure": 15.0,
+        "None": 5.0
+      }
+    }
+  },
+  {
+    "gravity": 15.0,
+    "distribution": {
+      "20": {
+        "State Tracking Failure": 56.00000000000001,
+        "Transition Rule Failure": 14.000000000000002,
+        "Horizon Collapse": 26.0,
+        "None": 3.0,
+        "Semantic Interpretation Failure": 1.0
+      },
+      "10": {
+        "Horizon Collapse": 47.5,
+        "Transition Rule Failure": 45.0,
+        "State Tracking Failure": 5.0,
+        "None": 2.5
+      },
+      "15": {
+        "Transition Rule Failure": 32.5,
+        "Horizon Collapse": 42.5,
+        "State Tracking Failure": 20.0,
+        "None": 5.0
+      },
+      "17": {
+        "Horizon Collapse": 42.5,
+        "Transition Rule Failure": 25.0,
+        "State Tracking Failure": 27.500000000000004,
+        "None": 5.0
+      },
+      "18": {
+        "Horizon Collapse": 45.0,
+        "Transition Rule Failure": 25.0,
+        "State Tracking Failure": 22.5,
+        "None": 7.5
+      },
+      "19": {
+        "Horizon Collapse": 40.0,
+        "Transition Rule Failure": 37.5,
+        "State Tracking Failure": 17.5,
+        "None": 5.0
+      },
+      "29": {
+        "State Tracking Failure": 72.5,
+        "Transition Rule Failure": 5.0,
+        "None": 7.5,
+        "Horizon Collapse": 15.0
+      },
+      "24": {
+        "State Tracking Failure": 65.0,
+        "Horizon Collapse": 21.666666666666668,
+        "Transition Rule Failure": 8.333333333333332,
+        "None": 5.0
+      },
+      "26": {
+        "State Tracking Failure": 72.5,
+        "Semantic Interpretation Failure": 2.5,
+        "Horizon Collapse": 7.5,
+        "Transition Rule Failure": 17.5
+      },
+      "25": {
+        "State Tracking Failure": 71.0,
+        "Transition Rule Failure": 14.000000000000002,
+        "Horizon Collapse": 8.0,
+        "None": 6.0,
+        "Formatting Failure": 1.0
+      },
+      "30": {
+        "State Tracking Failure": 90.0,
+        "Horizon Collapse": 6.666666666666667,
+        "Transition Rule Failure": 1.6666666666666667,
+        "None": 1.6666666666666667
+      },
+      "22": {
+        "Transition Rule Failure": 11.666666666666666,
+        "State Tracking Failure": 55.00000000000001,
+        "Horizon Collapse": 28.333333333333332,
+        "None": 5.0
+      },
+      "21": {
+        "State Tracking Failure": 70.0,
+        "Horizon Collapse": 15.0,
+        "Transition Rule Failure": 15.0
+      },
+      "23": {
+        "State Tracking Failure": 52.5,
+        "None": 10.0,
+        "Horizon Collapse": 17.5,
+        "Transition Rule Failure": 17.5,
+        "Semantic Interpretation Failure": 2.5
+      }
+    }
+  }
+]

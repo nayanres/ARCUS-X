@@ -1,0 +1,141 @@
+{
+  "model": "nvidia.nemotron-super-3-120b",
+  "run_status": "COMPLETE",
+  "completed_probes": 2265,
+  "total_probes": 2105,
+  "accuracy": 48.4,
+  "per_horizon_accuracy": {
+    "3": 1.0,
+    "10": 0.8,
+    "15": 0.6,
+    "16": 0.6,
+    "17": 0.5,
+    "18": 0.5,
+    "19": 0.5,
+    "20": 0.5,
+    "21": 0.5,
+    "22": 0.4,
+    "23": 0.5,
+    "24": 0.4,
+    "25": 0.4,
+    "26": 0.4,
+    "29": 0.3,
+    "30": 0.3,
+    "32": 0.3
+  },
+  "per_gravity_accuracy": {
+    "0.0": 1.0,
+    "0.5": 0.4536,
+    "3.0": 0.5157,
+    "15.0": 0.4709
+  },
+  "per_tier_accuracy": {
+    "tier_0": 0.5671,
+    "tier_1": 0.4678,
+    "tier_2": 0.5103,
+    "tier_3": 0.3906
+  },
+  "avg_output_tokens": 120.6,
+  "max_output_tokens": 8192.0,
+  "avg_latency": 2321.117,
+  "total_cost": 0.0,
+  "failure_taxonomy": {},
+  "latency_diagnostics": {
+    "mean_latency_ms": 2321.1172,
+    "median_latency_ms": 2071.6832,
+    "p95_latency_ms": 3833.3309,
+    "max_latency_ms": 52912.4293,
+    "mean_output_tokens_per_sec": 51.4903,
+    "mean_correct_steps_per_sec": 4.7668,
+    "ale": 0.2327,
+    "correct_steps_per_sec": 4.7668,
+    "per_horizon": [
+      {
+        "horizon": "3",
+        "mean_latency_ms": 1394.0599,
+        "correct_steps_per_sec": 2.9935
+      },
+      {
+        "horizon": "10",
+        "mean_latency_ms": 1982.1848,
+        "correct_steps_per_sec": 4.6272
+      },
+      {
+        "horizon": "15",
+        "mean_latency_ms": 2376.6635,
+        "correct_steps_per_sec": 4.6162
+      },
+      {
+        "horizon": "16",
+        "mean_latency_ms": 1727.0025,
+        "correct_steps_per_sec": 5.7183
+      },
+      {
+        "horizon": "17",
+        "mean_latency_ms": 2258.0253,
+        "correct_steps_per_sec": 4.6901
+      },
+      {
+        "horizon": "18",
+        "mean_latency_ms": 2252.55,
+        "correct_steps_per_sec": 4.7454
+      },
+      {
+        "horizon": "19",
+        "mean_latency_ms": 2318.8185,
+        "correct_steps_per_sec": 4.705
+      },
+      {
+        "horizon": "20",
+        "mean_latency_ms": 2140.2063,
+        "correct_steps_per_sec": 5.1883
+      },
+      {
+        "horizon": "21",
+        "mean_latency_ms": 2165.6255,
+        "correct_steps_per_sec": 4.9097
+      },
+      {
+        "horizon": "22",
+        "mean_latency_ms": 2190.7996,
+        "correct_steps_per_sec": 4.9536
+      },
+      {
+        "horizon": "23",
+        "mean_latency_ms": 2320.2944,
+        "correct_steps_per_sec": 5.1001
+      },
+      {
+        "horizon": "24",
+        "mean_latency_ms": 2314.5688,
+        "correct_steps_per_sec": 4.4827
+      },
+      {
+        "horizon": "25",
+        "mean_latency_ms": 2567.661,
+        "correct_steps_per_sec": 4.7848
+      },
+      {
+        "horizon": "26",
+        "mean_latency_ms": 2572.6815,
+        "correct_steps_per_sec": 4.1316
+      },
+      {
+        "horizon": "29",
+        "mean_latency_ms": 2513.4464,
+        "correct_steps_per_sec": 4.1802
+      },
+      {
+        "horizon": "30",
+        "mean_latency_ms": 2691.527,
+        "correct_steps_per_sec": 4.613
+      },
+      {
+        "horizon": "32",
+        "mean_latency_ms": 3965.7072,
+        "correct_steps_per_sec": 4.1792
+      }
+    ],
+    "diagnostic_note": "Latency is a systems-level diagnostic (provider infrastructure, architecture, batching, deployment). It is NOT a model capability score and is excluded from CRI/GBI/trajectory/fracture metrics."
+  }
+}

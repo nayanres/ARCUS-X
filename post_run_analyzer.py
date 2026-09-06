@@ -937,12 +937,15 @@ def _parse_grid(grid_str: str) -> Tuple[int, int]:
         return 0, 0
 
 
-def _parse_actions(actions_str: str) -> List[str]:
-    """Parse a Python list-literal string of actions."""
+def _parse_actions(actions_value: Any) -> List[str]:
+    """Parse a Python list-literal string, tolerating scalar action metadata."""
     try:
-        return [str(a) for a in ast.literal_eval(actions_str)]
+        parsed = ast.literal_eval(actions_value) if isinstance(actions_value, str) else actions_value
     except (ValueError, SyntaxError):
         return []
+    if not isinstance(parsed, (list, tuple)):
+        return []
+    return [str(action) for action in parsed]
 
 
 def _parse_transition_rules(rules_str: str) -> Optional[Dict[str, Dict[str, int]]]:
