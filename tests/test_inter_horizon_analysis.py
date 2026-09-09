@@ -45,5 +45,13 @@ def test_all_tax_only_adds_detail_and_horizons_are_numeric():
                _entry(3)]
     default = render_report(analyze_entries(entries))
     detailed = render_report(analyze_entries(entries), all_tax=True)
-    assert default == detailed.split("=" * 60 + "\nTaxonomy By Horizon And Trajectory Third", 1)[0].rstrip()
+    assert default == detailed.split("=" * 60 + "\nTrajectory-level Taxonomy By Horizon", 1)[0].rstrip()
     assert detailed.index("z=3") < detailed.index("z=10")
+
+
+def test_taxonomy_is_reported_once_at_trajectory_level():
+    report = render_report(analyze_entries([_entry()]))
+    assert "Trajectory-level Taxonomy Distribution" in report
+    assert "Taxonomy labels are trajectory-level; they are not localized to a third." in report
+    assert "Aggregate Error Taxonomy By Trajectory Third" not in report
+    assert report.count("State Tracking Failure:") == 1

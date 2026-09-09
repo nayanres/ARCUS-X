@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Post-hoc inter-horizon trajectory analysis for ARCUS-X raw output logs."""
+"""Post-hoc inter-horizon trajectory analysis for ARCUS-X raw output logs.
+
+Taxonomy is reported at trajectory level because the canonical classifier does
+not provide step-local taxonomy labels. Step accuracy, however, is computed
+for each trajectory third.
+"""
 
 from __future__ import annotations
 
@@ -28,9 +33,15 @@ TAXONOMY_BUCKETS = (
 TAXONOMY_MAP = {
     "State Tracking Failure": "State Tracking Failure",
     "Transition Failure": "Transition Rule Failure",
+    "Transition Rule Failure": "Transition Rule Failure",
     "Semantic Failure": "Semantic Interpretation Failure",
+    "Semantic Interpretation Failure": "Semantic Interpretation Failure",
     "Horizon Failure": "Horizon Collapse",
+    "Horizon Collapse": "Horizon Collapse",
     "Output Format Failure": "Formatting Failure",
+    "Formatting Failure": "Formatting Failure",
+    "Unknown Failure": "Unknown / Unmapped",
+    "Unknown / Unmapped": "Unknown / Unmapped",
     "None": "None",
 }
 INVALID_CODES = {
@@ -161,7 +172,7 @@ def _percent(correct: int, total: int) -> str:
 def render_report(analyzed: list[AnalyzedEntry], all_tax: bool = False) -> str:
     accuracy: dict[int, dict[str, list[int]]] = defaultdict(lambda: defaultdict(lambda: [0, 0]))
     taxonomy: dict[str, Counter[str]] = defaultdict(Counter)
-    per_horizon_tax: dict[int, dict[str, Counter[str]]] = defaultdict(lambda: defaultdict(Counter))
+    per_horizon_tax: dict[int, Counter[str]] = defaultdict(Counter)
 
     for item in analyzed:
         for region in ("early", "middle", "end"):
@@ -175,14 +186,9 @@ def render_report(analyzed: list[AnalyzedEntry], all_tax: bool = False) -> str:
                 continue
             accuracy[item.entry.z][region][1] += 1
             accuracy[item.entry.z][region][0] += item.predicted[step] == item.expected[step]
-        for region in ("early", "middle", "end"):
-            if sizes[region] and any(
-                step < len(item.expected) and step < len(item.predicted)
-                for step in range(1, item.entry.z + 1)
-                if _region_for_step(step, sizes) == region
-            ):
-                taxonomy[region][item.taxonomy or "Unknown / Unmapped"] += 1
-                per_horizon_tax[item.entry.z][region][item.taxonomy or "Unknown / Unmapped"] += 1
+        label = item.taxonomy or "Unknown / Unmapped"
+        taxonomy["trajectory"][label] += 1
+        per_horizon_tax[item.entry.z][label] += 1
 
     lines = [
         "=" * 60,
@@ -198,21 +204,19 @@ def render_report(analyzed: list[AnalyzedEntry], all_tax: bool = False) -> str:
         for region in ("early", "middle", "end"):
             correct, total = accuracy[z][region]
             lines.append(f"{region + ':':<8}{_percent(correct, total)}")
-    lines.extend(["", "=" * 60, "Aggregate Error Taxonomy By Trajectory Third", "=" * 60])
-    for region in ("early", "middle", "end"):
-        lines.extend(["", f"{region.title()}:"])
-        counts = taxonomy[region]
-        for bucket in TAXONOMY_BUCKETS:
-            lines.append(f"{bucket}: {_percent(counts[bucket], sum(counts.values()))}")
+    lines.extend(["", "=" * 60, "Trajectory-level Taxonomy Distribution", "=" * 60])
+    lines.append("")
+    lines.append("Taxonomy labels are trajectory-level; they are not localized to a third.")
+    counts = taxonomy["trajectory"]
+    for bucket in TAXONOMY_BUCKETS:
+        lines.append(f"{bucket}: {_percent(counts[bucket], sum(counts.values()))}")
     if all_tax:
-        lines.extend(["", "=" * 60, "Taxonomy By Horizon And Trajectory Third", "=" * 60])
+        lines.extend(["", "=" * 60, "Trajectory-level Taxonomy By Horizon", "=" * 60])
         for z in sorted(per_horizon_tax):
             lines.extend(["", f"z={z}"])
-            for region in ("early", "middle", "end"):
-                lines.extend(["", f"{region.title()}:"])
-                counts = per_horizon_tax[z][region]
-                for bucket in TAXONOMY_BUCKETS:
-                    lines.append(f"{bucket}: {_percent(counts[bucket], sum(counts.values()))}")
+            counts = per_horizon_tax[z]
+            for bucket in TAXONOMY_BUCKETS:
+                lines.append(f"{bucket}: {_percent(counts[bucket], sum(counts.values()))}")
     return "\n".join(lines)
 
 

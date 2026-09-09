@@ -132,9 +132,19 @@ primary metrics but never used as the sole success criterion):
 - **Error Taxonomy** — classifies *why* a trajectory failed:
   `State Tracking Failure`, `Transition Rule Failure`,
   `Semantic Interpretation Failure`, `Horizon Collapse`, `Formatting Failure`.
-- **Fracture Depth** — horizon where step accuracy drops below 0.5 and stays
-  there (with look-ahead to avoid transient dips).
-- **Adaptive Fracture Search (AFS) Operational Filtering** — AFS bisection searches compute batch accuracy using operationally valid probes only, excluding infrastructure and execution errors (`is_infra`). When an entire batch consists of failed probes, batch accuracy returns `None` (insufficient evidence) rather than `0.0`, ensuring bisection retreats gracefully without treating operational outages as cognitive failure. Resumed/cached runs enforce identical validity filtering.
+- **Fracture Depth** — the canonical reporting detector returns the first
+  horizon whose step accuracy is strictly below `0.5` and is not followed by a
+  recovery within its look-ahead window. This look-ahead belongs to reporting;
+  it is not the AFS search algorithm.
+- **Adaptive Fracture Search (AFS)** — the active search uses deterministic
+  midpoint bisection over the horizon bounds. Each midpoint is classified from
+  the observed batch accuracy: operationally invalid probes are filtered out
+  before the mean is computed, and a batch with no valid probes yields
+  `None` rather than `0.0`. AFS does not require three consecutive failures,
+  does not treat exactly `50%` accuracy as fracture, and does not claim
+  unbiasedness or unique horizon evaluations. Resume/cached observations may
+  therefore be reused. AFS and the canonical fracture detector are separate
+  layers; the search loop is not implemented by `FracturePointFinder`.
 - **ARCUS Robustness Index (CRI)** — *secondary aggregate* robustness indicator
   (NOT a primary metric). It summarises correctness retention across horizons,
   semantic perturbations, and efficiency:
