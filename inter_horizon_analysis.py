@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from arcus.analysis.taxonomy import classify_from_result
+from arcus.analysis.reporting import canonicalize_taxonomy, is_fully_correct
 from arcus.evaluation.parser import extract_model_path
 
 
@@ -30,20 +31,6 @@ TAXONOMY_BUCKETS = (
     "Unknown / Unmapped",
     "None",
 )
-TAXONOMY_MAP = {
-    "State Tracking Failure": "State Tracking Failure",
-    "Transition Failure": "Transition Rule Failure",
-    "Transition Rule Failure": "Transition Rule Failure",
-    "Semantic Failure": "Semantic Interpretation Failure",
-    "Semantic Interpretation Failure": "Semantic Interpretation Failure",
-    "Horizon Failure": "Horizon Collapse",
-    "Horizon Collapse": "Horizon Collapse",
-    "Output Format Failure": "Formatting Failure",
-    "Formatting Failure": "Formatting Failure",
-    "Unknown Failure": "Unknown / Unmapped",
-    "Unknown / Unmapped": "Unknown / Unmapped",
-    "None": "None",
-}
 INVALID_CODES = {
     "E100_EXCEPTION_TOKEN",
     "E101_EMPTY_OUTPUT",
@@ -141,10 +128,20 @@ def _taxonomy(entry: RawEntry, predicted: list[str], expected: list[str]) -> tup
     classification = result.probe_classification
     if not result.valid or (classification and classification.exception_code in INVALID_CODES):
         return False, None
-    mode = result.legacy_mode.value
-    if mode == "None" and predicted != expected:
-        mode = "Unknown / Unmapped"
-    return True, TAXONOMY_MAP.get(mode, "Unknown / Unmapped")
+    classification_dict = (
+        classification.to_dict() if classification is not None else {}
+    )
+    scored = {
+        "step_accuracy": (
+            classification_dict.get("step_accuracy", 1.0 if predicted == expected else 0.0)
+        ),
+        "exact_match": predicted == expected,
+        "probe_classification": classification_dict,
+    }
+    return True, canonicalize_taxonomy(
+        result.legacy_mode.value,
+        is_fully_correct(scored, classification_dict),
+    )
 
 
 def analyze_entries(entries: Iterable[RawEntry]) -> list[AnalyzedEntry]:

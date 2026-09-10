@@ -18,6 +18,12 @@ import re
 import sys
 import statistics
 from typing import Any, Dict, List, Optional, Tuple
+from arcus.analysis.reporting import (
+    TAXONOMY_ALIAS_MAP,
+    canonicalize_taxonomy,
+    is_fully_correct,
+    normalize_taxonomy_label,
+)
 
 # Force UTF-8 output on Windows
 if sys.stdout.encoding != "utf-8":
@@ -34,36 +40,6 @@ if sys.stderr.encoding != "utf-8":
 # ---------------------------------------------------------------------------
 # Taxonomy alias mapping and validity classification constants
 # ---------------------------------------------------------------------------
-TAXONOMY_ALIAS_MAP = {
-    "state drift": "State Tracking Failure",
-    "state tracking failure": "State Tracking Failure",
-    "state tracking": "State Tracking Failure",
-    "wraparound errors": "Transition Rule Failure",
-    "transition rule failure": "Transition Rule Failure",
-    "transition failure": "Transition Rule Failure",
-    "transition": "Transition Rule Failure",
-    "semantic interpretation failure": "Semantic Interpretation Failure",
-    "semantic failure": "Semantic Interpretation Failure",
-    "semantic": "Semantic Interpretation Failure",
-    "horizon collapse": "Horizon Collapse",
-    "horizon failure": "Horizon Collapse",
-    "horizon": "Horizon Collapse",
-    "formatting failures": "Formatting Failure",
-    "formatting failure": "Formatting Failure",
-    "output format failure": "Formatting Failure",
-    "malformed output": "Formatting Failure",
-    "output format": "Formatting Failure",
-    "state tracking failure": "State Tracking Failure",
-    "transition rule": "Transition Rule Failure",
-    "semantic interpretation": "Semantic Interpretation Failure",
-    "none": "None",
-    "no failure": "None",
-    "unknown": "Unknown / Unmapped",
-    "unknown / unmapped": "Unknown / Unmapped",
-    "unmapped": "Unknown / Unmapped",
-    "output format failure": "Formatting Failure",
-}
-
 CANONICAL_TAXONOMY_BUCKETS = (
     "State Tracking Failure",
     "Transition Rule Failure",
@@ -75,42 +51,9 @@ CANONICAL_TAXONOMY_BUCKETS = (
 )
 
 
-def _normalize_taxonomy_label(value: Any) -> str:
-    """Normalize taxonomy strings to a canonical lookup form."""
-    cleaned = str(value or "").strip()
-    cleaned = cleaned.replace("_", " ")
-    cleaned = cleaned.replace("-", " ")
-    cleaned = re.sub(r"\s+", " ", cleaned)
-    return cleaned.lower()
-
-
-def _is_ssot_fully_correct(result: Dict[str, Any], probe_classification: Optional[Dict[str, Any]] = None) -> bool:
-    """Use the canonical trajectory comparison signal from the benchmark pipeline."""
-    if not isinstance(result, dict):
-        return False
-    step_accuracy = _coerce_float(result.get("step_accuracy", 0.0))
-    pc = probe_classification or {}
-    return (
-        bool(result.get("exact_match", False))
-        or bool(pc.get("exact_match", False))
-        or bool(pc.get("trajectory_correct", False))
-        or step_accuracy >= 1.0
-    )
-
-
-def _canonicalize_taxonomy(raw_mode: Any, is_fully_correct: bool) -> str:
-    """Resolve a taxonomy label to the canonical post-run taxonomy buckets."""
-    normalized = _normalize_taxonomy_label(raw_mode)
-    if is_fully_correct:
-        return "None"
-    if normalized in {"", "none", "no failure", "unknown", "unmapped", "unknown / unmapped"}:
-        return "Unknown / Unmapped"
-    mapped = TAXONOMY_ALIAS_MAP.get(normalized)
-    if mapped is not None:
-        return mapped
-    if normalized in {"state tracking failure", "transition rule failure", "semantic interpretation failure", "horizon collapse", "formatting failure"}:
-        return normalized.title().replace(" Of ", " of")
-    return "Unknown / Unmapped"
+_normalize_taxonomy_label = normalize_taxonomy_label
+_is_ssot_fully_correct = is_fully_correct
+_canonicalize_taxonomy = canonicalize_taxonomy
 
 class ExceptionCategory:
     EXCEPTION_TOKEN = "EXCEPTION_TOKEN"
@@ -324,11 +267,9 @@ def _compute_report_metrics(results_matrix: Dict[str, Any], model: str,
         else:
             valid_count += 1
             is_fully_correct = _is_ssot_fully_correct(result, pc)
+            canonical_mode = _canonicalize_taxonomy(error_mode, is_fully_correct)
             if is_fully_correct:
-                canonical_mode = "None"
                 fully_correct_valid_probe_count += 1
-            else:
-                canonical_mode = _canonicalize_taxonomy(error_mode, False)
             if canonical_mode == "None" and not is_fully_correct:
                 raise AssertionError(
                     f"Taxonomy classification violated SSOT correctness for probe {key}: "
@@ -508,16 +449,8 @@ def _compute_aggregated_metrics(results_matrix: Dict[str, Any], seeds,
 
         valid_failure_count += 1
         normalized_mode = str(raw_mode).strip().lower()
-        is_fully_correct = acc >= 1.0 or res.get("exact_match", False) or (pc and isinstance(pc, dict) and (pc.get("exact_match", False) or pc.get("trajectory_correct", False)))
-
-        if is_fully_correct and normalized_mode in ("none", "no failure", "unknown"):
-            canonical_mode = "None"
-        elif normalized_mode in TAXONOMY_ALIAS_MAP:
-            canonical_mode = TAXONOMY_ALIAS_MAP[normalized_mode]
-        elif not is_fully_correct and normalized_mode in ("none", "no failure", "unknown"):
-            canonical_mode = "State Tracking Failure"
-        else:
-            canonical_mode = "Unknown / Unmapped"
+        is_fully_correct = _is_ssot_fully_correct(res, pc)
+        canonical_mode = _canonicalize_taxonomy(raw_mode, is_fully_correct)
 
         if canonical_mode in failure_analysis:
             failure_analysis[canonical_mode] += 1
