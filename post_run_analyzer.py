@@ -307,6 +307,10 @@ def _compute_report_metrics(results_matrix: Dict[str, Any], model: str,
         )
 
     per_horizon_acc = {str(k): _avg_round1(v) for k, v in sorted(per_horizon.items())}
+    per_horizon_density = {
+        str(k): round(len(values) / total_probes_counted * 100.0, 1)
+        for k, values in sorted(per_horizon.items())
+    } if total_probes_counted else {}
     per_gravity_acc = {str(k): _avg_round4(v) for k, v in sorted(per_gravity.items(), key=lambda kv: float(kv[0]))}
     per_tier_acc = {f"tier_{k}": _avg_round4(v) for k, v in sorted(per_tier.items())}
 
@@ -321,6 +325,7 @@ def _compute_report_metrics(results_matrix: Dict[str, Any], model: str,
         "total_probes": total,
         "accuracy": accuracy,
         "per_horizon_accuracy": per_horizon_acc,
+        "per_horizon_density": per_horizon_density,
         "per_gravity_accuracy": per_gravity_acc,
         "per_tier_accuracy": per_tier_acc,
         "avg_output_tokens": avg_output_tokens,
@@ -598,7 +603,7 @@ def _bar(percentage: float, width: int = 20) -> str:
     return "\u2588" * filled + "\u2591" * (width - filled)
 
 
-def _render_report(data: Dict[str, Any]) -> str:
+def _render_report(data: Dict[str, Any], show_density: bool = False) -> str:
     results_matrix = data.get("results_matrix", {})
     model = data.get("model", "unknown")
     run_status = data.get("run_status", "COMPLETE")
@@ -628,6 +633,12 @@ def _render_report(data: Dict[str, Any]) -> str:
     for z in sorted(m["per_horizon_accuracy"].keys(), key=lambda x: float(x)):
         acc = m["per_horizon_accuracy"][z]
         lines.append(f"  z={z:<4}: {acc * 100:.1f}%")
+    if show_density:
+        lines.append("")
+        lines.append("Probe Density by Horizon:")
+        for z in sorted(m["per_horizon_density"].keys(), key=lambda x: float(x)):
+            density = m["per_horizon_density"][z]
+            lines.append(f"  z={z:<4}: {density:.1f}%")
     lines.append("")
     lines.append("Per-Gravity Accuracy:")
     for g, acc in m["per_gravity_accuracy"].items():
@@ -1289,6 +1300,11 @@ def main():
         action="store_true",
         help="Run post-run consistency audit checks (A, B, C, D, E)"
     )
+    parser.add_argument(
+        "--density",
+        action="store_true",
+        help="Include the percentage of all probes at each horizon"
+    )
 
     args = parser.parse_args()
     input_path = args.input_flag or args.input_path
@@ -1320,7 +1336,7 @@ def main():
                 data = process_txt_file(filepath, last_run_only=last_run_only)
             else:
                 raise ValueError(f"Unsupported file type: {filepath}")
-            report = _render_report(data)
+            report = _render_report(data, show_density=args.density)
             print(report)
             if args.audit:
                 aggregated = _compute_aggregated_metrics(data.get("results_matrix", {}), data.get("seeds", [42]), data.get("fracture_cache"))

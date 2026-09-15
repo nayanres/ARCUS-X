@@ -391,9 +391,13 @@ python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.t
 
 # Analyze ONLY the most recent run in a TXT log file with multiple appended runs
 python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --lastrun
+
+# Include the share of all probes at each horizon
+python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --density
 ```
 
 - **`--lastrun`** — filters TXT logs to parse only the most recent run session (starting from the final `ARCUS-X RUN START` block).
+- **`--density`** — adds the percentage of total probes represented by each horizon (for example, `z=3: 3.0%`).
 - **Multi-seed support** — automatically captures all seeds present in the session and reports per-seed variance and metrics correctly.
 
 ### Run it locally (step by step)
