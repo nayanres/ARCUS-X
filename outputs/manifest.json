@@ -1,8 +1,8 @@
 {
-  "experiment_id": "ARCUS-X-exp-local_qwen.qwen3_coder_480b_a35b_v1_0_20260909T202712",
+  "experiment_id": "ARCUS-X-exp-local_minimax.minimax_m2.5_20260917T124552",
   "benchmark_version": "1.0.0",
   "models": [
-    "qwen.qwen3-coder-480b-a35b-v1:0"
+    "minimax.minimax-m2.5"
   ],
   "parameters": {
     "probes": 5,
@@ -55,7 +55,7 @@
     "capabilities": [
       {
         "provider": "unknown",
-        "model": "qwen.qwen3-coder-480b-a35b-v1:0",
+        "model": "minimax.minimax-m2.5",
         "capabilities": {
           "token_parameter": {
             "name": "token_parameter",
@@ -102,9 +102,9 @@
     "note": "Latency is a systems-level diagnostic, NOT a model capability score. It is excluded from CRI/GBI/trajectory/fracture metrics."
   },
   "artifacts": {
-    "raw_log": "absolute_raw_data_local_qwen.qwen3_coder_480b_a35b_v1_0.txt",
+    "raw_log": "absolute_raw_data_local_minimax.minimax_m2.5.txt",
     "results": "benchmark_results.json",
-    "metrics": "metrics_qwen.qwen3-coder-480b-a35b-v1-0.json"
+    "metrics": "metrics_minimax.minimax-m2.5.json"
   },
-  "created": "2026-09-09"
+  "created": "2026-09-17"
 }

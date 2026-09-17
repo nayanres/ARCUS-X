@@ -121,6 +121,8 @@ def _compute_report_metrics(results_matrix: Dict[str, Any], model: str,
                             accuracy: float) -> Dict[str, Any]:
     """Replicates BenchmarkRunner._compute_report_metrics with binary validity."""
     per_horizon: Dict[Any, List[float]] = {}
+    per_horizon_error_counts: Dict[Any, int] = {}
+    per_horizon_error_codes: Dict[Any, Dict[str, int]] = {}
     per_gravity: Dict[Any, List[float]] = {}
     per_tier: Dict[Any, List[float]] = {}
 
@@ -250,20 +252,26 @@ def _compute_report_metrics(results_matrix: Dict[str, Any], model: str,
             invalid_count += 1
             exc = pc.get("exception_code", ExceptionCategory.UNKNOWN_INVALID)
             if ExceptionCategory.EXCEPTION_TOKEN in str(exc):
+                error_code = ErrorCode.E100
                 invalid_category_counts[ExceptionCategory.EXCEPTION_TOKEN] += 1
-                error_code_counts[ErrorCode.E100] += 1
             elif ExceptionCategory.EMPTY_OUTPUT in str(exc):
+                error_code = ErrorCode.E101
                 invalid_category_counts[ExceptionCategory.EMPTY_OUTPUT] += 1
-                error_code_counts[ErrorCode.E101] += 1
             elif ExceptionCategory.PARSE_FAILURE in str(exc):
+                error_code = ErrorCode.E102
                 invalid_category_counts[ExceptionCategory.PARSE_FAILURE] += 1
-                error_code_counts[ErrorCode.E102] += 1
             elif ExceptionCategory.PROVIDER_ERROR in str(exc):
+                error_code = ErrorCode.E103
                 invalid_category_counts[ExceptionCategory.PROVIDER_ERROR] += 1
-                error_code_counts[ErrorCode.E103] += 1
             else:
+                error_code = ErrorCode.E104
                 invalid_category_counts[ExceptionCategory.UNKNOWN_INVALID] += 1
-                error_code_counts[ErrorCode.E104] += 1
+            error_code_counts[error_code] += 1
+            per_horizon_error_counts[z] = per_horizon_error_counts.get(z, 0) + 1
+            horizon_code_counts = per_horizon_error_codes.setdefault(
+                z, {code: 0 for code in error_code_counts}
+            )
+            horizon_code_counts[error_code] += 1
         else:
             valid_count += 1
             is_fully_correct = _is_ssot_fully_correct(result, pc)
@@ -311,6 +319,19 @@ def _compute_report_metrics(results_matrix: Dict[str, Any], model: str,
         str(k): round(len(values) / total_probes_counted * 100.0, 1)
         for k, values in sorted(per_horizon.items())
     } if total_probes_counted else {}
+    per_horizon_error_density = {
+        str(k): round(per_horizon_error_counts.get(k, 0) / len(values) * 100.0, 1)
+        for k, values in sorted(per_horizon.items())
+        if per_horizon_error_counts.get(k, 0) > 0
+    }
+    per_horizon_probe_counts = {
+        str(k): len(values)
+        for k, values in sorted(per_horizon.items())
+    }
+    per_horizon_error_codes_report = {
+        str(k): per_horizon_error_codes[k]
+        for k in sorted(per_horizon_error_codes)
+    }
     per_gravity_acc = {str(k): _avg_round4(v) for k, v in sorted(per_gravity.items(), key=lambda kv: float(kv[0]))}
     per_tier_acc = {f"tier_{k}": _avg_round4(v) for k, v in sorted(per_tier.items())}
 
@@ -326,6 +347,9 @@ def _compute_report_metrics(results_matrix: Dict[str, Any], model: str,
         "accuracy": accuracy,
         "per_horizon_accuracy": per_horizon_acc,
         "per_horizon_density": per_horizon_density,
+        "per_horizon_probe_counts": per_horizon_probe_counts,
+        "per_horizon_error_density": per_horizon_error_density,
+        "per_horizon_error_codes": per_horizon_error_codes_report,
         "per_gravity_accuracy": per_gravity_acc,
         "per_tier_accuracy": per_tier_acc,
         "avg_output_tokens": avg_output_tokens,
@@ -603,7 +627,11 @@ def _bar(percentage: float, width: int = 20) -> str:
     return "\u2588" * filled + "\u2591" * (width - filled)
 
 
-def _render_report(data: Dict[str, Any], show_density: bool = False) -> str:
+def _render_report(
+    data: Dict[str, Any],
+    show_density: bool = False,
+    show_error_density: bool = False,
+) -> str:
     results_matrix = data.get("results_matrix", {})
     model = data.get("model", "unknown")
     run_status = data.get("run_status", "COMPLETE")
@@ -639,6 +667,21 @@ def _render_report(data: Dict[str, Any], show_density: bool = False) -> str:
         for z in sorted(m["per_horizon_density"].keys(), key=lambda x: float(x)):
             density = m["per_horizon_density"][z]
             lines.append(f"  z={z:<4}: {density:.1f}%")
+    if show_error_density:
+        lines.append("")
+        lines.append("Error Density by Horizon:")
+        for z in sorted(m["per_horizon_error_density"].keys(), key=lambda x: float(x)):
+            error_density = m["per_horizon_error_density"][z]
+            total_probes = m["per_horizon_probe_counts"][z]
+            code_counts = m["per_horizon_error_codes"].get(z, {})
+            codes = "   ".join(
+                f"{code}: {code_counts.get(code, 0)}"
+                for code in (ErrorCode.E100, ErrorCode.E101, ErrorCode.E102, ErrorCode.E103, ErrorCode.E104)
+            )
+            lines.append(
+                f"  z={z:<4} {total_probes:>4} probes   {codes}   "
+                f"error density: {error_density:.1f}%"
+            )
     lines.append("")
     lines.append("Per-Gravity Accuracy:")
     for g, acc in m["per_gravity_accuracy"].items():
@@ -1305,6 +1348,11 @@ def main():
         action="store_true",
         help="Include the percentage of all probes at each horizon"
     )
+    parser.add_argument(
+        "--error-density",
+        action="store_true",
+        help="Include non-zero error rates and error codes at each horizon"
+    )
 
     args = parser.parse_args()
     input_path = args.input_flag or args.input_path
@@ -1336,7 +1384,11 @@ def main():
                 data = process_txt_file(filepath, last_run_only=last_run_only)
             else:
                 raise ValueError(f"Unsupported file type: {filepath}")
-            report = _render_report(data, show_density=args.density)
+            report = _render_report(
+                data,
+                show_density=args.density,
+                show_error_density=args.error_density,
+            )
             print(report)
             if args.audit:
                 aggregated = _compute_aggregated_metrics(data.get("results_matrix", {}), data.get("seeds", [42]), data.get("fracture_cache"))

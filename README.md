@@ -394,10 +394,14 @@ python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.t
 
 # Include the share of all probes at each horizon
 python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --density
+
+# Include non-zero error rates and error codes at each horizon
+python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --error-density
 ```
 
 - **`--lastrun`** — filters TXT logs to parse only the most recent run session (starting from the final `ARCUS-X RUN START` block).
 - **`--density`** — adds the percentage of total probes represented by each horizon (for example, `z=3: 3.0%`).
+- **`--error-density`** — adds non-zero operational error rates by horizon using all probes evaluated at that horizon as the denominator, with per-code counts (for example, `z=3   20 probes   E100: 2   E101: 1   error density: 15.0%`).
 - **Multi-seed support** — automatically captures all seeds present in the session and reports per-seed variance and metrics correctly.
 
 ### Run it locally (step by step)
