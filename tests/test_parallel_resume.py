@@ -21,9 +21,6 @@ from arcus.evaluation.api_compat import AdaptationLog, CapabilityCache
 from arcus.experiments.ux import ProgressDisplay
 
 
-# ---------------------------------------------------------------------------
-# Deterministic stub evaluator (no API)
-# ---------------------------------------------------------------------------
 class _StubEvaluator(ModelEvaluator):
     """Returns a deterministic trajectory derived from the ground-truth path.
 
@@ -104,9 +101,6 @@ def _matrix_signature(runner):
     return sig
 
 
-# ---------------------------------------------------------------------------
-# Tests
-# ---------------------------------------------------------------------------
 def test_serial_vs_parallel_deterministic(tmp_path):
     """Parallel execution must produce identical results to serial execution."""
     seeds = [42, 123, 456]
@@ -275,7 +269,6 @@ def test_adaptive_search_state_reconstruction_and_ux(tmp_path):
     seeds = [42]
     r, raw_stream = _make_runner(tmp_path / "adaptive", seeds)
 
-    # 1. Fresh adaptive execution initializes UX from search state
     stream = io.StringIO()
     r.progress = ProgressDisplay(model_name="stub/stub", stream=stream)
     c, f, d = r._reconstruct_adaptive_state(None)
@@ -283,7 +276,6 @@ def test_adaptive_search_state_reconstruction_and_ux(tmp_path):
     assert r.progress.completed_evaluations == 0
     assert r.progress.active_frontier >= 0
 
-    # 2. Progress display never renders invalid empty metadata during execution (shows "Waiting for adaptive search expansion...")
     output = r.progress._build()
     assert "Waiting for adaptive search expansion..." in output
     assert "Seed: -" not in output
@@ -291,10 +283,8 @@ def test_adaptive_search_state_reconstruction_and_ux(tmp_path):
     assert "Gravity: -" not in output
     assert "Depth: -" not in output
 
-    # 3. No static probe denominator is assumed
     assert "%" not in output
 
-    # 4. Active execution metadata displays properly when set
     r.progress.set_context(tier=1, gravity=0.0, horizon=5, seed=42, n_probe="1/5")
     active_output = r.progress._build()
     assert "Seed: 42" in active_output
@@ -304,7 +294,6 @@ def test_adaptive_search_state_reconstruction_and_ux(tmp_path):
     assert "N-Probe: 1/5" in active_output
     assert "Waiting for adaptive search expansion..." not in active_output
 
-    # 5. Interrupted execution reconstructs identical UX state after resume & restores correct adaptive frontier
     r_full, raw_full = _make_runner(tmp_path / "full_exec", seeds)
     r_full.run(output_filepath=str(tmp_path / "full_exec" / "out.json"), parallel_seeds="1")
 

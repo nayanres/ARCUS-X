@@ -54,7 +54,6 @@ def test_generator_respects_grid_size():
     task_16 = gen.generate(tier=0, task_index=0, grid_width=16, grid_height=16, horizon=5)
     assert task_default.grid_width != 16 or task_default.grid_height != 16
     assert task_16.grid_width == 16 and task_16.grid_height == 16
-    # Ground truth recomputed for the larger grid
     assert len(task_16.ground_truth_trajectory) == 6  # initial + 5 steps
 
 

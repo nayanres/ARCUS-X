@@ -15,9 +15,7 @@ from arcus.environment.grid import parse_coord
 logger = logging.getLogger(__name__)
 
 
-# ===========================================================================
 # Invalid Error Codes (Output Validity Layer)
-# ===========================================================================
 E100_EXCEPTION_TOKEN = "E100_EXCEPTION_TOKEN"
 E101_EMPTY_OUTPUT = "E101_EMPTY_OUTPUT"
 E102_PARSE_FAILURE = "E102_PARSE_FAILURE"
@@ -25,9 +23,7 @@ E103_PROVIDER_ERROR = "E103_PROVIDER_ERROR"
 E104_UNKNOWN_INVALID = "E104_UNKNOWN_INVALID"
 
 
-# ===========================================================================
 # Output Compliance Layer (Formatting / Protocol Evaluation)
-# ===========================================================================
 class OutputCompliance(Enum):
     """Output protocol compliance classification.
 
@@ -50,9 +46,7 @@ F005_MALFORMED_TRAJECTORY = "F005_MALFORMED_TRAJECTORY"
 F006_PARSE_FAILURE = "F006_PARSE_FAILURE"
 
 
-# ===========================================================================
 # Layer 0: Outcome Classification
-# ===========================================================================
 class Outcome(Enum):
     """Top-level outcome of a single trajectory comparison."""
 
@@ -61,9 +55,7 @@ class Outcome(Enum):
     UNCLASSIFIABLE = "Unclassifiable"
 
 
-# ===========================================================================
 # Cognitive Failure Buckets (Broad & Scientifically Defensible)
-# ===========================================================================
 class FailureMechanism(Enum):
     """Primary broad cognitive failure mechanism.
 
@@ -81,9 +73,7 @@ class FailureMechanism(Enum):
     UNKNOWN_FAILURE = "Unknown Failure"
 
 
-# ===========================================================================
 # Fine-grained subtypes (retained for evidence mapping)
-# ===========================================================================
 class FailureSubtype(Enum):
     """Fine-grained subtypes for analysis."""
 
@@ -142,9 +132,7 @@ class DivergenceEvolution(Enum):
     NONE = "none"
 
 
-# ===========================================================================
 # Backwards-compatible legacy aliases
-# ===========================================================================
 class ErrorMode(Enum):
     """Legacy enum preserved for backwards compatibility."""
 
@@ -156,9 +144,7 @@ class ErrorMode(Enum):
     FORMATTING_FAILURE = "Formatting Failure"
 
 
-# ===========================================================================
 # Canonical Classification Objects
-# ===========================================================================
 @dataclass(frozen=True)
 class ProbeClassification:
     """Single source of truth classification object separating validity and cognitive failure."""
@@ -258,9 +244,7 @@ class FailureDynamics:
 
 
 
-# ===========================================================================
 # Geometry helpers (toroidal)
-# ===========================================================================
 def toroidal_distance(
     a: Tuple[int, int], b: Tuple[int, int], gw: int, gh: int
 ) -> float:
@@ -698,9 +682,7 @@ def _attribute_mechanism(
     )
 
 
-# ===========================================================================
 # Public Entry Points
-# ===========================================================================
 def classify_trajectory(
     predicted: List[str],
     ground_truth: List[str],
@@ -717,7 +699,6 @@ def classify_trajectory(
     rules = transition_rules or {}
     acts = actions or []
 
-    # --- 1. Binary Output Validity Layer ---
     valid = True
     exception_code: Optional[str] = None
 

@@ -17,9 +17,6 @@ from arcus.evaluation.metrics import LatencyDiagnostics
 from arcus.evaluation.evaluator import ModelEvaluator
 
 
-# ---------------------------------------------------------------------------
-# Unit tests: LatencyDiagnostics math
-# ---------------------------------------------------------------------------
 def test_ale_basic():
     # Accuracy 0.8 over 10s -> ALE 0.08 (matches the spec example).
     assert abs(LatencyDiagnostics.accuracy_latency_efficiency(0.8, 10.0) - 0.08) < 1e-9
@@ -101,9 +98,6 @@ def test_aggregate_empty():
     assert "diagnostic_note" in agg
 
 
-# ---------------------------------------------------------------------------
-# Integration: evaluator records per-probe latency fields
-# ---------------------------------------------------------------------------
 class _StubEvaluator(ModelEvaluator):
     """Minimal evaluator subclass that avoids vLLM/API construction."""
 
@@ -157,9 +151,6 @@ def test_evaluator_latency_is_monotonic_across_calls():
     assert t1 >= t0
 
 
-# ---------------------------------------------------------------------------
-# Guardrail: latency must NOT leak into CRI / trajectory metrics
-# ---------------------------------------------------------------------------
 def test_latency_excluded_from_cri_and_trajectory():
     # Latency diagnostics are computed independently and never feed CRI.
     # This test documents the contract: the CRI computation path does not

@@ -14,7 +14,6 @@ def _stub_evaluator_class():
             pass
 
         def evaluate_single_probe(self, probe, tier, depth=1):
-            # Deterministic pseudo-result keyed by tier/depth
             return {
                 "step_accuracy": 0.9 if tier == 0 else 0.5,
                 "exact_match": tier == 0,
@@ -43,9 +42,6 @@ def test_aggregated_metrics_include_per_tier_and_per_gravity():
         seed=42,
     )
 
-    # Manually populate a small results matrix. Per-tier fracture depth is now
-    # derived from each tier's accuracy curve (canonical FracturePointFinder),
-    # not from the per-probe fracture_depth field.
     runner.results_matrix = {
         (1, 0.0, 0, 0, "8x8"): {"step_accuracy": 0.9, "exact_match": True,
                                  "continuity_score": 0.8, "fracture_depth": 0,
@@ -81,23 +77,18 @@ def test_aggregated_metrics_include_per_tier_and_per_gravity():
 
     agg = runner._compute_aggregated_metrics()
 
-    # Per-tier fracture depth should be present and derived from the curve
     assert "per_tier" in agg
     assert "tier_0" in agg["per_tier"]
     assert "tier_1" in agg["per_tier"]
-    # tier_0: accuracy drops below 0.5 at z=3 -> fracture depth 3
     assert agg["per_tier"]["tier_0"]["fracture_depth"] == 3.0
-    # tier_1: accuracy drops below 0.5 at z=2 -> fracture depth 2
     assert agg["per_tier"]["tier_1"]["fracture_depth"] == 2.0
 
-    # Per-gravity fracture curve should be present and sorted by depth
     assert "per_gravity_fracture_curve" in agg
     assert 0.0 in agg["per_gravity_fracture_curve"]
     curve = agg["per_gravity_fracture_curve"][0.0]
     assert curve["depths"] == [1, 2, 3]
     assert curve["accuracies"] == [0.9, 0.85, 0.4]
 
-    # CRI block should expose components
     assert "cri" in agg
     cri = agg["cri"]
     assert "trajectory_fidelity" in cri

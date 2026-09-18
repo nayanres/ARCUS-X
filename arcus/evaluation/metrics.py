@@ -29,9 +29,7 @@ from typing import Dict, List, Optional, Tuple
 logger = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
 # Trajectory compliance metrics
-# ---------------------------------------------------------------------------
 @dataclass
 class TrajectoryResult:
     """Per-trajectory evaluation result (all ratios on a 0.0-1.0 scale)."""
@@ -146,9 +144,7 @@ def compare_trajectories(
     )
 
 
-# ---------------------------------------------------------------------------
 # Efficiency / horizon metrics (0.0-1.0 unless noted)
-# ---------------------------------------------------------------------------
 class HorizonCompliance:
     """Measures whether the model generated the requested number of transitions."""
 
@@ -190,9 +186,7 @@ def _token_density(total_tokens: int, depth: int) -> float:
     return float(total_tokens) / float(depth)
 
 
-# ---------------------------------------------------------------------------
 # Aggregation helpers
-# ---------------------------------------------------------------------------
 def mean(values: List[float]) -> float:
     """Arithmetic mean, returning 0.0 for an empty list."""
     return sum(values) / len(values) if values else 0.0
@@ -258,9 +252,7 @@ def metric_tier(metric_name: str) -> str:
     return "uncategorized"
 
 
-# ---------------------------------------------------------------------------
 # ARCUS Robustness Index (CRI) -- SECONDARY aggregate summary statistic
-# ---------------------------------------------------------------------------
 @dataclass
 class CRISummary:
     """Result of the ARCUS Robustness Index computation.
@@ -310,7 +302,6 @@ class ARCUSRobustnessIndex:
         "generation_efficiency": 0.05,
     }
 
-    # --- Trajectory Fidelity (TF) -----------------------------------------
     @staticmethod
     def trajectory_fidelity(
         step_accuracy: float,
@@ -323,7 +314,6 @@ class ARCUSRobustnessIndex:
         """
         return 0.5 * step_accuracy + 0.3 * continuity_score + 0.2 * exact_match
 
-    # --- Horizon Robustness (HR) ------------------------------------------
     @staticmethod
     def horizon_robustness(
         horizon_points: List[Tuple[float, Optional[float]]],
@@ -368,7 +358,6 @@ class ARCUSRobustnessIndex:
             area += (a0 + a1) / 2.0 * dz
         return area / (z_max - z_min)
 
-    # --- Semantic Robustness (SR) -----------------------------------------
     @staticmethod
     def semantic_robustness(
         tier0_acc: Optional[float],
@@ -421,7 +410,6 @@ class ARCUSRobustnessIndex:
         wsum = sum(weights)
         return sum(p * w for p, w in zip(parts, weights)) / wsum
 
-    # --- Composite --------------------------------------------------------
     @classmethod
     def compute(
         cls,
@@ -471,9 +459,7 @@ class ARCUSRobustnessIndex:
         )
 
 
-# ---------------------------------------------------------------------------
 # Latency-normalized efficiency diagnostics (SYSTEMS-LEVEL ONLY)
-# ---------------------------------------------------------------------------
 # IMPORTANT: latency is a *systems-level diagnostic*. It is affected by provider
 # infrastructure, architecture, batching, and deployment conditions, and must
 # NEVER be treated as a model capability score. These metrics measure how much

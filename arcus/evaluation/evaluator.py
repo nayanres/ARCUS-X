@@ -139,7 +139,6 @@ class ModelEvaluator:
         self.status_callback = status_callback
         logger.info(f"Model context limit for {self.model_name}: {self.max_context} tokens")
 
-        # --- Provider-agnostic API compatibility layer -------------------
         # Best-effort provider slug (logging/attribution only; never drives
         # parameter selection, which is discovered dynamically per request).
         self.provider = detect_provider(api_base, model_name)
@@ -181,9 +180,7 @@ class ModelEvaluator:
             self.sampling_params = SamplingParams(temperature=0.0, max_tokens=8000,
                                                   logprobs=1, include_stop_str_in_output=True)
 
-    # ------------------------------------------------------------------
     # Context limit discovery (network-resilient)
-    # ------------------------------------------------------------------
     def _get_model_context_limit(self, model_id: str) -> int:
         fallback_limits = {
             "step-3.7-flash": 256000, "step-1-flash": 128000,
@@ -209,9 +206,7 @@ class ModelEvaluator:
     def compute_prompt_margin(self, estimated_prompt_tokens: int) -> int:
         return max(512, min(8192, int(estimated_prompt_tokens * 0.10)))
 
-    # ------------------------------------------------------------------
     # Prompt construction (uses the task's own axioms/question)
-    # ------------------------------------------------------------------
     def build_prompt(self, probe: Dict) -> str:
         """Build the model prompt from the probe's axioms and question.
 
@@ -262,9 +257,7 @@ class ModelEvaluator:
         # Last-resort neutral placeholder so the API call is never empty.
         return "Follow the task instructions."
 
-    # ------------------------------------------------------------------
     # Public evaluation entry points
-    # ------------------------------------------------------------------
     def evaluate(self, prompt: str, max_tokens: Optional[int] = None) -> Dict:
         """Run inference on ``prompt`` and return a raw result dict."""
         if self.use_vllm:
@@ -354,9 +347,7 @@ class ModelEvaluator:
             "input_tokens": token_metrics["prompt_tokens"],
         }
 
-    # ------------------------------------------------------------------
     # Backends
-    # ------------------------------------------------------------------
     def _query_vllm(self, prompt: str, max_tokens: Optional[int] = None) -> Dict:
         try:
             outputs = self.model.generate([prompt], self.sampling_params)
@@ -385,7 +376,6 @@ class ModelEvaluator:
         available = self.max_context - required
         cap = max(512, min(available, max_tokens or 8192))
 
-        # --- Dynamic capability negotiation (provider/model-agnostic) ---
         # Seed negotiation state from any capability already discovered for this
         # (provider, model) in the shared cache; otherwise begin with the
         # universal defaults. The negotiation engine infers token-parameter
@@ -451,7 +441,6 @@ class ModelEvaluator:
                     err = self._parse_api_error(resp)
                     logger.error(f"API error {err}")
 
-                    # --- Capability negotiation: recoverable errors ----------
                     # If the provider rejected the request because of an
                     # unsupported parameter or value, adapt and retry. This is
                     # how Azure's gpt-5-mini (which wants max_completion_tokens,
@@ -501,9 +490,7 @@ class ModelEvaluator:
         return {"output": "[MAX_RETRIES_EXCEEDED]", "finish_reason": "error",
                 "thinking_tokens": 0, "output_tokens": 0}
 
-    # ------------------------------------------------------------------
     # API error parsing / adaptation helpers
-    # ------------------------------------------------------------------
     def _parse_api_error(self, resp) -> APIError:
         """Parse a non-200 ``requests.Response`` into a structured APIError."""
         status = resp.status_code

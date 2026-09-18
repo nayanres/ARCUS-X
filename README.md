@@ -5,7 +5,27 @@ rules over long horizons. The benchmark generates **deterministic, procedural
 grid-trajectory tasks** where the ground truth is computed from explicit
 transition rules — never from model output.
 
-## Core Ideaw
+## Overview
+
+ARCUS-X is designed to separate sequential state tracking from semantic
+robustness. Every task is generated from a seed, scored against an internally
+computed trajectory, and reported with both headline metrics and diagnostic
+failure categories. The repository includes API evaluation, optional local GPU
+inference, model-free baselines, reproducibility controls, and post-run audits.
+
+### Contents
+
+- [Benchmark design](#benchmark-design)
+- [Metrics and reporting](#metrics-and-reporting)
+- [Validation suite](#validation-suite)
+- [Architecture](#architecture-single-source-of-truth)
+- [Quick start](#quick-start)
+- [Reproducibility](#reproducibility)
+- [Dependency management](#dependency-management)
+- [File manifest](#file-manifest)
+- [License](#license)
+
+## Benchmark Design
 
 - A discrete toroidal grid (width × height) with an initial coordinate.
 - A sequence of **actions** (e.g., `north`, `east`, `south`, `west`).
@@ -97,7 +117,7 @@ an independent sweep axis alongside gravity / tier / depth.
 - Controlled by the `grid_size_levels` parameter (a list of `(width, height)`
   tuples, e.g. `[(8, 8), (16, 16), (32, 32)]`).
 - When `None` (default), grid dimensions are sampled per-instance exactly as
-  before — the default benchmark behaviour is unchanged.
+  before — the default benchmark behavior is unchanged.
 - When set, the runner yields each `(width, height)` as an independent axis; the
   results-matrix key becomes a 5-tuple `(z, gravity, tier, probe_idx, grid_key)`
   so aggregation is uniform across both modes.
@@ -112,7 +132,7 @@ an independent sweep axis alongside gravity / tier / depth.
 effects from other axes (e.g. controlled scaling curves). It is a working
 capability, not a placeholder.
 
-## Metrics (all on 0.0–1.0 scale)
+## Metrics and Reporting (all on a 0.0–1.0 scale)
 
 **Primary metrics** (directly measure trajectory compliance — these are the
 headline results):
@@ -163,7 +183,7 @@ primary metrics but never used as the sole success criterion):
   degrade). CRI is reported alongside the primary trajectory metrics but never
   replaces them.
 
-### Interpretable Reporting (new)
+### Interpretable Reporting
 
 ARCUS-X now emits **per-tier** and **per-gravity** fracture diagnostics alongside
 the aggregate CRI, so reviewers can localise *where* and *why* a model breaks:
@@ -252,7 +272,7 @@ python -m arcus.experiments.quickstart --model ... --master-seeds 42 123 456 \
     --parallel-seeds auto
 ```
 
-- **`"1"` (default)** — fully serial; behaviour is byte-for-byte identical to the
+- **`"1"` (default)** — fully serial; behavior is byte-for-byte identical to the
   original single-threaded path.
 - **`N`** — up to `N` worker threads, one per master seed.
 - **`"auto"`** — `workers = min(cpu_count(), len(master_seeds), user_max_workers)`.
@@ -386,7 +406,8 @@ Results are written to `outputs/benchmark_results_<timestamp>.json`.
 
 ### Post-Run Analysis (`post_run_analyzer.py`)
 
-You can analyze completed JSON result files, directories, or raw TXT logs using [`post_run_analyzer.py`](post_run_analyzer.py:1):
+You can analyze completed JSON result files, directories, or raw TXT logs using
+[`post_run_analyzer.py`](post_run_analyzer.py):
 
 ```bash
 # Analyze all runs in a TXT log file (default)
@@ -506,13 +527,16 @@ once per master seed; each seed regenerates the task set via
 `run_framework.sh` wrapper accepts the same flag
 (`./run_framework.sh --model ... --master-seeds all`).
 
-### Local GPU Inference (optional, optional API key)
+### Local GPU Inference (optional)
 
 ARCUS-X does **not** require local inference — the default path is API-only.
-Install [`requirements-local.txt`](requirements-local.txt:20) only when running models locally (vLLM /
-transformers). 
+Install [`requirements-local.txt`](requirements-local.txt) only when running
+models locally (vLLM / transformers).
 
-The underlying evaluator [`arcus/evaluation/evaluator.py`](arcus/evaluation/evaluator.py:152) uses **local vLLM automatically when `api_base` is `None`**, so no API key or network connection is needed for this path:
+The underlying evaluator
+[`arcus/evaluation/evaluator.py`](arcus/evaluation/evaluator.py) uses **local
+vLLM automatically when `api_base` is `None`**, so no API key or network
+connection is needed for this path:
 
 ```python
 from arcus.evaluation.evaluator import ModelEvaluator
@@ -528,7 +552,8 @@ evaluator = ModelEvaluator(
 
 Requirements for local mode:
 - A CUDA-capable GPU with enough VRAM for the chosen model.
-- `vllm` installed (via [`requirements-local.txt`](requirements-local.txt:20)). If vLLM is missing you'll get
+- `vllm` installed (via [`requirements-local.txt`](requirements-local.txt)).
+  If vLLM is missing you'll get
   `ImportError: vLLM required for local inference`.
 - The model must be a vLLM-compatible Hugging Face model id.
 
@@ -644,7 +669,7 @@ Covers:
 13. **Difficulty validation experiments confirm the difficulty structure**
     (horizon scaling, tier scaling, seed variance, reproducibility)
 
-### Baseline Evaluators (new)
+### Baseline Evaluators
 
 Three reference evaluators were added to anchor the score range and detect
 shortcut leakage:
@@ -655,7 +680,7 @@ shortcut leakage:
 | Oracle solver | [`arcus/evaluation/baselines.py`](arcus/evaluation/baselines.py) | Upper bound: rule-following solver (perfect by construction) |
 | Initial-state baseline | [`arcus/evaluation/baselines.py`](arcus/evaluation/baselines.py) | Lower bound: outputs only the initial coordinate |
 
-### Difficulty Validation (new)
+### Difficulty Validation
 
 [`arcus/experiments/difficulty_validation.py`](arcus/experiments/difficulty_validation.py)
 runs controlled experiments confirming the benchmark's difficulty structure:
@@ -665,7 +690,7 @@ runs controlled experiments confirming the benchmark's difficulty structure:
 - **Seed variance** — different seeds yield independent tasks.
 - **Reproducibility** — same `(seed, tier, task_index)` reproduces identical tasks.
 
-### Task Shortcut Audit (new)
+### Task Shortcut Audit
 
 [`arcus/experiments/task_shortcut_audit.py`](arcus/experiments/task_shortcut_audit.py)
 scans the **prompt** portion of every generated probe (`axioms` + `question`)
@@ -683,7 +708,7 @@ answer shortcuts into its prompt.
 | Path | Purpose |
 |------|---------|
 | `run_framework.sh` | Public shell entry point |
-| `quickstart_api.py` | Public Python entry point (legacy compat) |
+| `quickstart_api.py` | Public Python entry point (legacy compatibility) |
 | `requirements.txt` | Runtime dependencies only (flexible `>=` spec) |
 | `requirements-local.txt` | Optional heavy deps (torch, vLLM, transformers) — flexible `>=` spec |
 | `requirements-lock.txt` | Pinned runtime dependency lock (reproducibility) |
@@ -729,8 +754,6 @@ copies remain), so the single source of truth is the `arcus/` package:
 - `generator.py` (empty stub)
 
 Archived copies are in `archive/`.
-
-## License
 
 ## Post-Run Analysis & Accounting Invariants
 

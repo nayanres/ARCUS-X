@@ -9,10 +9,8 @@ New users should use:  ./run_framework.sh  or  python -m arcus.experiments.quick
 import sys
 import os
 
-# Add the current directory to Python path so arcus can be imported
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Delegate to the actual implementation
 from arcus.experiments.quickstart import main
 
 if __name__ == "__main__":

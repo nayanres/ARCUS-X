@@ -184,7 +184,6 @@ def main():
     os.makedirs("outputs", exist_ok=True)
     output_file = args.output or f"outputs/quickstart_results_{datetime.now():%Y%m%d_%H%M%S}.json"
 
-    # --- Optional baselines (never require a model) ---
     baseline_report = None
     if args.baselines:
         logger.info("Running model-free baseline evaluators (no model required)...")

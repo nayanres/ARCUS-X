@@ -80,10 +80,8 @@ def _make_accounting_runner(tmp_path, seeds=(42,)):
 def test_reconstruct_adaptive_state_idempotent(tmp_path):
     """Reconstructing the same adaptive state twice gives identical results."""
     runner, raw = _make_accounting_runner(tmp_path)
-    # Run once to generate some stream entries
     runner.run(output_filepath=str(tmp_path / "out.json"), parallel_seeds="1")
 
-    # Call _reconstruct_adaptive_state twice on the same raw stream
     res1_count, res1_frontier, res1_depth = runner._reconstruct_adaptive_state(resume_path=str(raw))
     res2_count, res2_frontier, res2_depth = runner._reconstruct_adaptive_state(resume_path=str(raw))
 
@@ -97,10 +95,8 @@ def test_resume_does_not_consume_frontier(tmp_path):
     runner, raw = _make_accounting_runner(tmp_path)
     runner.run(output_filepath=str(tmp_path / "out.json"), parallel_seeds="1")
 
-    # Get state before resume reconstruction
     count_before, frontier_before, _ = runner._reconstruct_adaptive_state(resume_path=str(raw))
 
-    # Reconstruct state again (simulating resume initialization)
     count_after, frontier_after, _ = runner._reconstruct_adaptive_state(resume_path=str(raw))
 
     assert count_after == count_before, "Resume must not consume or change completed evaluations count"
@@ -128,17 +124,13 @@ def test_frontier_size_and_accounting_invariant(tmp_path):
     completed_count, active_frontier, _ = runner._reconstruct_adaptive_state(resume_path=None)
     est_total = runner._estimate_total_evaluations()
 
-    # Invariant check
     assert completed_count + active_frontier >= est_total or active_frontier >= 0
 
 
 def test_different_models_arbitrary_counts(tmp_path):
     """Different models can have different total evaluation counts without being treated as an error."""
     runner, raw = _make_accounting_runner(tmp_path)
-    # Simulate a model with 4500 completed evaluations (like gpt-5-mini)
-    # and another with 427 completed evaluations (like qwen3)
     for completed_sim in [427, 4500]:
-        # Monkeypatch parse_completed_probes with probe identity tuple keys (seed, gravity, tier, z, probe_idx, grid_key)
         runner.parse_completed_probes = lambda path: {(42, 0.0, 0, 1, i, "default"): {} for i in range(completed_sim)}
         completed_count, active_frontier, depth = runner._reconstruct_adaptive_state(resume_path="dummy.txt")
         assert completed_count == completed_sim
@@ -148,7 +140,6 @@ def test_different_models_arbitrary_counts(tmp_path):
 
 def test_interrupted_vs_uninterrupted_equivalence(tmp_path):
     """Interrupted vs uninterrupted equivalence test: Run A (complete) vs Run B (partial + resume)."""
-    # Run A: Uninterrupted full run
     runner_a, raw_a = _make_accounting_runner(tmp_path)
     out_a = tmp_path / "out_a.json"
     runner_a.run(output_filepath=str(out_a), parallel_seeds="1")
@@ -156,7 +147,6 @@ def test_interrupted_vs_uninterrupted_equivalence(tmp_path):
     parsed_a = runner_a.parse_completed_probes(str(raw_a))
     prior_a = runner_a._load_prior_results(str(raw_a), 42)
 
-    # Run B: Interrupted run (simulate by copying first half of raw stream)
     raw_b = tmp_path / "absolute_raw_stream_b.txt"
     with open(raw_a, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -171,7 +161,6 @@ def test_interrupted_vs_uninterrupted_equivalence(tmp_path):
     with open(raw_b, "w", encoding="utf-8") as f:
         f.write(partial_content)
 
-    # Resume Run B
     runner_b, _ = _make_accounting_runner(tmp_path)
     runner_b.raw_log_filename = str(raw_b)
     out_b = tmp_path / "out_b.json"
@@ -181,7 +170,6 @@ def test_interrupted_vs_uninterrupted_equivalence(tmp_path):
     parsed_b = runner_b.parse_completed_probes(str(raw_b))
     prior_b = runner_b._load_prior_results(str(raw_b), 42)
 
-    # Final state equivalence checks
     assert count_b == count_a, f"Completed evaluations must match: {count_b} vs {count_a}"
     assert frontier_b == frontier_a, f"Frontier must match: {frontier_b} vs {frontier_a}"
     assert depth_b == depth_a, f"Search depth must match: {depth_b} vs {depth_a}"

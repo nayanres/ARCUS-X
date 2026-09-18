@@ -59,9 +59,7 @@ class FracturePointFinder:
             f"(0-1 scale)."
         )
 
-    # ------------------------------------------------------------------
     # Progress bar (terminal only, main thread only)
-    # ------------------------------------------------------------------
     def print_search_envelope_bar(self, low: int, mid: int, high: int, max_depth: int = 200) -> None:
         if threading.current_thread() is not threading.main_thread():
             return
@@ -79,9 +77,7 @@ class FracturePointFinder:
         sys.stdout.write(line.ljust(85))
         sys.stdout.flush()
 
-    # ------------------------------------------------------------------
     # Core fracture detection
-    # ------------------------------------------------------------------
     def compute_structural_yield(
         self, accuracy_curve: List[Tuple[int, float]]
     ) -> Optional[int]:
@@ -157,9 +153,7 @@ class FracturePointFinder:
                     return depth
         return None
 
-    # ------------------------------------------------------------------
     # Telemetry aggregation
-    # ------------------------------------------------------------------
     def parse_matrix_telemetry(
         self,
         results_matrix: Dict,

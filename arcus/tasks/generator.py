@@ -30,9 +30,7 @@ from typing import Dict, List, Tuple, Optional, Any
 from arcus.environment.grid import compute_trajectory, format_coord
 
 
-# ---------------------------------------------------------------------------
 # Base directional vocabulary (Tier 0 "normal" semantics)
-# ---------------------------------------------------------------------------
 BASE_DIRECTIONS: Dict[str, Tuple[int, int]] = {
     "north": (0, 1),
     "south": (0, -1),
@@ -76,7 +74,6 @@ class GridTask:
     axioms: List[str] = field(default_factory=list)
     question: str = ""
 
-    # ----- serialization -----
     def to_dict(self) -> Dict[str, Any]:
         return {
             "task_id": self.task_id,
@@ -154,9 +151,7 @@ class GridTaskGenerator:
         # regenerate identical tasks repeatedly.
         self._cache: Dict[Tuple[int, int, Optional[int], Optional[int], Optional[int]], GridTask] = {}
 
-    # ------------------------------------------------------------------
     # Deterministic per-instance RNG
-    # ------------------------------------------------------------------
     def _base_rng(self, task_index: int) -> random.Random:
         """Reproducible RNG for the shared base instance of a task.
 
@@ -171,9 +166,7 @@ class GridTaskGenerator:
         """Reproducible RNG used only for the Tier 1 label (semantic) mutation."""
         return random.Random(f"arcus-x:{self.seed}:semantic:{task_index}")
 
-    # ------------------------------------------------------------------
     # Tier mutation primitives (grid-adapted)
-    # ------------------------------------------------------------------
     def _generate_pseudoword(self, rng: random.Random, existing: set) -> str:
         """Generate a unique, token-safe lowercase pseudoword."""
         while True:
@@ -211,9 +204,7 @@ class GridTaskGenerator:
         """
         return {label: (-dy, dx) for label, (dx, dy) in directions.items()}
 
-    # ------------------------------------------------------------------
     # Core generation
-    # ------------------------------------------------------------------
     def generate(self, tier: int = 0, task_index: int = 0,
                  grid_width: Optional[int] = None,
                  grid_height: Optional[int] = None,
@@ -320,9 +311,7 @@ class GridTaskGenerator:
         self._cache[cache_key] = task
         return task
 
-    # ------------------------------------------------------------------
     # Procedural prompt construction (model-facing content only)
-    # ------------------------------------------------------------------
     def _build_prompt_fields(
         self,
         gw: int,

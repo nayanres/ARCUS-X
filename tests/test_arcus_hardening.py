@@ -604,9 +604,6 @@ def test_benchmark_runner_run_baselines():
     assert report["initial_state"]["exact_match"] == 0.0
 
 
-# ---------------------------------------------------------------------------
-# CRI (ARCUS Robustness Index) -- secondary aggregate robustness indicator
-# ---------------------------------------------------------------------------
 def test_cri_perfect_oracle():
     """Perfect oracle: every component is 1.0 -> CRI ~= 1.0."""
     summary = ARCUSRobustnessIndex.compute(

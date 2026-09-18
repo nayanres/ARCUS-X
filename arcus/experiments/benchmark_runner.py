@@ -40,11 +40,8 @@ def sanitize_model_name(model_name: str) -> str:
     
     Replaces '/' and other illegal filename characters with safe alternatives.
     """
-    # Replace forward slash with hyphen
     sanitized = model_name.replace('/', '-')
-    # Replace other potentially problematic characters
     sanitized = re.sub(r'[\\:*?"<>|]', '-', sanitized)
-    # Remove any leading/trailing whitespace or dots
     sanitized = sanitized.strip('. ')
     return sanitized
 
@@ -151,8 +148,7 @@ class BenchmarkRunner:
         self.results_matrix = {}
         self.token_density_matrix = {}
         self.fracture_cache = {}  # (gravity, "final") -> final_fracture_depth
-        
-        # Model-specific raw log file
+
         self.sanitized_model_name = sanitize_model_name(model_name)
         # Safer raw-log filename scheme: absolute_raw_data_{provider}_{model_slug}.txt
         # Model identifiers can get messy (provider changes, version bumps, aliases),
@@ -186,9 +182,7 @@ class BenchmarkRunner:
 
         logger.info(f"Initialized ARCUS-X BenchmarkRunner for {model_name}")
 
-    # ------------------------------------------------------------------
     # UX helpers (no-ops when no live progress display is active)
-    # ------------------------------------------------------------------
     def _progress_set_context(self, tier, gravity, horizon, seed=None, n_probe=None):
         if self.progress is not None:
             self.progress.set_context(tier, gravity, horizon, seed=seed if seed is not None else self.seed, n_probe=n_probe)
@@ -280,9 +274,7 @@ class BenchmarkRunner:
             "source": "estimated"
         }
 
-    # ------------------------------------------------------------------
     # Parallel / resume infrastructure
-    # ------------------------------------------------------------------
     def _probe_identity(self, seed: int, gravity: float, tier: int, z: int,
                         probe_idx: int, grid_key: str = "default") -> Tuple:
         """Stable, order-independent identity for a single probe.
@@ -676,9 +668,7 @@ class BenchmarkRunner:
             prior[(z, gravity, tier, probe_idx) + grid_suffix] = result
         return prior
 
-    # ------------------------------------------------------------------
     # Adaptive concurrency controller (rate-limit aware)
-    # ------------------------------------------------------------------
     class _ConcurrencyController:
         """Dynamically reduces/restores worker concurrency on rate limits.
 
@@ -910,7 +900,6 @@ class BenchmarkRunner:
                 self.seeds = sorted(list(self._per_seed_full.keys()))
             return
 
-        # --- Parallel path: one worker thread per master seed ---
         logger.info(
             f"[SCHEDULER] Parallel execution: {workers} worker(s) for "
             f"{n_seeds} seed(s)."
@@ -964,7 +953,6 @@ class BenchmarkRunner:
                 if self.progress is not None:
                     self.progress.set_seed_progress(done, n_seeds, workers)
 
-        # --- Merge worker outputs into the runner's primary structures ---
         # The first seed becomes the "primary" results_matrix used by the
         # aggregation/reporting pipeline; all seeds are also kept in
         # ``_per_seed_full`` for variance reporting.
@@ -1176,7 +1164,6 @@ class BenchmarkRunner:
         logger.info("[1/3] Generating base probe templates...")
         base_probes = self._generate_base_probes()
 
-        # --- UX: startup banner (self-test result drives the PASS/FAIL line) ---
         self_test_passed = True
         try:
             self.run_self_test(base_probes)
@@ -1187,7 +1174,6 @@ class BenchmarkRunner:
             raise
         print_banner(self_test_passed=True, model_name=self.model_name)
 
-        # --- UX: live progress display ---
         self.progress = ProgressDisplay(
             model_name=self.model_name,
         )
@@ -1216,7 +1202,6 @@ class BenchmarkRunner:
                 self._write_run_start()
                 self._write_experiment_manifest()
 
-            # --- Multi-seed variance measurement ---
             # The benchmark is executed once per master seed. Each seed produces
             # its own results matrix; the headline metrics (CRI, fracture depth)
             # are aggregated as mean +/- std across seeds so a reviewer can see
@@ -1513,7 +1498,6 @@ class BenchmarkRunner:
         INITIAL_MAX_DEPTH = min(40, ABSOLUTE_HARD_CEILING)
         logger.info(f"Execution initialized with ABSOLUTE_HARD_CEILING = {ABSOLUTE_HARD_CEILING}")
 
-        # --- Baseline calibration anchor ---
         logger.info(
             "\n=== [BASELINE CALIBRATION ANCHOR] Running simplified calibration "
             "at z=3, Tier 1, Gravity 0.0 ==="
@@ -1882,7 +1866,6 @@ class BenchmarkRunner:
                             )
                         continue
 
-                    # --- UX: live progress + status line ---
                     self._progress_set_context(
                         tier, gravity_target, z,
                         seed=self.seed,
@@ -1903,7 +1886,6 @@ class BenchmarkRunner:
 
                     raw_output = result.get("raw_output", "")
 
-                    # --- Global stream logger ---
                     expected_sequence = final_probe_payload.get("ground_truth_path", [])
                     try:
                         token_metrics = measure_tokens(
@@ -1955,7 +1937,6 @@ class BenchmarkRunner:
                     except Exception as e:  # pragma: no cover - defensive
                         logger.error(f"Failed to log raw stream: {e}")
 
-                    # --- Strictness gate logic ---
                     if result.get("context_exhausted", False) or result.get("completion_tokens", 0) > 7500:
                         logger.warning(f"   [OUTPUT CEILING / EXHAUSTION] Failure at z={z}. Writing raw log.")
                         context_exhausted_count += 1
@@ -1992,7 +1973,6 @@ class BenchmarkRunner:
                         # Latency diagnostics still recorded (systems-level).
                         result.setdefault("correct_transitions", 0)
                     else:
-                        # --- Trajectory-based scoring (the single source of truth) ---
                         predicted_path = extract_model_path(raw_output)
                         ground_truth_path = final_probe_payload["ground_truth_path"]
 
@@ -2017,7 +1997,6 @@ class BenchmarkRunner:
 
                         acc = traj.step_accuracy
 
-                        # --- Error taxonomy classification (real environment) ---
                         tax = classify_from_result(
                             predicted_path,
                             ground_truth_path,
@@ -2033,7 +2012,6 @@ class BenchmarkRunner:
                             result["error_mode"] = "Unknown"
                         result["probe_classification"] = tax.probe_classification.to_dict() if tax.probe_classification else None
 
-                        # --- Horizon compliance ---
                         if not predicted_path:
                             result["horizon_compliance"] = 0.0
                             result["hc_error"] = "Path parsing failed"
@@ -2045,7 +2023,6 @@ class BenchmarkRunner:
                             )
                             result["horizon_overshoot"] = generated_depth / z if z > 0 else 0.0
 
-                        # --- Generation bloat index ---
                         actual_tokens = result.get("completion_tokens")
                         if actual_tokens is None:
                             actual_tokens = result.get("output_tokens", 0)
@@ -2059,7 +2036,6 @@ class BenchmarkRunner:
                             "baseline_source": baseline_info["source"]
                         }
 
-                        # --- Generation efficiency ---
                         result["generation_efficiency"] = GenerationEfficiency.calculate(
                             result["generation_bloat_index"]
                         )
@@ -2088,7 +2064,6 @@ class BenchmarkRunner:
                     if self._is_cognitive_valid(result):
                         all_accuracies.append(acc)
 
-                    # --- UX: advance the live probe counter ---
                     self._progress_increment()
 
         # ``None`` means insufficient valid/recoverable evidence, not cognitive
@@ -2124,9 +2099,7 @@ class BenchmarkRunner:
         assert probe.get("ground_truth_path"), "Self-test probe missing ground truth"
         logger.info("[SELF-TEST] Runner self-test passed.")
 
-    # ------------------------------------------------------------------
     # Reporting: structured debug report (no scoring logic change)
-    # ------------------------------------------------------------------
     def _print_structured_report(self, aggregated: Dict):
         lines = [
             "",
@@ -2176,10 +2149,8 @@ class BenchmarkRunner:
         lines.append("=" * 60)
         self._append_debug_log("\n".join(lines))
 
-    # ------------------------------------------------------------------
     # Clean terminal summary report + JSON export + partial-run reporting
     # (infrastructure only; no benchmark / scoring / evaluation logic changed)
-    # ------------------------------------------------------------------
     def _compute_report_metrics(self, aggregated: Dict) -> Dict:
         """Derive the clean-report metrics from the results matrix + aggregated dict.
 
@@ -2436,7 +2407,6 @@ class BenchmarkRunner:
         for bucket, count in m.get("failure_taxonomy", {}).items():
             lines.append(f"  {bucket + ':':<22} {count}")
         lines.append("")
-        # --- Latency Diagnostics (systems-level only; never a capability score) ---
         lat = aggregated.get("latency_diagnostics")
         if lat:
             lines.append("Latency Diagnostics:")
@@ -2760,14 +2730,13 @@ class BenchmarkRunner:
 
         per_gravity_summary = {}
         for gravity, data in per_gravity_fracture.items():
-            # Sort by depth for curve plotting
+
             sorted_pairs = sorted(zip(data["depths"], data["accuracies"]))
             per_gravity_summary[gravity] = {
                 "depths": [d for d, _ in sorted_pairs],
                 "accuracies": [a for _, a in sorted_pairs]
             }
 
-        # --- Latency diagnostics (systems-level only; never a capability score) ---
         # Build the per-probe list consumed by LatencyDiagnostics.aggregate.
         latency_probes = []
         for key, result in self.results_matrix.items():

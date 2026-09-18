@@ -53,9 +53,6 @@ from arcus.evaluation.api_compat import (
 )
 
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 class _FakeResponse:
     """Minimal stand-in for ``requests.Response``."""
 
@@ -105,9 +102,6 @@ def _unsupported_value_error(param_name: str = "temperature") -> dict:
     }
 
 
-# ---------------------------------------------------------------------------
-# 1. Provider rejects max_tokens but accepts max_completion_tokens
-# ---------------------------------------------------------------------------
 def test_fallback_max_tokens_to_max_completion_tokens(monkeypatch):
     calls = []
 
@@ -499,9 +493,6 @@ def test_adaptation_log_records_with_callback():
     assert len(log.to_dict()) == 1
 
 
-# ---------------------------------------------------------------------------
-# Fallback chain extensibility
-# ---------------------------------------------------------------------------
 def test_fallback_chain_extensibility():
     """Adding a parameter to the chain requires no execution-layer rewrite."""
     original = list(TOKEN_PARAM_FALLBACK_CHAIN)
@@ -522,9 +513,6 @@ def test_build_token_param_payload_strips_competing_keys():
     assert base.get("max_tokens") == 100
 
 
-# ---------------------------------------------------------------------------
-# Capability registry, validation, and metadata preservation tests
-# ---------------------------------------------------------------------------
 def test_model_capability_registry_and_validation():
     from arcus.evaluation.api_compat import (
         get_model_capabilities,
@@ -572,4 +560,3 @@ def test_api_error_metadata_preservation():
     assert "include_reasoning" in d["message"]
     assert d["timestamp"] is not None
     assert d["retryable"] is False
-

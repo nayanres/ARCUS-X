@@ -56,9 +56,7 @@ from typing import Any, Callable, Dict, List, Optional
 logger = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
 # Token-parameter fallback chain
-# ---------------------------------------------------------------------------
 # Ordered list of parameter names to try for the *maximum completion length*.
 # The first entry is the universal default; subsequent entries are fallbacks
 # used when a provider rejects the previous one as unsupported.
@@ -74,9 +72,7 @@ TOKEN_PARAM_FALLBACK_CHAIN: List[str] = [
 ]
 
 
-# ---------------------------------------------------------------------------
 # Capability schema
-# ---------------------------------------------------------------------------
 # The set of capability *categories* the negotiation engine understands. Each
 # category maps to one or more request parameters. Adding a new capability is a
 # matter of extending this schema and the negotiation engine -- not the
@@ -134,9 +130,7 @@ CAP_REASONING = "reasoning"
 CAP_JSON_MODE = "json_mode"
 
 
-# ---------------------------------------------------------------------------
 # Structured API error classification
-# ---------------------------------------------------------------------------
 class APIErrorCategory(str, Enum):
     """Structured categories for provider API failures.
 
@@ -218,9 +212,7 @@ class APIError:
         )
 
 
-# ---------------------------------------------------------------------------
 # Capability cache
-# ---------------------------------------------------------------------------
 @dataclass
 class CapabilityRecord:
     """A discovered capability set for a ``(provider, model)`` combination."""
@@ -295,9 +287,7 @@ class CapabilityCache:
 SHARED_CAPABILITY_CACHE = CapabilityCache()
 
 
-# ---------------------------------------------------------------------------
 # Adaptation logging
-# ---------------------------------------------------------------------------
 @dataclass
 class CompatibilityAdaptation:
     """A recorded API compatibility adjustment for a provider/model."""
@@ -358,9 +348,7 @@ class AdaptationLog:
             return [e.to_dict() for e in self._entries]
 
 
-# ---------------------------------------------------------------------------
 # Provider detection
-# ---------------------------------------------------------------------------
 def detect_provider(api_base: Optional[str], model_name: str) -> str:
     """Best-effort provider slug from the API base URL or model name.
 
@@ -387,9 +375,7 @@ def detect_provider(api_base: Optional[str], model_name: str) -> str:
     return "unknown"
 
 
-# ---------------------------------------------------------------------------
 # Error classification
-# ---------------------------------------------------------------------------
 # Substrings that, when present in a provider error message/type, indicate a
 # specific category. Order matters: more specific patterns are checked first.
 _UNSUPPORTED_PARAM_HINTS = (
@@ -672,9 +658,7 @@ def is_unsupported_value_error(err: APIError) -> bool:
     return err.category == APIErrorCategory.UNSUPPORTED_VALUE
 
 
-# ---------------------------------------------------------------------------
 # Token-parameter fallback engine
-# ---------------------------------------------------------------------------
 def build_token_param_payload(
     base_payload: Dict[str, Any],
     param_name: str,
@@ -709,9 +693,7 @@ def next_token_param(current: str) -> Optional[str]:
     return None
 
 
-# ---------------------------------------------------------------------------
 # Capability negotiation engine
-# ---------------------------------------------------------------------------
 # The set of "optional" sampling parameters the engine negotiates. Each maps to
 # a capability category. The engine tries to send these with their default ARCUS
 # value; on an unsupported-value error it omits them to preserve the provider's
@@ -815,12 +797,8 @@ class NegotiationState:
         return CapabilityRecord(provider=self.provider, model=self.model, capabilities=caps)
 
 
-# ---------------------------------------------------------------------------
 # Model Capability Registry / Config Layer (Extensible)
-# ---------------------------------------------------------------------------
-# ---------------------------------------------------------------------------
 # Model Capability Registry / Config Layer (Extensible)
-# ---------------------------------------------------------------------------
 @dataclass
 class ModelCapabilities:
     """A capability set for a model, including reasoning controls and outputs.
