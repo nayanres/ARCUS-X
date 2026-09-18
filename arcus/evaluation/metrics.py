@@ -77,10 +77,11 @@ def compare_trajectories(
     Returns
     -------
     TrajectoryResult
-        Structural comparison. ``step_accuracy`` is the fraction of
-        ground-truth positions reproduced; ``continuity_score`` is the longest
-        correct prefix divided by the ground-truth length; ``first_divergence``
-        is the 1-based step index of the first mismatch (or ``None`` on an
+        Structural comparison. ``step_accuracy`` is the fraction of requested
+        transitions reproduced, excluding the provided initial state;
+        ``continuity_score`` is the longest correct transition prefix divided
+        by the number of requested transitions; ``first_divergence`` is the
+        1-based trajectory position of the first mismatch (or ``None`` on an
         exact match).
     """
     gt_len = len(ground_truth)
@@ -99,11 +100,16 @@ def compare_trajectories(
         )
 
     overlap = min(len(predicted), gt_len)
+    # The initial state is supplied by the task and is not a transition.
+    # Keep it in the structural comparison, but exclude it from the primary
+    # execution metrics.
+    transition_count = max(gt_len - 1, 0)
     correct = 0
     first_div: Optional[int] = None
     for i in range(overlap):
         if predicted[i] == ground_truth[i]:
-            correct += 1
+            if i > 0:
+                correct += 1
         elif first_div is None:
             first_div = i + 1  # 1-based step index
 
@@ -113,10 +119,19 @@ def compare_trajectories(
         first_div = overlap + 1
 
     exact = (len(predicted) == gt_len) and (first_div is None)
-    step_accuracy = (correct / gt_len) if gt_len > 0 else 0.0
-    # Longest correct prefix length == (first_div - 1) when a divergence exists.
-    prefix_len = (first_div - 1) if first_div is not None else gt_len
-    continuity = (prefix_len / gt_len) if gt_len > 0 else 0.0
+    step_accuracy = (correct / transition_count) if transition_count > 0 else 0.0
+    # A mismatch at trajectory position 1 (the initial state) means that no
+    # transition prefix is continuous. Position 2 is the first transition.
+    prefix_len = (
+        max(0, first_div - 2)
+        if first_div is not None
+        else transition_count
+    )
+    continuity = (
+        prefix_len / transition_count
+        if transition_count > 0
+        else 0.0
+    )
 
     return TrajectoryResult(
         parsed=True,

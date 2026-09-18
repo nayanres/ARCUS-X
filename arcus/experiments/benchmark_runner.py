@@ -622,7 +622,8 @@ class BenchmarkRunner:
             gt_len = len(ground_truth_path)
             overlap = min(len(predicted_path), gt_len)
             correct_transitions = sum(
-                1 for i in range(overlap) if predicted_path[i] == ground_truth_path[i]
+                1 for i in range(1, overlap)
+                if predicted_path[i] == ground_truth_path[i]
             )
 
             transition_rules = _parse_transition_rules(entry.get("transition_rules", "") or "")
@@ -2004,13 +2005,12 @@ class BenchmarkRunner:
                         result["predicted_length"] = traj.predicted_length
                         result["ground_truth_length"] = traj.ground_truth_length
 
-                        # Correctly predicted state transitions = number of
-                        # ground-truth positions reproduced (verified trajectory
-                        # throughput). Used by Correct Steps/sec diagnostics.
+                        # The initial state is provided by the task, so only
+                        # subsequent ground-truth positions count as transitions.
                         gt_len = len(ground_truth_path)
                         overlap = min(len(predicted_path), gt_len)
                         correct_transitions = 0
-                        for i in range(overlap):
+                        for i in range(1, overlap):
                             if predicted_path[i] == ground_truth_path[i]:
                                 correct_transitions += 1
                         result["correct_transitions"] = correct_transitions
@@ -2108,7 +2108,7 @@ class BenchmarkRunner:
         assert r_ok.exact_match is True
         assert abs(r_ok.step_accuracy - 1.0) < 1e-9
         assert r_bad.exact_match is False
-        assert abs(r_bad.step_accuracy - (2.0 / 3.0)) < 1e-9
+        assert abs(r_bad.step_accuracy - 0.5) < 1e-9
         # Latency diagnostics sanity (systems-level only).
         ale = LatencyDiagnostics.accuracy_latency_efficiency(0.8, 10.0)
         assert abs(ale - 0.08) < 1e-9, f"ALE mismatch: {ale}"

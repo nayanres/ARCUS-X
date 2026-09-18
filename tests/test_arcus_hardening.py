@@ -123,6 +123,21 @@ def test_metrics_perfect_partial_wrongfinal():
     assert not r3.exact_match
 
 
+def test_step_accuracy_excludes_provided_initial_state():
+    gt = ["[0,0]", "[1,0]", "[1,1]"]
+
+    # Copying the supplied initial state while missing every transition is not
+    # partial transition success.
+    initial_only = compare_trajectories(["[0,0]"], gt)
+    assert initial_only.step_accuracy == 0.0
+    assert initial_only.continuity_score == 0.0
+
+    # One of the two requested transitions is correct.
+    one_transition = compare_trajectories(["[0,0]", "[1,0]", "[0,0]"], gt)
+    assert one_transition.step_accuracy == 0.5
+    assert one_transition.continuity_score == 0.5
+
+
 def test_fracture_depth():
     finder = FracturePointFinder(accuracy_threshold=0.5, look_ahead_step=2)
     # Accuracy stays high then collapses and stays low.
@@ -493,7 +508,7 @@ def test_random_baseline_near_chance():
 
 
 def test_random_baseline_step_accuracy_chance_level():
-    """Random baseline step accuracy should be near chance level (~1/|actions|)."""
+    """Random baseline position matches should remain well below a strong model."""
     from arcus.evaluation.baselines import RandomBaseline
     baseline = RandomBaseline(seed=12345)
     gen = GridTaskGenerator(seed=7)
@@ -504,10 +519,11 @@ def test_random_baseline_step_accuracy_chance_level():
         res = baseline.evaluate(task)
         step_accs.append(res["step_accuracy"])
         cont_accs.append(res["continuity_score"])
-    # With 4 actions, chance step accuracy is ~0.25. Random walk should be near this.
+    # Position matches are stricter than action-label matches, so the expected
+    # coordinate-match rate is lower than 1 / number_of_actions.
     mean_step = sum(step_accs) / len(step_accs)
     mean_cont = sum(cont_accs) / len(cont_accs)
-    assert 0.1 < mean_step < 0.4, f"Step accuracy {mean_step:.3f} not near chance (0.25)"
+    assert 0.05 < mean_step < 0.2, f"Step accuracy {mean_step:.3f} not near random"
     # Continuity should be low (random walk rarely maintains long correct prefix)
     assert mean_cont < 0.3, f"Continuity {mean_cont:.3f} too high for random walk"
 

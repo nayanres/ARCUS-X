@@ -117,9 +117,12 @@ capability, not a placeholder.
 **Primary metrics** (directly measure trajectory compliance — these are the
 headline results):
 
-- **Step Accuracy** — fraction of steps matching ground truth.
+- **Step Accuracy** — fraction of requested transitions matching ground truth;
+  the provided initial state is excluded from this metric.
 - **Exact Match** — entire predicted path equals ground truth.
-- **Continuity** — longest correct prefix / ground-truth length.
+- **Continuity** — longest correct transition prefix / number of requested
+  transitions; exact-match and structural length checks still include the
+  initial state.
 
 **Secondary metrics** (diagnostic / efficiency context — reported alongside
 primary metrics but never used as the sole success criterion):

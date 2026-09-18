@@ -965,7 +965,8 @@ def _score_probe(entry: Dict[str, Any]) -> Dict[str, Any]:
     gt_len = len(ground_truth_path)
     overlap = min(len(predicted_path), gt_len)
     correct_transitions = sum(
-        1 for i in range(overlap) if predicted_path[i] == ground_truth_path[i]
+        1 for i in range(1, overlap)
+        if predicted_path[i] == ground_truth_path[i]
     )
 
     transition_rules = _parse_transition_rules(entry.get("transition_rules", "") or "")
