@@ -42,6 +42,6 @@ RUN useradd --create-home --uid 1000 appuser \
 USER appuser
 
 # Default: prove the environment works. Override to run benchmarks, e.g.
-#   docker run ... ghcr.io/<org>/arcus-x:iclr2025 \
+#   docker run ... ghcr.io/<org>/arcus-x:<tag-or-digest> \
 #       python -m arcus.experiments.quickstart --api-key "$KEY" --n-probes 5
 CMD ["python", "tests/test_arcus_hardening.py"]

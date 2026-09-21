@@ -67,23 +67,20 @@ semantics and the ground truth is **recomputed** from the mutated rules.
 ### Semantic Gravity: Definition and Scope
 
 **Semantic gravity** is a *deterministic benchmark difficulty parameter*, not a
-measure of human cognition or model "understanding". It controls how strongly
-the transition semantics are perturbed relative to the Tier-0 baseline:
+measure of human cognition or model "understanding". It controls perturbation
+intensity, while **tier** selects the qualitative perturbation family. They are
+crossed experimental dimensions in the evaluation matrix: every requested
+gravity level is evaluated independently at each requested tier. For example,
+the paper's gravity levels can include `0.5`, `3.0`, and `15.0`, and are not
+limited to the tier numbers `0`–`3`.
 
-- `gravity = 0.0` → Tier 0 (baseline rules).
-- `gravity = 1.0` → Tier 1 (semantic disruption: labels are replaced by
-  pseudowords; the underlying trajectory is identical to Tier 0).
-- `gravity = 2.0` → Tier 2 (attribute inversion: y-axis deltas are negated;
-  ground truth is recomputed from the inverted rules).
-- `gravity = 3.0` → Tier 3 (coordinate transformation: a 90° rotation of the
-  delta vector; ground truth is recomputed from the rotated rules).
-
-The mapping from gravity to tier is implemented in
-[`arcus/analysis/gravity.py`](arcus/analysis/gravity.py) and is fully
-deterministic: `tier_for(gravity)` returns the same tier for the same gravity
-value across runs. The `disruption_ratio` is `min(1.0, gravity / 3.0)` and is
-used only for internal logging/calibration — it is **never** leaked to the
-model prompt (see [Reproducibility](#reproducibility) and the validation suite).
+`DifficultyConfig.tier_for(gravity)` remains a deterministic convenience
+mapping for code paths that need a default tier from a scalar gravity value
+(and for backward-compatible utilities); it does **not** describe the main
+runner's experimental design. The `disruption_ratio` is
+`min(1.0, gravity / 3.0)` and is used only for internal logging/calibration —
+it is **never** leaked to the model prompt (see
+[Reproducibility](#reproducibility) and the validation suite).
 
 **Methodology note:** Difficulty parameters (tier, gravity_target, seed, task_id, experiment_hash) are controlled internally and are not exposed to evaluated models. They are used only by the generation and evaluation code paths; the model-facing prompt contains solely the initial state, grid dimensions, transition rules, action sequence, task question, and required output format.
 
@@ -102,7 +99,7 @@ To avoid confusion, the benchmark separates four distinct axes:
 | Axis | What it controls | Values | Effect on Ground Truth |
 |------|------------------|--------|------------------------|
 | **Tier** | *Qualitative perturbation family* (type of rule change) | 0, 1, 2, 3 | Tier 0/1: unchanged; Tier 2/3: recomputed |
-| **Gravity** | *Perturbation intensity* (difficulty parameter) | 0.0, 1.0, 2.0, 3.0 | Maps deterministically to Tier via `tier_for(gravity)` |
+| **Gravity** | *Perturbation intensity* (difficulty parameter) | Any configured numeric levels (for example, 0.5, 3.0, 15.0) | Crossed with Tier; does not select the qualitative tier in the main runner |
 | **Horizon / Depth** | *Long-horizon state tracking difficulty* (number of steps) | 1, 2, 3, ... | Increases trajectory length; GT scales with horizon |
 | **Fracture Depth** | *Observed failure point* (where accuracy drops below threshold) | Integer horizon index | Derived from model performance, not a task parameter |
 
@@ -156,9 +153,9 @@ primary metrics but never used as the sole success criterion):
   `State Tracking Failure`, `Transition Rule Failure`,
   `Semantic Interpretation Failure`, `Horizon Collapse`, `Formatting Failure`.
 - **Fracture Depth** — the canonical reporting detector returns the first
-  horizon whose step accuracy is strictly below `0.5` and is not followed by a
-  recovery within its look-ahead window. This look-ahead belongs to reporting;
-  it is not the AFS search algorithm.
+  *sampled* horizon whose step accuracy is strictly below `0.5` and has no
+  recovery within the next three sampled points. This look-ahead belongs to
+  reporting; it is not the AFS search algorithm.
 - **Adaptive Fracture Search (AFS)** — the active search uses deterministic
   midpoint bisection over the horizon bounds. Each midpoint is classified from
   the observed batch accuracy: operationally invalid probes are filtered out
@@ -188,8 +185,9 @@ primary metrics but never used as the sole success criterion):
 ARCUS-X now emits **per-tier** and **per-gravity** fracture diagnostics alongside
 the aggregate CRI, so reviewers can localise *where* and *why* a model breaks:
 
-- **Per-tier fracture depth** — `metrics.per_tier[tier].fracture_depth` reports the
-  mean horizon at which step accuracy permanently drops below the fracture floor
+- **Per-tier fracture depth** — `metrics.per_tier[tier].fracture_depth` reports
+  the mean sampled horizon at which step accuracy first falls strictly below
+  the fracture floor without recovering within the next three sampled points,
   for each tier (0–3). This isolates the effect of each perturbation family.
 - **Per-gravity fracture curves** — `metrics.per_gravity_fracture_curve[gravity]`
   contains the sorted `(depth, step_accuracy)` pairs for each gravity level,
@@ -368,6 +366,7 @@ arcus/
 
 **Public entry points (repo root):**
 - `run_framework.sh` — shell wrapper
+- `runframework.sh` — compatibility alias for `run_framework.sh`
 - `quickstart_api.py` — Python wrapper (delegates to `arcus.experiments.quickstart`)
 
 Everything else is internal.
@@ -602,15 +601,15 @@ environment.
 ```bash
 # Pull the digest-pinned image (replace <org> and the digest with the values
 # recorded for the camera-ready / released tag):
-docker pull ghcr.io/<org>/arcus-x:iclr2025@sha256:<digest>
+docker pull ghcr.io/<org>/arcus-x:<tag-or-digest>@sha256:<digest>
 
 # Verify the environment works (runs the validation suite):
-docker run --rm ghcr.io/<org>/arcus-x:iclr2025@sha256:<digest> \
+docker run --rm ghcr.io/<org>/arcus-x:<tag-or-digest>@sha256:<digest> \
     python tests/test_arcus_hardening.py
 
 # Run a benchmark instead (API-only mode needs an OpenRouter-compatible key):
 docker run --rm -e OPENROUTER_API_KEY="$OPENROUTER_API_KEY" \
-    ghcr.io/<org>/arcus-x:iclr2025@sha256:<digest> \
+    ghcr.io/<org>/arcus-x:<tag-or-digest>@sha256:<digest> \
     python -m arcus.experiments.quickstart --model google/gemini-2.5-flash-lite --n-probes 5
 ```
 

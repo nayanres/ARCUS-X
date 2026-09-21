@@ -450,15 +450,15 @@ environment.
 ```bash
 # Pull the digest-pinned image (replace <org> and the digest with the values
 # recorded for the camera-ready / released tag):
-docker pull ghcr.io/<org>/arcus-x:iclr2025@sha256:<digest>
+docker pull ghcr.io/<org>/arcus-x:<tag-or-digest>@sha256:<digest>
 
 # Verify the environment works (runs the validation suite):
-docker run --rm ghcr.io/<org>/arcus-x:iclr2025@sha256:<digest> \
+docker run --rm ghcr.io/<org>/arcus-x:<tag-or-digest>@sha256:<digest> \
     python tests/test_arcus_hardening.py
 
 # Run a benchmark instead (API-only mode needs an OpenRouter-compatible key):
 docker run --rm -e OPENROUTER_API_KEY="$OPENROUTER_API_KEY" \
-    ghcr.io/<org>/arcus-x:iclr2025@sha256:<digest> \
+    ghcr.io/<org>/arcus-x:<tag-or-digest>@sha256:<digest> \
     python -m arcus.experiments.quickstart --model google/gemini-2.5-flash-lite --n-probes 5
 ```
 

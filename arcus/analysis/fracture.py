@@ -2,11 +2,11 @@
 
 CANONICAL DEFINITION
 --------------------
-Fracture depth is the *smallest* horizon ``z`` at which the primary trajectory
-metric -- **step accuracy** (0.0-1.0) -- permanently drops below the fracture
-floor (``accuracy_threshold``, default 0.5) and stays below it. A short
-look-ahead window confirms the drop is persistent (not a transient local dip),
-which gives robustness against non-monotonic accuracy curves.
+Fracture depth is the *smallest sampled* horizon ``z`` at which the primary
+trajectory metric -- **step accuracy** (0.0-1.0) -- falls strictly below the
+fracture floor (``accuracy_threshold``, default 0.5) with no recovery within
+the next three sampled points. The look-ahead window filters transient local
+dips without claiming permanent behavior between sampled horizons.
 
 This is the single, authoritative fracture definition used everywhere in
 ARCUS-X. The runner's bisection search locates the same point via binary
@@ -81,10 +81,10 @@ class FracturePointFinder:
     def compute_structural_yield(
         self, accuracy_curve: List[Tuple[int, float]]
     ) -> Optional[int]:
-        """Return the depth at which accuracy permanently drops below threshold.
+        """Return the first sampled depth with an unrecovered below-floor drop.
 
-        A look-ahead window confirms the drop is persistent (not a transient
-        local minimum). Returns ``None`` if no fracture is found.
+        The next ``look_ahead_step`` sampled points are checked for recovery.
+        Returns ``None`` if no fracture is found.
         """
         if not accuracy_curve:
             return None
