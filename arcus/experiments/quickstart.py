@@ -29,7 +29,7 @@ Usage:
         --api-key ... --model ... ^
         --master-seeds all
 """
-
+# debugging was not easy :(
 import os
 import sys
 import logging
