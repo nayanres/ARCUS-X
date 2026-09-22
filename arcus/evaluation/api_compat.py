@@ -56,11 +56,7 @@ from typing import Any, Callable, Dict, List, Optional
 logger = logging.getLogger(__name__)
 
 
-# Token-parameter fallback chain
-# Ordered list of parameter names to try for the *maximum completion length*.
-# The first entry is the universal default; subsequent entries are fallbacks
-# used when a provider rejects the previous one as unsupported.
-#
+
 # To add future compatibility (e.g. ``max_output_tokens`` or a provider-specific
 # parameter) simply append to this list -- no execution-layer rewrite required.
 DEFAULT_TOKEN_PARAM = "max_tokens"
@@ -73,10 +69,6 @@ TOKEN_PARAM_FALLBACK_CHAIN: List[str] = [
 
 
 # Capability schema
-# The set of capability *categories* the negotiation engine understands. Each
-# category maps to one or more request parameters. Adding a new capability is a
-# matter of extending this schema and the negotiation engine -- not the
-# execution layer.
 @dataclass
 class Capability:
     """A single negotiated capability for a provider/model.
@@ -350,7 +342,7 @@ class AdaptationLog:
 
 # Provider detection
 def detect_provider(api_base: Optional[str], model_name: str) -> str:
-    """Best-effort provider slug from the API base URL or model name.
+    """provider slug from the API base URL or model name.
 
     This is used purely for *logging/attribution* -- it never drives parameter
     selection. Parameter selection is always discovered dynamically.
@@ -361,8 +353,6 @@ def detect_provider(api_base: Optional[str], model_name: str) -> str:
             return "azure"
         if "openrouter" in base:
             return "openrouter"
-        if "ai.hackclub" in base:
-            return "hackclub"
         if "openai.com" in base or "api.openai" in base:
             return "openai"
         if "anthropic" in base:
