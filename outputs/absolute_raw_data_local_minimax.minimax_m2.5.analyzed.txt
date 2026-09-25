@@ -1,0 +1,223 @@
+============================================================
+ARCUS-X Inter-horizon trajectory analysis.
+============================================================
+
+This tool aims to see where in the trajectory the model fails most often over horizons.
+
+Step Accuracy Per Third:
+
+z=3
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=20
+early:  97.6%
+middle: 97.6%
+end:    96.9%
+
+z=30
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=35
+early:  94.1%
+middle: 93.5%
+end:    93.8%
+
+z=38
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=39
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=40
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=60
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=70
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=75
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=78
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=79
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=80
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=115
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=133
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=142
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=146
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=148
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=149
+early:  N/A
+middle: N/A
+end:    N/A
+
+z=150
+early:  N/A
+middle: N/A
+end:    N/A
+
+============================================================
+Trajectory-level Taxonomy Distribution
+============================================================
+
+Taxonomy labels are trajectory-level; they are not localized to a third.
+State Tracking Failure: 0.5%
+Transition Rule Failure: 0.5%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 5.4%
+Formatting Failure: 1.4%
+Unknown / Unmapped: 0.0%
+None: 92.3%
+
+============================================================
+Trajectory-level Taxonomy By Horizon
+============================================================
+
+z=3
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 100.0%
+
+z=20
+State Tracking Failure: 0.0%
+Transition Rule Failure: 1.2%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 1.2%
+Formatting Failure: 2.4%
+Unknown / Unmapped: 0.0%
+None: 95.1%
+
+z=30
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 3.8%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 96.2%
+
+z=35
+State Tracking Failure: 3.2%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 3.2%
+Formatting Failure: 3.2%
+Unknown / Unmapped: 0.0%
+None: 90.3%
+
+z=38
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 11.8%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 88.2%
+
+z=39
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 12.5%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 87.5%
+
+z=40
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 9.5%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 90.5%
+
+z=60
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 100.0%
+
+z=70
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 66.7%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 33.3%
+
+z=78
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 100.0%
+
+z=80
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 100.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%

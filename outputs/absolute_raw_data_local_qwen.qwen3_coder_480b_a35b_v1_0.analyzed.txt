@@ -1,0 +1,276 @@
+============================================================
+ARCUS-X Inter-horizon trajectory analysis.
+============================================================
+
+This tool aims to see where in the trajectory the model fails most often over horizons.
+
+Step Accuracy Per Third:
+
+z=3
+early:  100.0%
+middle: 100.0%
+end:    100.0%
+
+z=20
+early:  93.5%
+middle: 61.7%
+end:    30.2%
+
+z=22
+early:  96.0%
+middle: 57.6%
+end:    28.8%
+
+z=23
+early:  89.4%
+middle: 45.6%
+end:    21.6%
+
+z=24
+early:  89.0%
+middle: 39.6%
+end:    21.4%
+
+z=25
+early:  88.5%
+middle: 45.4%
+end:    21.9%
+
+z=26
+early:  90.1%
+middle: 52.4%
+end:    19.4%
+
+z=27
+early:  90.0%
+middle: 39.6%
+end:    12.8%
+
+z=28
+early:  85.0%
+middle: 38.3%
+end:    10.0%
+
+z=29
+early:  86.7%
+middle: 36.1%
+end:    15.9%
+
+z=30
+early:  81.0%
+middle: 36.9%
+end:    15.4%
+
+z=31
+early:  83.0%
+middle: 32.5%
+end:    8.9%
+
+z=32
+early:  84.2%
+middle: 35.9%
+end:    16.2%
+
+z=33
+early:  88.6%
+middle: 36.4%
+end:    22.7%
+
+z=34
+early:  80.0%
+middle: 30.0%
+end:    12.2%
+
+z=35
+early:  85.5%
+middle: 33.6%
+end:    14.8%
+
+z=36
+early:  73.3%
+middle: 15.2%
+end:    6.1%
+
+z=39
+early:  73.0%
+middle: 18.5%
+end:    9.5%
+
+============================================================
+Trajectory-level Taxonomy Distribution
+============================================================
+
+Taxonomy labels are trajectory-level; they are not localized to a third.
+State Tracking Failure: 93.9%
+Transition Rule Failure: 1.1%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 1.2%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 3.7%
+
+============================================================
+Trajectory-level Taxonomy By Horizon
+============================================================
+
+z=3
+State Tracking Failure: 0.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 100.0%
+
+z=20
+State Tracking Failure: 84.0%
+Transition Rule Failure: 3.3%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 2.7%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 10.0%
+
+z=22
+State Tracking Failure: 90.8%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.8%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 8.3%
+
+z=23
+State Tracking Failure: 93.3%
+Transition Rule Failure: 1.7%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 2.5%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 2.5%
+
+z=24
+State Tracking Failure: 91.7%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 8.3%
+
+z=25
+State Tracking Failure: 91.9%
+Transition Rule Failure: 0.9%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 1.9%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 5.3%
+
+z=26
+State Tracking Failure: 94.2%
+Transition Rule Failure: 0.8%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 1.7%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 3.3%
+
+z=27
+State Tracking Failure: 96.8%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 2.5%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.7%
+
+z=28
+State Tracking Failure: 96.7%
+Transition Rule Failure: 3.3%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%
+
+z=29
+State Tracking Failure: 97.5%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 2.5%
+
+z=30
+State Tracking Failure: 97.9%
+Transition Rule Failure: 1.5%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.6%
+
+z=31
+State Tracking Failure: 100.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%
+
+z=32
+State Tracking Failure: 99.2%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.8%
+
+z=33
+State Tracking Failure: 100.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%
+
+z=34
+State Tracking Failure: 100.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%
+
+z=35
+State Tracking Failure: 100.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%
+
+z=36
+State Tracking Failure: 100.0%
+Transition Rule Failure: 0.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%
+
+z=39
+State Tracking Failure: 99.0%
+Transition Rule Failure: 1.0%
+Semantic Interpretation Failure: 0.0%
+Horizon Collapse: 0.0%
+Formatting Failure: 0.0%
+Unknown / Unmapped: 0.0%
+None: 0.0%

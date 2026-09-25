@@ -20,6 +20,7 @@ inference, model-free baselines, reproducibility controls, and post-run audits.
 - [Validation suite](#validation-suite)
 - [Architecture](#architecture-single-source-of-truth)
 - [Quick start](#quick-start)
+- [Inter-horizon trajectory analysis](#inter-horizon-trajectory-analysis)
 - [Reproducibility](#reproducibility)
 - [Dependency management](#dependency-management)
 - [File manifest](#file-manifest)
@@ -427,6 +428,61 @@ python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.t
 - **`--error-density`** — adds non-zero operational error rates by horizon using all probes evaluated at that horizon as the denominator, with per-code counts (for example, `z=3   20 probes   E100: 2   E101: 1   error density: 15.0%`).
 - **Multi-seed support** — automatically captures all seeds present in the session and reports per-seed variance and metrics correctly.
 
+### Inter-Horizon Trajectory Analysis (`inter_horizon_analysis.py`)
+
+[`inter_horizon_analysis.py`](inter_horizon_analysis.py) is a focused,
+post-hoc diagnostic for the raw TXT stream logs produced by an ARCUS-X run.
+While `post_run_analyzer.py` summarizes performance by probe and horizon, this
+tool shows **where within each trajectory** errors occur. It divides every
+horizon into early, middle, and end thirds (any remainder is assigned to the
+end) and reports step accuracy for each region and horizon.
+
+Run it against an absolute raw-output log:
+
+```bash
+python inter_horizon_analysis.py outputs/absolute_raw_data_local_gpt_5_mini.txt
+```
+
+On Windows PowerShell, the same command can be run directly:
+
+```powershell
+python .\inter_horizon_analysis.py .\outputs\absolute_raw_data_local_gpt_5_mini.txt
+```
+
+Use `--all_tax` when you also want the trajectory-level taxonomy broken out
+for each horizon:
+
+```bash
+python inter_horizon_analysis.py outputs/absolute_raw_data_local_gpt_5_mini.txt --all_tax
+```
+
+The report contains:
+
+- **Step Accuracy Per Third** — early/middle/end accuracy for each numeric
+  horizon (`z`). A declining end-of-trajectory score can indicate accumulated
+  state-tracking difficulty, while a uniform drop suggests a broader
+  interpretation or formatting problem.
+- **Trajectory-level Taxonomy Distribution** — the canonical error category
+  for each valid trajectory, including state-tracking, transition-rule,
+  semantic-interpretation, horizon-collapse, formatting, and unmapped errors.
+- **Optional taxonomy by horizon** — enabled by `--all_tax`, useful for seeing
+  whether the mix of failure modes changes as trajectories become longer.
+
+This analysis is valuable because aggregate exact-match accuracy can hide the
+failure pattern. Comparing the thirds separates early mistakes from errors
+that emerge only after several state transitions, making it easier to
+distinguish long-horizon degradation from a general inability to apply the
+rules. It is also lightweight and reproducible: it reads the raw stream
+format, reuses ARCUS-X's parser and taxonomy classifier, and does not invoke
+the model or rerun the benchmark.
+
+Interpret the results with two important limitations in mind. Taxonomy labels
+are assigned at the **trajectory level**, not to a specific third, so the
+taxonomy cannot by itself prove that an error occurred in the end region.
+Also, invalid/provider-error outputs are excluded from step-accuracy totals;
+they should be considered separately rather than treated as cognitive
+failures.
+
 ### Run it locally (step by step)
 
 The benchmark is **API-only by default** — you only need an OpenRouter-compatible
@@ -732,6 +788,7 @@ answer shortcuts into its prompt.
 | `arcus/analysis/fracture.py` | Fracture point detection |
 | `arcus/experiments/benchmark_runner.py` | Orchestrator (bisection search) |
 | `arcus/experiments/quickstart.py` | CLI for API-only runs |
+| `inter_horizon_analysis.py` | Within-trajectory accuracy and failure-pattern diagnostics |
 | `tests/test_arcus_hardening.py` | Validation suite |
 | `arcus/evaluation/baselines.py` | Model-free baseline evaluators (oracle / random / initial-state) |
 | `arcus/experiments/difficulty_validation.py` | Difficulty validation experiments |
