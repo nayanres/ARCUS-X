@@ -85,7 +85,7 @@ it is **never** leaked to the model prompt (see
 
 **Methodology note:** Difficulty parameters (tier, gravity_target, seed, task_id, experiment_hash) are controlled internally and are not exposed to evaluated models. They are used only by the generation and evaluation code paths; the model-facing prompt contains solely the initial state, grid dimensions, transition rules, action sequence, task question, and required output format.
 
-**Why this matters for reviewers:** Semantic gravity is a *controlled
+**Why this matters :** Semantic gravity is a *controlled
 perturbation of the evaluation environment*, analogous to changing the rules of
 a game. It is not a proxy for "reasoning depth" in the cognitive sense. All
 tiers share the same grid dimensions, initial state, and action sequence; only
@@ -104,7 +104,7 @@ To avoid confusion, the benchmark separates four distinct axes:
 | **Horizon / Depth** | *Long-horizon state tracking difficulty* (number of steps) | 1, 2, 3, ... | Increases trajectory length; GT scales with horizon |
 | **Fracture Depth** | *Observed failure point* (where accuracy drops below threshold) | Integer horizon index | Derived from model performance, not a task parameter |
 
-**Key distinction:** Tier and Gravity are *task construction* parameters (set before evaluation). Horizon is a *task configuration* parameter. Fracture Depth is a *measurement* derived from model outputs. Reviewers should not conflate these axes.
+**distinction:** Tier and Gravity are *task construction* parameters (set before evaluation). Horizon is a *task configuration* parameter. Fracture Depth is a *measurement* derived from model outputs. 
 
 ### Grid Scaling (optional axis)
 
@@ -184,7 +184,7 @@ primary metrics but never used as the sole success criterion):
 ### Interpretable Reporting
 
 ARCUS-X now emits **per-tier** and **per-gravity** fracture diagnostics alongside
-the aggregate CRI, so reviewers can localise *where* and *why* a model breaks:
+the aggregate CRI, so one can localise *where* and *why* a model breaks:
 
 - **Per-tier fracture depth** — `metrics.per_tier[tier].fracture_depth` reports
   the mean sampled horizon at which step accuracy first falls strictly below
