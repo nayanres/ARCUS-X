@@ -389,7 +389,7 @@ pip install -r requirements-local.txt
 ```bash
 # Run via the shell wrapper (API-only mode, needs an OpenRouter-compatible key)
 export OPENROUTER_API_KEY="sk-or-v1-..."
-./run_framework.sh --model google/gemini-2.5-flash-lite --probes 5
+./run_framework.sh --model google/gemini-2.5-flash-lite --n-probes 5
 ```
 
 Or directly via Python:
@@ -575,7 +575,7 @@ python quickstart_api.py \
     --master-seeds all
 ```
 
-`--master-seeds all` expands to the canonical paper seed list
+`--master-seeds all` expands to the generated (by quick google search) seed list
 `[42, 12345, 6734, 9878, 2026, 9001, 1337, 31415]`. The benchmark is executed
 once per master seed; each seed regenerates the task set via
 `GridTaskGenerator(seed=master_seed)` and produces its own results matrix. The
