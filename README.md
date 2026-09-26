@@ -67,9 +67,7 @@ semantics and the ground truth is **recomputed** from the mutated rules.
 
 ### Semantic Gravity: Definition and Scope
 
-**Semantic gravity** is a *deterministic benchmark difficulty parameter*, not a
-measure of human cognition or model "understanding". It controls perturbation
-intensity, while **tier** selects the qualitative perturbation family. They are
+Semantic gravity is a legacy/configuration parameter retained in the experimental matrix. In the main runner reported in the paper, gravity is crossed with tier but does not independently alter the model-facing prompt or select the tier. They are
 crossed experimental dimensions in the evaluation matrix: every requested
 gravity level is evaluated independently at each requested tier. For example,
 the paper's gravity levels can include `0.5`, `3.0`, and `15.0`, and are not
