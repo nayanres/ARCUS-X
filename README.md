@@ -826,4 +826,4 @@ Archived copies are in `archive/`.
 
 ## License
 
-MIT
+Apache 2.0
