@@ -3,7 +3,7 @@
 ARCUS-X evaluates how well language models maintain state and follow procedural
 rules over long horizons. The benchmark generates **deterministic, procedural
 grid-trajectory tasks** where the ground truth is computed from explicit
-transition rules — never from model output.
+transition rules, never from model output.
 
 ## Overview
 
@@ -106,14 +106,14 @@ To avoid confusion, the benchmark separates four distinct axes:
 
 ### Grid Scaling (optional axis)
 
-**Grid scaling is a fully implemented, optional evaluation axis — not future
+**Grid scaling is a fully implemented, optional evaluation axis, it not future
 extensibility.** It is disabled by default; when enabled, grid dimensions become
 an independent sweep axis alongside gravity / tier / depth.
 
 - Controlled by the `grid_size_levels` parameter (a list of `(width, height)`
   tuples, e.g. `[(8, 8), (16, 16), (32, 32)]`).
 - When `None` (default), grid dimensions are sampled per-instance exactly as
-  before — the default benchmark behavior is unchanged.
+  before. The default benchmark behavior is unchanged.
 - When set, the runner yields each `(width, height)` as an independent axis; the
   results-matrix key becomes a 5-tuple `(z, gravity, tier, probe_idx, grid_key)`
   so aggregation is uniform across both modes.
@@ -251,7 +251,7 @@ reproducibility.
 ## Parallel Master-Seed Execution & Resume
 
 ARCUS-X can run multiple master seeds **concurrently** and can **resume** an
-interrupted run from its raw stream. Both are runtime/scheduling features only —
+interrupted run from its raw stream. Both are runtime/scheduling features only.
 they do **not** change benchmark semantics, metrics, probe ordering, or scoring.
 
 ### Parallel execution (`--parallel-seeds`)
@@ -372,7 +372,7 @@ Everything else is internal.
 
 ## Quick Start
 
-Install the runtime (API evaluation / lightweight benchmark execution) — only
+Install the runtime (API evaluation / lightweight benchmark execution)- only
 `requests` is required. Local GPU inference is **optional** and ARCUS-X does
 **not** require it.
 
