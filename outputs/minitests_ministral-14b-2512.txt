@@ -1,0 +1,2627 @@
+
+MINITEST RUN | model=ministral-14b-2512 | seed=42 | gravity=0.5 | z=50 | tiers=0,1,2,3
+
+=== RAW STREAM ENTRY (Tokens: 625) ===
+Parameters: z=50, gravity=0.5, tier=0, grid=default
+Grid: 9x7
+InitialState: (1, 6)
+Actions: ['west', 'south', 'north', 'north', 'east', 'north', 'south', 'south', 'east', 'south', 'east', 'south', 'east', 'south', 'west', 'south', 'west', 'north', 'west', 'south', 'south', 'east', 'south', 'north', 'west', 'north', 'west', 'east', 'south', 'west', 'west', 'east', 'south', 'south', 'north', 'west', 'south', 'west', 'south', 'south', 'south', 'east', 'east', 'west', 'west', 'north', 'east', 'west', 'north', 'west']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=42, tier=0, gravity=0.5, z=50, grid_key=default, model_id=ministral-14b-2512, tier_name=baseline, experiment_hash=0dd66d06127a9fadd81da10ae041ea93fc38cf2fb3b2b49b140bf0d7794cb3cd
+Latency(ms): 22198.633
+InputTokens: 1467
+OutputTokens: 1360
+------------------------------
+[MODEL OUTPUT]:
+Let's compute the trajectory step by step. The grid is toroidal (wraps around), so coordinates are modulo 9 for x and modulo 7 for y.
+
+Initial position: (1, 6)
+
+Now, let's apply each action in sequence:
+
+1. west: (1-1, 6) = (0, 6)
+2. south: (0, 6-1) = (0, 5)
+3. north: (0, 5+1) = (0, 6)
+4. north: (0, 6+1) = (0, 0) [since 7 mod 7 = 0]
+5. east: (0+1, 0) = (1, 0)
+6. north: (1, 0+1) = (1, 1)
+7. south: (1, 1-1) = (1, 0)
+8. south: (1, 0-1) = (1, 6) [since -1 mod 7 = 6]
+9. east: (1+1, 6) = (2, 6)
+10. south: (2, 6-1) = (2, 5)
+11. east: (2+1, 5) = (3, 5)
+12. south: (3, 5-1) = (3, 4)
+13. east: (3+1, 4) = (4, 4)
+14. south: (4, 4-1) = (4, 3)
+15. west: (4-1, 3) = (3, 3)
+16. south: (3, 3-1) = (3, 2)
+17. west: (3-1, 2) = (2, 2)
+18. north: (2, 2+1) = (2, 3)
+19. west: (2-1, 3) = (1, 3)
+20. south: (1, 3-1) = (1, 2)
+21. south: (1, 2-1) = (1, 1)
+22. east: (1+1, 1) = (2, 1)
+23. south: (2, 1-1) = (2, 0)
+24. north: (2, 0+1) = (2, 1)
+25. west: (2-1, 1) = (1, 1)
+26. north: (1, 1+1) = (1, 2)
+27. west: (1-1, 2) = (0, 2)
+28. east: (0+1, 2) = (1, 2)
+29. south: (1, 2-1) = (1, 1)
+30. west: (1-1, 1) = (0, 1)
+31. west: (0-1, 1) = (8, 1) [since -1 mod 9 = 8]
+32. east: (8+1, 1) = (0, 1)
+33. south: (0, 1-1) = (0, 0)
+34. south: (0, 0-1) = (0, 6) [since -1 mod 7 = 6]
+35. south: (0, 6-1) = (0, 5)
+36. south: (0, 5-1) = (0, 4)
+37. south: (0, 4-1) = (0, 3)
+38. east: (0+1, 3) = (1, 3)
+39. east: (1+1, 3) = (2, 3)
+40. west: (2-1, 3) = (1, 3)
+41. west: (1-1, 3) = (0, 3)
+42. north: (0, 3+1) = (0, 4)
+43. west: (0-1, 4) = (8, 4) [since -1 mod 9 = 8]
+44. south: (8, 4-1) = (8, 3)
+45. west: (8-1, 3) = (7, 3)
+46. north: (7, 3+1) = (7, 4)
+47. west: (7-1, 4) = (6, 4)
+48. east: (6+1, 4) = (7, 4)
+49. south: (7, 4-1) = (7, 3)
+50. south: (7, 3-1) = (7, 2)
+
+Here is the full trajectory:
+
+```
+[1,6]
+[0,6]
+[0,5]
+[0,6]
+[0,0]
+[1,0]
+[1,1]
+[1,0]
+[1,6]
+[2,6]
+[2,5]
+[3,5]
+[3,4]
+[4,4]
+[3,3]
+[3,2]
+[2,2]
+[2,3]
+[1,3]
+[1,2]
+[1,1]
+[2,1]
+[2,0]
+[2,1]
+[1,1]
+[1,2]
+[0,2]
+[1,2]
+[1,1]
+[0,1]
+[8,1]
+[0,1]
+[0,0]
+[0,6]
+[0,5]
+[0,4]
+[0,3]
+[1,3]
+[2,3]
+[1,3]
+[0,3]
+[0,4]
+[8,4]
+[8,3]
+[7,3]
+[7,4]
+[6,4]
+[7,4]
+[7,3]
+[7,2]
+```
+
+[GROUND TRUTH EXPECTED]:
+[1,6]
+[0,6]
+[0,5]
+[0,6]
+[0,0]
+[1,0]
+[1,1]
+[1,0]
+[1,6]
+[2,6]
+[2,5]
+[3,5]
+[3,4]
+[4,4]
+[4,3]
+[3,3]
+[3,2]
+[2,2]
+[2,3]
+[1,3]
+[1,2]
+[1,1]
+[2,1]
+[2,0]
+[2,1]
+[1,1]
+[1,2]
+[0,2]
+[1,2]
+[1,1]
+[0,1]
+[8,1]
+[0,1]
+[0,0]
+[0,6]
+[0,0]
+[8,0]
+[8,6]
+[7,6]
+[7,5]
+[7,4]
+[7,3]
+[8,3]
+[0,3]
+[8,3]
+[7,3]
+[7,4]
+[8,4]
+[7,4]
+[7,5]
+[6,5]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 1276) ===
+Parameters: z=50, gravity=0.5, tier=1, grid=default
+Grid: 11x5
+InitialState: (10, 4)
+Actions: ['east', 'north', 'west', 'west', 'east', 'north', 'west', 'east', 'east', 'west', 'west', 'east', 'north', 'east', 'north', 'west', 'east', 'west', 'east', 'south', 'east', 'west', 'south', 'east', 'north', 'east', 'south', 'north', 'east', 'east', 'east', 'east', 'east', 'north', 'south', 'east', 'south', 'west', 'west', 'south', 'east', 'west', 'south', 'west', 'south', 'north', 'west', 'north', 'west', 'south']
+TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=42, tier=1, gravity=0.5, z=50, grid_key=default, model_id=ministral-14b-2512, tier_name=semantic_disruption, experiment_hash=6cb5609a6377c1b97f0c690e058dc48c7441ca7a808115f87a95a5cbeb686a6b
+Latency(ms): 39296.963
+InputTokens: 1750
+OutputTokens: 3095
+------------------------------
+[MODEL OUTPUT]:
+Let's compute the trajectory step by step starting from the initial position (10, 4) and applying each action in the given sequence. The grid is toroidal, so coordinates wrap around when they go out of bounds (e.g., x = 11 becomes 0, y = 5 becomes 0, x = -1 becomes 10, y = -1 becomes 4).
+
+### Initial position:
+0. [10, 4]
+
+### Action sequence and transitions:
+The sequence is: `rpgwkpcy, hbujt, becipox, becipox, rpgwkpcy, hbujt, becipox, rpgwkpcy, rpgwkpcy, becipox, becipox, rpgwkpcy, hbujt, rpgwkpcy, hbujt, becipox, rpgwkpcy, becipox, rpgwkpcy, ybvt, rpgwkpcy, becipox, ybvt, rpgwkpcy, hbujt, rpgwkpcy, ybvt, hbujt, rpgwkpcy, rpgwkpcy, rpgwkpcy, rpgwkpcy, rpgwkpcy, hbujt, ybvt, rpgwkpcy, ybvt, becipox, becipox, ybvt, rpgwkpcy, becipox, ybvt, becipox, ybvt, hbujt, becipox, hbujt, becipox, ybvt`
+
+Let's process each action one by one:
+
+1. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 4) = (11, 4) → (0, 4)
+   - 1. [0, 4]
+
+2. `hbujt`: (dx=0, dy=1) → (0, 4+1) = (0, 5) → (0, 0)
+   - 2. [0, 0]
+
+3. `becipox`: (dx=-1, dy=0) → (0-1, 0) = (-1, 0) → (10, 0)
+   - 3. [10, 0]
+
+4. `becipox`: (dx=-1, dy=0) → (10-1, 0) = (9, 0)
+   - 4. [9, 0]
+
+5. `rpgwkpcy`: (dx=1, dy=0) → (9+1, 0) = (10, 0)
+   - 5. [10, 0]
+
+6. `hbujt`: (dx=0, dy=1) → (10, 0+1) = (10, 1)
+   - 6. [10, 1]
+
+7. `becipox`: (dx=-1, dy=0) → (10-1, 1) = (9, 1)
+   - 7. [9, 1]
+
+8. `rpgwkpcy`: (dx=1, dy=0) → (9+1, 1) = (10, 1)
+   - 8. [10, 1]
+
+9. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 1) = (11, 1) → (0, 1)
+   - 9. [0, 1]
+
+10. `becipox`: (dx=-1, dy=0) → (0-1, 1) = (-1, 1) → (10, 1)
+    - 10. [10, 1]
+
+11. `becipox`: (dx=-1, dy=0) → (10-1, 1) = (9, 1)
+    - 11. [9, 1]
+
+12. `rpgwkpcy`: (dx=1, dy=0) → (9+1, 1) = (10, 1)
+    - 12. [10, 1]
+
+13. `hbujt`: (dx=0, dy=1) → (10, 1+1) = (10, 2)
+    - 13. [10, 2]
+
+14. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 2) = (11, 2) → (0, 2)
+    - 14. [0, 2]
+
+15. `hbujt`: (dx=0, dy=1) → (0, 2+1) = (0, 3)
+    - 15. [0, 3]
+
+16. `becipox`: (dx=-1, dy=0) → (0-1, 3) = (-1, 3) → (10, 3)
+    - 16. [10, 3]
+
+17. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 3) = (11, 3) → (0, 3)
+    - 17. [0, 3]
+
+18. `becipox`: (dx=-1, dy=0) → (0-1, 3) = (-1, 3) → (10, 3)
+    - 18. [10, 3]
+
+19. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 3) = (11, 3) → (0, 3)
+    - 19. [0, 3]
+
+20. `ybvt`: (dx=0, dy=-1) → (0, 3-1) = (0, 2)
+    - 20. [0, 2]
+
+21. `rpgwkpcy`: (dx=1, dy=0) → (0+1, 2) = (1, 2)
+    - 21. [1, 2]
+
+22. `becipox`: (dx=-1, dy=0) → (1-1, 2) = (0, 2)
+    - 22. [0, 2]
+
+23. `ybvt`: (dx=0, dy=-1) → (0, 2-1) = (0, 1)
+    - 23. [0, 1]
+
+24. `rpgwkpcy`: (dx=1, dy=0) → (0+1, 1) = (1, 1)
+    - 24. [1, 1]
+
+25. `hbujt`: (dx=0, dy=1) → (1, 1+1) = (1, 2)
+    - 25. [1, 2]
+
+26. `rpgwkpcy`: (dx=1, dy=0) → (1+1, 2) = (2, 2)
+    - 26. [2, 2]
+
+27. `ybvt`: (dx=0, dy=-1) → (2, 2-1) = (2, 1)
+    - 27. [2, 1]
+
+28. `hbujt`: (dx=0, dy=1) → (2, 1+1) = (2, 2)
+    - 28. [2, 2]
+
+29. `rpgwkpcy`: (dx=1, dy=0) → (2+1, 2) = (3, 2)
+    - 29. [3, 2]
+
+30. `rpgwkpcy`: (dx=1, dy=0) → (3+1, 2) = (4, 2)
+    - 30. [4, 2]
+
+31. `rpgwkpcy`: (dx=1, dy=0) → (4+1, 2) = (5, 2)
+    - 31. [5, 2]
+
+32. `rpgwkpcy`: (dx=1, dy=0) → (5+1, 2) = (6, 2)
+    - 32. [6, 2]
+
+33. `rpgwkpcy`: (dx=1, dy=0) → (6+1, 2) = (7, 2)
+    - 33. [7, 2]
+
+34. `hbujt`: (dx=0, dy=1) → (7, 2+1) = (7, 3)
+    - 34. [7, 3]
+
+35. `ybvt`: (dx=0, dy=-1) → (7, 3-1) = (7, 2)
+    - 35. [7, 2]
+
+36. `rpgwkpcy`: (dx=1, dy=0) → (7+1, 2) = (8, 2)
+    - 36. [8, 2]
+
+37. `ybvt`: (dx=0, dy=-1) → (8, 2-1) = (8, 1)
+    - 37. [8, 1]
+
+38. `becipox`: (dx=-1, dy=0) → (8-1, 1) = (7, 1)
+    - 38. [7, 1]
+
+39. `becipox`: (dx=-1, dy=0) → (7-1, 1) = (6, 1)
+    - 39. [6, 1]
+
+40. `ybvt`: (dx=0, dy=-1) → (6, 1-1) = (6, 0)
+    - 40. [6, 0]
+
+41. `rpgwkpcy`: (dx=1, dy=0) → (6+1, 0) = (7, 0)
+    - 41. [7, 0]
+
+42. `becipox`: (dx=-1, dy=0) → (7-1, 0) = (6, 0)
+    - 42. [6, 0]
+
+43. `ybvt`: (dx=0, dy=-1) → (6, 0-1) = (6, -1) → (6, 4)
+    - 43. [6, 4]
+
+44. `becipox`: (dx=-1, dy=0) → (6-1, 4) = (5, 4)
+    - 44. [5, 4]
+
+45. `ybvt`: (dx=0, dy=-1) → (5, 4-1) = (5, 3)
+    - 45. [5, 3]
+
+46. `hbujt`: (dx=0, dy=1) → (5, 3+1) = (5, 4)
+    - 46. [5, 4]
+
+47. `becipox`: (dx=-1, dy=0) → (5-1, 4) = (4, 4)
+    - 47. [4, 4]
+
+48. `hbujt`: (dx=0, dy=1) → (4, 4+1) = (4, 5) → (4, 0)
+    - 48. [4, 0]
+
+49. `becipox`: (dx=-1, dy=0) → (4-1, 0) = (3, 0)
+    - 49. [3, 0]
+
+50. `ybvt`: (dx=0, dy=-1) → (3, 0-1) = (3, -1) → (3, 4)
+    - 50. [3, 4]
+
+### Full trajectory:
+```
+[10, 4]
+[0, 4]
+[0, 0]
+[10, 0]
+[9, 0]
+[10, 0]
+[10, 1]
+[9, 1]
+[10, 1]
+[0, 1]
+[10, 1]
+[9, 1]
+[10, 1]
+[10, 2]
+[0, 2]
+[0, 3]
+[10, 3]
+[0, 3]
+[10, 3]
+[0, 3]
+[0, 2]
+[1, 2]
+[0, 2]
+[0, 1]
+[1, 1]
+[1, 2]
+[2, 2]
+[2, 1]
+[2, 2]
+[3, 2]
+[4, 2]
+[5, 2]
+[6, 2]
+[7, 2]
+[7, 3]
+[7, 2]
+[8, 2]
+[8, 1]
+[7, 1]
+[6, 1]
+[6, 0]
+[7, 0]
+[6, 0]
+[6, 4]
+[5, 4]
+[5, 3]
+[5, 4]
+[4, 4]
+[4, 0]
+[3, 0]
+[3, 4]
+```
+
+[GROUND TRUTH EXPECTED]:
+[10,4]
+[0,4]
+[0,0]
+[10,0]
+[9,0]
+[10,0]
+[10,1]
+[9,1]
+[10,1]
+[0,1]
+[10,1]
+[9,1]
+[10,1]
+[10,2]
+[0,2]
+[0,3]
+[10,3]
+[0,3]
+[10,3]
+[0,3]
+[0,2]
+[1,2]
+[0,2]
+[0,1]
+[1,1]
+[1,2]
+[2,2]
+[2,1]
+[2,2]
+[3,2]
+[4,2]
+[5,2]
+[6,2]
+[7,2]
+[7,3]
+[7,2]
+[8,2]
+[8,1]
+[7,1]
+[6,1]
+[6,0]
+[7,0]
+[6,0]
+[6,4]
+[5,4]
+[5,3]
+[5,4]
+[4,4]
+[4,0]
+[3,0]
+[3,4]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 838) ===
+Parameters: z=50, gravity=0.5, tier=2, grid=default
+Grid: 10x11
+InitialState: (3, 8)
+Actions: ['east', 'north', 'west', 'east', 'north', 'south', 'north', 'west', 'north', 'east', 'south', 'west', 'east', 'west', 'east', 'north', 'east', 'east', 'west', 'south', 'south', 'east', 'south', 'west', 'west', 'east', 'west', 'east', 'north', 'west', 'north', 'south', 'east', 'north', 'east', 'north', 'east', 'east', 'south', 'east', 'south', 'north', 'south', 'south', 'north', 'west', 'west', 'west', 'north', 'west']
+TransitionRules: {'north': {'dx': 0, 'dy': -1}, 'south': {'dx': 0, 'dy': 1}, 'east': {'dx': 1, 'dy': 0}, 'west': {'dx': -1, 'dy': 0}}
+EnvironmentMetadata: seed=42, tier=2, gravity=0.5, z=50, grid_key=default, model_id=ministral-14b-2512, tier_name=attribute_inversion, experiment_hash=6fb00ea6136ca464b2168f6f7ebc6da7ae7dbf82b0dc37b984d16451cb160a4a
+Latency(ms): 16275.559
+InputTokens: 1478
+OutputTokens: 1648
+------------------------------
+[MODEL OUTPUT]:
+Let's compute the trajectory step by step starting from the initial position (3, 8) and following the given sequence of 50 actions. The grid is toroidal, so coordinates wrap around when they go out of bounds (e.g., x = -1 becomes 9, x = 10 becomes 0, y = -1 becomes 10, y = 11 becomes 0).
+
+### Initial position:
+- (3, 8)
+
+### Action sequence (50 actions):
+1. east
+2. north
+3. west
+4. east
+5. north
+6. south
+7. north
+8. west
+9. north
+10. east
+11. south
+12. west
+13. east
+14. west
+15. east
+16. north
+17. east
+18. east
+19. west
+20. south
+21. south
+22. east
+23. south
+24. west
+25. west
+26. east
+27. west
+28. east
+29. north
+30. west
+31. north
+32. south
+33. east
+34. north
+35. east
+36. north
+37. east
+38. east
+39. south
+40. east
+41. south
+42. north
+43. south
+44. south
+45. north
+46. west
+47. west
+48. west
+49. north
+50. west
+
+### Trajectory:
+Let's compute each step one by one.
+
+1. Start: (3, 8)
+2. east: (3 + 1, 8) = (4, 8)
+3. north: (4, 8 - 1) = (4, 7)
+4. west: (4 - 1, 7) = (3, 7)
+5. east: (3 + 1, 7) = (4, 7)
+6. north: (4, 7 - 1) = (4, 6)
+7. south: (4, 6 + 1) = (4, 7)
+8. north: (4, 7 - 1) = (4, 6)
+9. west: (4 - 1, 6) = (3, 6)
+10. north: (3, 6 - 1) = (3, 5)
+11. east: (3 + 1, 5) = (4, 5)
+12. south: (4, 5 + 1) = (4, 6)
+13. west: (4 - 1, 6) = (3, 6)
+14. east: (3 + 1, 6) = (4, 6)
+15. west: (4 - 1, 6) = (3, 6)
+16. north: (3, 6 - 1) = (3, 5)
+17. east: (3 + 1, 5) = (4, 5)
+18. east: (4 + 1, 5) = (5, 5)
+19. west: (5 - 1, 5) = (4, 5)
+20. south: (4, 5 + 1) = (4, 6)
+21. south: (4, 6 + 1) = (4, 7)
+22. east: (4 + 1, 7) = (5, 7)
+23. south: (5, 7 + 1) = (5, 8)
+24. west: (5 - 1, 8) = (4, 8)
+25. west: (4 - 1, 8) = (3, 8)
+26. east: (3 + 1, 8) = (4, 8)
+27. west: (4 - 1, 8) = (3, 8)
+28. east: (3 + 1, 8) = (4, 8)
+29. north: (4, 8 - 1) = (4, 7)
+30. west: (4 - 1, 7) = (3, 7)
+31. north: (3, 7 - 1) = (3, 6)
+32. south: (3, 6 + 1) = (3, 7)
+33. east: (3 + 1, 7) = (4, 7)
+34. north: (4, 7 - 1) = (4, 6)
+35. east: (4 + 1, 6) = (5, 6)
+36. north: (5, 6 - 1) = (5, 5)
+37. east: (5 + 1, 5) = (6, 5)
+38. east: (6 + 1, 5) = (7, 5)
+39. south: (7, 5 + 1) = (7, 6)
+40. east: (7 + 1, 6) = (8, 6)
+41. south: (8, 6 + 1) = (8, 7)
+42. north: (8, 7 - 1) = (8, 6)
+43. south: (8, 6 + 1) = (8, 7)
+44. south: (8, 7 + 1) = (8, 8)
+45. north: (8, 8 - 1) = (8, 7)
+46. west: (8 - 1, 7) = (7, 7)
+47. west: (7 - 1, 7) = (6, 7)
+48. west: (6 - 1, 7) = (5, 7)
+49. north: (5, 7 - 1) = (5, 6)
+50. west: (5 - 1, 6) = (4, 6)
+
+### Full trajectory:
+```
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[4,7]
+[4,6]
+[4,7]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[4,6]
+[3,6]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[5,5]
+[4,5]
+[4,6]
+[4,7]
+[5,7]
+[5,8]
+[4,8]
+[3,8]
+[4,8]
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[3,6]
+[3,7]
+[4,7]
+[4,6]
+[5,6]
+[5,5]
+[6,5]
+[7,5]
+[7,6]
+[8,6]
+[8,7]
+[8,6]
+[8,7]
+[8,8]
+[8,7]
+[7,7]
+[6,7]
+[5,7]
+[5,6]
+[4,6]
+```
+
+[GROUND TRUTH EXPECTED]:
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[4,7]
+[4,6]
+[4,7]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[4,6]
+[3,6]
+[4,6]
+[3,6]
+[4,6]
+[4,5]
+[5,5]
+[6,5]
+[5,5]
+[5,6]
+[5,7]
+[6,7]
+[6,8]
+[5,8]
+[4,8]
+[5,8]
+[4,8]
+[5,8]
+[5,7]
+[4,7]
+[4,6]
+[4,7]
+[5,7]
+[5,6]
+[6,6]
+[6,5]
+[7,5]
+[8,5]
+[8,6]
+[9,6]
+[9,7]
+[9,6]
+[9,7]
+[9,8]
+[9,7]
+[8,7]
+[7,7]
+[6,7]
+[6,6]
+[5,6]
+
+==============================
+
+=== RAW STREAM ENTRY (Tokens: 519) ===
+Parameters: z=50, gravity=0.5, tier=3, grid=default
+Grid: 12x8
+InitialState: (2, 2)
+Actions: ['west', 'north', 'north', 'south', 'south', 'north', 'east', 'west', 'north', 'south', 'east', 'east', 'west', 'south', 'west', 'north', 'north', 'west', 'south', 'south', 'south', 'west', 'west', 'east', 'north', 'east', 'west', 'east', 'north', 'east', 'north', 'north', 'west', 'west', 'north', 'north', 'south', 'west', 'south', 'east', 'north', 'south', 'north', 'north', 'east', 'west', 'east', 'south', 'south', 'west']
+TransitionRules: {'north': {'dx': -1, 'dy': 0}, 'south': {'dx': 1, 'dy': 0}, 'east': {'dx': 0, 'dy': 1}, 'west': {'dx': 0, 'dy': -1}}
+EnvironmentMetadata: seed=42, tier=3, gravity=0.5, z=50, grid_key=default, model_id=ministral-14b-2512, tier_name=coordinate_transformation, experiment_hash=1770e5bea740d841fc803f4d2836f837b566f9da01eaabcc2d2efc9e88cd9623
+Latency(ms): 16169.568
+InputTokens: 1475
+OutputTokens: 1002
+------------------------------
+[MODEL OUTPUT]:
+Let's process the action sequence step by step starting from the initial position (2, 2). The grid is toroidal, so when the agent moves off one edge, it wraps around to the opposite edge.
+
+Here is the trajectory:
+
+1. Initial position: [2, 2]
+2. west: [2, 1]
+3. north: [1, 1]
+4. north: [0, 1]
+5. south: [1, 1]
+6. south: [2, 1]
+7. north: [1, 1]
+8. east: [1, 2]
+9. west: [1, 1]
+10. north: [0, 1]
+11. south: [1, 1]
+12. east: [1, 2]
+13. east: [1, 3]
+14. west: [1, 2]
+15. south: [2, 2]
+16. west: [2, 1]
+17. north: [1, 1]
+18. north: [0, 1]
+19. west: [0, 0]
+20. south: [1, 0]
+21. south: [2, 0]
+22. south: [3, 0]
+23. west: [3, 7] (wraps around from y=0 to y=7)
+24. west: [3, 6]
+25. east: [3, 7]
+26. north: [2, 7]
+27. east: [2, 0] (wraps around from y=7 to y=0)
+28. west: [2, 7]
+29. east: [2, 0]
+30. north: [1, 0]
+31. east: [1, 1]
+32. north: [0, 1]
+33. north: [11, 1] (wraps around from x=0 to x=11)
+34. west: [11, 0]
+35. west: [11, 7] (wraps around from y=0 to y=7)
+36. north: [10, 7]
+37. north: [9, 7]
+38. south: [10, 7]
+39. west: [10, 6]
+40. south: [11, 6]
+41. east: [11, 7]
+42. north: [10, 7]
+43. south: [11, 7]
+44. north: [10, 7]
+45. north: [9, 7]
+46. east: [9, 0] (wraps around from y=7 to y=0)
+47. west: [9, 7]
+48. east: [9, 0]
+49. south: [10, 0]
+50. south: [11, 0]
+
+Here is the full trajectory as a list of coordinates:
+
+```
+[2, 2]
+[2, 1]
+[1, 1]
+[0, 1]
+[1, 1]
+[2, 1]
+[1, 1]
+[1, 2]
+[1, 1]
+[0, 1]
+[1, 1]
+[1, 2]
+[1, 3]
+[1, 2]
+[2, 2]
+[2, 1]
+[1, 1]
+[0, 1]
+[0, 0]
+[1, 0]
+[2, 0]
+[3, 0]
+[3, 7]
+[3, 6]
+[3, 7]
+[2, 7]
+[2, 0]
+[2, 7]
+[2, 0]
+[1, 0]
+[1, 1]
+[0, 1]
+[11, 1]
+[11, 0]
+[11, 7]
+[10, 7]
+[9, 7]
+[10, 7]
+[10, 6]
+[11, 6]
+[11, 7]
+[10, 7]
+[11, 7]
+[10, 7]
+[9, 7]
+[9, 0]
+[9, 7]
+[9, 0]
+[10, 0]
+[11, 0]
+```
+
+[GROUND TRUTH EXPECTED]:
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[1,1]
+[2,1]
+[1,1]
+[1,2]
+[1,1]
+[0,1]
+[1,1]
+[1,2]
+[1,3]
+[1,2]
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[0,0]
+[1,0]
+[2,0]
+[3,0]
+[3,7]
+[3,6]
+[3,7]
+[2,7]
+[2,0]
+[2,7]
+[2,0]
+[1,0]
+[1,1]
+[0,1]
+[11,1]
+[11,0]
+[11,7]
+[10,7]
+[9,7]
+[10,7]
+[10,6]
+[11,6]
+[11,7]
+[10,7]
+[11,7]
+[10,7]
+[9,7]
+[9,0]
+[9,7]
+[9,0]
+[10,0]
+[11,0]
+[11,7]
+
+==============================
+
+==============================================================================
+MINITEST CHAIN ANALYSIS | model=ministral-14b-2512 | created=2026-11-06T13:29:24
+Illustrative single-probe examples only; not a statistical evaluation.
+==============================================================================
+
+------------------------------------------------------------------------------
+tier=0 | seed=42 | z=50 | gravity=0.5
+task_id=arcus_x_42_t0_i51677
+experiment_hash=0dd66d06127a9fadd81da10ae041ea93fc38cf2fb3b2b49b140bf0d7794cb3cd
+
+[EXACT SENT PROMPT]
+Rules:
+  - The world is a grid with width 9 and height 7. Coordinates are (x, y) with x in [0, 8] and y in [0, 6].
+  - The grid is toroidal: movement off one edge wraps to the opposite edge.
+  - The agent starts at position (1, 6).
+  - Transition rules:
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  - The agent performs this exact sequence of actions: west -> south -> north -> north -> east -> north -> south -> south -> east -> south -> east -> south -> east -> south -> west -> south -> west -> north -> west -> south -> south -> east -> south -> north -> west -> north -> west -> east -> south -> west -> west -> east -> south -> south -> north -> west -> south -> west -> south -> south -> south -> east -> east -> west -> west -> north -> east -> west -> north -> west.
+
+Apply the transition rules step by step starting from the initial position, following the action sequence in order. Output the full trajectory as a list of 50 coordinates (initial position followed by each subsequent position), one per line, in the format '[x,y]'.
+
+[EXACT MODEL OUTPUT]
+Let's compute the trajectory step by step. The grid is toroidal (wraps around), so coordinates are modulo 9 for x and modulo 7 for y.
+
+Initial position: (1, 6)
+
+Now, let's apply each action in sequence:
+
+1. west: (1-1, 6) = (0, 6)
+2. south: (0, 6-1) = (0, 5)
+3. north: (0, 5+1) = (0, 6)
+4. north: (0, 6+1) = (0, 0) [since 7 mod 7 = 0]
+5. east: (0+1, 0) = (1, 0)
+6. north: (1, 0+1) = (1, 1)
+7. south: (1, 1-1) = (1, 0)
+8. south: (1, 0-1) = (1, 6) [since -1 mod 7 = 6]
+9. east: (1+1, 6) = (2, 6)
+10. south: (2, 6-1) = (2, 5)
+11. east: (2+1, 5) = (3, 5)
+12. south: (3, 5-1) = (3, 4)
+13. east: (3+1, 4) = (4, 4)
+14. south: (4, 4-1) = (4, 3)
+15. west: (4-1, 3) = (3, 3)
+16. south: (3, 3-1) = (3, 2)
+17. west: (3-1, 2) = (2, 2)
+18. north: (2, 2+1) = (2, 3)
+19. west: (2-1, 3) = (1, 3)
+20. south: (1, 3-1) = (1, 2)
+21. south: (1, 2-1) = (1, 1)
+22. east: (1+1, 1) = (2, 1)
+23. south: (2, 1-1) = (2, 0)
+24. north: (2, 0+1) = (2, 1)
+25. west: (2-1, 1) = (1, 1)
+26. north: (1, 1+1) = (1, 2)
+27. west: (1-1, 2) = (0, 2)
+28. east: (0+1, 2) = (1, 2)
+29. south: (1, 2-1) = (1, 1)
+30. west: (1-1, 1) = (0, 1)
+31. west: (0-1, 1) = (8, 1) [since -1 mod 9 = 8]
+32. east: (8+1, 1) = (0, 1)
+33. south: (0, 1-1) = (0, 0)
+34. south: (0, 0-1) = (0, 6) [since -1 mod 7 = 6]
+35. south: (0, 6-1) = (0, 5)
+36. south: (0, 5-1) = (0, 4)
+37. south: (0, 4-1) = (0, 3)
+38. east: (0+1, 3) = (1, 3)
+39. east: (1+1, 3) = (2, 3)
+40. west: (2-1, 3) = (1, 3)
+41. west: (1-1, 3) = (0, 3)
+42. north: (0, 3+1) = (0, 4)
+43. west: (0-1, 4) = (8, 4) [since -1 mod 9 = 8]
+44. south: (8, 4-1) = (8, 3)
+45. west: (8-1, 3) = (7, 3)
+46. north: (7, 3+1) = (7, 4)
+47. west: (7-1, 4) = (6, 4)
+48. east: (6+1, 4) = (7, 4)
+49. south: (7, 4-1) = (7, 3)
+50. south: (7, 3-1) = (7, 2)
+
+Here is the full trajectory:
+
+```
+[1,6]
+[0,6]
+[0,5]
+[0,6]
+[0,0]
+[1,0]
+[1,1]
+[1,0]
+[1,6]
+[2,6]
+[2,5]
+[3,5]
+[3,4]
+[4,4]
+[3,3]
+[3,2]
+[2,2]
+[2,3]
+[1,3]
+[1,2]
+[1,1]
+[2,1]
+[2,0]
+[2,1]
+[1,1]
+[1,2]
+[0,2]
+[1,2]
+[1,1]
+[0,1]
+[8,1]
+[0,1]
+[0,0]
+[0,6]
+[0,5]
+[0,4]
+[0,3]
+[1,3]
+[2,3]
+[1,3]
+[0,3]
+[0,4]
+[8,4]
+[8,3]
+[7,3]
+[7,4]
+[6,4]
+[7,4]
+[7,3]
+[7,2]
+```
+
+[GROUND-TRUTH CHAIN]
+[1,6]
+[0,6]
+[0,5]
+[0,6]
+[0,0]
+[1,0]
+[1,1]
+[1,0]
+[1,6]
+[2,6]
+[2,5]
+[3,5]
+[3,4]
+[4,4]
+[4,3]
+[3,3]
+[3,2]
+[2,2]
+[2,3]
+[1,3]
+[1,2]
+[1,1]
+[2,1]
+[2,0]
+[2,1]
+[1,1]
+[1,2]
+[0,2]
+[1,2]
+[1,1]
+[0,1]
+[8,1]
+[0,1]
+[0,0]
+[0,6]
+[0,0]
+[8,0]
+[8,6]
+[7,6]
+[7,5]
+[7,4]
+[7,3]
+[8,3]
+[0,3]
+[8,3]
+[7,3]
+[7,4]
+[8,4]
+[7,4]
+[7,5]
+[6,5]
+
+[PARSED MODEL CHAIN]
+[1,6]
+[0,6]
+[0,5]
+[0,6]
+[0,0]
+[1,0]
+[1,1]
+[1,0]
+[1,6]
+[2,6]
+[2,5]
+[3,5]
+[3,4]
+[4,4]
+[3,3]
+[3,2]
+[2,2]
+[2,3]
+[1,3]
+[1,2]
+[1,1]
+[2,1]
+[2,0]
+[2,1]
+[1,1]
+[1,2]
+[0,2]
+[1,2]
+[1,1]
+[0,1]
+[8,1]
+[0,1]
+[0,0]
+[0,6]
+[0,5]
+[0,4]
+[0,3]
+[1,3]
+[2,3]
+[1,3]
+[0,3]
+[0,4]
+[8,4]
+[8,3]
+[7,3]
+[7,4]
+[6,4]
+[7,4]
+[7,3]
+[7,2]
+
+[CHAIN COMPARISON]
+000 initial: expected=[1,6] actual=[1,6] [MATCH]
+001 transition 1: expected=[0,6] actual=[0,6] [MATCH]
+002 transition 2: expected=[0,5] actual=[0,5] [MATCH]
+003 transition 3: expected=[0,6] actual=[0,6] [MATCH]
+004 transition 4: expected=[0,0] actual=[0,0] [MATCH]
+005 transition 5: expected=[1,0] actual=[1,0] [MATCH]
+006 transition 6: expected=[1,1] actual=[1,1] [MATCH]
+007 transition 7: expected=[1,0] actual=[1,0] [MATCH]
+008 transition 8: expected=[1,6] actual=[1,6] [MATCH]
+009 transition 9: expected=[2,6] actual=[2,6] [MATCH]
+010 transition 10: expected=[2,5] actual=[2,5] [MATCH]
+011 transition 11: expected=[3,5] actual=[3,5] [MATCH]
+012 transition 12: expected=[3,4] actual=[3,4] [MATCH]
+013 transition 13: expected=[4,4] actual=[4,4] [MATCH]
+014 transition 14: expected=[4,3] actual=[3,3] [MISMATCH]
+015 transition 15: expected=[3,3] actual=[3,2] [MISMATCH]
+016 transition 16: expected=[3,2] actual=[2,2] [MISMATCH]
+017 transition 17: expected=[2,2] actual=[2,3] [MISMATCH]
+018 transition 18: expected=[2,3] actual=[1,3] [MISMATCH]
+019 transition 19: expected=[1,3] actual=[1,2] [MISMATCH]
+020 transition 20: expected=[1,2] actual=[1,1] [MISMATCH]
+021 transition 21: expected=[1,1] actual=[2,1] [MISMATCH]
+022 transition 22: expected=[2,1] actual=[2,0] [MISMATCH]
+023 transition 23: expected=[2,0] actual=[2,1] [MISMATCH]
+024 transition 24: expected=[2,1] actual=[1,1] [MISMATCH]
+025 transition 25: expected=[1,1] actual=[1,2] [MISMATCH]
+026 transition 26: expected=[1,2] actual=[0,2] [MISMATCH]
+027 transition 27: expected=[0,2] actual=[1,2] [MISMATCH]
+028 transition 28: expected=[1,2] actual=[1,1] [MISMATCH]
+029 transition 29: expected=[1,1] actual=[0,1] [MISMATCH]
+030 transition 30: expected=[0,1] actual=[8,1] [MISMATCH]
+031 transition 31: expected=[8,1] actual=[0,1] [MISMATCH]
+032 transition 32: expected=[0,1] actual=[0,0] [MISMATCH]
+033 transition 33: expected=[0,0] actual=[0,6] [MISMATCH]
+034 transition 34: expected=[0,6] actual=[0,5] [MISMATCH]
+035 transition 35: expected=[0,0] actual=[0,4] [MISMATCH]
+036 transition 36: expected=[8,0] actual=[0,3] [MISMATCH]
+037 transition 37: expected=[8,6] actual=[1,3] [MISMATCH]
+038 transition 38: expected=[7,6] actual=[2,3] [MISMATCH]
+039 transition 39: expected=[7,5] actual=[1,3] [MISMATCH]
+040 transition 40: expected=[7,4] actual=[0,3] [MISMATCH]
+041 transition 41: expected=[7,3] actual=[0,4] [MISMATCH]
+042 transition 42: expected=[8,3] actual=[8,4] [MISMATCH]
+043 transition 43: expected=[0,3] actual=[8,3] [MISMATCH]
+044 transition 44: expected=[8,3] actual=[7,3] [MISMATCH]
+045 transition 45: expected=[7,3] actual=[7,4] [MISMATCH]
+046 transition 46: expected=[7,4] actual=[6,4] [MISMATCH]
+047 transition 47: expected=[8,4] actual=[7,4] [MISMATCH]
+048 transition 48: expected=[7,4] actual=[7,3] [MISMATCH]
+049 transition 49: expected=[7,5] actual=[7,2] [MISMATCH]
+050 transition 50: expected=[6,5] actual=<missing> [MISMATCH]
+
+[ANALYSIS]
+raw_output_available=True
+parseable_coordinates=True
+response_valid=True
+exact_match=False
+step_accuracy=0.260000
+continuity=0.260000
+horizon_compliance=0.980000
+taxonomy=State Tracking Failure
+taxonomy_mechanism=State Tracking Failure
+taxonomy_explanation=Model followed correctly until step 14, then drift increased (state tracking failure / recursive drift).
+
+------------------------------------------------------------------------------
+tier=1 | seed=42 | z=50 | gravity=0.5
+task_id=arcus_x_42_t1_i10445
+experiment_hash=6cb5609a6377c1b97f0c690e058dc48c7441ca7a808115f87a95a5cbeb686a6b
+
+[EXACT SENT PROMPT]
+Rules:
+  - The world is a grid with width 11 and height 5. Coordinates are (x, y) with x in [0, 10] and y in [0, 4].
+  - The grid is toroidal: movement off one edge wraps to the opposite edge.
+  - The agent starts at position (10, 4).
+  - Transition rules:
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'rpgwkpcy', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'hbujt', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'becipox', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'ybvt', the agent moves by (dx=0, dy=-1).
+  - The agent performs this exact sequence of actions: rpgwkpcy -> hbujt -> becipox -> becipox -> rpgwkpcy -> hbujt -> becipox -> rpgwkpcy -> rpgwkpcy -> becipox -> becipox -> rpgwkpcy -> hbujt -> rpgwkpcy -> hbujt -> becipox -> rpgwkpcy -> becipox -> rpgwkpcy -> ybvt -> rpgwkpcy -> becipox -> ybvt -> rpgwkpcy -> hbujt -> rpgwkpcy -> ybvt -> hbujt -> rpgwkpcy -> rpgwkpcy -> rpgwkpcy -> rpgwkpcy -> rpgwkpcy -> hbujt -> ybvt -> rpgwkpcy -> ybvt -> becipox -> becipox -> ybvt -> rpgwkpcy -> becipox -> ybvt -> becipox -> ybvt -> hbujt -> becipox -> hbujt -> becipox -> ybvt.
+
+Apply the transition rules step by step starting from the initial position, following the action sequence in order. Output the full trajectory as a list of 50 coordinates (initial position followed by each subsequent position), one per line, in the format '[x,y]'.
+
+[EXACT MODEL OUTPUT]
+Let's compute the trajectory step by step starting from the initial position (10, 4) and applying each action in the given sequence. The grid is toroidal, so coordinates wrap around when they go out of bounds (e.g., x = 11 becomes 0, y = 5 becomes 0, x = -1 becomes 10, y = -1 becomes 4).
+
+### Initial position:
+0. [10, 4]
+
+### Action sequence and transitions:
+The sequence is: `rpgwkpcy, hbujt, becipox, becipox, rpgwkpcy, hbujt, becipox, rpgwkpcy, rpgwkpcy, becipox, becipox, rpgwkpcy, hbujt, rpgwkpcy, hbujt, becipox, rpgwkpcy, becipox, rpgwkpcy, ybvt, rpgwkpcy, becipox, ybvt, rpgwkpcy, hbujt, rpgwkpcy, ybvt, hbujt, rpgwkpcy, rpgwkpcy, rpgwkpcy, rpgwkpcy, rpgwkpcy, hbujt, ybvt, rpgwkpcy, ybvt, becipox, becipox, ybvt, rpgwkpcy, becipox, ybvt, becipox, ybvt, hbujt, becipox, hbujt, becipox, ybvt`
+
+Let's process each action one by one:
+
+1. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 4) = (11, 4) → (0, 4)
+   - 1. [0, 4]
+
+2. `hbujt`: (dx=0, dy=1) → (0, 4+1) = (0, 5) → (0, 0)
+   - 2. [0, 0]
+
+3. `becipox`: (dx=-1, dy=0) → (0-1, 0) = (-1, 0) → (10, 0)
+   - 3. [10, 0]
+
+4. `becipox`: (dx=-1, dy=0) → (10-1, 0) = (9, 0)
+   - 4. [9, 0]
+
+5. `rpgwkpcy`: (dx=1, dy=0) → (9+1, 0) = (10, 0)
+   - 5. [10, 0]
+
+6. `hbujt`: (dx=0, dy=1) → (10, 0+1) = (10, 1)
+   - 6. [10, 1]
+
+7. `becipox`: (dx=-1, dy=0) → (10-1, 1) = (9, 1)
+   - 7. [9, 1]
+
+8. `rpgwkpcy`: (dx=1, dy=0) → (9+1, 1) = (10, 1)
+   - 8. [10, 1]
+
+9. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 1) = (11, 1) → (0, 1)
+   - 9. [0, 1]
+
+10. `becipox`: (dx=-1, dy=0) → (0-1, 1) = (-1, 1) → (10, 1)
+    - 10. [10, 1]
+
+11. `becipox`: (dx=-1, dy=0) → (10-1, 1) = (9, 1)
+    - 11. [9, 1]
+
+12. `rpgwkpcy`: (dx=1, dy=0) → (9+1, 1) = (10, 1)
+    - 12. [10, 1]
+
+13. `hbujt`: (dx=0, dy=1) → (10, 1+1) = (10, 2)
+    - 13. [10, 2]
+
+14. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 2) = (11, 2) → (0, 2)
+    - 14. [0, 2]
+
+15. `hbujt`: (dx=0, dy=1) → (0, 2+1) = (0, 3)
+    - 15. [0, 3]
+
+16. `becipox`: (dx=-1, dy=0) → (0-1, 3) = (-1, 3) → (10, 3)
+    - 16. [10, 3]
+
+17. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 3) = (11, 3) → (0, 3)
+    - 17. [0, 3]
+
+18. `becipox`: (dx=-1, dy=0) → (0-1, 3) = (-1, 3) → (10, 3)
+    - 18. [10, 3]
+
+19. `rpgwkpcy`: (dx=1, dy=0) → (10+1, 3) = (11, 3) → (0, 3)
+    - 19. [0, 3]
+
+20. `ybvt`: (dx=0, dy=-1) → (0, 3-1) = (0, 2)
+    - 20. [0, 2]
+
+21. `rpgwkpcy`: (dx=1, dy=0) → (0+1, 2) = (1, 2)
+    - 21. [1, 2]
+
+22. `becipox`: (dx=-1, dy=0) → (1-1, 2) = (0, 2)
+    - 22. [0, 2]
+
+23. `ybvt`: (dx=0, dy=-1) → (0, 2-1) = (0, 1)
+    - 23. [0, 1]
+
+24. `rpgwkpcy`: (dx=1, dy=0) → (0+1, 1) = (1, 1)
+    - 24. [1, 1]
+
+25. `hbujt`: (dx=0, dy=1) → (1, 1+1) = (1, 2)
+    - 25. [1, 2]
+
+26. `rpgwkpcy`: (dx=1, dy=0) → (1+1, 2) = (2, 2)
+    - 26. [2, 2]
+
+27. `ybvt`: (dx=0, dy=-1) → (2, 2-1) = (2, 1)
+    - 27. [2, 1]
+
+28. `hbujt`: (dx=0, dy=1) → (2, 1+1) = (2, 2)
+    - 28. [2, 2]
+
+29. `rpgwkpcy`: (dx=1, dy=0) → (2+1, 2) = (3, 2)
+    - 29. [3, 2]
+
+30. `rpgwkpcy`: (dx=1, dy=0) → (3+1, 2) = (4, 2)
+    - 30. [4, 2]
+
+31. `rpgwkpcy`: (dx=1, dy=0) → (4+1, 2) = (5, 2)
+    - 31. [5, 2]
+
+32. `rpgwkpcy`: (dx=1, dy=0) → (5+1, 2) = (6, 2)
+    - 32. [6, 2]
+
+33. `rpgwkpcy`: (dx=1, dy=0) → (6+1, 2) = (7, 2)
+    - 33. [7, 2]
+
+34. `hbujt`: (dx=0, dy=1) → (7, 2+1) = (7, 3)
+    - 34. [7, 3]
+
+35. `ybvt`: (dx=0, dy=-1) → (7, 3-1) = (7, 2)
+    - 35. [7, 2]
+
+36. `rpgwkpcy`: (dx=1, dy=0) → (7+1, 2) = (8, 2)
+    - 36. [8, 2]
+
+37. `ybvt`: (dx=0, dy=-1) → (8, 2-1) = (8, 1)
+    - 37. [8, 1]
+
+38. `becipox`: (dx=-1, dy=0) → (8-1, 1) = (7, 1)
+    - 38. [7, 1]
+
+39. `becipox`: (dx=-1, dy=0) → (7-1, 1) = (6, 1)
+    - 39. [6, 1]
+
+40. `ybvt`: (dx=0, dy=-1) → (6, 1-1) = (6, 0)
+    - 40. [6, 0]
+
+41. `rpgwkpcy`: (dx=1, dy=0) → (6+1, 0) = (7, 0)
+    - 41. [7, 0]
+
+42. `becipox`: (dx=-1, dy=0) → (7-1, 0) = (6, 0)
+    - 42. [6, 0]
+
+43. `ybvt`: (dx=0, dy=-1) → (6, 0-1) = (6, -1) → (6, 4)
+    - 43. [6, 4]
+
+44. `becipox`: (dx=-1, dy=0) → (6-1, 4) = (5, 4)
+    - 44. [5, 4]
+
+45. `ybvt`: (dx=0, dy=-1) → (5, 4-1) = (5, 3)
+    - 45. [5, 3]
+
+46. `hbujt`: (dx=0, dy=1) → (5, 3+1) = (5, 4)
+    - 46. [5, 4]
+
+47. `becipox`: (dx=-1, dy=0) → (5-1, 4) = (4, 4)
+    - 47. [4, 4]
+
+48. `hbujt`: (dx=0, dy=1) → (4, 4+1) = (4, 5) → (4, 0)
+    - 48. [4, 0]
+
+49. `becipox`: (dx=-1, dy=0) → (4-1, 0) = (3, 0)
+    - 49. [3, 0]
+
+50. `ybvt`: (dx=0, dy=-1) → (3, 0-1) = (3, -1) → (3, 4)
+    - 50. [3, 4]
+
+### Full trajectory:
+```
+[10, 4]
+[0, 4]
+[0, 0]
+[10, 0]
+[9, 0]
+[10, 0]
+[10, 1]
+[9, 1]
+[10, 1]
+[0, 1]
+[10, 1]
+[9, 1]
+[10, 1]
+[10, 2]
+[0, 2]
+[0, 3]
+[10, 3]
+[0, 3]
+[10, 3]
+[0, 3]
+[0, 2]
+[1, 2]
+[0, 2]
+[0, 1]
+[1, 1]
+[1, 2]
+[2, 2]
+[2, 1]
+[2, 2]
+[3, 2]
+[4, 2]
+[5, 2]
+[6, 2]
+[7, 2]
+[7, 3]
+[7, 2]
+[8, 2]
+[8, 1]
+[7, 1]
+[6, 1]
+[6, 0]
+[7, 0]
+[6, 0]
+[6, 4]
+[5, 4]
+[5, 3]
+[5, 4]
+[4, 4]
+[4, 0]
+[3, 0]
+[3, 4]
+```
+
+[GROUND-TRUTH CHAIN]
+[10,4]
+[0,4]
+[0,0]
+[10,0]
+[9,0]
+[10,0]
+[10,1]
+[9,1]
+[10,1]
+[0,1]
+[10,1]
+[9,1]
+[10,1]
+[10,2]
+[0,2]
+[0,3]
+[10,3]
+[0,3]
+[10,3]
+[0,3]
+[0,2]
+[1,2]
+[0,2]
+[0,1]
+[1,1]
+[1,2]
+[2,2]
+[2,1]
+[2,2]
+[3,2]
+[4,2]
+[5,2]
+[6,2]
+[7,2]
+[7,3]
+[7,2]
+[8,2]
+[8,1]
+[7,1]
+[6,1]
+[6,0]
+[7,0]
+[6,0]
+[6,4]
+[5,4]
+[5,3]
+[5,4]
+[4,4]
+[4,0]
+[3,0]
+[3,4]
+
+[PARSED MODEL CHAIN]
+[10,4]
+[0,4]
+[0,0]
+[10,0]
+[9,0]
+[10,0]
+[10,1]
+[9,1]
+[10,1]
+[0,1]
+[10,1]
+[9,1]
+[10,1]
+[10,2]
+[0,2]
+[0,3]
+[10,3]
+[0,3]
+[10,3]
+[0,3]
+[0,2]
+[1,2]
+[0,2]
+[0,1]
+[1,1]
+[1,2]
+[2,2]
+[2,1]
+[2,2]
+[3,2]
+[4,2]
+[5,2]
+[6,2]
+[7,2]
+[7,3]
+[7,2]
+[8,2]
+[8,1]
+[7,1]
+[6,1]
+[6,0]
+[7,0]
+[6,0]
+[6,4]
+[5,4]
+[5,3]
+[5,4]
+[4,4]
+[4,0]
+[3,0]
+[3,4]
+[10,4]
+[0,4]
+[0,0]
+[10,0]
+[9,0]
+[10,0]
+[10,1]
+[9,1]
+[10,1]
+[0,1]
+[10,1]
+[9,1]
+[10,1]
+[10,2]
+[0,2]
+[0,3]
+[10,3]
+[0,3]
+[10,3]
+[0,3]
+[0,2]
+[1,2]
+[0,2]
+[0,1]
+[1,1]
+[1,2]
+[2,2]
+[2,1]
+[2,2]
+[3,2]
+[4,2]
+[5,2]
+[6,2]
+[7,2]
+[7,3]
+[7,2]
+[8,2]
+[8,1]
+[7,1]
+[6,1]
+[6,0]
+[7,0]
+[6,0]
+[6,4]
+[5,4]
+[5,3]
+[5,4]
+[4,4]
+[4,0]
+[3,0]
+[3,4]
+
+[CHAIN COMPARISON]
+000 initial: expected=[10,4] actual=[10,4] [MATCH]
+001 transition 1: expected=[0,4] actual=[0,4] [MATCH]
+002 transition 2: expected=[0,0] actual=[0,0] [MATCH]
+003 transition 3: expected=[10,0] actual=[10,0] [MATCH]
+004 transition 4: expected=[9,0] actual=[9,0] [MATCH]
+005 transition 5: expected=[10,0] actual=[10,0] [MATCH]
+006 transition 6: expected=[10,1] actual=[10,1] [MATCH]
+007 transition 7: expected=[9,1] actual=[9,1] [MATCH]
+008 transition 8: expected=[10,1] actual=[10,1] [MATCH]
+009 transition 9: expected=[0,1] actual=[0,1] [MATCH]
+010 transition 10: expected=[10,1] actual=[10,1] [MATCH]
+011 transition 11: expected=[9,1] actual=[9,1] [MATCH]
+012 transition 12: expected=[10,1] actual=[10,1] [MATCH]
+013 transition 13: expected=[10,2] actual=[10,2] [MATCH]
+014 transition 14: expected=[0,2] actual=[0,2] [MATCH]
+015 transition 15: expected=[0,3] actual=[0,3] [MATCH]
+016 transition 16: expected=[10,3] actual=[10,3] [MATCH]
+017 transition 17: expected=[0,3] actual=[0,3] [MATCH]
+018 transition 18: expected=[10,3] actual=[10,3] [MATCH]
+019 transition 19: expected=[0,3] actual=[0,3] [MATCH]
+020 transition 20: expected=[0,2] actual=[0,2] [MATCH]
+021 transition 21: expected=[1,2] actual=[1,2] [MATCH]
+022 transition 22: expected=[0,2] actual=[0,2] [MATCH]
+023 transition 23: expected=[0,1] actual=[0,1] [MATCH]
+024 transition 24: expected=[1,1] actual=[1,1] [MATCH]
+025 transition 25: expected=[1,2] actual=[1,2] [MATCH]
+026 transition 26: expected=[2,2] actual=[2,2] [MATCH]
+027 transition 27: expected=[2,1] actual=[2,1] [MATCH]
+028 transition 28: expected=[2,2] actual=[2,2] [MATCH]
+029 transition 29: expected=[3,2] actual=[3,2] [MATCH]
+030 transition 30: expected=[4,2] actual=[4,2] [MATCH]
+031 transition 31: expected=[5,2] actual=[5,2] [MATCH]
+032 transition 32: expected=[6,2] actual=[6,2] [MATCH]
+033 transition 33: expected=[7,2] actual=[7,2] [MATCH]
+034 transition 34: expected=[7,3] actual=[7,3] [MATCH]
+035 transition 35: expected=[7,2] actual=[7,2] [MATCH]
+036 transition 36: expected=[8,2] actual=[8,2] [MATCH]
+037 transition 37: expected=[8,1] actual=[8,1] [MATCH]
+038 transition 38: expected=[7,1] actual=[7,1] [MATCH]
+039 transition 39: expected=[6,1] actual=[6,1] [MATCH]
+040 transition 40: expected=[6,0] actual=[6,0] [MATCH]
+041 transition 41: expected=[7,0] actual=[7,0] [MATCH]
+042 transition 42: expected=[6,0] actual=[6,0] [MATCH]
+043 transition 43: expected=[6,4] actual=[6,4] [MATCH]
+044 transition 44: expected=[5,4] actual=[5,4] [MATCH]
+045 transition 45: expected=[5,3] actual=[5,3] [MATCH]
+046 transition 46: expected=[5,4] actual=[5,4] [MATCH]
+047 transition 47: expected=[4,4] actual=[4,4] [MATCH]
+048 transition 48: expected=[4,0] actual=[4,0] [MATCH]
+049 transition 49: expected=[3,0] actual=[3,0] [MATCH]
+050 transition 50: expected=[3,4] actual=[3,4] [MATCH]
+051 transition 51: expected=<missing> actual=[10,4] [MISMATCH]
+052 transition 52: expected=<missing> actual=[0,4] [MISMATCH]
+053 transition 53: expected=<missing> actual=[0,0] [MISMATCH]
+054 transition 54: expected=<missing> actual=[10,0] [MISMATCH]
+055 transition 55: expected=<missing> actual=[9,0] [MISMATCH]
+056 transition 56: expected=<missing> actual=[10,0] [MISMATCH]
+057 transition 57: expected=<missing> actual=[10,1] [MISMATCH]
+058 transition 58: expected=<missing> actual=[9,1] [MISMATCH]
+059 transition 59: expected=<missing> actual=[10,1] [MISMATCH]
+060 transition 60: expected=<missing> actual=[0,1] [MISMATCH]
+061 transition 61: expected=<missing> actual=[10,1] [MISMATCH]
+062 transition 62: expected=<missing> actual=[9,1] [MISMATCH]
+063 transition 63: expected=<missing> actual=[10,1] [MISMATCH]
+064 transition 64: expected=<missing> actual=[10,2] [MISMATCH]
+065 transition 65: expected=<missing> actual=[0,2] [MISMATCH]
+066 transition 66: expected=<missing> actual=[0,3] [MISMATCH]
+067 transition 67: expected=<missing> actual=[10,3] [MISMATCH]
+068 transition 68: expected=<missing> actual=[0,3] [MISMATCH]
+069 transition 69: expected=<missing> actual=[10,3] [MISMATCH]
+070 transition 70: expected=<missing> actual=[0,3] [MISMATCH]
+071 transition 71: expected=<missing> actual=[0,2] [MISMATCH]
+072 transition 72: expected=<missing> actual=[1,2] [MISMATCH]
+073 transition 73: expected=<missing> actual=[0,2] [MISMATCH]
+074 transition 74: expected=<missing> actual=[0,1] [MISMATCH]
+075 transition 75: expected=<missing> actual=[1,1] [MISMATCH]
+076 transition 76: expected=<missing> actual=[1,2] [MISMATCH]
+077 transition 77: expected=<missing> actual=[2,2] [MISMATCH]
+078 transition 78: expected=<missing> actual=[2,1] [MISMATCH]
+079 transition 79: expected=<missing> actual=[2,2] [MISMATCH]
+080 transition 80: expected=<missing> actual=[3,2] [MISMATCH]
+081 transition 81: expected=<missing> actual=[4,2] [MISMATCH]
+082 transition 82: expected=<missing> actual=[5,2] [MISMATCH]
+083 transition 83: expected=<missing> actual=[6,2] [MISMATCH]
+084 transition 84: expected=<missing> actual=[7,2] [MISMATCH]
+085 transition 85: expected=<missing> actual=[7,3] [MISMATCH]
+086 transition 86: expected=<missing> actual=[7,2] [MISMATCH]
+087 transition 87: expected=<missing> actual=[8,2] [MISMATCH]
+088 transition 88: expected=<missing> actual=[8,1] [MISMATCH]
+089 transition 89: expected=<missing> actual=[7,1] [MISMATCH]
+090 transition 90: expected=<missing> actual=[6,1] [MISMATCH]
+091 transition 91: expected=<missing> actual=[6,0] [MISMATCH]
+092 transition 92: expected=<missing> actual=[7,0] [MISMATCH]
+093 transition 93: expected=<missing> actual=[6,0] [MISMATCH]
+094 transition 94: expected=<missing> actual=[6,4] [MISMATCH]
+095 transition 95: expected=<missing> actual=[5,4] [MISMATCH]
+096 transition 96: expected=<missing> actual=[5,3] [MISMATCH]
+097 transition 97: expected=<missing> actual=[5,4] [MISMATCH]
+098 transition 98: expected=<missing> actual=[4,4] [MISMATCH]
+099 transition 99: expected=<missing> actual=[4,0] [MISMATCH]
+100 transition 100: expected=<missing> actual=[3,0] [MISMATCH]
+101 transition 101: expected=<missing> actual=[3,4] [MISMATCH]
+
+[ANALYSIS]
+raw_output_available=True
+parseable_coordinates=True
+response_valid=True
+exact_match=False
+step_accuracy=1.000000
+continuity=1.000000
+horizon_compliance=0.495050
+taxonomy=Horizon Collapse
+taxonomy_mechanism=Horizon Failure
+taxonomy_explanation=Predicted trajectory length differs from ground truth (horizon/truncation mismatch).
+
+------------------------------------------------------------------------------
+tier=2 | seed=42 | z=50 | gravity=0.5
+task_id=arcus_x_42_t2_i19125
+experiment_hash=6fb00ea6136ca464b2168f6f7ebc6da7ae7dbf82b0dc37b984d16451cb160a4a
+
+[EXACT SENT PROMPT]
+Rules:
+  - The world is a grid with width 10 and height 11. Coordinates are (x, y) with x in [0, 9] and y in [0, 10].
+  - The grid is toroidal: movement off one edge wraps to the opposite edge.
+  - The agent starts at position (3, 8).
+  - Transition rules:
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'east', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'south', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=-1, dy=0).
+  - The agent performs this exact sequence of actions: east -> north -> west -> east -> north -> south -> north -> west -> north -> east -> south -> west -> east -> west -> east -> north -> east -> east -> west -> south -> south -> east -> south -> west -> west -> east -> west -> east -> north -> west -> north -> south -> east -> north -> east -> north -> east -> east -> south -> east -> south -> north -> south -> south -> north -> west -> west -> west -> north -> west.
+
+Apply the transition rules step by step starting from the initial position, following the action sequence in order. Output the full trajectory as a list of 50 coordinates (initial position followed by each subsequent position), one per line, in the format '[x,y]'.
+
+[EXACT MODEL OUTPUT]
+Let's compute the trajectory step by step starting from the initial position (3, 8) and following the given sequence of 50 actions. The grid is toroidal, so coordinates wrap around when they go out of bounds (e.g., x = -1 becomes 9, x = 10 becomes 0, y = -1 becomes 10, y = 11 becomes 0).
+
+### Initial position:
+- (3, 8)
+
+### Action sequence (50 actions):
+1. east
+2. north
+3. west
+4. east
+5. north
+6. south
+7. north
+8. west
+9. north
+10. east
+11. south
+12. west
+13. east
+14. west
+15. east
+16. north
+17. east
+18. east
+19. west
+20. south
+21. south
+22. east
+23. south
+24. west
+25. west
+26. east
+27. west
+28. east
+29. north
+30. west
+31. north
+32. south
+33. east
+34. north
+35. east
+36. north
+37. east
+38. east
+39. south
+40. east
+41. south
+42. north
+43. south
+44. south
+45. north
+46. west
+47. west
+48. west
+49. north
+50. west
+
+### Trajectory:
+Let's compute each step one by one.
+
+1. Start: (3, 8)
+2. east: (3 + 1, 8) = (4, 8)
+3. north: (4, 8 - 1) = (4, 7)
+4. west: (4 - 1, 7) = (3, 7)
+5. east: (3 + 1, 7) = (4, 7)
+6. north: (4, 7 - 1) = (4, 6)
+7. south: (4, 6 + 1) = (4, 7)
+8. north: (4, 7 - 1) = (4, 6)
+9. west: (4 - 1, 6) = (3, 6)
+10. north: (3, 6 - 1) = (3, 5)
+11. east: (3 + 1, 5) = (4, 5)
+12. south: (4, 5 + 1) = (4, 6)
+13. west: (4 - 1, 6) = (3, 6)
+14. east: (3 + 1, 6) = (4, 6)
+15. west: (4 - 1, 6) = (3, 6)
+16. north: (3, 6 - 1) = (3, 5)
+17. east: (3 + 1, 5) = (4, 5)
+18. east: (4 + 1, 5) = (5, 5)
+19. west: (5 - 1, 5) = (4, 5)
+20. south: (4, 5 + 1) = (4, 6)
+21. south: (4, 6 + 1) = (4, 7)
+22. east: (4 + 1, 7) = (5, 7)
+23. south: (5, 7 + 1) = (5, 8)
+24. west: (5 - 1, 8) = (4, 8)
+25. west: (4 - 1, 8) = (3, 8)
+26. east: (3 + 1, 8) = (4, 8)
+27. west: (4 - 1, 8) = (3, 8)
+28. east: (3 + 1, 8) = (4, 8)
+29. north: (4, 8 - 1) = (4, 7)
+30. west: (4 - 1, 7) = (3, 7)
+31. north: (3, 7 - 1) = (3, 6)
+32. south: (3, 6 + 1) = (3, 7)
+33. east: (3 + 1, 7) = (4, 7)
+34. north: (4, 7 - 1) = (4, 6)
+35. east: (4 + 1, 6) = (5, 6)
+36. north: (5, 6 - 1) = (5, 5)
+37. east: (5 + 1, 5) = (6, 5)
+38. east: (6 + 1, 5) = (7, 5)
+39. south: (7, 5 + 1) = (7, 6)
+40. east: (7 + 1, 6) = (8, 6)
+41. south: (8, 6 + 1) = (8, 7)
+42. north: (8, 7 - 1) = (8, 6)
+43. south: (8, 6 + 1) = (8, 7)
+44. south: (8, 7 + 1) = (8, 8)
+45. north: (8, 8 - 1) = (8, 7)
+46. west: (8 - 1, 7) = (7, 7)
+47. west: (7 - 1, 7) = (6, 7)
+48. west: (6 - 1, 7) = (5, 7)
+49. north: (5, 7 - 1) = (5, 6)
+50. west: (5 - 1, 6) = (4, 6)
+
+### Full trajectory:
+```
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[4,7]
+[4,6]
+[4,7]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[4,6]
+[3,6]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[5,5]
+[4,5]
+[4,6]
+[4,7]
+[5,7]
+[5,8]
+[4,8]
+[3,8]
+[4,8]
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[3,6]
+[3,7]
+[4,7]
+[4,6]
+[5,6]
+[5,5]
+[6,5]
+[7,5]
+[7,6]
+[8,6]
+[8,7]
+[8,6]
+[8,7]
+[8,8]
+[8,7]
+[7,7]
+[6,7]
+[5,7]
+[5,6]
+[4,6]
+```
+
+[GROUND-TRUTH CHAIN]
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[4,7]
+[4,6]
+[4,7]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[4,6]
+[3,6]
+[4,6]
+[3,6]
+[4,6]
+[4,5]
+[5,5]
+[6,5]
+[5,5]
+[5,6]
+[5,7]
+[6,7]
+[6,8]
+[5,8]
+[4,8]
+[5,8]
+[4,8]
+[5,8]
+[5,7]
+[4,7]
+[4,6]
+[4,7]
+[5,7]
+[5,6]
+[6,6]
+[6,5]
+[7,5]
+[8,5]
+[8,6]
+[9,6]
+[9,7]
+[9,6]
+[9,7]
+[9,8]
+[9,7]
+[8,7]
+[7,7]
+[6,7]
+[6,6]
+[5,6]
+
+[PARSED MODEL CHAIN]
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[4,7]
+[4,6]
+[4,7]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[4,6]
+[3,6]
+[4,6]
+[3,6]
+[3,5]
+[4,5]
+[5,5]
+[4,5]
+[4,6]
+[4,7]
+[5,7]
+[5,8]
+[4,8]
+[3,8]
+[4,8]
+[3,8]
+[4,8]
+[4,7]
+[3,7]
+[3,6]
+[3,7]
+[4,7]
+[4,6]
+[5,6]
+[5,5]
+[6,5]
+[7,5]
+[7,6]
+[8,6]
+[8,7]
+[8,6]
+[8,7]
+[8,8]
+[8,7]
+[7,7]
+[6,7]
+[5,7]
+[5,6]
+[4,6]
+
+[CHAIN COMPARISON]
+000 initial: expected=[3,8] actual=[3,8] [MATCH]
+001 transition 1: expected=[4,8] actual=[4,8] [MATCH]
+002 transition 2: expected=[4,7] actual=[4,7] [MATCH]
+003 transition 3: expected=[3,7] actual=[3,7] [MATCH]
+004 transition 4: expected=[4,7] actual=[4,7] [MATCH]
+005 transition 5: expected=[4,6] actual=[4,6] [MATCH]
+006 transition 6: expected=[4,7] actual=[4,7] [MATCH]
+007 transition 7: expected=[4,6] actual=[4,6] [MATCH]
+008 transition 8: expected=[3,6] actual=[3,6] [MATCH]
+009 transition 9: expected=[3,5] actual=[3,5] [MATCH]
+010 transition 10: expected=[4,5] actual=[4,5] [MATCH]
+011 transition 11: expected=[4,6] actual=[4,6] [MATCH]
+012 transition 12: expected=[3,6] actual=[3,6] [MATCH]
+013 transition 13: expected=[4,6] actual=[4,6] [MATCH]
+014 transition 14: expected=[3,6] actual=[3,6] [MATCH]
+015 transition 15: expected=[4,6] actual=[3,5] [MISMATCH]
+016 transition 16: expected=[4,5] actual=[4,5] [MATCH]
+017 transition 17: expected=[5,5] actual=[5,5] [MATCH]
+018 transition 18: expected=[6,5] actual=[4,5] [MISMATCH]
+019 transition 19: expected=[5,5] actual=[4,6] [MISMATCH]
+020 transition 20: expected=[5,6] actual=[4,7] [MISMATCH]
+021 transition 21: expected=[5,7] actual=[5,7] [MATCH]
+022 transition 22: expected=[6,7] actual=[5,8] [MISMATCH]
+023 transition 23: expected=[6,8] actual=[4,8] [MISMATCH]
+024 transition 24: expected=[5,8] actual=[3,8] [MISMATCH]
+025 transition 25: expected=[4,8] actual=[4,8] [MATCH]
+026 transition 26: expected=[5,8] actual=[3,8] [MISMATCH]
+027 transition 27: expected=[4,8] actual=[4,8] [MATCH]
+028 transition 28: expected=[5,8] actual=[4,7] [MISMATCH]
+029 transition 29: expected=[5,7] actual=[3,7] [MISMATCH]
+030 transition 30: expected=[4,7] actual=[3,6] [MISMATCH]
+031 transition 31: expected=[4,6] actual=[3,7] [MISMATCH]
+032 transition 32: expected=[4,7] actual=[4,7] [MATCH]
+033 transition 33: expected=[5,7] actual=[4,6] [MISMATCH]
+034 transition 34: expected=[5,6] actual=[5,6] [MATCH]
+035 transition 35: expected=[6,6] actual=[5,5] [MISMATCH]
+036 transition 36: expected=[6,5] actual=[6,5] [MATCH]
+037 transition 37: expected=[7,5] actual=[7,5] [MATCH]
+038 transition 38: expected=[8,5] actual=[7,6] [MISMATCH]
+039 transition 39: expected=[8,6] actual=[8,6] [MATCH]
+040 transition 40: expected=[9,6] actual=[8,7] [MISMATCH]
+041 transition 41: expected=[9,7] actual=[8,6] [MISMATCH]
+042 transition 42: expected=[9,6] actual=[8,7] [MISMATCH]
+043 transition 43: expected=[9,7] actual=[8,8] [MISMATCH]
+044 transition 44: expected=[9,8] actual=[8,7] [MISMATCH]
+045 transition 45: expected=[9,7] actual=[7,7] [MISMATCH]
+046 transition 46: expected=[8,7] actual=[6,7] [MISMATCH]
+047 transition 47: expected=[7,7] actual=[5,7] [MISMATCH]
+048 transition 48: expected=[6,7] actual=[5,6] [MISMATCH]
+049 transition 49: expected=[6,6] actual=[4,6] [MISMATCH]
+050 transition 50: expected=[5,6] actual=<missing> [MISMATCH]
+
+[ANALYSIS]
+raw_output_available=True
+parseable_coordinates=True
+response_valid=True
+exact_match=False
+step_accuracy=0.480000
+continuity=0.280000
+horizon_compliance=0.980000
+taxonomy=State Tracking Failure
+taxonomy_mechanism=State Tracking Failure
+taxonomy_explanation=Model followed correctly until step 15, then held persistent offset (state tracking failure).
+
+------------------------------------------------------------------------------
+tier=3 | seed=42 | z=50 | gravity=0.5
+task_id=arcus_x_42_t3_i34681
+experiment_hash=1770e5bea740d841fc803f4d2836f837b566f9da01eaabcc2d2efc9e88cd9623
+
+[EXACT SENT PROMPT]
+Rules:
+  - The world is a grid with width 12 and height 8. Coordinates are (x, y) with x in [0, 11] and y in [0, 7].
+  - The grid is toroidal: movement off one edge wraps to the opposite edge.
+  - The agent starts at position (2, 2).
+  - Transition rules:
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'north', the agent moves by (dx=-1, dy=0).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  -   - When the action is 'east', the agent moves by (dx=0, dy=1).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'south', the agent moves by (dx=1, dy=0).
+  -   - When the action is 'west', the agent moves by (dx=0, dy=-1).
+  - The agent performs this exact sequence of actions: west -> north -> north -> south -> south -> north -> east -> west -> north -> south -> east -> east -> west -> south -> west -> north -> north -> west -> south -> south -> south -> west -> west -> east -> north -> east -> west -> east -> north -> east -> north -> north -> west -> west -> north -> north -> south -> west -> south -> east -> north -> south -> north -> north -> east -> west -> east -> south -> south -> west.
+
+Apply the transition rules step by step starting from the initial position, following the action sequence in order. Output the full trajectory as a list of 50 coordinates (initial position followed by each subsequent position), one per line, in the format '[x,y]'.
+
+[EXACT MODEL OUTPUT]
+Let's process the action sequence step by step starting from the initial position (2, 2). The grid is toroidal, so when the agent moves off one edge, it wraps around to the opposite edge.
+
+Here is the trajectory:
+
+1. Initial position: [2, 2]
+2. west: [2, 1]
+3. north: [1, 1]
+4. north: [0, 1]
+5. south: [1, 1]
+6. south: [2, 1]
+7. north: [1, 1]
+8. east: [1, 2]
+9. west: [1, 1]
+10. north: [0, 1]
+11. south: [1, 1]
+12. east: [1, 2]
+13. east: [1, 3]
+14. west: [1, 2]
+15. south: [2, 2]
+16. west: [2, 1]
+17. north: [1, 1]
+18. north: [0, 1]
+19. west: [0, 0]
+20. south: [1, 0]
+21. south: [2, 0]
+22. south: [3, 0]
+23. west: [3, 7] (wraps around from y=0 to y=7)
+24. west: [3, 6]
+25. east: [3, 7]
+26. north: [2, 7]
+27. east: [2, 0] (wraps around from y=7 to y=0)
+28. west: [2, 7]
+29. east: [2, 0]
+30. north: [1, 0]
+31. east: [1, 1]
+32. north: [0, 1]
+33. north: [11, 1] (wraps around from x=0 to x=11)
+34. west: [11, 0]
+35. west: [11, 7] (wraps around from y=0 to y=7)
+36. north: [10, 7]
+37. north: [9, 7]
+38. south: [10, 7]
+39. west: [10, 6]
+40. south: [11, 6]
+41. east: [11, 7]
+42. north: [10, 7]
+43. south: [11, 7]
+44. north: [10, 7]
+45. north: [9, 7]
+46. east: [9, 0] (wraps around from y=7 to y=0)
+47. west: [9, 7]
+48. east: [9, 0]
+49. south: [10, 0]
+50. south: [11, 0]
+
+Here is the full trajectory as a list of coordinates:
+
+```
+[2, 2]
+[2, 1]
+[1, 1]
+[0, 1]
+[1, 1]
+[2, 1]
+[1, 1]
+[1, 2]
+[1, 1]
+[0, 1]
+[1, 1]
+[1, 2]
+[1, 3]
+[1, 2]
+[2, 2]
+[2, 1]
+[1, 1]
+[0, 1]
+[0, 0]
+[1, 0]
+[2, 0]
+[3, 0]
+[3, 7]
+[3, 6]
+[3, 7]
+[2, 7]
+[2, 0]
+[2, 7]
+[2, 0]
+[1, 0]
+[1, 1]
+[0, 1]
+[11, 1]
+[11, 0]
+[11, 7]
+[10, 7]
+[9, 7]
+[10, 7]
+[10, 6]
+[11, 6]
+[11, 7]
+[10, 7]
+[11, 7]
+[10, 7]
+[9, 7]
+[9, 0]
+[9, 7]
+[9, 0]
+[10, 0]
+[11, 0]
+```
+
+[GROUND-TRUTH CHAIN]
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[1,1]
+[2,1]
+[1,1]
+[1,2]
+[1,1]
+[0,1]
+[1,1]
+[1,2]
+[1,3]
+[1,2]
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[0,0]
+[1,0]
+[2,0]
+[3,0]
+[3,7]
+[3,6]
+[3,7]
+[2,7]
+[2,0]
+[2,7]
+[2,0]
+[1,0]
+[1,1]
+[0,1]
+[11,1]
+[11,0]
+[11,7]
+[10,7]
+[9,7]
+[10,7]
+[10,6]
+[11,6]
+[11,7]
+[10,7]
+[11,7]
+[10,7]
+[9,7]
+[9,0]
+[9,7]
+[9,0]
+[10,0]
+[11,0]
+[11,7]
+
+[PARSED MODEL CHAIN]
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[1,1]
+[2,1]
+[1,1]
+[1,2]
+[1,1]
+[0,1]
+[1,1]
+[1,2]
+[1,3]
+[1,2]
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[0,0]
+[1,0]
+[2,0]
+[3,0]
+[3,7]
+[3,6]
+[3,7]
+[2,7]
+[2,0]
+[2,7]
+[2,0]
+[1,0]
+[1,1]
+[0,1]
+[11,1]
+[11,0]
+[11,7]
+[10,7]
+[9,7]
+[10,7]
+[10,6]
+[11,6]
+[11,7]
+[10,7]
+[11,7]
+[10,7]
+[9,7]
+[9,0]
+[9,7]
+[9,0]
+[10,0]
+[11,0]
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[1,1]
+[2,1]
+[1,1]
+[1,2]
+[1,1]
+[0,1]
+[1,1]
+[1,2]
+[1,3]
+[1,2]
+[2,2]
+[2,1]
+[1,1]
+[0,1]
+[0,0]
+[1,0]
+[2,0]
+[3,0]
+[3,7]
+[3,6]
+[3,7]
+[2,7]
+[2,0]
+[2,7]
+[2,0]
+[1,0]
+[1,1]
+[0,1]
+[11,1]
+[11,0]
+[11,7]
+[10,7]
+[9,7]
+[10,7]
+[10,6]
+[11,6]
+[11,7]
+[10,7]
+[11,7]
+[10,7]
+[9,7]
+[9,0]
+[9,7]
+[9,0]
+[10,0]
+[11,0]
+
+[CHAIN COMPARISON]
+000 initial: expected=[2,2] actual=[2,2] [MATCH]
+001 transition 1: expected=[2,1] actual=[2,1] [MATCH]
+002 transition 2: expected=[1,1] actual=[1,1] [MATCH]
+003 transition 3: expected=[0,1] actual=[0,1] [MATCH]
+004 transition 4: expected=[1,1] actual=[1,1] [MATCH]
+005 transition 5: expected=[2,1] actual=[2,1] [MATCH]
+006 transition 6: expected=[1,1] actual=[1,1] [MATCH]
+007 transition 7: expected=[1,2] actual=[1,2] [MATCH]
+008 transition 8: expected=[1,1] actual=[1,1] [MATCH]
+009 transition 9: expected=[0,1] actual=[0,1] [MATCH]
+010 transition 10: expected=[1,1] actual=[1,1] [MATCH]
+011 transition 11: expected=[1,2] actual=[1,2] [MATCH]
+012 transition 12: expected=[1,3] actual=[1,3] [MATCH]
+013 transition 13: expected=[1,2] actual=[1,2] [MATCH]
+014 transition 14: expected=[2,2] actual=[2,2] [MATCH]
+015 transition 15: expected=[2,1] actual=[2,1] [MATCH]
+016 transition 16: expected=[1,1] actual=[1,1] [MATCH]
+017 transition 17: expected=[0,1] actual=[0,1] [MATCH]
+018 transition 18: expected=[0,0] actual=[0,0] [MATCH]
+019 transition 19: expected=[1,0] actual=[1,0] [MATCH]
+020 transition 20: expected=[2,0] actual=[2,0] [MATCH]
+021 transition 21: expected=[3,0] actual=[3,0] [MATCH]
+022 transition 22: expected=[3,7] actual=[3,7] [MATCH]
+023 transition 23: expected=[3,6] actual=[3,6] [MATCH]
+024 transition 24: expected=[3,7] actual=[3,7] [MATCH]
+025 transition 25: expected=[2,7] actual=[2,7] [MATCH]
+026 transition 26: expected=[2,0] actual=[2,0] [MATCH]
+027 transition 27: expected=[2,7] actual=[2,7] [MATCH]
+028 transition 28: expected=[2,0] actual=[2,0] [MATCH]
+029 transition 29: expected=[1,0] actual=[1,0] [MATCH]
+030 transition 30: expected=[1,1] actual=[1,1] [MATCH]
+031 transition 31: expected=[0,1] actual=[0,1] [MATCH]
+032 transition 32: expected=[11,1] actual=[11,1] [MATCH]
+033 transition 33: expected=[11,0] actual=[11,0] [MATCH]
+034 transition 34: expected=[11,7] actual=[11,7] [MATCH]
+035 transition 35: expected=[10,7] actual=[10,7] [MATCH]
+036 transition 36: expected=[9,7] actual=[9,7] [MATCH]
+037 transition 37: expected=[10,7] actual=[10,7] [MATCH]
+038 transition 38: expected=[10,6] actual=[10,6] [MATCH]
+039 transition 39: expected=[11,6] actual=[11,6] [MATCH]
+040 transition 40: expected=[11,7] actual=[11,7] [MATCH]
+041 transition 41: expected=[10,7] actual=[10,7] [MATCH]
+042 transition 42: expected=[11,7] actual=[11,7] [MATCH]
+043 transition 43: expected=[10,7] actual=[10,7] [MATCH]
+044 transition 44: expected=[9,7] actual=[9,7] [MATCH]
+045 transition 45: expected=[9,0] actual=[9,0] [MATCH]
+046 transition 46: expected=[9,7] actual=[9,7] [MATCH]
+047 transition 47: expected=[9,0] actual=[9,0] [MATCH]
+048 transition 48: expected=[10,0] actual=[10,0] [MATCH]
+049 transition 49: expected=[11,0] actual=[11,0] [MATCH]
+050 transition 50: expected=[11,7] actual=[2,2] [MISMATCH]
+051 transition 51: expected=<missing> actual=[2,1] [MISMATCH]
+052 transition 52: expected=<missing> actual=[1,1] [MISMATCH]
+053 transition 53: expected=<missing> actual=[0,1] [MISMATCH]
+054 transition 54: expected=<missing> actual=[1,1] [MISMATCH]
+055 transition 55: expected=<missing> actual=[2,1] [MISMATCH]
+056 transition 56: expected=<missing> actual=[1,1] [MISMATCH]
+057 transition 57: expected=<missing> actual=[1,2] [MISMATCH]
+058 transition 58: expected=<missing> actual=[1,1] [MISMATCH]
+059 transition 59: expected=<missing> actual=[0,1] [MISMATCH]
+060 transition 60: expected=<missing> actual=[1,1] [MISMATCH]
+061 transition 61: expected=<missing> actual=[1,2] [MISMATCH]
+062 transition 62: expected=<missing> actual=[1,3] [MISMATCH]
+063 transition 63: expected=<missing> actual=[1,2] [MISMATCH]
+064 transition 64: expected=<missing> actual=[2,2] [MISMATCH]
+065 transition 65: expected=<missing> actual=[2,1] [MISMATCH]
+066 transition 66: expected=<missing> actual=[1,1] [MISMATCH]
+067 transition 67: expected=<missing> actual=[0,1] [MISMATCH]
+068 transition 68: expected=<missing> actual=[0,0] [MISMATCH]
+069 transition 69: expected=<missing> actual=[1,0] [MISMATCH]
+070 transition 70: expected=<missing> actual=[2,0] [MISMATCH]
+071 transition 71: expected=<missing> actual=[3,0] [MISMATCH]
+072 transition 72: expected=<missing> actual=[3,7] [MISMATCH]
+073 transition 73: expected=<missing> actual=[3,6] [MISMATCH]
+074 transition 74: expected=<missing> actual=[3,7] [MISMATCH]
+075 transition 75: expected=<missing> actual=[2,7] [MISMATCH]
+076 transition 76: expected=<missing> actual=[2,0] [MISMATCH]
+077 transition 77: expected=<missing> actual=[2,7] [MISMATCH]
+078 transition 78: expected=<missing> actual=[2,0] [MISMATCH]
+079 transition 79: expected=<missing> actual=[1,0] [MISMATCH]
+080 transition 80: expected=<missing> actual=[1,1] [MISMATCH]
+081 transition 81: expected=<missing> actual=[0,1] [MISMATCH]
+082 transition 82: expected=<missing> actual=[11,1] [MISMATCH]
+083 transition 83: expected=<missing> actual=[11,0] [MISMATCH]
+084 transition 84: expected=<missing> actual=[11,7] [MISMATCH]
+085 transition 85: expected=<missing> actual=[10,7] [MISMATCH]
+086 transition 86: expected=<missing> actual=[9,7] [MISMATCH]
+087 transition 87: expected=<missing> actual=[10,7] [MISMATCH]
+088 transition 88: expected=<missing> actual=[10,6] [MISMATCH]
+089 transition 89: expected=<missing> actual=[11,6] [MISMATCH]
+090 transition 90: expected=<missing> actual=[11,7] [MISMATCH]
+091 transition 91: expected=<missing> actual=[10,7] [MISMATCH]
+092 transition 92: expected=<missing> actual=[11,7] [MISMATCH]
+093 transition 93: expected=<missing> actual=[10,7] [MISMATCH]
+094 transition 94: expected=<missing> actual=[9,7] [MISMATCH]
+095 transition 95: expected=<missing> actual=[9,0] [MISMATCH]
+096 transition 96: expected=<missing> actual=[9,7] [MISMATCH]
+097 transition 97: expected=<missing> actual=[9,0] [MISMATCH]
+098 transition 98: expected=<missing> actual=[10,0] [MISMATCH]
+099 transition 99: expected=<missing> actual=[11,0] [MISMATCH]
+
+[ANALYSIS]
+raw_output_available=True
+parseable_coordinates=True
+response_valid=True
+exact_match=False
+step_accuracy=0.980000
+continuity=0.980000
+horizon_compliance=0.505051
+taxonomy=State Tracking Failure
+taxonomy_mechanism=State Tracking Failure
+taxonomy_explanation=Model followed correctly until step 50, then held persistent offset (state tracking failure).
+
+==============================================================================

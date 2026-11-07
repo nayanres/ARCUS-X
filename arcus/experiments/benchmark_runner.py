@@ -59,6 +59,7 @@ from arcus.tasks.generator import GridTaskGenerator, TIER_NAMES
 from arcus.analysis.gravity import DifficultyConfig, build_gravity_context
 from arcus.analysis.taxonomy import classify_from_result, ErrorMode
 from arcus.analysis.fracture import FracturePointFinder
+from arcus.analysis.reporting import is_fully_correct
 from arcus.evaluation.token_accounting import measure_tokens
 from arcus.experiments.ux import print_banner, print_metrics_chart, ProgressDisplay
 from post_run_analyzer import (
@@ -179,21 +180,25 @@ class BenchmarkRunner:
         # Live progress display (created in run()); None until then so that
         # direct calls to scoring/aggregation helpers stay UX-free (e.g. tests).
         self.progress = None
+        self._progress_lock = threading.RLock()
 
         logger.info(f"Initialized ARCUS-X BenchmarkRunner for {model_name}")
 
     # UX helpers (no-ops when no live progress display is active)
     def _progress_set_context(self, tier, gravity, horizon, seed=None, n_probe=None):
         if self.progress is not None:
-            self.progress.set_context(tier, gravity, horizon, seed=seed if seed is not None else self.seed, n_probe=n_probe)
+            with self._progress_lock:
+                self.progress.set_context(tier, gravity, horizon, seed=seed if seed is not None else self.seed, n_probe=n_probe)
 
     def _progress_set_status(self, status: str):
         if self.progress is not None:
-            self.progress.set_status(status)
+            with self._progress_lock:
+                self.progress.set_status(status)
 
     def _progress_increment(self, n: int = 1):
         if self.progress is not None:
-            self.progress.increment(n)
+            with self._progress_lock:
+                self.progress.increment(n)
         self.actual_probe_count += n
 
     def _estimate_total_evaluations(self) -> int:
@@ -346,6 +351,8 @@ class BenchmarkRunner:
                 experiment_hash = None
                 for bl in block_lines:
                     s = bl.strip()
+                    if s.startswith(("[EXACT SENT PROMPT]:", "[MODEL OUTPUT]:")):
+                        break
                     if s.startswith("EnvironmentMetadata:"):
                         # Parse key=value pairs from the metadata line.
                         meta = s.split(":", 1)[1]
@@ -474,10 +481,10 @@ class BenchmarkRunner:
                     "transition_rules": "", "raw_output": "", "ground_truth": "",
                     "latency_ms": None, "input_tokens": None, "output_tokens": None,
                 }
-                section = None  # "output" | "ground_truth"
+                section = None  # "prompt" | "output" | "ground_truth"
                 for bl in block_lines:
                     s = bl.strip()
-                    if s.startswith("EnvironmentMetadata:"):
+                    if section is None and s.startswith("EnvironmentMetadata:"):
                         meta = s.split(":", 1)[1]
                         for kv in meta.split(","):
                             kv = kv.strip()
@@ -502,35 +509,35 @@ class BenchmarkRunner:
                                     entry["experiment_hash"] = v
                             except ValueError:
                                 continue
-                    elif s.startswith("Grid:"):
+                    elif section is None and s.startswith("Grid:"):
                         entry["grid"] = s.split(":", 1)[1].strip()
-                    elif s.startswith("Actions:"):
+                    elif section is None and s.startswith("Actions:"):
                         entry["actions"] = s.split(":", 1)[1].strip()
-                    elif s.startswith("TransitionRules:"):
+                    elif section is None and s.startswith("TransitionRules:"):
                         entry["transition_rules"] = s.split(":", 1)[1].strip()
-                    elif s.startswith("Latency(ms):"):
+                    elif section is None and s.startswith("Latency(ms):"):
                         try:
                             entry["latency_ms"] = float(s.split(":", 1)[1].strip())
                         except ValueError:
                             pass
-                    elif s.startswith("InputTokens:"):
+                    elif section is None and s.startswith("InputTokens:"):
                         try:
                             entry["input_tokens"] = int(s.split(":", 1)[1].strip())
                         except ValueError:
                             pass
-                    elif s.startswith("OutputTokens:"):
+                    elif section is None and s.startswith("OutputTokens:"):
                         try:
                             entry["output_tokens"] = int(s.split(":", 1)[1].strip())
                         except ValueError:
                             pass
+                    elif section is None and s.startswith("[EXACT SENT PROMPT]:"):
+                        section = "prompt"
                     elif s.startswith("[MODEL OUTPUT]:"):
                         section = "output"
                         entry["raw_output"] = ""
                     elif s.startswith("[GROUND TRUTH EXPECTED]:"):
                         section = "ground_truth"
                         entry["ground_truth"] = ""
-                    elif s.startswith("-" * 30) or s.startswith("=" * 30):
-                        section = None
                     elif section == "output":
                         entry["raw_output"] += bl
                     elif section == "ground_truth":
@@ -951,7 +958,8 @@ class BenchmarkRunner:
                     pass
                 done += 1
                 if self.progress is not None:
-                    self.progress.set_seed_progress(done, n_seeds, workers)
+                    with self._progress_lock:
+                        self.progress.set_seed_progress(done, n_seeds, workers)
 
         # The first seed becomes the "primary" results_matrix used by the
         # aggregation/reporting pipeline; all seeds are also kept in
@@ -1025,6 +1033,8 @@ class BenchmarkRunner:
         # Reuse the parent's (already constructed) evaluator instead of building
         # a second one -- avoids duplicate model/API client initialisation.
         r.evaluator = self.evaluator
+        r.progress = self.progress
+        r._progress_lock = self._progress_lock
         # All seeds append to the one shared raw stream file.
         r.raw_log_filename = self.raw_log_filename
         r._offline = self._offline
@@ -1180,7 +1190,7 @@ class BenchmarkRunner:
         self._reconstruct_adaptive_state(resume_path=resume_path)
         # Route evaluator rate-limit events onto the live status line.
         if hasattr(self.evaluator, "status_callback"):
-            self.evaluator.status_callback = self.progress.set_status
+            self.evaluator.status_callback = self._progress_set_status
 
         # Route evaluator API-compatibility adaptations onto the raw stream so
         # every parameter adjustment (e.g. max_tokens -> max_completion_tokens)
@@ -1790,7 +1800,8 @@ class BenchmarkRunner:
     def _evaluate_depth_batch(self, base_probes: List[Dict], gravity_target: float,
                               z: int, tiers: Optional[List[int]] = None,
                               results_matrix: Optional[Dict] = None,
-                              skip_set: Optional[set] = None) -> tuple:
+                              skip_set: Optional[set] = None,
+                              log_prompt: bool = False) -> tuple:
         """
         Runs evaluation matrix across OOD tiers.
 
@@ -1805,6 +1816,8 @@ class BenchmarkRunner:
         resume (skip probes already completed in the raw stream). When ``skip_set``
         contains a probe's identity the probe is NOT re-run; its prior result is
         assumed already present in ``results_matrix`` (loaded by the caller).
+        ``log_prompt`` opts in to recording the evaluator's prompt in each raw
+        entry; normal benchmark runs leave it disabled.
         """
         results_matrix = results_matrix if results_matrix is not None else self.results_matrix
         skip_set = skip_set if skip_set is not None else set()
@@ -1885,6 +1898,9 @@ class BenchmarkRunner:
                     )
 
                     raw_output = result.get("raw_output", "")
+                    prompt = result.get("prompt")
+                    if log_prompt and (not isinstance(prompt, str) or not prompt):
+                        raise ValueError("Minitest result is missing its exact prompt.")
 
                     expected_sequence = final_probe_payload.get("ground_truth_path", [])
                     try:
@@ -1921,6 +1937,12 @@ class BenchmarkRunner:
                                     f.write(f"InputTokens: {result.get('input_tokens')}\n")
                                     f.write(f"OutputTokens: {result.get('output_tokens')}\n")
                                 f.write("-" * 30 + "\n")
+                                if log_prompt:
+                                    f.write("[EXACT SENT PROMPT]:\n")
+                                    f.write(prompt)
+                                    if not prompt.endswith("\n"):
+                                        f.write("\n")
+                                    f.write("\n")
                                 f.write("[MODEL OUTPUT]:\n")
                                 f.write(f"{raw_output if raw_output else '[EMPTY OR NONE PAYLOAD]'}\n\n")
                                 f.write("[GROUND TRUTH EXPECTED]:\n")
@@ -1936,6 +1958,8 @@ class BenchmarkRunner:
                                 f.write("=" * 30 + "\n")
                     except Exception as e:  # pragma: no cover - defensive
                         logger.error(f"Failed to log raw stream: {e}")
+                        if log_prompt:
+                            raise
 
                     if result.get("context_exhausted", False) or result.get("completion_tokens", 0) > 7500:
                         logger.warning(f"   [OUTPUT CEILING / EXHAUSTION] Failure at z={z}. Writing raw log.")
@@ -2269,7 +2293,7 @@ class BenchmarkRunner:
 
             mech = pc.get("mechanism", "None")
             step_acc = self._coerce_float(result.get("step_accuracy", 0.0))
-            is_success = (step_acc >= 1.0) or (mech == "None") or pc.get("trajectory_correct", False)
+            is_success = is_fully_correct(result, pc)
 
             if is_success:
                 cog_taxonomy_counts_new["None"] += 1

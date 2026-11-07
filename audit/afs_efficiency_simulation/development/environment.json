@@ -1,0 +1,9 @@
+{
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "numpy": "2.2.6",
+  "config_sha256": "3344b278ebfa87b3ccf8f7c1343ea15adab81ce713459376bc7fec4219917161",
+  "controller_sha256": "550c2c933e9bf2f99e72cd973d8ce1369469f44cd2b9acea9294eb909c657761",
+  "simulation_sha256": "0df4fe02e6b64b550dd0f704710beb2d6999b4e66ce82563610d727124ee0b38",
+  "split": "development"
+}

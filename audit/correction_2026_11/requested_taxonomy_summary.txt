@@ -1,0 +1,89 @@
+Requested-output taxonomy audit (requested-output-v2)
+=====================================================
+
+The corrected publication taxonomy uses the z coordinates requested in the
+prompt, including the initial state. The complete generated z+1-state
+reference and z actions remain unchanged. Live AFS and the historical
+classifier retain their original behavior. No inference or API calls were made.
+
+The 13-model non-calibration cohort contains 49,262 completed observations:
+39,728 valid and 9,534 invalid. Exactly 3,123 valid responses match the
+requested coordinates and are assigned None. All 9,440 full-reference exact
+responses are overlong and classified as Horizon Collapse. There are 16,041
+corrected Horizon Collapse assignments overall. Of the 13,320 changed labels,
+3,123 were Horizon-to-None, 9,440 None-to-Horizon, and 757 other changes.
+
+The modal primary label changes to Horizon Collapse for GPT-5-mini,
+MAI-Thinking-1, Kimi K2.5, and Qwen3-235B. Overlong outputs are horizon
+signatures, not evidence that the requested transitions were incorrect.
+State Tracking remains the modal category for Qwen3 Coder and GLM-5.
+The qualitative multi-metric diagnostic finding remains descriptive;
+adaptive sampling and taxonomy precedence preclude causal interpretation.
+
+State Tracking has 13,633 explicit assignments. Three former fallback cases
+(two Kimi and one Ministral-3B) have mixed evidence and are now Unknown /
+Unmapped rather than State Tracking. One further valid Kimi response (source
+row 3783, z=55, tier 3) has an unmapped requested-coordinate divergence.
+Their mechanisms are not independently established. The 13 synthetic cases test deterministic
+classifier consistency, not human or causal validity.
+
+At exact z=20, the 3,604 valid responses comprise 113 None, 1,627 Horizon,
+1,186 State, 476 Transition, 150 Semantic, 52 Format, and zero Unknown.
+At exact z=30, the corresponding counts among 2,992 valid responses are 77,
+1,258, 1,252, 221, 144, 40, and zero.
+
+In the horizon-local analysis, +/-3 has 284 supported cells and +/-5 has
+329. State Tracking is uniquely modal in 91/284 and 108/329, respectively;
+modal labels agree in 267/284 cells supported at both bandwidths. Neighborhood
+membership retains actual horizons; it does not imply exact matching or
+task pairing. Coverage uses the pre-established minimum of 10 valid responses,
+three valid master seeds and five task hashes. N/A-U means unsampled, N/A-N
+means sampled but no valid response, and N/A-I means insufficient coverage.
+Where supported, 95% percentile intervals use 2,000 master-seed block
+bootstrap replicates, retaining related observations within each seed.
+
+Use requested_taxonomy_model_summary.csv and
+requested_taxonomy_model_tier_summary.csv for corrected publication labels,
+requested_taxonomy_horizon_taxonomy.csv for corrected exact/local partitions,
+requested_taxonomy_precedence_sensitivity.csv for corrected policy sensitivity,
+and requested_taxonomy_cross_tab.csv for the validity/length/accuracy
+reconciliation. requested_taxonomy_probe_crosswalk.csv and
+requested_taxonomy_transition_matrix.csv preserve the comparison with the
+historical labels. requested_taxonomy_synthetic_checks.csv records the
+injection outcomes. The original analysis_A, analysis_B, reviewer_response,
+and horizon_local taxonomy-bearing outputs are historical and are not the
+corrected publication taxonomy. Their coverage and non-taxonomy measurements
+remain applicable.
+
+Reproduction:
+  python audit\correction_2026_11\requested_taxonomy_audit.py
+  python audit\correction_2026_11\publish_requested_taxonomy.py
+  python audit\correction_2026_11\verify_requested_taxonomy.py
+
+The first command resumes fingerprinted raw-file classification checkpoints.
+Version-one outputs are preserved in requested_taxonomy_v1_archive. To
+reproduce the efficient v1-to-v2 upgrade, use
+  python audit\correction_2026_11\requested_taxonomy_audit.py --upgrade-v1
+This rechecks the three affected source records, carries forward all other v1
+classifications, and recomputes only affected horizon cells and their
+seed-block intervals. Historical and live AFS classifiers are unchanged.
+To regenerate summaries from the existing crosswalk without reclassification,
+use requested_taxonomy_audit.py --summarize-existing. The independent
+verification checks all 49,262 records, all 1,664 exact/local taxonomy cells,
+and reproduces seed-block intervals for one supported cell in each scope.
+The unchanged primary metric file and historical probe files remain tracked
+without worktree modifications.
+
+Change inventory:
+  arcus\analysis\taxonomy.py: versioned requested-output classifier.
+  tests\test_requested_output_taxonomy.py: contract and edge-case regressions.
+  audit\correction_2026_11\requested_taxonomy_audit.py: retrospective audit.
+  audit\correction_2026_11\publish_requested_taxonomy.py: table/figure generation.
+  audit\correction_2026_11\verify_requested_taxonomy.py: independent checks.
+  audit\correction_2026_11\requested_taxonomy_*.csv: corrected crosswalk,
+    transition matrix, model/tier and model summaries, cross-tab, sensitivity,
+    horizon taxonomy, and synthetic checks.
+  Formatting_Instructions_for_ICLR_2027_Conference_Submissions\
+    iclr2027_conference.tex: corrected taxonomy discussion, tables, figure
+    reference, historical reconciliation and hyperlink package order.
+  The same manuscript directory contains failure_profiles_requested.pdf.

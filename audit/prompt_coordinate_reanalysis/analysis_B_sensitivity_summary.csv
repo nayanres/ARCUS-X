@@ -1,0 +1,673 @@
+model,policy,policy_definition,category,count_valid,valid_denominator,proportion_valid
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,0,5066,0.0
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,2483,5066,0.49013028030003947
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,2052,5066,0.4050532964863798
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,0,5066,0.0
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,528,5066,0.1042242400315831
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,3,5066,0.0005921831819976313
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,5066,0.0
+GPT-5-mini,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,5066,0.0
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,0,5066,0.0
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,2483,5066,0.49013028030003947
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,2052,5066,0.4050532964863798
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,0,5066,0.0
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,528,5066,0.1042242400315831
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,3,5066,0.0005921831819976313
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,5066,0.0
+GPT-5-mini,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,5066,0.0
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,0,5066,0.0
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,2483,5066,0.49013028030003947
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,2052,5066,0.4050532964863798
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,0,5066,0.0
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,528,5066,0.1042242400315831
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,3,5066,0.0005921831819976313
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,5066,0.0
+GPT-5-mini,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,5066,0.0
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,5066,0.0
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,2626,5066,0.5183576786419266
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,2052,5066,0.4050532964863798
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,5066,0.0
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,388,5066,0.07658902487169364
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,0,5066,0.0
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,5066,0.0
+GPT-5-mini,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,5066,0.0
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,0,5066,0.0
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,2483,5066,0.49013028030003947
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,2052,5066,0.4050532964863798
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,0,5066,0.0
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,528,5066,0.1042242400315831
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,3,5066,0.0005921831819976313
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,5066,0.0
+GPT-5-mini,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,5066,0.0
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,0,5066,0.0
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,2483,5066,0.49013028030003947
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,2052,5066,0.4050532964863798
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,0,5066,0.0
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,4,5066,0.0007895775759968417
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,527,5066,0.1040268456375839
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,5066,0.0
+GPT-5-mini,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,5066,0.0
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,0,3113,0.0
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,2527,3113,0.8117571474461934
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,491,3113,0.15772566655958883
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,0,3113,0.0
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,94,3113,0.030195952457436556
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,1,3113,0.00032123353678124
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,3113,0.0
+MAI-Thinking-1,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,3113,0.0
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,0,3113,0.0
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,2527,3113,0.8117571474461934
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,491,3113,0.15772566655958883
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,0,3113,0.0
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,94,3113,0.030195952457436556
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,1,3113,0.00032123353678124
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,3113,0.0
+MAI-Thinking-1,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,3113,0.0
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,0,3113,0.0
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,2527,3113,0.8117571474461934
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,491,3113,0.15772566655958883
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,0,3113,0.0
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,94,3113,0.030195952457436556
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,1,3113,0.00032123353678124
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,3113,0.0
+MAI-Thinking-1,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,3113,0.0
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,3113,0.0
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,2605,3113,0.8368133633151301
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,491,3113,0.15772566655958883
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,3113,0.0
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,17,3113,0.00546097012528108
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,0,3113,0.0
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,3113,0.0
+MAI-Thinking-1,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,3113,0.0
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,0,3113,0.0
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,2527,3113,0.8117571474461934
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,491,3113,0.15772566655958883
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,0,3113,0.0
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,94,3113,0.030195952457436556
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,1,3113,0.00032123353678124
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,3113,0.0
+MAI-Thinking-1,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,3113,0.0
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,0,3113,0.0
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,2527,3113,0.8117571474461934
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,491,3113,0.15772566655958883
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,0,3113,0.0
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,3,3113,0.0009637006103437199
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,92,3113,0.029553485383874076
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,3113,0.0
+MAI-Thinking-1,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,3113,0.0
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,0,221,0.0
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,210,221,0.9502262443438914
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,6,221,0.027149321266968326
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,3,221,0.013574660633484163
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,221,0.0
+minimax.minimax-m2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,221,0.0
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,0,221,0.0
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,210,221,0.9502262443438914
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,6,221,0.027149321266968326
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,3,221,0.013574660633484163
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,221,0.0
+minimax.minimax-m2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,221,0.0
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,0,221,0.0
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,210,221,0.9502262443438914
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,6,221,0.027149321266968326
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,3,221,0.013574660633484163
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,221,0.0
+minimax.minimax-m2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,221,0.0
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,221,0.0
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,212,221,0.9592760180995475
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,6,221,0.027149321266968326
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,3,221,0.013574660633484163
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,0,221,0.0
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,0,221,0.0
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,221,0.0
+minimax.minimax-m2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,221,0.0
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,0,221,0.0
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,210,221,0.9502262443438914
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,6,221,0.027149321266968326
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,3,221,0.013574660633484163
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,1,221,0.004524886877828055
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,221,0.0
+minimax.minimax-m2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,221,0.0
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,0,221,0.0
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,210,221,0.9502262443438914
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,6,221,0.027149321266968326
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,3,221,0.013574660633484163
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,0,221,0.0
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,2,221,0.00904977375565611
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,221,0.0
+minimax.minimax-m2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,221,0.0
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,31,4126,0.0075133301017935045
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,1236,4126,0.29956374212312165
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,265,4126,0.06422685409597673
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,52,4126,0.012603005332040717
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,2086,4126,0.5055744062045565
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,456,4126,0.11051866214251091
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,4126,0.0
+ministral-14b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,4126,0.0
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,31,4126,0.0075133301017935045
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,1236,4126,0.29956374212312165
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,265,4126,0.06422685409597673
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,52,4126,0.012603005332040717
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,2086,4126,0.5055744062045565
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,456,4126,0.11051866214251091
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,4126,0.0
+ministral-14b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,4126,0.0
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,31,4126,0.0075133301017935045
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,1236,4126,0.29956374212312165
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,265,4126,0.06422685409597673
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,52,4126,0.012603005332040717
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,2086,4126,0.5055744062045565
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,456,4126,0.11051866214251091
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,4126,0.0
+ministral-14b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,4126,0.0
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,4126,0.0
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,2875,4126,0.6968007755695589
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,265,4126,0.06422685409597673
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,1,4126,0.0002423654871546292
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,924,4126,0.22394571013087736
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,61,4126,0.01478429471643238
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,4126,0.0
+ministral-14b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,4126,0.0
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,31,4126,0.0075133301017935045
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,1236,4126,0.29956374212312165
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,265,4126,0.06422685409597673
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,52,4126,0.012603005332040717
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,2086,4126,0.5055744062045565
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,456,4126,0.11051866214251091
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,4126,0.0
+ministral-14b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,4126,0.0
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,31,4126,0.0075133301017935045
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,1236,4126,0.29956374212312165
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,265,4126,0.06422685409597673
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,52,4126,0.012603005332040717
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,15,4126,0.003635482307319438
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,2527,4126,0.612457586039748
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,4126,0.0
+ministral-14b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,4126,0.0
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,105,1825,0.057534246575342465
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,298,1825,0.1632876712328767
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,186,1825,0.10191780821917808
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,117,1825,0.06410958904109589
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,1036,1825,0.5676712328767123
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,83,1825,0.04547945205479452
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,1825,0.0
+ministral-3b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,1825,0.0
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,105,1825,0.057534246575342465
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,298,1825,0.1632876712328767
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,186,1825,0.10191780821917808
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,117,1825,0.06410958904109589
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,1035,1825,0.5671232876712329
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,83,1825,0.04547945205479452
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,1,1825,0.000547945205479452
+ministral-3b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,1825,0.0
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,105,1825,0.057534246575342465
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,298,1825,0.1632876712328767
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,186,1825,0.10191780821917808
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,117,1825,0.06410958904109589
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,1035,1825,0.5671232876712329
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,83,1825,0.04547945205479452
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,1,1825,0.000547945205479452
+ministral-3b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,1825,0.0
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,1825,0.0
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,928,1825,0.5084931506849315
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,186,1825,0.10191780821917808
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,5,1825,0.0027397260273972603
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,666,1825,0.3649315068493151
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,40,1825,0.021917808219178082
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,1825,0.0
+ministral-3b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,1825,0.0
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,105,1825,0.057534246575342465
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,298,1825,0.1632876712328767
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,190,1825,0.10410958904109589
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,117,1825,0.06410958904109589
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,1036,1825,0.5676712328767123
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,79,1825,0.04328767123287671
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,1825,0.0
+ministral-3b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,1825,0.0
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,105,1825,0.057534246575342465
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,298,1825,0.1632876712328767
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,186,1825,0.10191780821917808
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,117,1825,0.06410958904109589
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,26,1825,0.014246575342465753
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,1093,1825,0.5989041095890411
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,1825,0.0
+ministral-3b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,1825,0.0
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,9,2457,0.003663003663003663
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,908,2457,0.36955636955636956
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,22,2457,0.008954008954008955
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,7,2457,0.002849002849002849
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,520,2457,0.21164021164021163
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,991,2457,0.4033374033374033
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,2457,0.0
+ministral-8b-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,2457,0.0
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,9,2457,0.003663003663003663
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,908,2457,0.36955636955636956
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,22,2457,0.008954008954008955
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,7,2457,0.002849002849002849
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,520,2457,0.21164021164021163
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,991,2457,0.4033374033374033
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,2457,0.0
+ministral-8b-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,2457,0.0
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,9,2457,0.003663003663003663
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,908,2457,0.36955636955636956
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,22,2457,0.008954008954008955
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,7,2457,0.002849002849002849
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,520,2457,0.21164021164021163
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,991,2457,0.4033374033374033
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,2457,0.0
+ministral-8b-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,2457,0.0
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,2457,0.0
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,2363,2457,0.9617419617419617
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,22,2457,0.008954008954008955
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,2457,0.0
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,67,2457,0.02726902726902727
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,5,2457,0.002035002035002035
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,2457,0.0
+ministral-8b-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,2457,0.0
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,9,2457,0.003663003663003663
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,908,2457,0.36955636955636956
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,22,2457,0.008954008954008955
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,7,2457,0.002849002849002849
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,520,2457,0.21164021164021163
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,991,2457,0.4033374033374033
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,2457,0.0
+ministral-8b-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,2457,0.0
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,9,2457,0.003663003663003663
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,908,2457,0.36955636955636956
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,22,2457,0.008954008954008955
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,7,2457,0.002849002849002849
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,18,2457,0.007326007326007326
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,1493,2457,0.6076516076516076
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,2457,0.0
+ministral-8b-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,2457,0.0
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,136,3300,0.041212121212121214
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,1630,3300,0.49393939393939396
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,13,3300,0.00393939393939394
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,337,3300,0.10212121212121213
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,365,3300,0.11060606060606061
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,819,3300,0.24818181818181817
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,3300,0.0
+mistral-large-2512,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,3300,0.0
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,136,3300,0.041212121212121214
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,1630,3300,0.49393939393939396
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,13,3300,0.00393939393939394
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,337,3300,0.10212121212121213
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,365,3300,0.11060606060606061
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,819,3300,0.24818181818181817
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,3300,0.0
+mistral-large-2512,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,3300,0.0
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,136,3300,0.041212121212121214
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,1630,3300,0.49393939393939396
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,13,3300,0.00393939393939394
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,337,3300,0.10212121212121213
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,365,3300,0.11060606060606061
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,819,3300,0.24818181818181817
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,3300,0.0
+mistral-large-2512,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,3300,0.0
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,3300,0.0
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,3259,3300,0.9875757575757576
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,13,3300,0.00393939393939394
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,4,3300,0.0012121212121212121
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,19,3300,0.005757575757575757
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,5,3300,0.0015151515151515152
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,3300,0.0
+mistral-large-2512,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,3300,0.0
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,136,3300,0.041212121212121214
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,1630,3300,0.49393939393939396
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,13,3300,0.00393939393939394
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,337,3300,0.10212121212121213
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,365,3300,0.11060606060606061
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,819,3300,0.24818181818181817
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,3300,0.0
+mistral-large-2512,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,3300,0.0
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,136,3300,0.041212121212121214
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,1630,3300,0.49393939393939396
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,13,3300,0.00393939393939394
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,337,3300,0.10212121212121213
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,1,3300,0.00030303030303030303
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,1183,3300,0.35848484848484846
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,3300,0.0
+mistral-large-2512,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,3300,0.0
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,1,2185,0.0004576659038901602
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,736,2185,0.3368421052631579
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,14,2185,0.006407322654462242
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,7,2185,0.003203661327231121
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,1043,2185,0.47734553775743704
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,384,2185,0.1757437070938215
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,2185,0.0
+mistral-small-2603,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,2185,0.0
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,1,2185,0.0004576659038901602
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,736,2185,0.3368421052631579
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,14,2185,0.006407322654462242
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,7,2185,0.003203661327231121
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,1043,2185,0.47734553775743704
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,384,2185,0.1757437070938215
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,2185,0.0
+mistral-small-2603,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,2185,0.0
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,1,2185,0.0004576659038901602
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,736,2185,0.3368421052631579
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,14,2185,0.006407322654462242
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,7,2185,0.003203661327231121
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,1043,2185,0.47734553775743704
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,384,2185,0.1757437070938215
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,2185,0.0
+mistral-small-2603,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,2185,0.0
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,2185,0.0
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,1405,2185,0.6430205949656751
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,14,2185,0.006407322654462242
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,2185,0.0
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,766,2185,0.3505720823798627
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,0,2185,0.0
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,2185,0.0
+mistral-small-2603,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,2185,0.0
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,1,2185,0.0004576659038901602
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,736,2185,0.3368421052631579
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,14,2185,0.006407322654462242
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,7,2185,0.003203661327231121
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,1043,2185,0.47734553775743704
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,384,2185,0.1757437070938215
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,2185,0.0
+mistral-small-2603,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,2185,0.0
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,1,2185,0.0004576659038901602
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,736,2185,0.3368421052631579
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,14,2185,0.006407322654462242
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,7,2185,0.003203661327231121
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,3,2185,0.0013729977116704805
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,1424,2185,0.6517162471395881
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,2185,0.0
+mistral-small-2603,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,2185,0.0
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,31,3798,0.008162190626645603
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,1933,3798,0.5089520800421274
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,3,3798,0.0007898894154818325
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,27,3798,0.0071090047393364926
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,898,3798,0.2364402317008952
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,906,3798,0.23854660347551343
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,3798,0.0
+mistral.devstral-2-123b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,3798,0.0
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,31,3798,0.008162190626645603
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,1933,3798,0.5089520800421274
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,3,3798,0.0007898894154818325
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,27,3798,0.0071090047393364926
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,898,3798,0.2364402317008952
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,906,3798,0.23854660347551343
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,3798,0.0
+mistral.devstral-2-123b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,3798,0.0
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,31,3798,0.008162190626645603
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,1933,3798,0.5089520800421274
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,3,3798,0.0007898894154818325
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,27,3798,0.0071090047393364926
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,898,3798,0.2364402317008952
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,906,3798,0.23854660347551343
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,3798,0.0
+mistral.devstral-2-123b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,3798,0.0
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,3798,0.0
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,3682,3798,0.9694576092680358
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,3,3798,0.0007898894154818325
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,3798,0.0
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,111,3798,0.029225908372827805
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,2,3798,0.000526592943654555
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,3798,0.0
+mistral.devstral-2-123b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,3798,0.0
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,31,3798,0.008162190626645603
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,1933,3798,0.5089520800421274
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,3,3798,0.0007898894154818325
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,27,3798,0.0071090047393364926
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,898,3798,0.2364402317008952
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,906,3798,0.23854660347551343
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,3798,0.0
+mistral.devstral-2-123b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,3798,0.0
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,31,3798,0.008162190626645603
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,1933,3798,0.5089520800421274
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,3,3798,0.0007898894154818325
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,27,3798,0.0071090047393364926
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,16,3798,0.00421274354923644
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,1788,3798,0.4707740916271722
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,3798,0.0
+mistral.devstral-2-123b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,3798,0.0
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,366,6245,0.058606885508406724
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,3508,6245,0.5617293835068055
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,4,6245,0.0006405124099279424
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,1449,6245,0.2320256204963971
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,670,6245,0.10728582866293035
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,248,6245,0.03971176941553243
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,6245,0.0
+moonshotai.kimi-k2.5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,6245,0.0
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,366,6245,0.058606885508406724
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,3508,6245,0.5617293835068055
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,4,6245,0.0006405124099279424
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,1449,6245,0.2320256204963971
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,668,6245,0.10696557245796637
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,248,6245,0.03971176941553243
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,2,6245,0.0003202562049639712
+moonshotai.kimi-k2.5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,6245,0.0
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,366,6245,0.058606885508406724
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,3508,6245,0.5617293835068055
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,4,6245,0.0006405124099279424
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,1449,6245,0.2320256204963971
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,668,6245,0.10696557245796637
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,248,6245,0.03971176941553243
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,2,6245,0.0003202562049639712
+moonshotai.kimi-k2.5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,6245,0.0
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,6245,0.0
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,6166,6245,0.9873498799039231
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,4,6245,0.0006405124099279424
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,8,6245,0.0012810248198558848
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,66,6245,0.010568454763811049
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,1,6245,0.0001601281024819856
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,6245,0.0
+moonshotai.kimi-k2.5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,6245,0.0
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,366,6245,0.058606885508406724
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,3508,6245,0.5617293835068055
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,4,6245,0.0006405124099279424
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,1449,6245,0.2320256204963971
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,670,6245,0.10728582866293035
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,248,6245,0.03971176941553243
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,6245,0.0
+moonshotai.kimi-k2.5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,6245,0.0
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,366,6245,0.058606885508406724
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,3508,6245,0.5617293835068055
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,4,6245,0.0006405124099279424
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,1449,6245,0.2320256204963971
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,13,6245,0.002081665332265813
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,905,6245,0.14491593274619696
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,6245,0.0
+moonshotai.kimi-k2.5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,6245,0.0
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,5,2263,0.002209456473707468
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,127,2263,0.05612019443216969
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,13,2263,0.0057445868316394165
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,1,2263,0.0004418912947414936
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,2092,2263,0.9244365885992046
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,25,2263,0.01104728236853734
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,2263,0.0
+nvidia.nemotron-super-3-120b,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,5,2263,0.002209456473707468
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,127,2263,0.05612019443216969
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,13,2263,0.0057445868316394165
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,1,2263,0.0004418912947414936
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,2092,2263,0.9244365885992046
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,25,2263,0.01104728236853734
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,5,2263,0.002209456473707468
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,127,2263,0.05612019443216969
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,13,2263,0.0057445868316394165
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,1,2263,0.0004418912947414936
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,2092,2263,0.9244365885992046
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,25,2263,0.01104728236853734
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,1161,2263,0.513035793194874
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,13,2263,0.0057445868316394165
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,1074,2263,0.4745912505523641
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,15,2263,0.006628369421122404
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,5,2263,0.002209456473707468
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,127,2263,0.05612019443216969
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,13,2263,0.0057445868316394165
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,1,2263,0.0004418912947414936
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,2092,2263,0.9244365885992046
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,25,2263,0.01104728236853734
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,5,2263,0.002209456473707468
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,127,2263,0.05612019443216969
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,13,2263,0.0057445868316394165
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,1,2263,0.0004418912947414936
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,42,2263,0.01855943437914273
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,2075,2263,0.9169244365885992
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,2263,0.0
+nvidia.nemotron-super-3-120b,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,2263,0.0
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,67,604,0.11092715231788079
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,245,604,0.4056291390728477
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,8,604,0.013245033112582781
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,223,604,0.36920529801324503
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,49,604,0.08112582781456953
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,12,604,0.019867549668874173
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,604,0.0
+qwen.qwen3-235b-a22b-2507,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,67,604,0.11092715231788079
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,245,604,0.4056291390728477
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,8,604,0.013245033112582781
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,223,604,0.36920529801324503
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,49,604,0.08112582781456953
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,12,604,0.019867549668874173
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,67,604,0.11092715231788079
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,245,604,0.4056291390728477
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,8,604,0.013245033112582781
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,223,604,0.36920529801324503
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,49,604,0.08112582781456953
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,12,604,0.019867549668874173
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,570,604,0.9437086092715232
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,8,604,0.013245033112582781
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,26,604,0.04304635761589404
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,67,604,0.11092715231788079
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,245,604,0.4056291390728477
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,8,604,0.013245033112582781
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,223,604,0.36920529801324503
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,49,604,0.08112582781456953
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,12,604,0.019867549668874173
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,67,604,0.11092715231788079
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,245,604,0.4056291390728477
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,8,604,0.013245033112582781
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,223,604,0.36920529801324503
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,3,604,0.004966887417218543
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,58,604,0.09602649006622517
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,604,0.0
+qwen.qwen3-235b-a22b-2507,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,604,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,83,2165,0.03833718244803695
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,27,2165,0.012471131639722863
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,2031,2165,0.9381062355658198
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,24,2165,0.011085450346420323
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,83,2165,0.03833718244803695
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,27,2165,0.012471131639722863
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,2031,2165,0.9381062355658198
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,24,2165,0.011085450346420323
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,83,2165,0.03833718244803695
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,27,2165,0.012471131639722863
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,2031,2165,0.9381062355658198
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,24,2165,0.011085450346420323
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,701,2165,0.32378752886836026
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,27,2165,0.012471131639722863
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,1422,2165,0.6568129330254041
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,15,2165,0.006928406466512702
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,83,2165,0.03833718244803695
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,27,2165,0.012471131639722863
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,2031,2165,0.9381062355658198
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,24,2165,0.011085450346420323
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,83,2165,0.03833718244803695
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,27,2165,0.012471131639722863
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,37,2165,0.017090069284064664
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,2018,2165,0.9321016166281755
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,2165,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,2165,0.0
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Formatting Failure,0,2644,0.0
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Horizon Collapse,379,2644,0.14334341906202724
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",None,26,2644,0.009833585476550681
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Semantic Interpretation Failure,0,2644,0.0
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",State Tracking Failure,2224,2644,0.8411497730711044
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Transition Rule Failure,15,2644,0.0056732223903177
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unclassified,0,2644,0.0
+zai.glm-5,A_corrected_original_precedence,"Use the corrected classifier, strict correctness, and original primary-category precedence.",Unknown / Unmapped,0,2644,0.0
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Formatting Failure,0,2644,0.0
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Horizon Collapse,379,2644,0.14334341906202724
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",None,26,2644,0.009833585476550681
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Semantic Interpretation Failure,0,2644,0.0
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",State Tracking Failure,2224,2644,0.8411497730711044
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Transition Rule Failure,15,2644,0.0056732223903177
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unclassified,0,2644,0.0
+zai.glm-5,B_conservative_unclassified,"Assign Unclassified to classifier fallback State Tracking, Unknown / Unmapped, or an unexplained non-exact None.",Unknown / Unmapped,0,2644,0.0
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Formatting Failure,0,2644,0.0
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Horizon Collapse,379,2644,0.14334341906202724
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,None,26,2644,0.009833585476550681
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Semantic Interpretation Failure,0,2644,0.0
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,State Tracking Failure,2224,2644,0.8411497730711044
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Transition Rule Failure,15,2644,0.0056732223903177
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unclassified,0,2644,0.0
+zai.glm-5,B_fallback_unclassified,Assign Unclassified only to State Tracking assignments made by the classifier fallback.,Unknown / Unmapped,0,2644,0.0
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Formatting Failure,0,2644,0.0
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Horizon Collapse,1412,2644,0.5340393343419062
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",None,26,2644,0.009833585476550681
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Semantic Interpretation Failure,0,2644,0.0
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",State Tracking Failure,1197,2644,0.4527231467473525
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Transition Rule Failure,9,2644,0.00340393343419062
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unclassified,0,2644,0.0
+zai.glm-5,B_horizon_first,"For valid failures with an explicit length mismatch, assign Horizon Collapse before other detected categories.",Unknown / Unmapped,0,2644,0.0
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Formatting Failure,0,2644,0.0
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Horizon Collapse,379,2644,0.14334341906202724
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",None,27,2644,0.01021180030257186
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Semantic Interpretation Failure,0,2644,0.0
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",State Tracking Failure,2224,2644,0.8411497730711044
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Transition Rule Failure,14,2644,0.00529500756429652
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unclassified,0,2644,0.0
+zai.glm-5,B_modulo_equivalent,"Treat a full-length, modulo-equivalent trajectory as correct even when coordinates are noncanonical; sensitivity only.",Unknown / Unmapped,0,2644,0.0
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Formatting Failure,0,2644,0.0
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Horizon Collapse,379,2644,0.14334341906202724
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",None,26,2644,0.009833585476550681
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Semantic Interpretation Failure,0,2644,0.0
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",State Tracking Failure,92,2644,0.03479576399394856
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Transition Rule Failure,2147,2644,0.8120272314674736
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unclassified,0,2644,0.0
+zai.glm-5,B_transition_first,"For valid probes with an explicit transition-rule indicator, assign Transition Rule Failure before other primary categories.",Unknown / Unmapped,0,2644,0.0

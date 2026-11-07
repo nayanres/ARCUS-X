@@ -1,0 +1,110 @@
+ARCUS-X exact and horizon-local reviewer analysis
+
+Reproduce: python audit\correction_2026_11\horizon_local_analysis.py
+Validate:  python audit\correction_2026_11\validate_horizon_local.py
+Tests:     python -m pytest audit\correction_2026_11\test_horizon_local_analysis.py audit\correction_2026_11\test_reviewer_response_analysis.py tests\test_post_run_analyzer.py -q
+
+Scope and conventions
+The 13 publication models are analyzed without inference or modification of
+raw logs, scoring, or the primary taxonomy. Calibration anchors are excluded.
+Exact horizons are z=20,30. The two separate neighborhood analyses include
+only recorded z in [h-3,h+3] and [h-5,h+5], respectively, for h=10,...,150.
+Actual horizons and their valid/invalid frequencies are retained in each cell.
+The canonical z+1 reference is retained. Conditional Step Accuracy compares
+the first z reference coordinates, excluding the initial coordinate, with a
+z-1 denominator. Invalid observations never contribute accuracy or taxonomy.
+
+Predeclared support and uncertainty
+The uniform minimum for a cell is 10 valid observations, 3 valid master
+seeds, and 5 distinct valid recorded experiment hashes. N/A-U means no
+observations; N/A-N means observations but no valid responses; N/A-I means
+valid responses exist but the minimum is not met. Raw counts and descriptive
+means remain available for N/A-I, but intervals and supported comparisons do
+not. For a comparison, N/A-U means at least one required cell is unsampled;
+N/A-N means no cell is unsampled but at least one has no valid response;
+N/A-I means valid data exist on both sides but support or exact-horizon
+intersection is insufficient.
+
+For horizon-standardized comparisons, each side independently meets the same
+minimum at every retained shared exact horizon; these horizons receive equal
+weight. Other horizons are not included in that controlled contrast. Paired
+contrasts require matching seed, experiment hash, and gravity; repeats within
+a task condition are averaged. A paired result requires the same minimum
+number of matched task conditions, seeds, and hashes at each retained
+horizon. The experiment hash includes tier; it cannot establish exact
+cross-tier task identity. A supplementary check found no valid cross-tier
+matches at z=20 or 30 even on the more limited combination of seed, gravity,
+grid, initial state, and action sequence.
+
+Intervals use 2,000 percentile bootstrap draws of entire master-seed blocks;
+repeated tasks and gravity observations within a seed remain together.
+When sides share master seeds, the union of blocks is jointly resampled;
+otherwise sides are resampled separately. A standardized contrast receives an
+interval only if at least 95% of draws retain both sides at every included
+horizon. At only three to five clusters, these intervals can be unstable and
+should be interpreted cautiously. Bandwidth differences are descriptive, not
+independent replications: neighborhoods can overlap. No significance claim
+is based on differing point estimates.
+
+Coverage
+  Exact z=20,30, 104 cells: OK 96; N/A-U 0; N/A-N 0; N/A-I 8.
+  +/-3, 780 cells: OK 284; N/A-U 384; N/A-N 7; N/A-I 105.
+  +/-5, 780 cells: OK 329; N/A-U 352; N/A-N 6; N/A-I 93.
+At exact z=20 the four MAI-Thinking-1 tier cells have only two valid seeds;
+at z=30 the four Qwen3-235B-A22B-2507 cells each have fewer than 10 valid
+observations. The pre-existing pooled exact-horizon tier table remains a
+descriptive observation-weighted aggregate including these cells.
+At h=100, +/-3 has 36 N/A-U and 16 N/A-I cells; +/-5 has 32 N/A-U, 16
+N/A-I, and 4 OK. Neither an unobserved exact z=100 nor a missing cell is zero.
+
+Exact-horizon results
+Observation-weighted conditional Step Accuracy, T0/T1/T2/T3:
+  z=20: 69.8%, 70.8%, 67.0%, 59.2%; valid 895/902/908/899;
+        invalid 131/124/118/126.
+  z=30: 65.3%, 69.2%, 65.2%, 56.8%; valid 756/744/742/750;
+        invalid 59/71/73/65.
+These pooled values are not balanced-model or task-paired tier effects.
+Of 156 within-model tier comparisons, 144 meet support and 12 are N/A-I.
+All supported tier contrasts are exact-horizon matched but not task-paired.
+Of 624 same-tier cross-model comparisons, 528 meet the common-horizon rule;
+527 additionally have sufficiently supported exact task-condition pairs.
+Every valid None label was checked against full canonical exact match.
+
+Neighborhood comparisons and bandwidth sensitivity
+Supported within-model tier contrasts: 373/1,170 for +/-3, 437/1,170 for
++/-5. Supported same-tier cross-model contrasts: 866/4,680 and 965/4,680;
+808 and 886, respectively, also have supported task-condition pairs.
+The tier-0 minus tier-3 contrast is positive in 47/64 supported +/-3 cases
+and 55/75 supported +/-5 cases. The direction is descriptive, not causal.
+State Tracking is the unique modal label in 98/284 supported +/-3 cells and
+119/329 supported +/-5 cells; other labels dominate many cells.
+
+Of the 373 tier contrasts supported at both bandwidths, 325 have the same
+nonzero direction, 39 reverse, and 9 include a zero. The mean absolute change
+is 2.64 percentage points; 22 change by at least 10 points. Only 99/373 use
+exactly the same shared-horizon set and weights, so differences can reflect
+changed support. For example, Devstral tier 0 minus tier 3 at target 10
+changes from -52.0 points (z=10 only) to -18.7 points (equal weights on
+z=10 and 15). Modal taxonomy is unchanged in 269/284 cells supported by both
+windows. At h=100, zero +/-3 but three +/-5 tier contrasts meet the rule.
+All 144 supported exact-horizon tier contrasts also meet the rule in both
+corresponding neighborhoods; there are no tier contrasts supported only at
+the exact z=20,30 under this inclusion rule.
+
+Artifacts
+  horizon_local_cells.csv: all 1,664 coverage/metric/taxonomy cells.
+  horizon_local_comparisons.csv: all 12,480 tier and model comparisons.
+  horizon_local_bandwidth_cells.csv: paired bandwidth coverage and labels.
+  horizon_local_bandwidth_comparisons.csv: 5,850 bandwidth comparisons.
+The SQLite caches contain fingerprinted verified raw-file, cell-bootstrap,
+and individual comparison checkpoints. Rerunning resumes these checkpoints
+only when inputs and relevant code fingerprints match. The script prints
+progress for each input file and target. No cache changes original artifacts.
+
+Independent validation
+The validator checked 49,328 cohort rows against raw metadata and checked
+recorded experiment hashes for conflicting task payloads. It independently
+recomputed all 1,664 cells, requested-z scores, taxonomy partitions, inclusion
+windows, coverage classifications, common horizons, standardized point
+estimates, and task matches for 12,480 comparisons. The unit tests compare the
+compressed bootstrap with explicit seed-block resampling.

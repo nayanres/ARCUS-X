@@ -1,0 +1,14 @@
+case,expected,actual,valid,matched,explanation
+requested exact,None,None,True,True,Predicted trajectory correctly matches ground truth (or verbose correct).
+full reference overlong,Horizon Collapse,Horizon Collapse,True,True,Predicted trajectory length differs from ground truth (horizon/truncation mismatch).
+short correct prefix,Horizon Collapse,Horizon Collapse,True,True,Predicted trajectory length differs from ground truth (horizon/truncation mismatch).
+extra incorrect coordinate,Horizon Collapse,Horizon Collapse,True,True,Predicted trajectory length differs from ground truth (horizon/truncation mismatch).
+overlong initial corruption,Semantic Interpretation Failure,Semantic Interpretation Failure,True,True,Initial state does not match ground truth (semantic rule/environment reconstruction failure).
+initial corruption,Semantic Interpretation Failure,Semantic Interpretation Failure,True,True,Initial coordinate offset but subsequent deltas are correct (semantic coordinate offset).
+transition rule error,Transition Rule Failure,Transition Rule Failure,True,True,2/3 step deltas are sign-inverted (transition failure).
+state tracking error,State Tracking Failure,State Tracking Failure,True,True,"Model followed correctly until step 2, then held persistent offset (state tracking failure)."
+noncanonical equivalent,Formatting Failure,Formatting Failure,True,True,Predicted coordinates fall outside the canonical grid range.
+unmapped divergence,Unknown / Unmapped,Unknown / Unmapped,True,True,Requested-coordinate divergence has no mapped mechanism.
+unparseable,Invalid / Excluded,Invalid / Excluded,False,True,Invalid response encountered (error code: E102_PARSE_FAILURE).
+empty,Invalid / Excluded,Invalid / Excluded,False,True,Invalid response encountered (error code: E101_EMPTY_OUTPUT).
+provider exception,Invalid / Excluded,Invalid / Excluded,False,True,Invalid response encountered (error code: E100_EXCEPTION_TOKEN).

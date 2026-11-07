@@ -1,0 +1,15 @@
+model,source_file,parsed_entries,raw_context_entries
+GPT-5-mini,absolute_raw_data_local_gpt_5_mini.txt,5705,5705
+MAI-Thinking-1,absolute_raw_data_local_MAI_Thinking_1.txt,7628,7628
+minimax.minimax-m2.5,absolute_raw_data_local_minimax.minimax_m2.5.txt,5705,5705
+ministral-14b-2512,absolute_raw_data_local_ministral_14b_2512.txt,4525,4525
+ministral-3b-2512,absolute_raw_data_local_ministral_3b_2512.txt,2225,2225
+ministral-8b-2512,absolute_raw_data_local_ministral_8b_2512.txt,2465,2465
+mistral.devstral-2-123b,absolute_raw_data_local_mistral.devstral_2_123b.txt,5225,5225
+mistral-large-2512,absolute_raw_data_local_mistral_large_2512.txt,3405,3405
+mistral-small-2603,absolute_raw_data_local_mistral_small_2603.txt,2185,2185
+moonshotai.kimi-k2.5,absolute_raw_data_local_moonshotai.kimi_k2.5.txt,6585,6585
+nvidia.nemotron-super-3-120b,absolute_raw_data_local_nvidia.nemotron_super_3_120b.txt,2265,2265
+qwen.qwen3-235b-a22b-2507,absolute_raw_data_local_qwen.qwen3_235b_a22b_2507.txt,2305,2305
+qwen.qwen3-coder-480b-a35b-v1:0,absolute_raw_data_local_qwen.qwen3_coder_480b_a35b_v1_0.txt,2165,2165
+zai.glm-5,absolute_raw_data_local_zai.glm_5.txt,2645,2645

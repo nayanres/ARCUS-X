@@ -45,19 +45,16 @@ def is_fully_correct(
     result: Dict[str, Any],
     probe_classification: Optional[Dict[str, Any]] = None,
 ) -> bool:
-    """Use the benchmark trajectory signals as the correctness SSOT."""
+    """Return whether a valid probe produced the complete required trajectory."""
     if not isinstance(result, dict):
         return False
     pc = probe_classification or {}
-    try:
-        step_accuracy = float(result.get("step_accuracy", 0.0) or 0.0)
-    except (TypeError, ValueError):
-        step_accuracy = 0.0
+    if not pc.get("valid", True):
+        return False
     return bool(
         result.get("exact_match", False)
         or pc.get("exact_match", False)
         or pc.get("trajectory_correct", False)
-        or step_accuracy >= 1.0
     )
 
 

@@ -142,6 +142,7 @@ class ErrorMode(Enum):
     SEMANTIC_INTERPRETATION_FAILURE = "Semantic Interpretation Failure"
     HORIZON_COLLAPSE = "Horizon Collapse"
     FORMATTING_FAILURE = "Formatting Failure"
+    UNKNOWN_UNMAPPED = "Unknown / Unmapped"
 
 
 # Canonical Classification Objects
@@ -534,6 +535,8 @@ def _attribute_mechanism(
     gh: int,
     patterns: List[ErrorPattern],
     dynamics: FailureDynamics,
+    *,
+    unmapped_fallback: bool = False,
 ) -> Tuple[FailureMechanism, FailureSubtype, str]:
     """Determine the primary failure mechanism and map to the new broad buckets."""
     n = min(len(pred), len(gt))
@@ -675,6 +678,12 @@ def _attribute_mechanism(
             "Divergence begins immediately and grows with horizon (horizon failure).",
         )
 
+    if unmapped_fallback:
+        return (
+            FailureMechanism.UNKNOWN_FAILURE,
+            FailureSubtype.NONE,
+            "Early divergence has no explicitly mapped mechanism.",
+        )
     return (
         FailureMechanism.STATE_TRACKING_FAILURE,
         FailureSubtype.SRF_PERSISTENT_OFFSET,
@@ -692,6 +701,8 @@ def classify_trajectory(
     grid_width: Optional[int] = None,
     grid_height: Optional[int] = None,
     raw_output: Optional[str] = None,
+    *,
+    _requested_contract: bool = False,
 ) -> TaxonomyResult:
     """Full classification pipeline with binary Output Validity layer and broad Cognitive Failure taxonomy."""
     gw = int(grid_width) if grid_width else 0
@@ -794,6 +805,75 @@ def classify_trajectory(
             probe_classification=pc,
         )
 
+    noncanonical_coordinates = (
+        gw > 0
+        and gh > 0
+        and any(x < 0 or x >= gw or y < 0 or y >= gh for x, y in pred_coords)
+    )
+    modulo_equivalent_trajectory = (
+        len(pred_coords) == len(gt_coords)
+        and all(
+            (x % gw, y % gh) == expected
+            for (x, y), expected in zip(pred_coords, gt_coords)
+        )
+    ) if gw > 0 and gh > 0 else False
+    unwrapped_transition = False
+    if noncanonical_coordinates and modulo_equivalent_trajectory:
+        for i in range(1, min(len(pred_coords), len(gt_coords))):
+            action = acts[i - 1] if i - 1 < len(acts) else None
+            rule = rules.get(action) if action else None
+            if rule is None:
+                continue
+            dx = int(rule["dx"]) % gw
+            dy = int(rule["dy"]) % gh
+            expected_unwrapped = (gt_coords[i - 1][0] + dx, gt_coords[i - 1][1] + dy)
+            x, y = pred_coords[i]
+            if pred_coords[i] == expected_unwrapped and (
+                x < 0 or x >= gw or y < 0 or y >= gh
+            ):
+                unwrapped_transition = True
+                break
+    if (
+        noncanonical_coordinates
+        and modulo_equivalent_trajectory
+        and not unwrapped_transition
+    ):
+        transition_count = max(len(gt_coords) - 1, 0)
+        correct_transitions = sum(
+            pred_coords[i] == gt_coords[i]
+            for i in range(1, min(len(pred_coords), len(gt_coords)))
+        )
+        pc = ProbeClassification(
+            valid=True,
+            exception_code=None,
+            mechanism=FailureMechanism.OUTPUT_FORMAT_FAILURE,
+            first_failure_step=next(
+                i + 1
+                for i, (x, y) in enumerate(pred_coords)
+                if x < 0 or x >= gw or y < 0 or y >= gh
+            ),
+            secondary_flags=("noncanonical_coordinate",),
+            trajectory_correct=False,
+            step_accuracy=(
+                correct_transitions / transition_count if transition_count else 0.0
+            ),
+            exact_match=False,
+            output_compliance=OutputCompliance.MALFORMED_OUTPUT,
+            formatting_subcode=F005_MALFORMED_TRAJECTORY,
+        )
+        return TaxonomyResult(
+            outcome=Outcome.FAILURE,
+            mechanism=FailureMechanism.OUTPUT_FORMAT_FAILURE,
+            subtype=FailureSubtype.ORF_INVALID_COORDINATE,
+            patterns=[ErrorPattern.NONE],
+            dynamics=None,
+            impact=None,
+            legacy_mode=ErrorMode.FORMATTING_FAILURE,
+            valid=True,
+            explanation="Predicted coordinates fall outside the canonical grid range.",
+            probe_classification=pc,
+        )
+
     # SUCCESS: exact match or verbose correct trajectory
     if pred_coords == gt_coords:
         raw_str = (raw_output or "").strip()
@@ -821,7 +901,9 @@ def classify_trajectory(
             first_failure_step=None,
             secondary_flags=(),
             trajectory_correct=True,
-            step_accuracy=1.0,
+            step_accuracy=(
+                0.0 if _requested_contract and len(gt_coords) == 1 else 1.0
+            ),
             exact_match=exact_m,
             output_compliance=out_comp,
             formatting_subcode=f_code,
@@ -844,24 +926,45 @@ def classify_trajectory(
         )
 
     # FAILURE path
-    patterns = _run_pattern_detectors(pred_coords, gt_coords, gw, gh)
-    dynamics = _compute_dynamics(pred_coords, gt_coords)
-    impact = _compute_impact(pred_coords, gt_coords, gw, gh, dynamics)
+    diagnostic_pred = pred_coords[:len(gt_coords)] if _requested_contract else pred_coords
+    patterns = _run_pattern_detectors(diagnostic_pred, gt_coords, gw, gh)
+    dynamics = _compute_dynamics(diagnostic_pred, gt_coords)
+    impact = _compute_impact(diagnostic_pred, gt_coords, gw, gh, dynamics)
 
     mechanism, subtype, explanation = _attribute_mechanism(
-        pred_coords, gt_coords, rules, acts, gw, gh, patterns, dynamics
+        pred_coords, gt_coords, rules, acts, gw, gh, patterns, dynamics,
+        unmapped_fallback=_requested_contract,
     )
+    if _requested_contract and (
+        mechanism == FailureMechanism.NONE
+        or (
+            mechanism == FailureMechanism.HORIZON_FAILURE
+            and explanation == "Predicted trajectory length differs from ground truth (horizon/truncation mismatch)."
+            and diagnostic_pred != gt_coords[:len(diagnostic_pred)]
+        )
+    ):
+        mechanism = FailureMechanism.UNKNOWN_FAILURE
+        subtype = FailureSubtype.NONE
+        explanation = "Requested-coordinate divergence has no mapped mechanism."
 
     # Check if formatting prevented extraction / no correct trajectory recovered
     n_gt = len(gt_coords)
     step_acc = sum(1 for i in range(min(len(pred_coords), n_gt)) if pred_coords[i] == gt_coords[i]) / n_gt if n_gt > 0 else 0.0
+    if _requested_contract:
+        step_acc = (
+            sum(pred_coords[i] == gt_coords[i] for i in range(1, min(len(pred_coords), n_gt)))
+            / (n_gt - 1) if n_gt > 1 else 0.0
+        )
     exact_m = (pred_coords == gt_coords)
 
     if not pred_coords or len(pred_coords) == 0:
         out_comp = OutputCompliance.NO_TRAJECTORY
         f_code = F004_MISSING_TRAJECTORY
         mechanism = FailureMechanism.OUTPUT_FORMAT_FAILURE
-    elif step_acc == 0.0 and len(pred_coords) != n_gt:
+    elif (
+        sum(pred_coords[i] == gt_coords[i] for i in range(min(len(pred_coords), n_gt))) == 0
+        and len(pred_coords) != n_gt
+    ):
         out_comp = OutputCompliance.MALFORMED_OUTPUT
         f_code = F005_MALFORMED_TRAJECTORY
         mechanism = FailureMechanism.OUTPUT_FORMAT_FAILURE
@@ -877,11 +980,18 @@ def classify_trajectory(
         FailureMechanism.SEMANTIC_FAILURE: ErrorMode.SEMANTIC_INTERPRETATION_FAILURE,
         FailureMechanism.OUTPUT_FORMAT_FAILURE: ErrorMode.FORMATTING_FAILURE,
         FailureMechanism.HORIZON_FAILURE: ErrorMode.HORIZON_COLLAPSE,
-        FailureMechanism.UNKNOWN_FAILURE: ErrorMode.STATE_TRACKING_FAILURE,
+        FailureMechanism.UNKNOWN_FAILURE: (
+            ErrorMode.UNKNOWN_UNMAPPED if _requested_contract
+            else ErrorMode.STATE_TRACKING_FAILURE
+        ),
     }
     legacy = legacy_map.get(mechanism, ErrorMode.STATE_TRACKING_FAILURE)
 
     secondary_flags = tuple(p.value for p in patterns if p != ErrorPattern.NONE)
+    if _requested_contract and len(pred_coords) != len(gt_coords):
+        secondary_flags += (
+            "overlong_output" if len(pred_coords) > len(gt_coords) else "short_output",
+        )
     pc = ProbeClassification(
         valid=True,
         exception_code=None,
@@ -908,6 +1018,33 @@ def classify_trajectory(
         probe_classification=pc,
     )
 
+
+REQUESTED_OUTPUT_TAXONOMY_VERSION = "requested-output-v2"
+
+
+def classify_requested_output(
+    predicted: List[str],
+    full_reference: List[str],
+    requested_coordinates: int,
+    transition_rules: Optional[Dict[str, Dict[str, int]]] = None,
+    actions: Optional[List[str]] = None,
+    tier: Optional[int] = None,
+    grid_width: Optional[int] = None,
+    grid_height: Optional[int] = None,
+    raw_output: Optional[str] = None,
+) -> TaxonomyResult:
+    """Post-hoc classifier using the requested prefix, retaining the full reference."""
+    if requested_coordinates < 1:
+        raise ValueError("requested_coordinates must be positive")
+    if len(full_reference) != requested_coordinates + 1:
+        raise ValueError("full reference must contain requested_coordinates + 1 states")
+    if actions is not None and len(actions) != requested_coordinates:
+        raise ValueError("actions must contain requested_coordinates entries")
+    return classify_trajectory(
+        predicted, full_reference[:requested_coordinates], transition_rules,
+        actions[:requested_coordinates - 1] if actions is not None else None,
+        tier, grid_width, grid_height, raw_output, _requested_contract=True,
+    )
 
 
 def classify_from_result(

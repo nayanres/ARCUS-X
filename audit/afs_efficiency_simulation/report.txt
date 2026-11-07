@@ -1,0 +1,165 @@
+Synthetic AFS efficiency benchmark
+==================================
+Independent final set: 1,800 curves (200 in each of nine families), two noise realizations per curve.
+Every policy pays for one ignored calibration response and five per new batch.
+The fixed ten-step grid has 16 points and stops at 81 responses, even at the 161-response budget.
+The test set contains equal numbers of curves per family; conditioning on crossing or detection
+changes their effective weights. No conclusion is an empirical LLM efficiency result.
+A no-observed-crossing outcome is called correctly censored only when the generating curve has no crossing;
+it is not evidence that a policy established nonexistence of a crossing.
+Detected-only MAE and cost-to-target averages exclude failures; precision rates include failures.
+All pairwise differences below are policy minus production AFS; CIs resample curve blocks (500 replicates).
+
+Pooled results by budget
+
+Budget 11 responses
+  Production AFS: within5=8.4%, detected=24.1%, detected MAE=12.78, false positive=11.9%, mean cost=11.00, ever within5=8.5%, cost-to-5 among successes=8.82, within5 difference vs AFS=0.0% [0.0%, 0.0%]; paired curves=1598.
+  Fixed grid: within5=10.5%, detected=20.2%, detected MAE=21.52, false positive=20.0%, mean cost=11.00, ever within5=10.5%, cost-to-5 among successes=6.70, within5 difference vs AFS=2.1% [0.3%, 4.2%]; paired curves=1598.
+  Sequential: within5=11.4%, detected=19.3%, detected MAE=23.70, false positive=21.5%, mean cost=11.00, ever within5=11.4%, cost-to-5 among successes=7.03, within5 difference vs AFS=3.0% [1.1%, 5.2%]; paired curves=1598.
+  Uniform random: within5=7.8%, detected=58.0%, detected MAE=41.12, false positive=12.4%, mean cost=11.00, ever within5=7.9%, cost-to-5 among successes=8.47, within5 difference vs AFS=-0.6% [-2.1%, 0.9%]; paired curves=1598.
+  Adaptive alternative: within5=11.6%, detected=79.5%, detected MAE=66.92, false positive=25.0%, mean cost=11.00, ever within5=11.6%, cost-to-5 among successes=7.09, within5 difference vs AFS=3.2% [1.3%, 5.4%]; paired curves=1598.
+
+Budget 21 responses
+  Production AFS: within5=18.3%, detected=33.5%, detected MAE=12.14, false positive=17.1%, mean cost=21.00, ever within5=18.6%, cost-to-5 among successes=13.32, within5 difference vs AFS=0.0% [0.0%, 0.0%]; paired curves=1598.
+  Fixed grid: within5=17.3%, detected=33.6%, detected MAE=16.86, false positive=24.0%, mean cost=21.00, ever within5=17.3%, cost-to-5 among successes=11.38, within5 difference vs AFS=-0.9% [-2.9%, 0.9%]; paired curves=1598.
+  Sequential: within5=13.5%, detected=23.2%, detected MAE=23.51, false positive=30.4%, mean cost=21.00, ever within5=13.5%, cost-to-5 among successes=8.66, within5 difference vs AFS=-4.7% [-7.3%, -2.3%]; paired curves=1598.
+  Uniform random: within5=13.5%, detected=74.9%, detected MAE=31.68, false positive=20.5%, mean cost=21.00, ever within5=13.8%, cost-to-5 among successes=12.61, within5 difference vs AFS=-4.8% [-6.8%, -2.7%]; paired curves=1598.
+  Adaptive alternative: within5=18.1%, detected=88.1%, detected MAE=34.00, false positive=30.0%, mean cost=21.00, ever within5=18.2%, cost-to-5 among successes=11.22, within5 difference vs AFS=-0.2% [-3.1%, 2.1%]; paired curves=1598.
+
+Budget 41 responses
+  Production AFS: within5=30.2%, detected=55.7%, detected MAE=10.78, false positive=21.3%, mean cost=37.81, ever within5=31.0%, cost-to-5 among successes=22.84, within5 difference vs AFS=0.0% [0.0%, 0.0%]; paired curves=1598.
+  Fixed grid: within5=31.1%, detected=59.1%, detected MAE=12.53, false positive=27.7%, mean cost=41.00, ever within5=31.1%, cost-to-5 among successes=21.42, within5 difference vs AFS=0.9% [-1.1%, 3.2%]; paired curves=1598.
+  Sequential: within5=14.8%, detected=25.6%, detected MAE=23.59, false positive=35.4%, mean cost=41.00, ever within5=14.8%, cost-to-5 among successes=10.48, within5 difference vs AFS=-15.5% [-18.1%, -12.5%]; paired curves=1598.
+  Uniform random: within5=23.8%, detected=86.5%, detected MAE=20.92, false positive=27.2%, mean cost=41.00, ever within5=24.7%, cost-to-5 among successes=22.04, within5 difference vs AFS=-6.4% [-8.9%, -3.7%]; paired curves=1598.
+  Adaptive alternative: within5=33.3%, detected=93.7%, detected MAE=24.79, false positive=38.1%, mean cost=41.00, ever within5=35.8%, cost-to-5 among successes=22.50, within5 difference vs AFS=3.1% [0.1%, 5.8%]; paired curves=1598.
+
+Budget 81 responses
+  Production AFS: within5=59.3%, detected=94.0%, detected MAE=9.59, false positive=31.2%, mean cost=61.62, ever within5=62.0%, cost-to-5 among successes=44.11, within5 difference vs AFS=0.0% [0.0%, 0.0%]; paired curves=1598.
+  Fixed grid: within5=46.5%, detected=94.4%, detected MAE=11.40, false positive=38.9%, mean cost=81.00, ever within5=46.5%, cost-to-5 among successes=34.66, within5 difference vs AFS=-12.8% [-15.4%, -10.1%]; paired curves=1598.
+  Sequential: within5=16.7%, detected=28.5%, detected MAE=21.88, false positive=37.1%, mean cost=81.00, ever within5=16.7%, cost-to-5 among successes=17.15, within5 difference vs AFS=-42.6% [-46.0%, -39.5%]; paired curves=1598.
+  Uniform random: within5=37.8%, detected=92.1%, detected MAE=13.24, false positive=33.7%, mean cost=81.00, ever within5=40.9%, cost-to-5 among successes=37.90, within5 difference vs AFS=-21.4% [-23.7%, -19.2%]; paired curves=1598.
+  Adaptive alternative: within5=42.0%, detected=95.3%, detected MAE=22.12, false positive=46.3%, mean cost=81.00, ever within5=49.0%, cost-to-5 among successes=31.60, within5 difference vs AFS=-17.3% [-20.1%, -14.6%]; paired curves=1598.
+
+Budget 161 responses
+  Production AFS: within5=60.5%, detected=95.5%, detected MAE=9.36, false positive=38.4%, mean cost=71.38, ever within5=64.3%, cost-to-5 among successes=45.67, within5 difference vs AFS=0.0% [0.0%, 0.0%]; paired curves=1598.
+  Fixed grid: within5=46.5%, detected=94.4%, detected MAE=11.40, false positive=38.9%, mean cost=81.00, ever within5=46.5%, cost-to-5 among successes=34.66, within5 difference vs AFS=-14.0% [-16.4%, -11.3%]; paired curves=1598.
+  Sequential: within5=23.9%, detected=38.1%, detected MAE=17.55, false positive=38.1%, mean cost=161.00, ever within5=23.9%, cost-to-5 among successes=49.09, within5 difference vs AFS=-36.6% [-39.6%, -33.6%]; paired curves=1598.
+  Uniform random: within5=53.4%, detected=95.4%, detected MAE=10.12, false positive=41.3%, mean cost=161.00, ever within5=60.9%, cost-to-5 among successes=64.13, within5 difference vs AFS=-7.0% [-9.3%, -4.7%]; paired curves=1598.
+  Adaptive alternative: within5=40.4%, detected=95.9%, detected MAE=20.18, false positive=52.5%, mean cost=161.00, ever within5=56.2%, cost-to-5 among successes=42.62, within5 difference vs AFS=-20.0% [-22.6%, -17.3%]; paired curves=1598.
+
+Family-level within-five rates and paired differences at 81 responses
+  logistic:
+    Production AFS 85.8%; difference 0.0% [0.0%, 0.0%], paired curves=200.
+    Fixed grid 54.2%; difference -31.5% [-38.2%, -24.7%], paired curves=200.
+    Sequential 0.0%; difference -85.8% [-89.2%, -82.2%], paired curves=200.
+    Uniform random 49.0%; difference -36.8% [-43.0%, -30.4%], paired curves=200.
+    Adaptive alternative 80.5%; difference -5.2% [-10.5%, -0.1%], paired curves=200.
+  exponential:
+    Production AFS 53.5%; difference 0.0% [0.0%, 0.0%], paired curves=187.
+    Fixed grid 40.9%; difference -12.6% [-20.1%, -5.7%], paired curves=187.
+    Sequential 1.1%; difference -52.4% [-57.3%, -46.6%], paired curves=187.
+    Uniform random 34.2%; difference -19.3% [-26.5%, -12.5%], paired curves=187.
+    Adaptive alternative 44.7%; difference -8.8% [-16.1%, -1.3%], paired curves=187.
+  abrupt:
+    Production AFS 100.0%; difference 0.0% [0.0%, 0.0%], paired curves=200.
+    Fixed grid 57.2%; difference -42.8% [-49.3%, -36.0%], paired curves=200.
+    Sequential 4.0%; difference -96.0% [-98.5%, -93.0%], paired curves=200.
+    Uniform random 54.0%; difference -46.0% [-50.9%, -41.0%], paired curves=200.
+    Adaptive alternative 34.0%; difference -66.0% [-72.0%, -60.2%], paired curves=200.
+  gradual:
+    Production AFS 36.3%; difference 0.0% [0.0%, 0.0%], paired curves=142.
+    Fixed grid 32.0%; difference -4.2% [-11.7%, 3.2%], paired curves=142.
+    Sequential 0.0%; difference -36.3% [-42.0%, -30.7%], paired curves=142.
+    Uniform random 26.8%; difference -9.5% [-16.4%, -2.1%], paired curves=142.
+    Adaptive alternative 30.3%; difference -6.0% [-13.0%, 0.7%], paired curves=142.
+  recovery:
+    Production AFS 91.0%; difference 0.0% [0.0%, 0.0%], paired curves=200.
+    Fixed grid 58.0%; difference -33.0% [-40.8%, -25.5%], paired curves=200.
+    Sequential 2.2%; difference -88.8% [-93.0%, -84.0%], paired curves=200.
+    Uniform random 50.0%; difference -41.0% [-47.0%, -34.5%], paired curves=200.
+    Adaptive alternative 23.8%; difference -67.2% [-72.5%, -61.6%], paired curves=200.
+  oscillatory:
+    Production AFS 37.5%; difference 0.0% [0.0%, 0.0%], paired curves=200.
+    Fixed grid 62.3%; difference 24.8% [15.6%, 34.4%], paired curves=200.
+    Sequential 79.8%; difference 42.2% [32.4%, 52.4%], paired curves=200.
+    Uniform random 45.0%; difference 7.5% [-0.5%, 15.7%], paired curves=200.
+    Adaptive alternative 49.8%; difference 12.2% [1.8%, 23.8%], paired curves=200.
+  censored:
+    Production AFS 32.3%; difference 0.0% [0.0%, 0.0%], paired curves=96.
+    Fixed grid 27.1%; difference -5.2% [-14.9%, 4.3%], paired curves=96.
+    Sequential 0.0%; difference -32.3% [-39.7%, -25.4%], paired curves=96.
+    Uniform random 18.2%; difference -14.1% [-22.3%, -5.5%], paired curves=96.
+    Adaptive alternative 13.5%; difference -18.8% [-27.9%, -10.5%], paired curves=96.
+  near_threshold:
+    Production AFS 21.4%; difference 0.0% [0.0%, 0.0%], paired curves=173.
+    Fixed grid 37.3%; difference 15.9% [8.9%, 23.4%], paired curves=173.
+    Sequential 53.5%; difference 32.1% [22.9%, 41.0%], paired curves=173.
+    Uniform random 18.5%; difference -2.9% [-7.9%, 3.1%], paired curves=173.
+    Adaptive alternative 33.2%; difference 11.8% [4.8%, 19.1%], paired curves=173.
+  validity_degradation:
+    Production AFS 49.5%; difference 0.0% [0.0%, 0.0%], paired curves=200.
+    Fixed grid 33.2%; difference -16.2% [-21.7%, -10.5%], paired curves=200.
+    Sequential 0.0%; difference -49.5% [-55.4%, -43.2%], paired curves=200.
+    Uniform random 28.5%; difference -21.0% [-26.2%, -15.2%], paired curves=200.
+    Adaptive alternative 48.8%; difference -0.8% [-5.2%, 4.2%], paired curves=200.
+
+Five-consecutive-horizon persistent-target detection at 81 responses
+  recovery, Production AFS: 0/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  recovery, Fixed grid: 0/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  recovery, Sequential: 0/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  recovery, Uniform random: 0/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  recovery, Adaptive alternative: 226/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  oscillatory, Production AFS: 0/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  oscillatory, Fixed grid: 0/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  oscillatory, Sequential: 212/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  oscillatory, Uniform random: 0/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+  oscillatory, Adaptive alternative: 71/400 detected (estimator requires five consecutive sampled valid below-threshold horizons).
+
+Baselines compared at the actual cost consumed by production AFS with a 161-response cap
+  Production AFS: 60.5%; difference vs AFS 0.0% [0.0%, 0.0%].
+  Fixed grid: 46.2%; difference vs AFS -14.3% [-16.8%, -11.5%].
+  Sequential: 14.4%; difference vs AFS -46.0% [-48.9%, -43.0%].
+  Uniform random: 31.0%; difference vs AFS -29.5% [-31.6%, -27.2%].
+  Adaptive alternative: 38.3%; difference vs AFS -22.2% [-24.8%, -19.4%].
+
+Invalid-only search batches at 81 responses (descriptive, excluding calibration)
+  Production AFS, validity-degradation family: 1348/5477 (24.6%).
+  Fixed grid, validity-degradation family: 2476/6400 (38.7%).
+  Sequential, validity-degradation family: 5/6400 (0.1%).
+  Uniform random, validity-degradation family: 2361/6400 (36.9%).
+  Adaptive alternative, validity-degradation family: 1113/6400 (17.4%).
+  AFS with 0-9 valid search responses: 1/27 observed a crossing. This is a descriptive, policy-selected association.
+  AFS with 50+ valid search responses: 112/133 observed a crossing. This is a descriptive, policy-selected association.
+
+Correlation stress: within-five rates at 81 responses (independent observation stream)
+  beta concentration 5: Production AFS 48.0%; Fixed grid 42.6%; Sequential 17.4%; Uniform random 35.2%; Adaptive alternative 33.6%
+    Fixed-grid minus AFS: -5.5% [-10.9%, -0.4%]; 403 crossing curves.
+  beta concentration 30: Production AFS 60.3%; Fixed grid 47.1%; Sequential 18.1%; Uniform random 40.0%; Adaptive alternative 44.2%
+    Fixed-grid minus AFS: -13.2% [-18.7%, -8.0%]; 403 crossing curves.
+  beta concentration 200: Production AFS 64.3%; Fixed grid 48.6%; Sequential 17.7%; Uniform random 41.8%; Adaptive alternative 50.2%
+    Fixed-grid minus AFS: -15.6% [-20.8%, -9.6%]; 403 crossing curves.
+
+Altered-threshold AFS stress at 81 responses (descriptive; not primary policy comparisons)
+  threshold 0.4: detection 91.4% among 2422 crossing realizations; detected-only MAE 8.27; false positive 19.9% among 1178 no-crossing realizations.
+  threshold 0.6: detection 96.5% among 3412 crossing realizations; detected-only MAE 8.15; false positive 34.6% among 188 no-crossing realizations.
+
+Historical support sanity check (not simulation calibration or policy replay)
+  Existing valid-only requested-output summaries for mistral.devstral-2-123b tier 3:
+  z=30: 48 valid, 2 invalid, mean Step Accuracy 23.3% (valid responses only; 29 post-initial coordinates).
+  z=40: 30 valid, 0 invalid, mean Step Accuracy 82.3% (valid responses only; 39 post-initial coordinates).
+  These are observed, potentially unpaired task mixtures and use z-1 scored transitions; they do not establish an individual-task recovery, calibrate the simulator, or predict unobserved horizons.
+
+Interpretation
+  At 81 responses the pooled AFS within-five rate is 59.3%, versus 46.5% for the fixed grid and 42.0% for the adaptive alternative. The paired intervals above quantify the differences.
+  At 41 responses, the alternative is 33.3% versus AFS 30.2%; consult the paired interval rather than extrapolating from one budget.
+  Nonmonotonic results differ by family: AFS versus fixed grid is 91.0% versus 58.0% for recoveries, but 37.5% versus 62.3% for oscillations.
+  At 81 responses the AFS persistent estimator detected 0/3096 realizations with a true persistent crossing; it requires five consecutive sampled valid below-threshold horizons. Valid-response-bin comparisons are descriptive.
+  Budget dependence, the equally sized generating families, the fixed grid's finite schedule, early AFS termination, the response correlation model and the separate actual-cost results limit generalization. No controlled simulation result establishes empirical LLM efficiency.
+
+Full family/budget estimates, paired confidence intervals, missing counts, actual-cost comparisons,
+noise/validity/parameter factors, persistence and threshold stress results are in the CSV artifacts.
+The beta-binomial model does not reproduce complete state trajectories, causal model failures,
+provider behavior, adaptive task selection, or natural-language responses. The simulation assesses
+allocation under its stated response-generating assumptions, not empirical LLM sample efficiency.
+Detection and precision can be misleading on nonmonotone curves; examine first versus persistent
+targets and their failure rates. Differing valid sample counts condition MAE and its paired interval.

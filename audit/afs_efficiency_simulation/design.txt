@@ -1,0 +1,114 @@
+Synthetic AFS efficiency experiment: frozen protocol
+====================================================
+
+The primary experiment is configured by config.json. The file, simulation
+source, production controller source and Python/NumPy versions are hashed
+before the final run. Development and validation curves have independent seeds
+and are used for adapter tests, not policy tuning. The final set has 200
+parameterized curves per family, two independent noise realizations per curve,
+and nine equally sized families. The pooled result depends on that mixture;
+conditioning on crossing or detection changes the effective family weights.
+
+Production controller
+---------------------
+simulation.py invokes BenchmarkRunner._evaluate_all_dimensions directly on a
+minimal instance, replacing only _evaluate_depth_batch with synthetic batch
+I/O. No search decision is reimplemented. With one tier, one gravity condition,
+and no grid sweep, the runner requests one calibration observation at z=3
+(gravity 0), then five responses per search batch (gravity 0.5). The anchor
+is a different probe identity, ignored by the search and charged to all
+policies. The initial search bounds are 1 and 40, first midpoint 20, and
+integer midpoints use floor division. A valid batch mean below 0.5 moves the
+upper bound down and records a candidate; a passing or all-invalid batch moves
+the lower bound up. If the midpoint reaches the upper bound while passing,
+the bound doubles up to 150. The loop terminates when the bounds cross or its
+iteration guard fires. With no candidate and a lower bound beyond 150, the
+native output is 150; 0 is also possible when no candidate was established.
+The controller does not perform the separate post-hoc recovery look-ahead.
+This search can expand even after a candidate was recorded. An adapter test
+asserts the production trace [20,30,25,27,28,29,44,36,32] for a deterministic
+scenario, including one all-invalid batch.
+
+The adapter supplies per-response valid flags and fractions of correct
+post-initial positions over all z supplied actions, matching live Step Accuracy.
+Batch means use BenchmarkRunner._is_cognitive_valid. Invalid probes consume
+budget and do not enter the mean. Identity-based reuse of a completed batch is
+free; calibration and search observations have distinct identities. This
+experiment does not simulate provider-specific error categories or model text.
+
+Environment and estimators
+--------------------------
+For each curve, the equations and parameter ranges are in config.json and
+environment(). Exponential and logistic curves are bounded by their low/high
+parameters; abrupt and recovery curves are piecewise constant; gradual is
+linear; oscillatory and near-threshold curves use sinusoidal components;
+censored curves either stay above 0.5 or cross close to 150. Validity is one
+except in the validity-degradation family, which uses a decreasing logistic
+and optionally a zero-validity cutoff. Values are clipped to [0.001,0.999].
+
+Conditional on validity, each probe draws q ~ Beta(30p,30(1-p)); then the
+number of correct transition positions is Binomial(z,q). The score is that
+count divided by z. This exchangeable beta-binomial model induces intraclass
+correlation 1/31 across positions within a probe; it does not model coherent
+state trajectories or error persistence. A fixed potential observation is
+keyed by split, family, curve, replicate, horizon and probe index through a
+deterministic horizon-level random stream. It is common to all policies and
+independent of request order.
+
+All policies get the same ignored, charged calibration response. Their
+predefined schedules and alternative adaptive rule are in config.json.
+Policies do not access the generating curve; only the evaluator sees it.
+The fixed-grid policy samples the 16 prespecified points 1, 11, ..., 141,
+150 and then stops, so it cannot use more than 81 responses even when the
+available budget is 161. This is a fixed ten-step grid, not a budget-specific
+grid optimized separately for each budget. Other policies can keep sampling
+until their own stopping rule or the budget is reached.
+The common first-crossing estimator is the smallest observed horizon with a
+valid mean below 0.5. No observed crossing is reported as undetected; for
+true no-crossing curves, the corresponding correct-censor rate is the
+fraction with no observed crossing, not evidence that the policy proved
+absence of a crossing. First and persistent absolute errors are reported only
+when both truth and estimate exist, with detection and failure separately.
+Persistent estimates require five consecutive sampled integer horizons with
+valid means below threshold; the policy-neutral truth requires five
+consecutive integer horizons with generating p below threshold. Threshold
+region coverage is the fraction of true |p-0.5|<=0.05 horizons sampled;
+region precision measures how many observed means in the band are truly in it.
+Cost-to-target is the first prefix reaching +/-3 or +/-5 under the common
+estimator, and is conditional on success; report the ever-achieved fraction
+too. Final within-tolerance rates use the estimate at the evaluated budget,
+which can differ from an earlier transient success.
+
+Budget grid 11,21,41,81,161 is fixed from the controller configuration:
+one calibration plus 2,4,8,16,32 complete five-probe batches. An early
+terminated policy does not spend the remaining budget. A separate comparison
+evaluates each baseline at the actual total cost of the AFS run. Curves, not
+repeated realizations or budgets, are the bootstrap unit. Percentile intervals
+use 500 curve-cluster draws; paired policy differences retain only outcomes
+available for both policies on the same realization.
+The separate operational comparison uses the production native candidate
+only once AFS terminates; native zero, ceiling saturation without a below-floor
+batch, and budget interruption are not treated as candidate estimates.
+Baselines use their earliest observed below-floor horizon as a comparator.
+
+Sensitivity
+-----------
+The primary AFS threshold remains 0.5. Separately labeled 0.4 and 0.6
+controller runs and 3- and 10-horizon persistence targets assess threshold
+and persistence sensitivity. The separately specified noise_stress.py uses
+the first 50 final curves in each family, a separate observation stream, beta
+concentrations 5, 30 and 200 (intraclass correlations 1/6, 1/31, 1/201),
+and response budgets 41 and 81. This is a sensitivity check, not tuning.
+Stress summaries also retain per-curve parameters and valid-response counts.
+Invalidity, slope, location, non-monotonicity and budgets can be examined by
+family and factors. The complete finite synthetic domain is known only to the
+evaluator; no unobserved model outcomes are invented.
+
+Run:
+  python -m pytest audit\afs_efficiency_simulation\test_simulation.py -q
+  python audit\afs_efficiency_simulation\simulation.py --split test
+  python audit\afs_efficiency_simulation\noise_stress.py
+  python audit\afs_efficiency_simulation\analyze.py
+
+Family checkpoints record file hashes and reject mismatched source or
+environment metadata; rerun the same simulation command to resume.

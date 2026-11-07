@@ -1,0 +1,561 @@
+model,policy,category,count_valid,valid_denominator,proportion_valid
+GPT-5-mini,A_strict_original_precedence,Formatting Failure,0,5061,0.0
+GPT-5-mini,A_strict_original_precedence,Horizon Collapse,2112,5061,0.4173088322465916
+GPT-5-mini,A_strict_original_precedence,None,2417,5061,0.4775736020549299
+GPT-5-mini,A_strict_original_precedence,Semantic Interpretation Failure,0,5061,0.0
+GPT-5-mini,A_strict_original_precedence,State Tracking Failure,529,5061,0.10452479747085557
+GPT-5-mini,A_strict_original_precedence,Transition Rule Failure,3,5061,0.0005927682276229994
+GPT-5-mini,A_strict_original_precedence,Unclassified,0,5061,0.0
+GPT-5-mini,A_strict_original_precedence,Unknown / Unmapped,0,5061,0.0
+GPT-5-mini,B_unmapped_divergences_unknown,Formatting Failure,0,5061,0.0
+GPT-5-mini,B_unmapped_divergences_unknown,Horizon Collapse,2112,5061,0.4173088322465916
+GPT-5-mini,B_unmapped_divergences_unknown,None,2417,5061,0.4775736020549299
+GPT-5-mini,B_unmapped_divergences_unknown,Semantic Interpretation Failure,0,5061,0.0
+GPT-5-mini,B_unmapped_divergences_unknown,State Tracking Failure,529,5061,0.10452479747085557
+GPT-5-mini,B_unmapped_divergences_unknown,Transition Rule Failure,3,5061,0.0005927682276229994
+GPT-5-mini,B_unmapped_divergences_unknown,Unclassified,0,5061,0.0
+GPT-5-mini,B_unmapped_divergences_unknown,Unknown / Unmapped,0,5061,0.0
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,5061,0.0
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,2604,5061,0.5145228215767634
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,None,2417,5061,0.4775736020549299
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,0,5061,0.0
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,37,5061,0.007310808140683659
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,3,5061,0.0005927682276229994
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,5061,0.0
+GPT-5-mini,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,5061,0.0
+GPT-5-mini,D_horizon_and_unmapped_unknown,Formatting Failure,0,5061,0.0
+GPT-5-mini,D_horizon_and_unmapped_unknown,Horizon Collapse,2604,5061,0.5145228215767634
+GPT-5-mini,D_horizon_and_unmapped_unknown,None,2417,5061,0.4775736020549299
+GPT-5-mini,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,0,5061,0.0
+GPT-5-mini,D_horizon_and_unmapped_unknown,State Tracking Failure,37,5061,0.007310808140683659
+GPT-5-mini,D_horizon_and_unmapped_unknown,Transition Rule Failure,3,5061,0.0005927682276229994
+GPT-5-mini,D_horizon_and_unmapped_unknown,Unclassified,0,5061,0.0
+GPT-5-mini,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,5061,0.0
+GPT-5-mini,E_transition_first,Formatting Failure,0,5061,0.0
+GPT-5-mini,E_transition_first,Horizon Collapse,2112,5061,0.4173088322465916
+GPT-5-mini,E_transition_first,None,2417,5061,0.4775736020549299
+GPT-5-mini,E_transition_first,Semantic Interpretation Failure,0,5061,0.0
+GPT-5-mini,E_transition_first,State Tracking Failure,4,5061,0.0007903576368306659
+GPT-5-mini,E_transition_first,Transition Rule Failure,528,5061,0.1043272080616479
+GPT-5-mini,E_transition_first,Unclassified,0,5061,0.0
+GPT-5-mini,E_transition_first,Unknown / Unmapped,0,5061,0.0
+MAI-Thinking-1,A_strict_original_precedence,Formatting Failure,0,3110,0.0
+MAI-Thinking-1,A_strict_original_precedence,Horizon Collapse,494,3110,0.15884244372990353
+MAI-Thinking-1,A_strict_original_precedence,None,2518,3110,0.8096463022508038
+MAI-Thinking-1,A_strict_original_precedence,Semantic Interpretation Failure,0,3110,0.0
+MAI-Thinking-1,A_strict_original_precedence,State Tracking Failure,97,3110,0.031189710610932477
+MAI-Thinking-1,A_strict_original_precedence,Transition Rule Failure,1,3110,0.0003215434083601286
+MAI-Thinking-1,A_strict_original_precedence,Unclassified,0,3110,0.0
+MAI-Thinking-1,A_strict_original_precedence,Unknown / Unmapped,0,3110,0.0
+MAI-Thinking-1,B_unmapped_divergences_unknown,Formatting Failure,0,3110,0.0
+MAI-Thinking-1,B_unmapped_divergences_unknown,Horizon Collapse,494,3110,0.15884244372990353
+MAI-Thinking-1,B_unmapped_divergences_unknown,None,2518,3110,0.8096463022508038
+MAI-Thinking-1,B_unmapped_divergences_unknown,Semantic Interpretation Failure,0,3110,0.0
+MAI-Thinking-1,B_unmapped_divergences_unknown,State Tracking Failure,97,3110,0.031189710610932477
+MAI-Thinking-1,B_unmapped_divergences_unknown,Transition Rule Failure,1,3110,0.0003215434083601286
+MAI-Thinking-1,B_unmapped_divergences_unknown,Unclassified,0,3110,0.0
+MAI-Thinking-1,B_unmapped_divergences_unknown,Unknown / Unmapped,0,3110,0.0
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,3110,0.0
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,551,3110,0.17717041800643088
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,None,2518,3110,0.8096463022508038
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,0,3110,0.0
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,40,3110,0.012861736334405145
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,1,3110,0.0003215434083601286
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,3110,0.0
+MAI-Thinking-1,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,3110,0.0
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,Formatting Failure,0,3110,0.0
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,Horizon Collapse,551,3110,0.17717041800643088
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,None,2518,3110,0.8096463022508038
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,0,3110,0.0
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,State Tracking Failure,40,3110,0.012861736334405145
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,Transition Rule Failure,1,3110,0.0003215434083601286
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,Unclassified,0,3110,0.0
+MAI-Thinking-1,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,3110,0.0
+MAI-Thinking-1,E_transition_first,Formatting Failure,0,3110,0.0
+MAI-Thinking-1,E_transition_first,Horizon Collapse,494,3110,0.15884244372990353
+MAI-Thinking-1,E_transition_first,None,2518,3110,0.8096463022508038
+MAI-Thinking-1,E_transition_first,Semantic Interpretation Failure,0,3110,0.0
+MAI-Thinking-1,E_transition_first,State Tracking Failure,3,3110,0.0009646302250803858
+MAI-Thinking-1,E_transition_first,Transition Rule Failure,95,3110,0.03054662379421222
+MAI-Thinking-1,E_transition_first,Unclassified,0,3110,0.0
+MAI-Thinking-1,E_transition_first,Unknown / Unmapped,0,3110,0.0
+minimax.minimax-m2.5,A_strict_original_precedence,Formatting Failure,3,218,0.013761467889908258
+minimax.minimax-m2.5,A_strict_original_precedence,Horizon Collapse,12,218,0.05504587155963303
+minimax.minimax-m2.5,A_strict_original_precedence,None,201,218,0.9220183486238532
+minimax.minimax-m2.5,A_strict_original_precedence,Semantic Interpretation Failure,0,218,0.0
+minimax.minimax-m2.5,A_strict_original_precedence,State Tracking Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,A_strict_original_precedence,Transition Rule Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,A_strict_original_precedence,Unclassified,0,218,0.0
+minimax.minimax-m2.5,A_strict_original_precedence,Unknown / Unmapped,0,218,0.0
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,Formatting Failure,3,218,0.013761467889908258
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,Horizon Collapse,12,218,0.05504587155963303
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,None,201,218,0.9220183486238532
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,Semantic Interpretation Failure,0,218,0.0
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,State Tracking Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,Transition Rule Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,Unclassified,0,218,0.0
+minimax.minimax-m2.5,B_unmapped_divergences_unknown,Unknown / Unmapped,0,218,0.0
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,218,0.0
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,15,218,0.06880733944954129
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,None,201,218,0.9220183486238532
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,0,218,0.0
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,218,0.0
+minimax.minimax-m2.5,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,218,0.0
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,Formatting Failure,0,218,0.0
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,Horizon Collapse,15,218,0.06880733944954129
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,None,201,218,0.9220183486238532
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,0,218,0.0
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,State Tracking Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,Transition Rule Failure,1,218,0.0045871559633027525
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,Unclassified,0,218,0.0
+minimax.minimax-m2.5,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,218,0.0
+minimax.minimax-m2.5,E_transition_first,Formatting Failure,3,218,0.013761467889908258
+minimax.minimax-m2.5,E_transition_first,Horizon Collapse,12,218,0.05504587155963303
+minimax.minimax-m2.5,E_transition_first,None,201,218,0.9220183486238532
+minimax.minimax-m2.5,E_transition_first,Semantic Interpretation Failure,0,218,0.0
+minimax.minimax-m2.5,E_transition_first,State Tracking Failure,0,218,0.0
+minimax.minimax-m2.5,E_transition_first,Transition Rule Failure,2,218,0.009174311926605505
+minimax.minimax-m2.5,E_transition_first,Unclassified,0,218,0.0
+minimax.minimax-m2.5,E_transition_first,Unknown / Unmapped,0,218,0.0
+ministral-14b-2512,A_strict_original_precedence,Formatting Failure,27,4121,0.006551807813637467
+ministral-14b-2512,A_strict_original_precedence,Horizon Collapse,710,4121,0.17228827954380005
+ministral-14b-2512,A_strict_original_precedence,None,699,4121,0.1696190245086144
+ministral-14b-2512,A_strict_original_precedence,Semantic Interpretation Failure,53,4121,0.012860956078621694
+ministral-14b-2512,A_strict_original_precedence,State Tracking Failure,2176,4121,0.5280271778694492
+ministral-14b-2512,A_strict_original_precedence,Transition Rule Failure,456,4121,0.11065275418587721
+ministral-14b-2512,A_strict_original_precedence,Unclassified,0,4121,0.0
+ministral-14b-2512,A_strict_original_precedence,Unknown / Unmapped,0,4121,0.0
+ministral-14b-2512,B_unmapped_divergences_unknown,Formatting Failure,27,4121,0.006551807813637467
+ministral-14b-2512,B_unmapped_divergences_unknown,Horizon Collapse,710,4121,0.17228827954380005
+ministral-14b-2512,B_unmapped_divergences_unknown,None,699,4121,0.1696190245086144
+ministral-14b-2512,B_unmapped_divergences_unknown,Semantic Interpretation Failure,53,4121,0.012860956078621694
+ministral-14b-2512,B_unmapped_divergences_unknown,State Tracking Failure,2176,4121,0.5280271778694492
+ministral-14b-2512,B_unmapped_divergences_unknown,Transition Rule Failure,456,4121,0.11065275418587721
+ministral-14b-2512,B_unmapped_divergences_unknown,Unclassified,0,4121,0.0
+ministral-14b-2512,B_unmapped_divergences_unknown,Unknown / Unmapped,0,4121,0.0
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,4121,0.0
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,3180,4121,0.7716573647173016
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,None,699,4121,0.1696190245086144
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,4,4121,0.000970638194612958
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,171,4121,0.04149478281970396
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,67,4121,0.016258189759767047
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,4121,0.0
+ministral-14b-2512,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,4121,0.0
+ministral-14b-2512,D_horizon_and_unmapped_unknown,Formatting Failure,0,4121,0.0
+ministral-14b-2512,D_horizon_and_unmapped_unknown,Horizon Collapse,3180,4121,0.7716573647173016
+ministral-14b-2512,D_horizon_and_unmapped_unknown,None,699,4121,0.1696190245086144
+ministral-14b-2512,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,4,4121,0.000970638194612958
+ministral-14b-2512,D_horizon_and_unmapped_unknown,State Tracking Failure,171,4121,0.04149478281970396
+ministral-14b-2512,D_horizon_and_unmapped_unknown,Transition Rule Failure,67,4121,0.016258189759767047
+ministral-14b-2512,D_horizon_and_unmapped_unknown,Unclassified,0,4121,0.0
+ministral-14b-2512,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,4121,0.0
+ministral-14b-2512,E_transition_first,Formatting Failure,27,4121,0.006551807813637467
+ministral-14b-2512,E_transition_first,Horizon Collapse,710,4121,0.17228827954380005
+ministral-14b-2512,E_transition_first,None,699,4121,0.1696190245086144
+ministral-14b-2512,E_transition_first,Semantic Interpretation Failure,53,4121,0.012860956078621694
+ministral-14b-2512,E_transition_first,State Tracking Failure,13,4121,0.0031545741324921135
+ministral-14b-2512,E_transition_first,Transition Rule Failure,2619,4121,0.6355253579228343
+ministral-14b-2512,E_transition_first,Unclassified,0,4121,0.0
+ministral-14b-2512,E_transition_first,Unknown / Unmapped,0,4121,0.0
+ministral-3b-2512,A_strict_original_precedence,Formatting Failure,96,1820,0.05274725274725275
+ministral-3b-2512,A_strict_original_precedence,Horizon Collapse,238,1820,0.13076923076923078
+ministral-3b-2512,A_strict_original_precedence,None,227,1820,0.12472527472527473
+ministral-3b-2512,A_strict_original_precedence,Semantic Interpretation Failure,126,1820,0.06923076923076923
+ministral-3b-2512,A_strict_original_precedence,State Tracking Failure,1050,1820,0.5769230769230769
+ministral-3b-2512,A_strict_original_precedence,Transition Rule Failure,83,1820,0.0456043956043956
+ministral-3b-2512,A_strict_original_precedence,Unclassified,0,1820,0.0
+ministral-3b-2512,A_strict_original_precedence,Unknown / Unmapped,0,1820,0.0
+ministral-3b-2512,B_unmapped_divergences_unknown,Formatting Failure,96,1820,0.05274725274725275
+ministral-3b-2512,B_unmapped_divergences_unknown,Horizon Collapse,238,1820,0.13076923076923078
+ministral-3b-2512,B_unmapped_divergences_unknown,None,227,1820,0.12472527472527473
+ministral-3b-2512,B_unmapped_divergences_unknown,Semantic Interpretation Failure,126,1820,0.06923076923076923
+ministral-3b-2512,B_unmapped_divergences_unknown,State Tracking Failure,1049,1820,0.5763736263736263
+ministral-3b-2512,B_unmapped_divergences_unknown,Transition Rule Failure,83,1820,0.0456043956043956
+ministral-3b-2512,B_unmapped_divergences_unknown,Unclassified,0,1820,0.0
+ministral-3b-2512,B_unmapped_divergences_unknown,Unknown / Unmapped,1,1820,0.0005494505494505495
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,1,1820,0.0005494505494505495
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,1446,1820,0.7945054945054945
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,None,227,1820,0.12472527472527473
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,16,1820,0.008791208791208791
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,109,1820,0.05989010989010989
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,21,1820,0.011538461538461539
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,1820,0.0
+ministral-3b-2512,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,1820,0.0
+ministral-3b-2512,D_horizon_and_unmapped_unknown,Formatting Failure,1,1820,0.0005494505494505495
+ministral-3b-2512,D_horizon_and_unmapped_unknown,Horizon Collapse,1445,1820,0.7939560439560439
+ministral-3b-2512,D_horizon_and_unmapped_unknown,None,227,1820,0.12472527472527473
+ministral-3b-2512,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,16,1820,0.008791208791208791
+ministral-3b-2512,D_horizon_and_unmapped_unknown,State Tracking Failure,109,1820,0.05989010989010989
+ministral-3b-2512,D_horizon_and_unmapped_unknown,Transition Rule Failure,21,1820,0.011538461538461539
+ministral-3b-2512,D_horizon_and_unmapped_unknown,Unclassified,0,1820,0.0
+ministral-3b-2512,D_horizon_and_unmapped_unknown,Unknown / Unmapped,1,1820,0.0005494505494505495
+ministral-3b-2512,E_transition_first,Formatting Failure,96,1820,0.05274725274725275
+ministral-3b-2512,E_transition_first,Horizon Collapse,238,1820,0.13076923076923078
+ministral-3b-2512,E_transition_first,None,227,1820,0.12472527472527473
+ministral-3b-2512,E_transition_first,Semantic Interpretation Failure,126,1820,0.06923076923076923
+ministral-3b-2512,E_transition_first,State Tracking Failure,26,1820,0.014285714285714285
+ministral-3b-2512,E_transition_first,Transition Rule Failure,1107,1820,0.6082417582417582
+ministral-3b-2512,E_transition_first,Unclassified,0,1820,0.0
+ministral-3b-2512,E_transition_first,Unknown / Unmapped,0,1820,0.0
+ministral-8b-2512,A_strict_original_precedence,Formatting Failure,8,2452,0.0032626427406199023
+ministral-8b-2512,A_strict_original_precedence,Horizon Collapse,658,2452,0.26835236541598695
+ministral-8b-2512,A_strict_original_precedence,None,172,2452,0.0701468189233279
+ministral-8b-2512,A_strict_original_precedence,Semantic Interpretation Failure,8,2452,0.0032626427406199023
+ministral-8b-2512,A_strict_original_precedence,State Tracking Failure,615,2452,0.250815660685155
+ministral-8b-2512,A_strict_original_precedence,Transition Rule Failure,991,2452,0.4041598694942904
+ministral-8b-2512,A_strict_original_precedence,Unclassified,0,2452,0.0
+ministral-8b-2512,A_strict_original_precedence,Unknown / Unmapped,0,2452,0.0
+ministral-8b-2512,B_unmapped_divergences_unknown,Formatting Failure,8,2452,0.0032626427406199023
+ministral-8b-2512,B_unmapped_divergences_unknown,Horizon Collapse,658,2452,0.26835236541598695
+ministral-8b-2512,B_unmapped_divergences_unknown,None,172,2452,0.0701468189233279
+ministral-8b-2512,B_unmapped_divergences_unknown,Semantic Interpretation Failure,8,2452,0.0032626427406199023
+ministral-8b-2512,B_unmapped_divergences_unknown,State Tracking Failure,615,2452,0.250815660685155
+ministral-8b-2512,B_unmapped_divergences_unknown,Transition Rule Failure,991,2452,0.4041598694942904
+ministral-8b-2512,B_unmapped_divergences_unknown,Unclassified,0,2452,0.0
+ministral-8b-2512,B_unmapped_divergences_unknown,Unknown / Unmapped,0,2452,0.0
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,2452,0.0
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,2131,2452,0.8690864600326265
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,None,172,2452,0.0701468189233279
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,1,2452,0.0004078303425774878
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,35,2452,0.014274061990212071
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,113,2452,0.04608482871125612
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,2452,0.0
+ministral-8b-2512,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,2452,0.0
+ministral-8b-2512,D_horizon_and_unmapped_unknown,Formatting Failure,0,2452,0.0
+ministral-8b-2512,D_horizon_and_unmapped_unknown,Horizon Collapse,2131,2452,0.8690864600326265
+ministral-8b-2512,D_horizon_and_unmapped_unknown,None,172,2452,0.0701468189233279
+ministral-8b-2512,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,1,2452,0.0004078303425774878
+ministral-8b-2512,D_horizon_and_unmapped_unknown,State Tracking Failure,35,2452,0.014274061990212071
+ministral-8b-2512,D_horizon_and_unmapped_unknown,Transition Rule Failure,113,2452,0.04608482871125612
+ministral-8b-2512,D_horizon_and_unmapped_unknown,Unclassified,0,2452,0.0
+ministral-8b-2512,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,2452,0.0
+ministral-8b-2512,E_transition_first,Formatting Failure,8,2452,0.0032626427406199023
+ministral-8b-2512,E_transition_first,Horizon Collapse,658,2452,0.26835236541598695
+ministral-8b-2512,E_transition_first,None,172,2452,0.0701468189233279
+ministral-8b-2512,E_transition_first,Semantic Interpretation Failure,8,2452,0.0032626427406199023
+ministral-8b-2512,E_transition_first,State Tracking Failure,14,2452,0.005709624796084829
+ministral-8b-2512,E_transition_first,Transition Rule Failure,1592,2452,0.6492659053833605
+ministral-8b-2512,E_transition_first,Unclassified,0,2452,0.0
+ministral-8b-2512,E_transition_first,Unknown / Unmapped,0,2452,0.0
+mistral-large-2512,A_strict_original_precedence,Formatting Failure,135,3295,0.0409711684370258
+mistral-large-2512,A_strict_original_precedence,Horizon Collapse,1481,3295,0.4494688922610015
+mistral-large-2512,A_strict_original_precedence,None,37,3295,0.011229135053110774
+mistral-large-2512,A_strict_original_precedence,Semantic Interpretation Failure,338,3295,0.10257966616084978
+mistral-large-2512,A_strict_original_precedence,State Tracking Failure,488,3295,0.148103186646434
+mistral-large-2512,A_strict_original_precedence,Transition Rule Failure,816,3295,0.24764795144157814
+mistral-large-2512,A_strict_original_precedence,Unclassified,0,3295,0.0
+mistral-large-2512,A_strict_original_precedence,Unknown / Unmapped,0,3295,0.0
+mistral-large-2512,B_unmapped_divergences_unknown,Formatting Failure,135,3295,0.0409711684370258
+mistral-large-2512,B_unmapped_divergences_unknown,Horizon Collapse,1481,3295,0.4494688922610015
+mistral-large-2512,B_unmapped_divergences_unknown,None,37,3295,0.011229135053110774
+mistral-large-2512,B_unmapped_divergences_unknown,Semantic Interpretation Failure,338,3295,0.10257966616084978
+mistral-large-2512,B_unmapped_divergences_unknown,State Tracking Failure,488,3295,0.148103186646434
+mistral-large-2512,B_unmapped_divergences_unknown,Transition Rule Failure,816,3295,0.24764795144157814
+mistral-large-2512,B_unmapped_divergences_unknown,Unclassified,0,3295,0.0
+mistral-large-2512,B_unmapped_divergences_unknown,Unknown / Unmapped,0,3295,0.0
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,3295,0.0
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,3207,3295,0.9732928679817906
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,None,37,3295,0.011229135053110774
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,3,3295,0.0009104704097116844
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,5,3295,0.0015174506828528073
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,43,3295,0.013050075872534143
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,3295,0.0
+mistral-large-2512,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,3295,0.0
+mistral-large-2512,D_horizon_and_unmapped_unknown,Formatting Failure,0,3295,0.0
+mistral-large-2512,D_horizon_and_unmapped_unknown,Horizon Collapse,3207,3295,0.9732928679817906
+mistral-large-2512,D_horizon_and_unmapped_unknown,None,37,3295,0.011229135053110774
+mistral-large-2512,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,3,3295,0.0009104704097116844
+mistral-large-2512,D_horizon_and_unmapped_unknown,State Tracking Failure,5,3295,0.0015174506828528073
+mistral-large-2512,D_horizon_and_unmapped_unknown,Transition Rule Failure,43,3295,0.013050075872534143
+mistral-large-2512,D_horizon_and_unmapped_unknown,Unclassified,0,3295,0.0
+mistral-large-2512,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,3295,0.0
+mistral-large-2512,E_transition_first,Formatting Failure,135,3295,0.0409711684370258
+mistral-large-2512,E_transition_first,Horizon Collapse,1481,3295,0.4494688922610015
+mistral-large-2512,E_transition_first,None,37,3295,0.011229135053110774
+mistral-large-2512,E_transition_first,Semantic Interpretation Failure,338,3295,0.10257966616084978
+mistral-large-2512,E_transition_first,State Tracking Failure,1,3295,0.00030349013657056146
+mistral-large-2512,E_transition_first,Transition Rule Failure,1303,3295,0.3954476479514416
+mistral-large-2512,E_transition_first,Unclassified,0,3295,0.0
+mistral-large-2512,E_transition_first,Unknown / Unmapped,0,3295,0.0
+mistral-small-2603,A_strict_original_precedence,Formatting Failure,1,2180,0.00045871559633027525
+mistral-small-2603,A_strict_original_precedence,Horizon Collapse,531,2180,0.24357798165137615
+mistral-small-2603,A_strict_original_precedence,None,105,2180,0.0481651376146789
+mistral-small-2603,A_strict_original_precedence,Semantic Interpretation Failure,7,2180,0.003211009174311927
+mistral-small-2603,A_strict_original_precedence,State Tracking Failure,1152,2180,0.5284403669724771
+mistral-small-2603,A_strict_original_precedence,Transition Rule Failure,384,2180,0.1761467889908257
+mistral-small-2603,A_strict_original_precedence,Unclassified,0,2180,0.0
+mistral-small-2603,A_strict_original_precedence,Unknown / Unmapped,0,2180,0.0
+mistral-small-2603,B_unmapped_divergences_unknown,Formatting Failure,1,2180,0.00045871559633027525
+mistral-small-2603,B_unmapped_divergences_unknown,Horizon Collapse,531,2180,0.24357798165137615
+mistral-small-2603,B_unmapped_divergences_unknown,None,105,2180,0.0481651376146789
+mistral-small-2603,B_unmapped_divergences_unknown,Semantic Interpretation Failure,7,2180,0.003211009174311927
+mistral-small-2603,B_unmapped_divergences_unknown,State Tracking Failure,1152,2180,0.5284403669724771
+mistral-small-2603,B_unmapped_divergences_unknown,Transition Rule Failure,384,2180,0.1761467889908257
+mistral-small-2603,B_unmapped_divergences_unknown,Unclassified,0,2180,0.0
+mistral-small-2603,B_unmapped_divergences_unknown,Unknown / Unmapped,0,2180,0.0
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,2180,0.0
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,1867,2180,0.8564220183486239
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,None,105,2180,0.0481651376146789
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,0,2180,0.0
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,193,2180,0.08853211009174312
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,15,2180,0.006880733944954129
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,2180,0.0
+mistral-small-2603,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,2180,0.0
+mistral-small-2603,D_horizon_and_unmapped_unknown,Formatting Failure,0,2180,0.0
+mistral-small-2603,D_horizon_and_unmapped_unknown,Horizon Collapse,1867,2180,0.8564220183486239
+mistral-small-2603,D_horizon_and_unmapped_unknown,None,105,2180,0.0481651376146789
+mistral-small-2603,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,0,2180,0.0
+mistral-small-2603,D_horizon_and_unmapped_unknown,State Tracking Failure,193,2180,0.08853211009174312
+mistral-small-2603,D_horizon_and_unmapped_unknown,Transition Rule Failure,15,2180,0.006880733944954129
+mistral-small-2603,D_horizon_and_unmapped_unknown,Unclassified,0,2180,0.0
+mistral-small-2603,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,2180,0.0
+mistral-small-2603,E_transition_first,Formatting Failure,1,2180,0.00045871559633027525
+mistral-small-2603,E_transition_first,Horizon Collapse,531,2180,0.24357798165137615
+mistral-small-2603,E_transition_first,None,105,2180,0.0481651376146789
+mistral-small-2603,E_transition_first,Semantic Interpretation Failure,7,2180,0.003211009174311927
+mistral-small-2603,E_transition_first,State Tracking Failure,3,2180,0.0013761467889908258
+mistral-small-2603,E_transition_first,Transition Rule Failure,1533,2180,0.7032110091743119
+mistral-small-2603,E_transition_first,Unclassified,0,2180,0.0
+mistral-small-2603,E_transition_first,Unknown / Unmapped,0,2180,0.0
+mistral.devstral-2-123b,A_strict_original_precedence,Formatting Failure,28,3793,0.00738201950962299
+mistral.devstral-2-123b,A_strict_original_precedence,Horizon Collapse,1671,3793,0.4405483785921434
+mistral.devstral-2-123b,A_strict_original_precedence,None,4,3793,0.0010545742156604272
+mistral.devstral-2-123b,A_strict_original_precedence,Semantic Interpretation Failure,28,3793,0.00738201950962299
+mistral.devstral-2-123b,A_strict_original_precedence,State Tracking Failure,1162,3793,0.30635380964935405
+mistral.devstral-2-123b,A_strict_original_precedence,Transition Rule Failure,900,3793,0.2372791985235961
+mistral.devstral-2-123b,A_strict_original_precedence,Unclassified,0,3793,0.0
+mistral.devstral-2-123b,A_strict_original_precedence,Unknown / Unmapped,0,3793,0.0
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,Formatting Failure,28,3793,0.00738201950962299
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,Horizon Collapse,1671,3793,0.4405483785921434
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,None,4,3793,0.0010545742156604272
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,Semantic Interpretation Failure,28,3793,0.00738201950962299
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,State Tracking Failure,1162,3793,0.30635380964935405
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,Transition Rule Failure,900,3793,0.2372791985235961
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,Unclassified,0,3793,0.0
+mistral.devstral-2-123b,B_unmapped_divergences_unknown,Unknown / Unmapped,0,3793,0.0
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,3793,0.0
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,3520,3793,0.9280253097811758
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,None,4,3793,0.0010545742156604272
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,1,3793,0.0002636435539151068
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,207,3793,0.054574215660427104
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,61,3793,0.016082256788821515
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,3793,0.0
+mistral.devstral-2-123b,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,3793,0.0
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,Formatting Failure,0,3793,0.0
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,Horizon Collapse,3520,3793,0.9280253097811758
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,None,4,3793,0.0010545742156604272
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,1,3793,0.0002636435539151068
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,State Tracking Failure,207,3793,0.054574215660427104
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,Transition Rule Failure,61,3793,0.016082256788821515
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,Unclassified,0,3793,0.0
+mistral.devstral-2-123b,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,3793,0.0
+mistral.devstral-2-123b,E_transition_first,Formatting Failure,28,3793,0.00738201950962299
+mistral.devstral-2-123b,E_transition_first,Horizon Collapse,1671,3793,0.4405483785921434
+mistral.devstral-2-123b,E_transition_first,None,4,3793,0.0010545742156604272
+mistral.devstral-2-123b,E_transition_first,Semantic Interpretation Failure,28,3793,0.00738201950962299
+mistral.devstral-2-123b,E_transition_first,State Tracking Failure,11,3793,0.0029000790930661744
+mistral.devstral-2-123b,E_transition_first,Transition Rule Failure,2051,3793,0.540732929079884
+mistral.devstral-2-123b,E_transition_first,Unclassified,0,3793,0.0
+mistral.devstral-2-123b,E_transition_first,Unknown / Unmapped,0,3793,0.0
+moonshotai.kimi-k2.5,A_strict_original_precedence,Formatting Failure,367,6240,0.05881410256410256
+moonshotai.kimi-k2.5,A_strict_original_precedence,Horizon Collapse,933,6240,0.14951923076923077
+moonshotai.kimi-k2.5,A_strict_original_precedence,None,2570,6240,0.41185897435897434
+moonshotai.kimi-k2.5,A_strict_original_precedence,Semantic Interpretation Failure,1449,6240,0.23221153846153847
+moonshotai.kimi-k2.5,A_strict_original_precedence,State Tracking Failure,672,6240,0.1076923076923077
+moonshotai.kimi-k2.5,A_strict_original_precedence,Transition Rule Failure,249,6240,0.03990384615384615
+moonshotai.kimi-k2.5,A_strict_original_precedence,Unclassified,0,6240,0.0
+moonshotai.kimi-k2.5,A_strict_original_precedence,Unknown / Unmapped,0,6240,0.0
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,Formatting Failure,367,6240,0.05881410256410256
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,Horizon Collapse,933,6240,0.14951923076923077
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,None,2570,6240,0.41185897435897434
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,Semantic Interpretation Failure,1449,6240,0.23221153846153847
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,State Tracking Failure,672,6240,0.1076923076923077
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,Transition Rule Failure,249,6240,0.03990384615384615
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,Unclassified,0,6240,0.0
+moonshotai.kimi-k2.5,B_unmapped_divergences_unknown,Unknown / Unmapped,0,6240,0.0
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,1,6240,0.00016025641025641026
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,3501,6240,0.5610576923076923
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,None,2570,6240,0.41185897435897434
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,8,6240,0.001282051282051282
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,149,6240,0.023878205128205127
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,11,6240,0.0017628205128205128
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,6240,0.0
+moonshotai.kimi-k2.5,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,6240,0.0
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,Formatting Failure,1,6240,0.00016025641025641026
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,Horizon Collapse,3501,6240,0.5610576923076923
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,None,2570,6240,0.41185897435897434
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,8,6240,0.001282051282051282
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,State Tracking Failure,149,6240,0.023878205128205127
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,Transition Rule Failure,11,6240,0.0017628205128205128
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,Unclassified,0,6240,0.0
+moonshotai.kimi-k2.5,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,6240,0.0
+moonshotai.kimi-k2.5,E_transition_first,Formatting Failure,367,6240,0.05881410256410256
+moonshotai.kimi-k2.5,E_transition_first,Horizon Collapse,933,6240,0.14951923076923077
+moonshotai.kimi-k2.5,E_transition_first,None,2570,6240,0.41185897435897434
+moonshotai.kimi-k2.5,E_transition_first,Semantic Interpretation Failure,1449,6240,0.23221153846153847
+moonshotai.kimi-k2.5,E_transition_first,State Tracking Failure,13,6240,0.0020833333333333333
+moonshotai.kimi-k2.5,E_transition_first,Transition Rule Failure,908,6240,0.14551282051282052
+moonshotai.kimi-k2.5,E_transition_first,Unclassified,0,6240,0.0
+moonshotai.kimi-k2.5,E_transition_first,Unknown / Unmapped,0,6240,0.0
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,Formatting Failure,5,2258,0.0022143489813994687
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,Horizon Collapse,14,2258,0.006200177147918512
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,None,108,2258,0.047829937998228524
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,Semantic Interpretation Failure,1,2258,0.0004428697962798937
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,State Tracking Failure,2105,2258,0.9322409211691762
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,Transition Rule Failure,25,2258,0.011071744906997343
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,Unclassified,0,2258,0.0
+nvidia.nemotron-super-3-120b,A_strict_original_precedence,Unknown / Unmapped,0,2258,0.0
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,Formatting Failure,5,2258,0.0022143489813994687
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,Horizon Collapse,14,2258,0.006200177147918512
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,None,108,2258,0.047829937998228524
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,Semantic Interpretation Failure,1,2258,0.0004428697962798937
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,State Tracking Failure,2105,2258,0.9322409211691762
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,Transition Rule Failure,25,2258,0.011071744906997343
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,Unclassified,0,2258,0.0
+nvidia.nemotron-super-3-120b,B_unmapped_divergences_unknown,Unknown / Unmapped,0,2258,0.0
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,2258,0.0
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,1293,2258,0.5726306465899026
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,None,108,2258,0.047829937998228524
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,0,2258,0.0
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,849,2258,0.37599645704162976
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,8,2258,0.00354295837023915
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,2258,0.0
+nvidia.nemotron-super-3-120b,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,2258,0.0
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,Formatting Failure,0,2258,0.0
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,Horizon Collapse,1293,2258,0.5726306465899026
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,None,108,2258,0.047829937998228524
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,0,2258,0.0
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,State Tracking Failure,849,2258,0.37599645704162976
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,Transition Rule Failure,8,2258,0.00354295837023915
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,Unclassified,0,2258,0.0
+nvidia.nemotron-super-3-120b,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,2258,0.0
+nvidia.nemotron-super-3-120b,E_transition_first,Formatting Failure,5,2258,0.0022143489813994687
+nvidia.nemotron-super-3-120b,E_transition_first,Horizon Collapse,14,2258,0.006200177147918512
+nvidia.nemotron-super-3-120b,E_transition_first,None,108,2258,0.047829937998228524
+nvidia.nemotron-super-3-120b,E_transition_first,Semantic Interpretation Failure,1,2258,0.0004428697962798937
+nvidia.nemotron-super-3-120b,E_transition_first,State Tracking Failure,43,2258,0.01904340124003543
+nvidia.nemotron-super-3-120b,E_transition_first,Transition Rule Failure,2087,2258,0.9242692648361381
+nvidia.nemotron-super-3-120b,E_transition_first,Unclassified,0,2258,0.0
+nvidia.nemotron-super-3-120b,E_transition_first,Unknown / Unmapped,0,2258,0.0
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,Formatting Failure,66,599,0.11018363939899833
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,Horizon Collapse,106,599,0.17696160267111852
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,None,140,599,0.2337228714524207
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,Semantic Interpretation Failure,223,599,0.3722871452420701
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,State Tracking Failure,52,599,0.08681135225375626
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,Transition Rule Failure,12,599,0.02003338898163606
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,Unclassified,0,599,0.0
+qwen.qwen3-235b-a22b-2507,A_strict_original_precedence,Unknown / Unmapped,0,599,0.0
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,Formatting Failure,66,599,0.11018363939899833
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,Horizon Collapse,106,599,0.17696160267111852
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,None,140,599,0.2337228714524207
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,Semantic Interpretation Failure,223,599,0.3722871452420701
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,State Tracking Failure,52,599,0.08681135225375626
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,Transition Rule Failure,12,599,0.02003338898163606
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,Unclassified,0,599,0.0
+qwen.qwen3-235b-a22b-2507,B_unmapped_divergences_unknown,Unknown / Unmapped,0,599,0.0
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,599,0.0
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,446,599,0.7445742904841403
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,None,140,599,0.2337228714524207
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,1,599,0.001669449081803005
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,12,599,0.02003338898163606
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,0,599,0.0
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,599,0.0
+qwen.qwen3-235b-a22b-2507,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,599,0.0
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,Formatting Failure,0,599,0.0
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,Horizon Collapse,446,599,0.7445742904841403
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,None,140,599,0.2337228714524207
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,1,599,0.001669449081803005
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,State Tracking Failure,12,599,0.02003338898163606
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,Transition Rule Failure,0,599,0.0
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,Unclassified,0,599,0.0
+qwen.qwen3-235b-a22b-2507,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,599,0.0
+qwen.qwen3-235b-a22b-2507,E_transition_first,Formatting Failure,66,599,0.11018363939899833
+qwen.qwen3-235b-a22b-2507,E_transition_first,Horizon Collapse,106,599,0.17696160267111852
+qwen.qwen3-235b-a22b-2507,E_transition_first,None,140,599,0.2337228714524207
+qwen.qwen3-235b-a22b-2507,E_transition_first,Semantic Interpretation Failure,223,599,0.3722871452420701
+qwen.qwen3-235b-a22b-2507,E_transition_first,State Tracking Failure,3,599,0.005008347245409015
+qwen.qwen3-235b-a22b-2507,E_transition_first,Transition Rule Failure,61,599,0.1018363939899833
+qwen.qwen3-235b-a22b-2507,E_transition_first,Unclassified,0,599,0.0
+qwen.qwen3-235b-a22b-2507,E_transition_first,Unknown / Unmapped,0,599,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,Formatting Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,Horizon Collapse,28,2160,0.012962962962962963
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,None,75,2160,0.034722222222222224
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,Semantic Interpretation Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,State Tracking Failure,2033,2160,0.9412037037037037
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,Transition Rule Failure,24,2160,0.011111111111111112
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,Unclassified,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,A_strict_original_precedence,Unknown / Unmapped,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,Formatting Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,Horizon Collapse,28,2160,0.012962962962962963
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,None,75,2160,0.034722222222222224
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,Semantic Interpretation Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,State Tracking Failure,2033,2160,0.9412037037037037
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,Transition Rule Failure,24,2160,0.011111111111111112
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,Unclassified,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,B_unmapped_divergences_unknown,Unknown / Unmapped,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,1490,2160,0.6898148148148148
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,None,75,2160,0.034722222222222224
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,592,2160,0.2740740740740741
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,3,2160,0.001388888888888889
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,Formatting Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,Horizon Collapse,1490,2160,0.6898148148148148
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,None,75,2160,0.034722222222222224
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,State Tracking Failure,592,2160,0.2740740740740741
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,Transition Rule Failure,3,2160,0.001388888888888889
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,Unclassified,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,Formatting Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,Horizon Collapse,28,2160,0.012962962962962963
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,None,75,2160,0.034722222222222224
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,Semantic Interpretation Failure,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,State Tracking Failure,36,2160,0.016666666666666666
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,Transition Rule Failure,2021,2160,0.9356481481481481
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,Unclassified,0,2160,0.0
+qwen.qwen3-coder-480b-a35b-v1:0,E_transition_first,Unknown / Unmapped,0,2160,0.0
+zai.glm-5,A_strict_original_precedence,Formatting Failure,0,2639,0.0
+zai.glm-5,A_strict_original_precedence,Horizon Collapse,26,2639,0.009852216748768473
+zai.glm-5,A_strict_original_precedence,None,368,2639,0.1394467601364153
+zai.glm-5,A_strict_original_precedence,Semantic Interpretation Failure,0,2639,0.0
+zai.glm-5,A_strict_original_precedence,State Tracking Failure,2230,2639,0.8450170519136037
+zai.glm-5,A_strict_original_precedence,Transition Rule Failure,15,2639,0.005683971201212581
+zai.glm-5,A_strict_original_precedence,Unclassified,0,2639,0.0
+zai.glm-5,A_strict_original_precedence,Unknown / Unmapped,0,2639,0.0
+zai.glm-5,B_unmapped_divergences_unknown,Formatting Failure,0,2639,0.0
+zai.glm-5,B_unmapped_divergences_unknown,Horizon Collapse,26,2639,0.009852216748768473
+zai.glm-5,B_unmapped_divergences_unknown,None,368,2639,0.1394467601364153
+zai.glm-5,B_unmapped_divergences_unknown,Semantic Interpretation Failure,0,2639,0.0
+zai.glm-5,B_unmapped_divergences_unknown,State Tracking Failure,2230,2639,0.8450170519136037
+zai.glm-5,B_unmapped_divergences_unknown,Transition Rule Failure,15,2639,0.005683971201212581
+zai.glm-5,B_unmapped_divergences_unknown,Unclassified,0,2639,0.0
+zai.glm-5,B_unmapped_divergences_unknown,Unknown / Unmapped,0,2639,0.0
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,Formatting Failure,0,2639,0.0
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,Horizon Collapse,1518,2639,0.5752178855627131
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,None,368,2639,0.1394467601364153
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,Semantic Interpretation Failure,0,2639,0.0
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,State Tracking Failure,749,2639,0.2838196286472148
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,Transition Rule Failure,4,2639,0.0015157256536566881
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,Unclassified,0,2639,0.0
+zai.glm-5,C_any_horizon_mismatch_is_horizon_failure,Unknown / Unmapped,0,2639,0.0
+zai.glm-5,D_horizon_and_unmapped_unknown,Formatting Failure,0,2639,0.0
+zai.glm-5,D_horizon_and_unmapped_unknown,Horizon Collapse,1518,2639,0.5752178855627131
+zai.glm-5,D_horizon_and_unmapped_unknown,None,368,2639,0.1394467601364153
+zai.glm-5,D_horizon_and_unmapped_unknown,Semantic Interpretation Failure,0,2639,0.0
+zai.glm-5,D_horizon_and_unmapped_unknown,State Tracking Failure,749,2639,0.2838196286472148
+zai.glm-5,D_horizon_and_unmapped_unknown,Transition Rule Failure,4,2639,0.0015157256536566881
+zai.glm-5,D_horizon_and_unmapped_unknown,Unclassified,0,2639,0.0
+zai.glm-5,D_horizon_and_unmapped_unknown,Unknown / Unmapped,0,2639,0.0
+zai.glm-5,E_transition_first,Formatting Failure,0,2639,0.0
+zai.glm-5,E_transition_first,Horizon Collapse,26,2639,0.009852216748768473
+zai.glm-5,E_transition_first,None,368,2639,0.1394467601364153
+zai.glm-5,E_transition_first,Semantic Interpretation Failure,0,2639,0.0
+zai.glm-5,E_transition_first,State Tracking Failure,94,2639,0.03561955286093217
+zai.glm-5,E_transition_first,Transition Rule Failure,2151,2639,0.815081470253884
+zai.glm-5,E_transition_first,Unclassified,0,2639,0.0
+zai.glm-5,E_transition_first,Unknown / Unmapped,0,2639,0.0

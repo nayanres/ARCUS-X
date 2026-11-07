@@ -1,0 +1,80 @@
+﻿python.exe : WARNING:root:transformers not available - tokenizer approximation only
+At line:2 char:379
++ ... '); $text = & python 'post_run_analyzer.py' $file.FullName --audit -- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING:root:tr...roximation only:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+============================================================
+Processing: C:\Users\games\python\arcus-x\outputs\absolute_raw_data_local_moonshotai.kimi_k2.5.analyzed.txt
+============================================================
+
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               unknown
+Run Status:          COMPLETE
+Completed Probes:    0 / 0
+Accuracy:            0.0%
+
+Per-Horizon Accuracy:
+
+Probe Density by Horizon:
+
+Error Density by Horizon:
+
+Per-Gravity Accuracy:
+
+Per-Tier Accuracy:
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 0.0
+Maximum Output Tokens: 0.0
+Average Latency:       0.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Response Validity:
+  VALID:   0 (100.0%)
+  INVALID: 0 (0.0%)
+
+Invalid Breakdown:
+  E100  Exception Token  0
+  E101  Empty Output       0
+  E102  Parse Failure      0
+  E103  Provider Error     0
+  E104  Unknown            0
+
+
+================================================================
+ARCUS-X EVALUATION CHART
+================================================================
+
+Headline Metrics:
+  Step Accuracy          ░░░░░░░░░░░░░░░░░░░░   0.0%
+  Exact Match            ░░░░░░░░░░░░░░░░░░░░   0.0%
+  Continuity             ░░░░░░░░░░░░░░░░░░░░   0.0%
+  Horizon Compliance     ░░░░░░░░░░░░░░░░░░░░   0.0%
+  Efficiency             ░░░░░░░░░░░░░░░░░░░░   0.0%
+
+  GBI                      0.00  (lower is better)
+  CRI                     0.000
+  Trajectory Fidelity     0.000
+  Horizon Robustness      0.000
+  Semantic Robustness     0.000
+  Generation Efficiency   0.000
+================================================================
+
+============================================================
+ARCUS-X POST-RUN AUDIT CONSISTENCY REPORT
+============================================================
+  A) Coverage (completed/scheduled) [PASS]
+  B) Taxonomy counts sum to valid count [PASS]
+  B1) None is SSOT-grounded      [PASS]
+  C) Valid + Invalid == Completed [PASS]
+  D) Fracture depth consistency  [FAIL]
+  E) CRI and component bounds valid [PASS]
+============================================================

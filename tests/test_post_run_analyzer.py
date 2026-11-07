@@ -13,7 +13,7 @@ from post_run_analyzer import (  # noqa: E402
 )
 
 
-def test_fully_correct_probe_overrides_stale_failure_label():
+def test_perfect_step_accuracy_does_not_make_an_incomplete_trajectory_correct():
     result = {
         "step_accuracy": 1.0,
         "exact_match": False,
@@ -23,8 +23,24 @@ def test_fully_correct_probe_overrides_stale_failure_label():
         },
     }
 
-    assert _is_ssot_fully_correct(result, result["probe_classification"])
-    assert _canonicalize_taxonomy("Horizon Collapse", True) == "None"
+    assert not _is_ssot_fully_correct(result, result["probe_classification"])
+    assert _canonicalize_taxonomy("Horizon Collapse", False) == "Horizon Collapse"
+
+
+def test_only_valid_exact_trajectory_is_fully_correct():
+    exact = {
+        "exact_match": True,
+        "probe_classification": {"valid": True},
+    }
+    invalid_exact = {
+        "exact_match": True,
+        "probe_classification": {"valid": False},
+    }
+
+    assert _is_ssot_fully_correct(exact, exact["probe_classification"])
+    assert not _is_ssot_fully_correct(
+        invalid_exact, invalid_exact["probe_classification"]
+    )
 
 
 def test_aggregated_taxonomy_uses_same_correctness_rule_as_report_metrics():
@@ -57,9 +73,9 @@ def test_aggregated_taxonomy_uses_same_correctness_rule_as_report_metrics():
 
     aggregated = _compute_aggregated_metrics(results, [42])
 
-    assert aggregated["failure_analysis"]["None"] == 50.0
+    assert aggregated["failure_analysis"]["None"] == 0.0
     assert aggregated["failure_analysis"]["Unknown / Unmapped"] == 50.0
-    assert aggregated["failure_analysis"]["Horizon Collapse"] == 0.0
+    assert aggregated["failure_analysis"]["Horizon Collapse"] == 50.0
 
 
 def test_density_reports_each_horizon_as_share_of_total_probes():

@@ -1,0 +1,209 @@
+﻿python.exe : WARNING:root:transformers not available - tokenizer approximation only
+At line:2 char:379
++ ... '); $text = & python 'post_run_analyzer.py' $file.FullName --audit -- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING:root:tr...roximation only:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+============================================================
+Processing: C:\Users\games\python\arcus-x\outputs\absolute_raw_data_local_qwen.qwen3_coder_480b_a35b_v1_0.txt
+============================================================
+
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               qwen.qwen3-coder-480b-a35b-v1:0
+Run Status:          COMPLETE
+Completed Probes:    2165 / 2165
+Accuracy:            48.1%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=20  : 60.0%
+  z=22  : 60.0%
+  z=23  : 50.0%
+  z=24  : 50.0%
+  z=25  : 50.0%
+  z=26  : 50.0%
+  z=27  : 50.0%
+  z=28  : 40.0%
+  z=29  : 40.0%
+  z=30  : 40.0%
+  z=31  : 40.0%
+  z=32  : 40.0%
+  z=33  : 50.0%
+  z=34  : 40.0%
+  z=35  : 40.0%
+  z=36  : 30.0%
+  z=39  : 30.0%
+
+Probe Density by Horizon:
+  z=3   : 0.2%
+  z=20  : 13.9%
+  z=22  : 5.5%
+  z=23  : 5.5%
+  z=24  : 2.8%
+  z=25  : 14.8%
+  z=26  : 5.5%
+  z=27  : 12.9%
+  z=28  : 2.8%
+  z=29  : 3.7%
+  z=30  : 15.7%
+  z=31  : 0.9%
+  z=32  : 5.5%
+  z=33  : 0.9%
+  z=34  : 0.9%
+  z=35  : 1.8%
+  z=36  : 1.8%
+  z=39  : 4.6%
+
+Error Density by Horizon:
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=0.5 : 48.1%
+  gravity=3.0 : 48.0%
+  gravity=15.0: 47.8%
+
+Per-Tier Accuracy:
+  tier_0  : 55.2%
+  tier_1  : 48.5%
+  tier_2  : 51.8%
+  tier_3  : 37.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 150.3
+Maximum Output Tokens: 1752.0
+Average Latency:       2012.082
+Failure Count:         2085
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [219, 472, 2190, 5396, 6430]
+  CRI:                 0.551 +/- 0.016
+
+Response Validity:
+  VALID:   2165 (100.0%)
+  INVALID: 0 (0.0%)
+
+Invalid Breakdown:
+  E100  Exception Token  0
+  E101  Empty Output       0
+  E102  Parse Failure      0
+  E103  Provider Error     0
+  E104  Unknown            0
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        2012.082 ms
+Median Latency:      1900.815 ms
+P95 Latency:         3188.029 ms
+Maximum Latency:     13580.338 ms
+Mean Output Tokens/sec: 77.907
+Mean Correct Steps/sec: 6.807
+
+Normalized Efficiency:
+  ALE: 0.2633
+  Correct Steps/sec: 6.807
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 2114.002 ms
+    Correct Steps/sec: 1.532
+  z=20:
+    Mean Latency: 1849.147 ms
+    Correct Steps/sec: 6.959
+  z=22:
+    Mean Latency: 1737.614 ms
+    Correct Steps/sec: 7.729
+  z=23:
+    Mean Latency: 1701.651 ms
+    Correct Steps/sec: 6.975
+  z=24:
+    Mean Latency: 1806.186 ms
+    Correct Steps/sec: 6.748
+  z=25:
+    Mean Latency: 1842.742 ms
+    Correct Steps/sec: 7.384
+  z=26:
+    Mean Latency: 2032.749 ms
+    Correct Steps/sec: 7.167
+  z=27:
+    Mean Latency: 2046.343 ms
+    Correct Steps/sec: 6.672
+  z=28:
+    Mean Latency: 2195.134 ms
+    Correct Steps/sec: 5.975
+  z=29:
+    Mean Latency: 2442.933 ms
+    Correct Steps/sec: 5.408
+  z=30:
+    Mean Latency: 2076.575 ms
+    Correct Steps/sec: 6.841
+  z=31:
+    Mean Latency: 2682.825 ms
+    Correct Steps/sec: 4.886
+  z=32:
+    Mean Latency: 2409.809 ms
+    Correct Steps/sec: 6.184
+  z=33:
+    Mean Latency: 1662.548 ms
+    Correct Steps/sec: 9.791
+  z=34:
+    Mean Latency: 1567.121 ms
+    Correct Steps/sec: 8.672
+  z=35:
+    Mean Latency: 2242.043 ms
+    Correct Steps/sec: 6.970
+  z=36:
+    Mean Latency: 2155.917 ms
+    Correct Steps/sec: 5.312
+  z=39:
+    Mean Latency: 2466.533 ms
+    Correct Steps/sec: 5.644
+============================================================
+
+================================================================
+ARCUS-X EVALUATION CHART
+================================================================
+
+Headline Metrics:
+  Step Accuracy          ██████████░░░░░░░░░░  48.1%
+  Exact Match            █░░░░░░░░░░░░░░░░░░░   3.7%
+  Continuity             ████████░░░░░░░░░░░░  41.6%
+  Horizon Compliance     ███████████████████░  97.0%
+  Efficiency             ████████████████████  99.3%
+
+  GBI                      0.03  (lower is better)
+  CRI                     0.540
+  Trajectory Fidelity     0.373
+  Horizon Robustness      0.513
+  Semantic Robustness     0.842
+  Generation Efficiency   0.993
+
+Per-Tier Fracture Depth:
+  tier_0                 ███████░░░░░░░░░░░░░  34.0
+  tier_1                 █████░░░░░░░░░░░░░░░  24.0
+  tier_2                 ██████░░░░░░░░░░░░░░  28.0
+  tier_3                 █████░░░░░░░░░░░░░░░  23.0
+
+Error Taxonomy (failure distribution):
+  State Tracking Failure         ███████████████████░  93.9%
+  Transition Rule Failure        ░░░░░░░░░░░░░░░░░░░░   1.1%
+  Semantic Interpretation Failure ░░░░░░░░░░░░░░░░░░░░   0.0%
+  Horizon Collapse               ░░░░░░░░░░░░░░░░░░░░   1.3%
+  Formatting Failure             ░░░░░░░░░░░░░░░░░░░░   0.0%
+  Unknown / Unmapped             ░░░░░░░░░░░░░░░░░░░░   0.0%
+  None                           █░░░░░░░░░░░░░░░░░░░   3.7%
+================================================================
+
+============================================================
+ARCUS-X POST-RUN AUDIT CONSISTENCY REPORT
+============================================================
+  A) Coverage (completed/scheduled) [PASS]
+  B) Taxonomy counts sum to valid count [PASS]
+  B1) None is SSOT-grounded      [PASS]
+  C) Valid + Invalid == Completed [PASS]
+  D) Fracture depth consistency  [PASS]
+  E) CRI and component bounds valid [PASS]
+============================================================

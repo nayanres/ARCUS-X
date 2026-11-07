@@ -1,0 +1,239 @@
+﻿python.exe : WARNING:root:transformers not available - tokenizer approximation only
+At line:2 char:396
++ ... '); $text = & python 'post_run_analyzer.py' $file.FullName --audit -- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING:root:tr...roximation only:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+============================================================
+Processing: C:\Users\games\python\arcus-x\outputs\absolute_raw_data_local_minimax.minimax_m2.5.txt
+============================================================
+
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               minimax.minimax-m2.5
+Run Status:          COMPLETE
+Completed Probes:    5705 / 5705
+Accuracy:            3.8%
+
+Per-Horizon Accuracy:
+  z=3   : 60.0%
+  z=20  : 30.0%
+  z=30  : 20.0%
+  z=35  : 10.0%
+  z=38  : 10.0%
+  z=39  : 0.0%
+  z=40  : 10.0%
+  z=60  : 0.0%
+  z=70  : 0.0%
+  z=75  : 0.0%
+  z=78  : 0.0%
+  z=79  : 0.0%
+  z=80  : 0.0%
+  z=115 : 0.0%
+  z=133 : 0.0%
+  z=142 : 0.0%
+  z=146 : 0.0%
+  z=148 : 0.0%
+  z=149 : 0.0%
+  z=150 : 0.0%
+
+Probe Density by Horizon:
+  z=3   : 0.1%
+  z=20  : 5.3%
+  z=30  : 5.3%
+  z=35  : 5.3%
+  z=38  : 5.3%
+  z=39  : 5.3%
+  z=40  : 5.3%
+  z=60  : 5.3%
+  z=70  : 5.3%
+  z=75  : 5.3%
+  z=78  : 5.3%
+  z=79  : 5.3%
+  z=80  : 5.3%
+  z=115 : 5.3%
+  z=133 : 5.3%
+  z=142 : 5.3%
+  z=146 : 5.3%
+  z=148 : 5.3%
+  z=149 : 5.3%
+  z=150 : 5.3%
+
+Error Density by Horizon:
+  z=3       5 probes   E100: 2   E101: 0   E102: 0   E103: 0   E104: 0   error density: 40.0%
+  z=20    300 probes   E100: 212   E101: 6   E102: 0   E103: 0   E104: 0   error density: 72.7%
+  z=30    300 probes   E100: 230   E101: 18   E102: 0   E103: 0   E104: 0   error density: 82.7%
+  z=35    300 probes   E100: 253   E101: 16   E102: 0   E103: 0   E104: 0   error density: 89.7%
+  z=38    300 probes   E100: 272   E101: 11   E102: 0   E103: 0   E104: 0   error density: 94.3%
+  z=39    300 probes   E100: 270   E101: 22   E102: 0   E103: 0   E104: 0   error density: 97.3%
+  z=40    300 probes   E100: 260   E101: 19   E102: 0   E103: 0   E104: 0   error density: 93.0%
+  z=60    300 probes   E100: 276   E101: 22   E102: 0   E103: 0   E104: 0   error density: 99.3%
+  z=70    300 probes   E100: 263   E101: 34   E102: 0   E103: 0   E104: 0   error density: 99.0%
+  z=75    300 probes   E100: 260   E101: 40   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=78    300 probes   E100: 269   E101: 30   E102: 0   E103: 0   E104: 0   error density: 99.7%
+  z=79    300 probes   E100: 290   E101: 10   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=80    300 probes   E100: 276   E101: 23   E102: 0   E103: 0   E104: 0   error density: 99.7%
+  z=115   300 probes   E100: 266   E101: 34   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=133   300 probes   E100: 280   E101: 20   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=142   300 probes   E100: 297   E101: 3   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=146   300 probes   E100: 287   E101: 13   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=148   300 probes   E100: 279   E101: 21   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=149   300 probes   E100: 283   E101: 17   E102: 0   E103: 0   E104: 0   error density: 100.0%
+  z=150   300 probes   E100: 274   E101: 26   E102: 0   E103: 0   E104: 0   error density: 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 60.0%
+  gravity=0.5 : 3.9%
+  gravity=3.0 : 2.1%
+  gravity=15.0: 5.1%
+
+Per-Tier Accuracy:
+  tier_0  : 5.0%
+  tier_1  : 2.5%
+  tier_2  : 4.8%
+  tier_3  : 2.7%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 780.0
+Maximum Output Tokens: 8192.0
+Average Latency:       60547.975
+Failure Count:         17
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [219, 472, 2190, 5396, 6430]
+  CRI:                 0.190 +/- 0.073
+
+Response Validity:
+  VALID:   221 (3.9%)
+  INVALID: 5484 (96.1%)
+
+Invalid Breakdown:
+  E100  Exception Token  5099
+  E101  Empty Output       385
+  E102  Parse Failure      0
+  E103  Provider Error     0
+  E104  Unknown            0
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        60547.975 ms
+Median Latency:      60886.960 ms
+P95 Latency:         62264.671 ms
+Maximum Latency:     74716.522 ms
+Mean Output Tokens/sec: 13.946
+Mean Correct Steps/sec: 0.024
+
+Normalized Efficiency:
+  ALE: 0.0008
+  Correct Steps/sec: 0.024
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 46752.581 ms
+    Correct Steps/sec: 0.052
+  z=20:
+    Mean Latency: 56235.667 ms
+    Correct Steps/sec: 0.132
+  z=30:
+    Mean Latency: 58920.308 ms
+    Correct Steps/sec: 0.108
+  z=35:
+    Mean Latency: 60350.241 ms
+    Correct Steps/sec: 0.064
+  z=38:
+    Mean Latency: 60370.678 ms
+    Correct Steps/sec: 0.043
+  z=39:
+    Mean Latency: 60952.052 ms
+    Correct Steps/sec: 0.020
+  z=40:
+    Mean Latency: 60177.573 ms
+    Correct Steps/sec: 0.060
+  z=60:
+    Mean Latency: 61012.863 ms
+    Correct Steps/sec: 0.008
+  z=70:
+    Mean Latency: 61004.584 ms
+    Correct Steps/sec: 0.011
+  z=75:
+    Mean Latency: 61052.800 ms
+    Correct Steps/sec: 0.000
+  z=78:
+    Mean Latency: 60967.398 ms
+    Correct Steps/sec: 0.005
+  z=79:
+    Mean Latency: 61204.010 ms
+    Correct Steps/sec: 0.000
+  z=80:
+    Mean Latency: 61024.620 ms
+    Correct Steps/sec: 0.004
+  z=115:
+    Mean Latency: 60988.203 ms
+    Correct Steps/sec: 0.000
+  z=133:
+    Mean Latency: 60925.897 ms
+    Correct Steps/sec: 0.000
+  z=142:
+    Mean Latency: 61040.098 ms
+    Correct Steps/sec: 0.000
+  z=146:
+    Mean Latency: 60988.477 ms
+    Correct Steps/sec: 0.000
+  z=148:
+    Mean Latency: 61057.358 ms
+    Correct Steps/sec: 0.000
+  z=149:
+    Mean Latency: 61176.458 ms
+    Correct Steps/sec: 0.000
+  z=150:
+    Mean Latency: 61192.159 ms
+    Correct Steps/sec: 0.000
+============================================================
+
+================================================================
+ARCUS-X EVALUATION CHART
+================================================================
+
+Headline Metrics:
+  Step Accuracy          █░░░░░░░░░░░░░░░░░░░   3.8%
+  Exact Match            █░░░░░░░░░░░░░░░░░░░   3.6%
+  Continuity             █░░░░░░░░░░░░░░░░░░░   3.8%
+  Horizon Compliance     █░░░░░░░░░░░░░░░░░░░   3.8%
+  Efficiency             ██████████████████░░  90.3%
+
+  GBI                      1.48  (lower is better)
+  CRI                     0.220
+  Trajectory Fidelity     0.037
+  Horizon Robustness      0.109
+  Semantic Robustness     0.626
+  Generation Efficiency   0.903
+
+Per-Tier Fracture Depth:
+  tier_0                 ████░░░░░░░░░░░░░░░░  20.0
+  tier_1                 ████░░░░░░░░░░░░░░░░  20.0
+  tier_2                 ████░░░░░░░░░░░░░░░░  20.0
+  tier_3                 ████░░░░░░░░░░░░░░░░  20.0
+
+Error Taxonomy (failure distribution):
+  State Tracking Failure         ░░░░░░░░░░░░░░░░░░░░   0.5%
+  Transition Rule Failure        ░░░░░░░░░░░░░░░░░░░░   0.5%
+  Semantic Interpretation Failure ░░░░░░░░░░░░░░░░░░░░   0.0%
+  Horizon Collapse               █░░░░░░░░░░░░░░░░░░░   5.4%
+  Formatting Failure             ░░░░░░░░░░░░░░░░░░░░   1.4%
+  Unknown / Unmapped             ░░░░░░░░░░░░░░░░░░░░   0.0%
+  None                           ██████████████████░░  92.3%
+================================================================
+
+============================================================
+ARCUS-X POST-RUN AUDIT CONSISTENCY REPORT
+============================================================
+  A) Coverage (completed/scheduled) [PASS]
+  B) Taxonomy counts sum to valid count [PASS]
+  B1) None is SSOT-grounded      [PASS]
+  C) Valid + Invalid == Completed [PASS]
+  D) Fracture depth consistency  [PASS]
+  E) CRI and component bounds valid [PASS]
+============================================================

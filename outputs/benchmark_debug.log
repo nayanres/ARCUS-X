@@ -1,0 +1,5613 @@
+2026-11-06T09:17:44.472406 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T09:17:44.478376 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T09:17:44.481929 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T09:17:44.488034 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T09:17:44.613009 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T09:18:02.520027 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T09:18:02.527140 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T09:18:02.532455 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T09:18:02.538458 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T09:18:02.631097 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T09:19:05.338569 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T09:19:05.345918 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T09:19:05.351995 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T09:19:05.359112 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T09:19:05.469451 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T10:00:35.757668 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T10:00:35.768177 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T10:00:35.773177 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T10:00:35.778178 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T10:00:35.889281 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:18.736821 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:18.812271 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:18.821791 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:35:18.830787 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:35:19.128830 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:21.911538 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:21.920001 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:21.927753 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:35:21.933765 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:35:22.223828 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:23.740344 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:23.746365 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:23.750345 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53015.385
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:35:23.756343 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    130 / 130
+Master Seeds:        42, 123
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.0
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53015.385
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:35:23.845030 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:25.753173 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:25.761167 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:25.766166 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:35:25.774172 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:35:25.957551 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:28.583804 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:28.592317 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:28.604539 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:35:28.614580 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:35:28.792299 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:29.687661 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:29.693671 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:29.696757 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:35:29.703832 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:35:29.775541 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:30.416965 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:30.425620 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:30.430145 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:35:30.436144 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:35:30.499142 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:30.999208 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=4: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:31.006197 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:31.012194 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 5
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 29458.333
+- Mean Correct Steps/sec: 4000.000
+- ALE: 1000.0000
+- Correct Steps/sec: 4000.000
+============================================================
+2026-11-06T13:35:31.020949 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/accounting
+Run Status:          COMPLETE
+Completed Probes:    25 / 24
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=4   : 100.0%
+  z=5   : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 29.5
+Maximum Output Tokens: 38.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 29458.333
+Mean Correct Steps/sec: 4000.000
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 4000.000
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=4:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 4000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+============================================================
+2026-11-06T13:35:31.070654 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "4": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:31.447173 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=4: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:31.455235 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:31.461205 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 5
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 29458.333
+- Mean Correct Steps/sec: 4000.000
+- ALE: 1000.0000
+- Correct Steps/sec: 4000.000
+============================================================
+2026-11-06T13:35:31.464170 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/accounting
+Run Status:          COMPLETE
+Completed Probes:    25 / 24
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=4   : 100.0%
+  z=5   : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 29.5
+Maximum Output Tokens: 38.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 29458.333
+Mean Correct Steps/sec: 4000.000
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 4000.000
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=4:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 4000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+============================================================
+2026-11-06T13:35:31.508429 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "4": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:35:31.860906 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=4: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:35:31.868892 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:35:31.875892 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 5
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 29458.333
+- Mean Correct Steps/sec: 4000.000
+- ALE: 1000.0000
+- Correct Steps/sec: 4000.000
+============================================================
+2026-11-06T13:35:31.879899 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/accounting
+Run Status:          COMPLETE
+Completed Probes:    25 / 24
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=4   : 100.0%
+  z=5   : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 29.5
+Maximum Output Tokens: 38.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 29458.333
+Mean Correct Steps/sec: 4000.000
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 4000.000
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=4:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 4000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+============================================================
+2026-11-06T13:35:31.910890 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "4": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:36:03.389617 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:36:03.395545 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:36:03.401541 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:36:03.406617 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:36:03.498765 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T13:36:04.662869 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T13:36:04.668870 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T13:36:04.676881 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T13:36:04.684869 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T13:36:04.824872 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:13.789396 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:14.255362 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:14.271021 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:14.280565 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:15.958672 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:21.272392 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:21.284490 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:21.296673 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:21.308843 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:21.598515 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:25.937097 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:25.949310 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:25.961421 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53015.385
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:25.980539 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    130 / 130
+Master Seeds:        42, 123
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.0
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53015.385
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:26.225310 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:26.508958 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:26.527698 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:26.541632 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53015.385
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:26.564321 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    130 / 130
+Master Seeds:        42, 123
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.0
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53015.385
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:26.788998 - [TAXONOMY DIAGNOSTIC] 0 classifications compiled due to sequence truncation.
+2026-11-06T14:38:32.497709 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:32.510176 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:32.517218 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:32.548865 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:32.852094 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:33.303000 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:33.319741 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:33.336346 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:33.357990 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:33.717583 - [TAXONOMY DIAGNOSTIC] 0 classifications compiled due to sequence truncation.
+2026-11-06T14:38:38.612261 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:38.624126 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:38.634293 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:38.647279 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:38.983819 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:42.092378 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:42.099475 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:42.107889 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:42.117244 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:42.253938 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:42.357434 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:42.366469 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:42.375100 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:42.385207 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:42.484954 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:44.494335 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:44.524872 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:44.554142 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:44.582546 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:44.876847 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:50.896978 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:50.957487 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:50.966716 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:50.980267 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:51.334798 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:38:56.083990 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:38:56.107122 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:38:56.122836 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:38:56.137409 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:38:56.653102 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:39:00.162759 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:00.179397 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:00.195976 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53015.385
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:00.212723 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    130 / 130
+Master Seeds:        42, 123
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.0
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53015.385
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:00.430780 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:39:00.679294 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:00.696028 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:00.709579 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53015.385
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:00.727426 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    130 / 130
+Master Seeds:        42, 123
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.0
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53015.385
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:00.934100 - [TAXONOMY DIAGNOSTIC] 0 classifications compiled due to sequence truncation.
+2026-11-06T14:39:04.790902 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:04.808349 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:04.826081 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:04.842053 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:05.090339 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:39:05.430945 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:05.441899 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:05.448908 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:05.459230 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:05.666544 - [TAXONOMY DIAGNOSTIC] 0 classifications compiled due to sequence truncation.
+2026-11-06T14:39:08.795731 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:08.805471 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:08.812803 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53061.539
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:08.820857 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    195 / 195
+Master Seeds:        42, 123, 456
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.1
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42, 123, 456]
+  CRI:                 1.000 +/- 0.000
+  Fracture Depth:      10.0 +/- 0.0
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53061.539
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:09.040939 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:39:10.246082 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:10.255348 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:10.264849 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:10.273110 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:10.381978 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:39:10.471020 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:10.481564 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:10.491955 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:10.500519 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:10.583318 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]
+2026-11-06T14:39:11.542212 - [METRIC REPORT] Fractional Score by Horizon Depth:
+  Horizon z=3: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=5: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=8: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=9: HC=1.000, GBI=0.000, GE=1.000
+  Horizon z=10: HC=1.000, GBI=0.000, GE=1.000
+2026-11-06T14:39:11.550939 - [METRIC REPORT] Fractional Score by Gravity Values:
+  Gravity 0.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+  Gravity 1.0: HC=1.000, GBI=0.000, GE=1.000, FractureDepth=0.0
+2026-11-06T14:39:11.558466 - 
+============================================================
+BENCHMARK EVALUATION SUMMARY
+============================================================
+Metric                   | Evidence
+------------------------------------------------------------
+Step Accuracy            | 100.0
+Exact Match              | 100.0
+Continuity               | 100.0
+Horizon Compliance       | 100.0
+GBI                      | 0.00
+Efficiency               | 100.0
+Fracture Depth           | 10
+
+Per-Tier Fracture Depth:
+- tier_1                        : fracture_depth=0.0, accuracy=1.0
+- tier_0                        : fracture_depth=0.0, accuracy=1.0
+- tier_2                        : fracture_depth=0.0, accuracy=1.0
+- tier_3                        : fracture_depth=0.0, accuracy=1.0
+
+CRI (Secondary Aggregate Robustness Index):
+- CRI: 1.000
+- Trajectory Fidelity: 1.000
+- Horizon Robustness: 1.000
+- Semantic Robustness: 1.000
+- Generation Efficiency: 1.000
+
+Failure Analysis:
+- State Tracking Failure        : 0.0%
+- Transition Rule Failure       : 0.0%
+- Semantic Interpretation Failure: 0.0%
+- Horizon Collapse              : 0.0%
+- Formatting Failure            : 0.0%
+- None                          : 100.0%
+
+Latency Diagnostics (systems-level; NOT a capability score):
+- Mean Latency:        1.000 ms
+- Median Latency:      1.000 ms
+- P95 Latency:         1.000 ms
+- Maximum Latency:     1.000 ms
+- Mean Output Tokens/sec: 53276.923
+- Mean Correct Steps/sec: 7923.077
+- ALE: 1000.0000
+- Correct Steps/sec: 7923.077
+============================================================
+2026-11-06T14:39:11.567905 - 
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               stub/stub
+Run Status:          COMPLETE
+Completed Probes:    65 / 65
+Master Seeds:        42
+Accuracy:            100.0%
+
+Per-Horizon Accuracy:
+  z=3   : 100.0%
+  z=5   : 100.0%
+  z=8   : 100.0%
+  z=9   : 100.0%
+  z=10  : 100.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 100.0%
+  gravity=1.0 : 100.0%
+
+Per-Tier Accuracy:
+  tier_0  : 100.0%
+  tier_1  : 100.0%
+  tier_2  : 100.0%
+  tier_3  : 100.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 53.3
+Maximum Output Tokens: 72.0
+Average Latency:       1.0
+Failure Count:         0
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [42] (single seed; no variance reported)
+
+Failure Taxonomy:
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        1.000 ms
+Median Latency:      1.000 ms
+P95 Latency:         1.000 ms
+Maximum Latency:     1.000 ms
+Mean Output Tokens/sec: 53276.923
+Mean Correct Steps/sec: 7923.077
+
+Normalized Efficiency:
+  ALE: 1000.0000
+  Correct Steps/sec: 7923.077
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 3000.000
+  z=5:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 5000.000
+  z=8:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 8000.000
+  z=9:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 9000.000
+  z=10:
+    Mean Latency: 1.000 ms
+    Correct Steps/sec: 10000.000
+============================================================
+2026-11-06T14:39:11.691506 - [TAXONOMY DIAGNOSTIC] Classification Compilation:
+[
+  {
+    "gravity": 0.0,
+    "distribution": {
+      "3": {
+        "None": 100.0
+      },
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  },
+  {
+    "gravity": 1.0,
+    "distribution": {
+      "5": {
+        "None": 100.0
+      },
+      "8": {
+        "None": 100.0
+      },
+      "9": {
+        "None": 100.0
+      },
+      "10": {
+        "None": 100.0
+      }
+    }
+  }
+]

@@ -119,6 +119,8 @@ def test_serial_vs_parallel_deterministic(tmp_path):
 
     assert len(serial_sig) == len(par_sig), "probe count mismatch"
     assert serial_sig == par_sig, "parallel results differ from serial"
+    assert r_par.progress.completed_evaluations == r_par.actual_probe_count
+    assert r_par.progress.completed_evaluations > 0
 
     def _entries(text):
         blocks = text.split("=== RAW STREAM ENTRY")
@@ -220,6 +222,45 @@ def test_parse_completed_probes_index_tracking(tmp_path):
     keys = list(completed.keys())
     assert keys[0][4] == 0
     assert keys[1][4] == 1
+
+
+@pytest.mark.parametrize("section", ["[MODEL OUTPUT]:", "[EXACT SENT PROMPT]:"])
+def test_resume_identity_ignores_response_metadata(tmp_path, section):
+    raw_file = tmp_path / "spoofed_metadata.txt"
+    raw_file.write_text(
+        "ARCUS-X RUN START\n"
+        "=== RAW STREAM ENTRY ===\n"
+        "EnvironmentMetadata: seed=42, tier=0, gravity=0.5, z=20, grid_key=default\n"
+        f"{section}\n"
+        "EnvironmentMetadata: seed=99, tier=3, gravity=3.0, z=50, grid_key=other\n"
+        "========================\n",
+        encoding="utf-8",
+    )
+    completed = BenchmarkRunner.parse_completed_probes(str(raw_file))
+    assert list(completed) == [(42, 0.5, 0, 20, 0, "default")]
+
+
+def test_resume_blocks_keep_trusted_metadata_and_output(tmp_path):
+    raw_file = tmp_path / "metadata_sections.txt"
+    raw_file.write_text(
+        "ARCUS-X RUN START\n=== RAW STREAM ENTRY ===\n"
+        "EnvironmentMetadata: seed=42, tier=0, gravity=0.5, z=2, grid_key=default\n"
+        "Actions: ['east', 'east']\n"
+        "[EXACT SENT PROMPT]:\nActions: ['west']\n"
+        "EnvironmentMetadata: seed=99, tier=3, gravity=3.0, z=50\n"
+        "[MODEL OUTPUT]:\n[0,0]\n------------------------------\n"
+        "EnvironmentMetadata: seed=98, tier=3, gravity=3.0, z=50\n"
+        "Actions: ['west']\n[1,0]\n"
+        "[GROUND TRUTH EXPECTED]:\n[0,0]\n[1,0]\n[2,0]\n"
+        "==============================\n",
+        encoding="utf-8",
+    )
+    entry, = BenchmarkRunner._parse_raw_stream_blocks(str(raw_file))
+    assert (entry["seed"], entry["tier"], entry["z"]) == (42, 0, 2)
+    assert entry["actions"] == "['east', 'east']"
+    assert "------------------------------" in entry["raw_output"]
+    assert "EnvironmentMetadata: seed=98" in entry["raw_output"]
+    assert entry["ground_truth"].strip().endswith("[2,0]")
 
 
 def test_resume_empty_latest_session_fallback(tmp_path):

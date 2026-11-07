@@ -3,7 +3,15 @@
 import os
 import pytest
 from arcus.experiments.benchmark_runner import BenchmarkRunner
-from post_run_analyzer import process_txt_file, _render_report
+from post_run_analyzer import (
+    _parse_actions,
+    _parse_coord_block,
+    _parse_grid,
+    _parse_transition_rules,
+    _render_report,
+    process_txt_file,
+)
+from arcus.analysis.taxonomy import classify_from_result
 from tests.test_parallel_resume import _StubEvaluator, _make_runner
 
 
@@ -75,3 +83,50 @@ def test_multiple_resume_blocks_and_partial(tmp_path):
     assert "results_matrix" in data
     report = _render_report(data)
     assert "ARCUS-X RUN SUMMARY" in report
+
+
+def test_model_output_cannot_overwrite_trusted_task_metadata(tmp_path):
+    raw = tmp_path / "metadata.txt"
+    raw.write_text(
+        "ARCUS-X RUN START\n"
+        "Run ID: 2026-08-01T00:00:00\n"
+        "Model: stub/stub\n"
+        "=== RAW STREAM ENTRY ===\n"
+        "Parameters: z=1, gravity=0.0, tier=0, grid=default\n"
+        "EnvironmentMetadata: seed=42, tier=0, gravity=0.0, z=1, grid_key=default\n"
+        "Grid: 5x5\n"
+        "InitialState: (0, 0)\n"
+        "Actions: ['north']\n"
+        "TransitionRules: {'north': {'dx': 0, 'dy': 1}, 'south': {'dx': 0, 'dy': -1}}\n"
+        "------------------------------\n"
+        "[MODEL OUTPUT]:\n"
+        "Actions: ['south']\n"
+        "Grid: 99x99\n"
+        "[0,0]\n[0,1]\n"
+        "------------------------------\n"
+        "[GROUND TRUTH EXPECTED]:\n"
+        "[0,0]\n[0,1]\n"
+        "==================================================\n",
+        encoding="utf-8",
+    )
+
+    runner_entry = BenchmarkRunner._parse_raw_stream_blocks(str(raw))[0]
+    post_data = process_txt_file(str(raw))
+    post_result = next(iter(post_data["results_matrix"].values()))
+
+    assert _parse_actions(runner_entry["actions"]) == ["north"]
+    assert _parse_grid(runner_entry["grid"]) == (5, 5)
+    assert post_result["exact_match"] is True
+    assert post_result["probe_classification"]["mechanism"] == "None"
+
+    live_taxonomy = classify_from_result(
+        post_result["predicted_path"],
+        post_result["ground_truth_path"],
+        _parse_transition_rules(runner_entry["transition_rules"]),
+        _parse_actions(runner_entry["actions"]),
+        tier=0,
+        grid_width=5,
+        grid_height=5,
+        raw_output=post_result["raw_output"],
+    )
+    assert live_taxonomy.probe_classification.to_dict() == post_result["probe_classification"]

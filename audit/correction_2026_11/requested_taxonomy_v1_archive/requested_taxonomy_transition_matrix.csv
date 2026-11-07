@@ -1,0 +1,50 @@
+historical_label,corrected_label,count
+None,None,0
+None,Horizon Collapse,9440
+None,State Tracking Failure,0
+None,Transition Rule Failure,0
+None,Semantic Interpretation Failure,0
+None,Formatting Failure,0
+None,Unknown / Unmapped,0
+Horizon Collapse,None,3123
+Horizon Collapse,Horizon Collapse,5879
+Horizon Collapse,State Tracking Failure,0
+Horizon Collapse,Transition Rule Failure,0
+Horizon Collapse,Semantic Interpretation Failure,0
+Horizon Collapse,Formatting Failure,0
+Horizon Collapse,Unknown / Unmapped,0
+State Tracking Failure,None,0
+State Tracking Failure,Horizon Collapse,721
+State Tracking Failure,State Tracking Failure,13634
+State Tracking Failure,Transition Rule Failure,6
+State Tracking Failure,Semantic Interpretation Failure,0
+State Tracking Failure,Formatting Failure,0
+State Tracking Failure,Unknown / Unmapped,0
+Transition Rule Failure,None,0
+Transition Rule Failure,Horizon Collapse,0
+Transition Rule Failure,State Tracking Failure,2
+Transition Rule Failure,Transition Rule Failure,3957
+Transition Rule Failure,Semantic Interpretation Failure,0
+Transition Rule Failure,Formatting Failure,0
+Transition Rule Failure,Unknown / Unmapped,0
+Semantic Interpretation Failure,None,0
+Semantic Interpretation Failure,Horizon Collapse,0
+Semantic Interpretation Failure,State Tracking Failure,0
+Semantic Interpretation Failure,Transition Rule Failure,0
+Semantic Interpretation Failure,Semantic Interpretation Failure,2214
+Semantic Interpretation Failure,Formatting Failure,19
+Semantic Interpretation Failure,Unknown / Unmapped,0
+Formatting Failure,None,0
+Formatting Failure,Horizon Collapse,1
+Formatting Failure,State Tracking Failure,0
+Formatting Failure,Transition Rule Failure,0
+Formatting Failure,Semantic Interpretation Failure,6
+Formatting Failure,Formatting Failure,725
+Formatting Failure,Unknown / Unmapped,1
+Unknown / Unmapped,None,0
+Unknown / Unmapped,Horizon Collapse,0
+Unknown / Unmapped,State Tracking Failure,0
+Unknown / Unmapped,Transition Rule Failure,0
+Unknown / Unmapped,Semantic Interpretation Failure,0
+Unknown / Unmapped,Formatting Failure,0
+Unknown / Unmapped,Unknown / Unmapped,0

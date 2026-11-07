@@ -1,0 +1,190 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{cobbe2021gsm8k}
+\citation{hendrycks2020mmlu}
+\citation{gu2024livebench}
+\citation{chen2021evaluating}
+\citation{khanal2026pass1reliabilityscienceframework}
+\citation{chen2026longhorizonagenttrajectoryattribution}
+\citation{lu2025agentrewardbench}
+\citation{wang2026aligning}
+\citation{grady2026kellybench}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{cobbe2021gsm8k}
+\citation{hendrycks2020mmlu}
+\citation{gu2024livebench}
+\citation{chen2021evaluating}
+\citation{khanal2026pass1reliabilityscienceframework}
+\citation{chen2026longhorizonagenttrajectoryattribution}
+\citation{lu2025agentrewardbench}
+\citation{wang2026aligning}
+\citation{sinha2026execution}
+\citation{wu2024counterfactual}
+\citation{hsieh2024ruler}
+\citation{wu2025longmemeval}
+\citation{maharana2024locomo}
+\citation{jimenez2024swebench}
+\citation{zhou2024webarena}
+\citation{liu2024agentbench}
+\citation{grady2026kellybench}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{3}{section.3}\protected@file@percent }
+\newlabel{Methodology}{{3}{3}{Methodology}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Experimental Design}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Procedural Generation of Probes}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Transition Rules and Environment}{3}{subsection.3.3}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Perturbation Regimes}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{subsec:pert_regi}{{3.4}{4}{Perturbation Regimes}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Evaluation}{4}{subsection.3.5}\protected@file@percent }
+\citation{haahr_random_org}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Failure Taxonomy}{5}{subsection.3.6}\protected@file@percent }
+\newlabel{subsec:failure_taxonomy}{{3.6}{5}{Failure Taxonomy}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Metrics}{5}{subsection.3.7}\protected@file@percent }
+\newlabel{subsec:Metrics}{{3.7}{5}{Metrics}{subsection.3.7}{}}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Adaptive Fracture Search}{6}{subsection.3.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{6}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Benchmark Performance}{6}{subsection.4.1}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Overall ARCUS-X trajectory-level performance over all recorded non-calibration probes. Asterisks indicate response validity below 75\%. Validity denotes the proportion of probes yielding cognitively analyzable responses.}}{7}{table.1}\protected@file@percent }
+\newlabel{tab:overall_results}{{1}{7}{Overall ARCUS-X trajectory-level performance over all recorded non-calibration probes. Asterisks indicate response validity below 75\%. Validity denotes the proportion of probes yielding cognitively analyzable responses}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Horizon-Dependent Degradation and Fracture}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Per-horizon step accuracy over all recorded non-calibration probes for the five representative models, including invalid responses. Each sampled point is drawn with a model-specific marker (circle, square, triangle, diamond, or star) in addition to its color, so the curves remain distinguishable in grayscale.}}{7}{figure.1}\protected@file@percent }
+\newlabel{fig:selected_models_horizon}{{1}{7}{Per-horizon step accuracy over all recorded non-calibration probes for the five representative models, including invalid responses. Each sampled point is drawn with a model-specific marker (circle, square, triangle, diamond, or star) in addition to its color, so the curves remain distinguishable in grayscale}{figure.1}{}}
+\def\@LN@column{1}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Post-hoc structural fracture depth by perturbation tier for the five representative models. Accuracy is pooled over all recorded non-calibration probes, including invalid responses. Values are the smallest sampled horizon below the 50\% step-accuracy floor that is not followed by a recovery within the next two sampled horizons; `N/A' means that no such sampled point was found.}}{8}{table.2}\protected@file@percent }
+\newlabel{tab:fracture_selected}{{2}{8}{Post-hoc structural fracture depth by perturbation tier for the five representative models. Accuracy is pooled over all recorded non-calibration probes, including invalid responses. Values are the smallest sampled horizon below the 50\% step-accuracy floor that is not followed by a recovery within the next two sampled horizons; `N/A' means that no such sampled point was found}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Semantic Robustness}{8}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Per-tier step accuracy for the five representative models. Tier 0 is baseline; Tier 1 renames action labels only; Tier 2 inverts the $y$-delta; Tier 3 rotates transitions $90^\circ $.}}{8}{table.3}\protected@file@percent }
+\newlabel{tab:tier_selected}{{3}{8}{Per-tier step accuracy for the five representative models. Tier 0 is baseline; Tier 1 renames action labels only; Tier 2 inverts the $y$-delta; Tier 3 rotates transitions $90^\circ $}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Generation Efficiency and Failure Modes}{8}{subsection.4.4}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Generation efficiency measurements for the five representative models.}}{9}{table.4}\protected@file@percent }
+\newlabel{tab:generation_efficiency_selected}{{4}{9}{Generation efficiency measurements for the five representative models}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Post-run validity and taxonomy partition for the five representative models. Taxonomy percentages are relative to valid probes; \emph  {None} requires complete canonical trajectory correctness.}}{9}{table.5}\protected@file@percent }
+\newlabel{tab:failure_taxonomy_selected}{{5}{9}{Post-run validity and taxonomy partition for the five representative models. Taxonomy percentages are relative to valid probes; \emph {None} requires complete canonical trajectory correctness}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{9}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Central Finding}{9}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Limitations}{9}{subsection.5.2}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{10}{section.6}\protected@file@percent }
+\bibdata{iclr2027_conference,long_context_references}
+\bibcite{chen2026longhorizonagenttrajectoryattribution}{{1}{2026}{{Chen et~al.}}{{Chen, Sun, Zhang, Xu, and Shi}}}
+\bibcite{chen2021evaluating}{{2}{2021}{{Chen et~al.}}{{Chen, Tworek, Jun, Yuan, et~al.}}}
+\bibcite{cobbe2021gsm8k}{{3}{2021}{{Cobbe et~al.}}{{Cobbe, Kosaraju, Bavarian, Chen, Jun, Kaiser, Plappert, Tworek, Hilton, Nakano, Hesse, and Schulman}}}
+\bibcite{grady2026kellybench}{{4}{2026}{{Grady et~al.}}{{Grady, Parker, Zarov, Course, Taylor, and Taylor}}}
+\bibcite{gu2024livebench}{{5}{2024}{{Gu et~al.}}{{}}}
+\def\@LN@column{1}
+\bibcite{haahr_random_org}{{6}{1998}{{Haahr}}{{}}}
+\bibcite{hendrycks2020mmlu}{{7}{2020}{{Hendrycks et~al.}}{{Hendrycks, Burns, Basart, Zou, Mazeika, Song, and Steinhardt}}}
+\bibcite{hsieh2024ruler}{{8}{2024}{{Hsieh et~al.}}{{Hsieh, Sun, Kriman, Acharya, Rekesh, Jia, Zhang, and Ginsburg}}}
+\bibcite{jimenez2024swebench}{{9}{2024}{{Jimenez et~al.}}{{Jimenez, Yang, Wettig, Yao, Pei, Press, and Narasimhan}}}
+\bibcite{khanal2026pass1reliabilityscienceframework}{{10}{2026}{{Khanal et~al.}}{{Khanal, Tao, and Zhou}}}
+\bibcite{liu2024agentbench}{{11}{2024}{{Liu et~al.}}{{Liu, Yu, Zhang, Xu, Lei, Lai, Gu, Ding, Men, Yang, Zhang, Deng, Zeng, Du, Zhang, Shen, Zhang, Su, Sun, Huang, Dong, and Tang}}}
+\bibcite{lu2025agentrewardbench}{{12}{2025}{{Lù et~al.}}{{Lù, Kazemnejad, Meade, et~al.}}}
+\bibcite{maharana2024locomo}{{13}{2024}{{Maharana et~al.}}{{Maharana, Lee, Tulyakov, Bansal, Barbieri, and Fang}}}
+\bibcite{sinha2026execution}{{14}{2026}{{Sinha et~al.}}{{Sinha, Arun, Goel, Staab, and Geiping}}}
+\bibcite{wang2026aligning}{{15}{2026}{{Wang et~al.}}{{Wang, Hu, Yang, Pan, Li, and Guo}}}
+\bibcite{wu2025longmemeval}{{16}{2025}{{Wu et~al.}}{{Wu, Wang, Yu, Zhang, Chang, and Yu}}}
+\bibcite{wu2024counterfactual}{{17}{2024}{{Wu et~al.}}{{Wu, Qiu, Ross, Akyurek, Chen, Wang, Kim, Andreas, and Kim}}}
+\bibcite{zhou2024webarena}{{18}{2024}{{Zhou et~al.}}{{Zhou, Xu, Zhu, Zhou, Lo, Sridhar, Cheng, Ou, Bisk, Fried, Alon, and Neubig}}}
+\bibstyle{iclr2027_conference}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix}{13}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Failure Taxonomy Implementation}{13}{subsection.A.1}\protected@file@percent }
+\newlabel{app:failure_taxonomy}{{A.1}{13}{Failure Taxonomy Implementation}{subsection.A.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.1.1}Output-validity partition}{13}{subsubsection.A.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.1.2}Primary mechanisms and precedence}{13}{subsubsection.A.1.2}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Operational and Temporal Failure Analysis}{14}{subsection.A.2}\protected@file@percent }
+\newlabel{app:operational_temporal}{{A.2}{14}{Operational and Temporal Failure Analysis}{subsection.A.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.1}Operational versus Cognitive Reliability}{14}{subsubsection.A.2.1}\protected@file@percent }
+\newlabel{eq:conditional_accuracy}{{1}{14}{Operational versus Cognitive Reliability}{equation.1}{}}
+\newlabel{eq:validity_partition}{{2}{14}{Operational versus Cognitive Reliability}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.2}Temporal Localization within Valid Trajectories}{14}{subsubsection.A.2.2}\protected@file@percent }
+\newlabel{app:temporal_localization}{{A.2.2}{14}{Temporal Localization within Valid Trajectories}{subsubsection.A.2.2}{}}
+\def\@LN@column{1}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces  Within-trajectory step accuracy at two common requested horizons for the 13-model publication cohort. Equal horizon does not imply identical tasks; this table is descriptive and is not task-paired unless exact task hashes match. Early, middle, and late correspond to contiguous thirds of the scored transition sequence. Values are conditional on valid, analyzable trajectories. The table is a positional diagnostic rather than a model ranking. }}{15}{table.6}\protected@file@percent }
+\newlabel{tab:temporal_thirds}{{6}{15}{Within-trajectory step accuracy at two common requested horizons for the 13-model publication cohort. Equal horizon does not imply identical tasks; this table is descriptive and is not task-paired unless exact task hashes match. Early, middle, and late correspond to contiguous thirds of the scored transition sequence. Values are conditional on valid, analyzable trajectories. The table is a positional diagnostic rather than a model ranking}{table.6}{}}
+\newlabel{eq:temporal_accuracy}{{3}{15}{Temporal Localization within Valid Trajectories}{equation.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Matched-horizon comparison.}{15}{section*.4}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {paragraph}{Development at longer horizons.}{16}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Relation to the trajectory-level taxonomy.}{16}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Interpretation and limitations.}{16}{section*.7}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}AFS Implementation}{17}{subsection.A.3}\protected@file@percent }
+\newlabel{app:afs_implementation}{{A.3}{17}{AFS Implementation}{subsection.A.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.1}Evaluation unit and scoring}{17}{subsubsection.A.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.2}Live search controller}{17}{subsubsection.A.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.3}Post-hoc fracture analysis}{17}{subsubsection.A.3.3}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.4}Caching, resume, and reproducibility}{18}{subsubsection.A.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Adaptive Horizon Search and Sampling}{18}{subsection.A.4}\protected@file@percent }
+\newlabel{app:afs_sampling}{{A.4}{18}{Adaptive Horizon Search and Sampling}{subsection.A.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Pooled observed horizon accuracy and probe density for Ministral 14B 2512 across sampled conditions, excluding calibration probes. Each point is an observed horizon; color encodes probe density (percent of probes).}}{18}{figure.2}\protected@file@percent }
+\newlabel{fig:ministral_sampling_density}{{2}{18}{Pooled observed horizon accuracy and probe density for Ministral 14B 2512 across sampled conditions, excluding calibration probes. Each point is an observed horizon; color encodes probe density (percent of probes)}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}CRI}{18}{subsection.A.5}\protected@file@percent }
+\newlabel{app:CRI}{{A.5}{18}{CRI}{subsection.A.5}{}}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.6}Seed-Level Variability}{19}{subsection.A.6}\protected@file@percent }
+\newlabel{app:seed_variance}{{A.6}{19}{Seed-Level Variability}{subsection.A.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces CRI across five master seeds (population mean $\pm $ standard deviation). Asterisks indicate response validity below 75\%.}}{19}{table.7}\protected@file@percent }
+\newlabel{tab:cri_seed_variance}{{7}{19}{CRI across five master seeds (population mean $\pm $ standard deviation). Asterisks indicate response validity below 75\%}{table.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.7}Full Model Results}{19}{subsection.A.7}\protected@file@percent }
+\newlabel{app:full_model}{{A.7}{19}{Full Model Results}{subsection.A.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Complete overall ARCUS-X results for all 13 evaluated models. Asterisks indicate response validity below 75\%.}}{19}{table.8}\protected@file@percent }
+\newlabel{tab:overall_results_full}{{8}{19}{Complete overall ARCUS-X results for all 13 evaluated models. Asterisks indicate response validity below 75\%}{table.8}{}}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.7.1}Horizon-Dependent Degradation and Fracture}{20}{subsubsection.A.7.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Observed per-horizon accuracy for every evaluated model, pooled over all recorded non-calibration probes. Curves join only horizons sampled by the adaptive procedure.}}{20}{figure.3}\protected@file@percent }
+\newlabel{fig:all_models_horizon_comparison}{{3}{20}{Observed per-horizon accuracy for every evaluated model, pooled over all recorded non-calibration probes. Curves join only horizons sampled by the adaptive procedure}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Post-hoc structural fracture depth by perturbation tier for all 13 evaluated models. Accuracy is pooled over all recorded non-calibration probes, including invalid responses. Values are the smallest sampled horizon below the 50\% step-accuracy floor that is not followed by a recovery within the next two sampled horizons; `N/A' means that no such sampled point was found. Asterisks indicate response validity below 75\%.}}{20}{table.9}\protected@file@percent }
+\newlabel{tab:fracture_full}{{9}{20}{Post-hoc structural fracture depth by perturbation tier for all 13 evaluated models. Accuracy is pooled over all recorded non-calibration probes, including invalid responses. Values are the smallest sampled horizon below the 50\% step-accuracy floor that is not followed by a recovery within the next two sampled horizons; `N/A' means that no such sampled point was found. Asterisks indicate response validity below 75\%}{table.9}{}}
+\def\@LN@column{1}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Per-horizon accuracy fluctuation over observed horizons. Std. dev. is the population standard deviation of each model's per-horizon accuracies rounded to one decimal place. Asterisks indicate response validity below 75\%.}}{21}{table.10}\protected@file@percent }
+\newlabel{tab:horizon_fluctuation}{{10}{21}{Per-horizon accuracy fluctuation over observed horizons. Std. dev. is the population standard deviation of each model's per-horizon accuracies rounded to one decimal place. Asterisks indicate response validity below 75\%}{table.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Pearson correlation between horizon-accuracy fluctuation and trajectory-level metrics across all models.}}{21}{table.11}\protected@file@percent }
+\newlabel{tab:fluctuation_correlations}{{11}{21}{Pearson correlation between horizon-accuracy fluctuation and trajectory-level metrics across all models}{table.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.7.2}Semantic Robustness}{21}{subsubsection.A.7.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Complete per-tier step accuracy for all 13 evaluated models. Asterisks indicate response validity below 75\%.}}{21}{table.12}\protected@file@percent }
+\newlabel{tab:tier_full}{{12}{21}{Complete per-tier step accuracy for all 13 evaluated models. Asterisks indicate response validity below 75\%}{table.12}{}}
+\def\@LN@column{1}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces CRI and its decomposition for all 13 evaluated models: Trajectory Fidelity (TF), Horizon Robustness (HR), Semantic Robustness (SR), and Generation Efficiency (GE), pooled across probes (Appendix~\ref {app:CRI}). Asterisks indicate response validity below 75\%.}}{22}{table.13}\protected@file@percent }
+\newlabel{tab:cri_decomposition}{{13}{22}{CRI and its decomposition for all 13 evaluated models: Trajectory Fidelity (TF), Horizon Robustness (HR), Semantic Robustness (SR), and Generation Efficiency (GE), pooled across probes (Appendix~\ref {app:CRI}). Asterisks indicate response validity below 75\%}{table.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.8}Generation Efficiency and Failure Modes}{22}{subsection.A.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Generation efficiency measurements. Asterisks indicate response validity below 75\%.}}{22}{table.14}\protected@file@percent }
+\newlabel{tab:generation_efficiency}{{14}{22}{Generation efficiency measurements. Asterisks indicate response validity below 75\%}{table.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Post-run validity and taxonomy partition for the 13-model publication cohort. Taxonomy percentages are relative to valid probes; invalid responses are reported separately.}}{22}{table.15}\protected@file@percent }
+\newlabel{tab:failure_taxonomy_full}{{15}{22}{Post-run validity and taxonomy partition for the 13-model publication cohort. Taxonomy percentages are relative to valid probes; invalid responses are reported separately}{table.15}{}}
+\def\@LN@column{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Failure-signature profiles across the 13-model publication cohort, expressed as a percentage of valid probes. Asterisks in the row labels identify models with response validity below 75\%.}}{23}{figure.4}\protected@file@percent }
+\newlabel{fig:failure_profiles}{{4}{23}{Failure-signature profiles across the 13-model publication cohort, expressed as a percentage of valid probes. Asterisks in the row labels identify models with response validity below 75\%}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.9}Taxonomy Policy Sensitivity (Analysis B)}{23}{subsection.A.9}\protected@file@percent }
+\newlabel{app:taxonomy_sensitivity}{{A.9}{23}{Taxonomy Policy Sensitivity (Analysis B)}{subsection.A.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Minitest transcripts}{23}{appendix.B}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Share of valid probes reassigned relative to Analysis A under alternative taxonomy policies.}}{24}{table.16}\protected@file@percent }
+\newlabel{tab:taxonomy_policy_stability}{{16}{24}{Share of valid probes reassigned relative to Analysis A under alternative taxonomy policies}{table.16}{}}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\def\@LN@column{1}
+\gdef \@abspage@last{37}

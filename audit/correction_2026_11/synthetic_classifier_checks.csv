@@ -1,0 +1,7 @@
+synthetic_case,valid,outcome,mechanism,subtype,explanation,trajectory_correct,exact_match,predicted_length,ground_truth_length,validation_scope
+known_correct,True,Success,None,None,Predicted trajectory correctly matches ground truth (or verbose correct).,True,True,13,13,synthetic rule-pattern recovery only; not human validity
+length_mismatch_overlong_correct_prefix,True,Failure,Horizon Failure,ORF_Empty_Response,Predicted trajectory length differs from ground truth (horizon/truncation mismatch).,False,False,14,13,synthetic rule-pattern recovery only; not human validity
+truncated_correct_prefix,True,Failure,Horizon Failure,ORF_Empty_Response,Predicted trajectory length differs from ground truth (horizon/truncation mismatch).,False,False,12,13,synthetic rule-pattern recovery only; not human validity
+sign_inversion,True,Failure,Transition Failure,TEF_Magnitude_Error,9/10 step deltas have wrong magnitude (transition failure).,False,False,13,13,synthetic rule-pattern recovery only; not human validity
+late_persistent_offset,True,Failure,State Tracking Failure,SRF_Persistent_Offset,"Model followed correctly until step 5, then held persistent offset (state tracking failure).",False,False,13,13,synthetic rule-pattern recovery only; not human validity
+unparseable,False,Unclassifiable,Output Format Failure,ORF_Malformed_Structure,Invalid response encountered (error code: E102_PARSE_FAILURE).,False,False,1,13,synthetic rule-pattern recovery only; not human validity

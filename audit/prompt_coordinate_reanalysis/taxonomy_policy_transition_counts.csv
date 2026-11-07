@@ -1,0 +1,115 @@
+model,old_full_transition_label,new_coordinate_count_label,valid_probe_count
+GPT-5-mini,Horizon Collapse,Horizon Collapse,60
+GPT-5-mini,Horizon Collapse,None,2052
+GPT-5-mini,None,Horizon Collapse,2417
+GPT-5-mini,State Tracking Failure,Horizon Collapse,1
+GPT-5-mini,State Tracking Failure,State Tracking Failure,528
+GPT-5-mini,Transition Rule Failure,Transition Rule Failure,3
+MAI-Thinking-1,Horizon Collapse,Horizon Collapse,4
+MAI-Thinking-1,Horizon Collapse,None,490
+MAI-Thinking-1,None,Horizon Collapse,2518
+MAI-Thinking-1,State Tracking Failure,Horizon Collapse,3
+MAI-Thinking-1,State Tracking Failure,State Tracking Failure,94
+MAI-Thinking-1,Transition Rule Failure,Transition Rule Failure,1
+minimax.minimax-m2.5,Formatting Failure,Semantic Interpretation Failure,3
+minimax.minimax-m2.5,Horizon Collapse,Horizon Collapse,6
+minimax.minimax-m2.5,Horizon Collapse,None,6
+minimax.minimax-m2.5,None,Horizon Collapse,201
+minimax.minimax-m2.5,State Tracking Failure,State Tracking Failure,1
+minimax.minimax-m2.5,Transition Rule Failure,Transition Rule Failure,1
+ministral-14b-2512,Formatting Failure,Formatting Failure,26
+ministral-14b-2512,Formatting Failure,Semantic Interpretation Failure,1
+ministral-14b-2512,Horizon Collapse,Horizon Collapse,445
+ministral-14b-2512,Horizon Collapse,None,265
+ministral-14b-2512,None,Horizon Collapse,699
+ministral-14b-2512,Semantic Interpretation Failure,Formatting Failure,2
+ministral-14b-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,51
+ministral-14b-2512,State Tracking Failure,Horizon Collapse,90
+ministral-14b-2512,State Tracking Failure,State Tracking Failure,2086
+ministral-14b-2512,Transition Rule Failure,Transition Rule Failure,456
+ministral-3b-2512,Formatting Failure,Formatting Failure,93
+ministral-3b-2512,Formatting Failure,Horizon Collapse,1
+ministral-3b-2512,Formatting Failure,Semantic Interpretation Failure,2
+ministral-3b-2512,Horizon Collapse,Horizon Collapse,52
+ministral-3b-2512,Horizon Collapse,None,186
+ministral-3b-2512,None,Horizon Collapse,227
+ministral-3b-2512,Semantic Interpretation Failure,Formatting Failure,11
+ministral-3b-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,115
+ministral-3b-2512,State Tracking Failure,Horizon Collapse,14
+ministral-3b-2512,State Tracking Failure,State Tracking Failure,1036
+ministral-3b-2512,Transition Rule Failure,Transition Rule Failure,83
+ministral-8b-2512,Formatting Failure,Formatting Failure,8
+ministral-8b-2512,Horizon Collapse,Horizon Collapse,636
+ministral-8b-2512,Horizon Collapse,None,22
+ministral-8b-2512,None,Horizon Collapse,172
+ministral-8b-2512,Semantic Interpretation Failure,Formatting Failure,1
+ministral-8b-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,7
+ministral-8b-2512,State Tracking Failure,Horizon Collapse,95
+ministral-8b-2512,State Tracking Failure,State Tracking Failure,520
+ministral-8b-2512,Transition Rule Failure,Transition Rule Failure,991
+mistral-large-2512,Formatting Failure,Formatting Failure,132
+mistral-large-2512,Formatting Failure,Semantic Interpretation Failure,3
+mistral-large-2512,Horizon Collapse,Horizon Collapse,1468
+mistral-large-2512,Horizon Collapse,None,13
+mistral-large-2512,None,Horizon Collapse,37
+mistral-large-2512,Semantic Interpretation Failure,Formatting Failure,4
+mistral-large-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,334
+mistral-large-2512,State Tracking Failure,Horizon Collapse,123
+mistral-large-2512,State Tracking Failure,State Tracking Failure,365
+mistral-large-2512,Transition Rule Failure,Transition Rule Failure,816
+mistral-small-2603,Formatting Failure,Formatting Failure,1
+mistral-small-2603,Horizon Collapse,Horizon Collapse,517
+mistral-small-2603,Horizon Collapse,None,14
+mistral-small-2603,None,Horizon Collapse,105
+mistral-small-2603,Semantic Interpretation Failure,Semantic Interpretation Failure,7
+mistral-small-2603,State Tracking Failure,Horizon Collapse,109
+mistral-small-2603,State Tracking Failure,State Tracking Failure,1043
+mistral-small-2603,Transition Rule Failure,Transition Rule Failure,384
+mistral.devstral-2-123b,Formatting Failure,Formatting Failure,28
+mistral.devstral-2-123b,Horizon Collapse,Horizon Collapse,1668
+mistral.devstral-2-123b,Horizon Collapse,None,3
+mistral.devstral-2-123b,None,Horizon Collapse,4
+mistral.devstral-2-123b,Semantic Interpretation Failure,Formatting Failure,1
+mistral.devstral-2-123b,Semantic Interpretation Failure,Semantic Interpretation Failure,27
+mistral.devstral-2-123b,State Tracking Failure,Horizon Collapse,259
+mistral.devstral-2-123b,State Tracking Failure,State Tracking Failure,898
+mistral.devstral-2-123b,State Tracking Failure,Transition Rule Failure,5
+mistral.devstral-2-123b,Transition Rule Failure,Transition Rule Failure,900
+moonshotai.kimi-k2.5,Formatting Failure,Formatting Failure,366
+moonshotai.kimi-k2.5,Formatting Failure,Horizon Collapse,1
+moonshotai.kimi-k2.5,Horizon Collapse,Horizon Collapse,929
+moonshotai.kimi-k2.5,Horizon Collapse,None,4
+moonshotai.kimi-k2.5,None,Horizon Collapse,2570
+moonshotai.kimi-k2.5,Semantic Interpretation Failure,Semantic Interpretation Failure,1449
+moonshotai.kimi-k2.5,State Tracking Failure,Horizon Collapse,3
+moonshotai.kimi-k2.5,State Tracking Failure,State Tracking Failure,668
+moonshotai.kimi-k2.5,State Tracking Failure,Transition Rule Failure,1
+moonshotai.kimi-k2.5,Transition Rule Failure,State Tracking Failure,2
+moonshotai.kimi-k2.5,Transition Rule Failure,Transition Rule Failure,247
+nvidia.nemotron-super-3-120b,Formatting Failure,Formatting Failure,5
+nvidia.nemotron-super-3-120b,Horizon Collapse,Horizon Collapse,1
+nvidia.nemotron-super-3-120b,Horizon Collapse,None,13
+nvidia.nemotron-super-3-120b,None,Horizon Collapse,108
+nvidia.nemotron-super-3-120b,Semantic Interpretation Failure,Semantic Interpretation Failure,1
+nvidia.nemotron-super-3-120b,State Tracking Failure,Horizon Collapse,13
+nvidia.nemotron-super-3-120b,State Tracking Failure,State Tracking Failure,2092
+nvidia.nemotron-super-3-120b,Transition Rule Failure,Transition Rule Failure,25
+qwen.qwen3-235b-a22b-2507,Formatting Failure,Formatting Failure,66
+qwen.qwen3-235b-a22b-2507,Horizon Collapse,Horizon Collapse,98
+qwen.qwen3-235b-a22b-2507,Horizon Collapse,None,8
+qwen.qwen3-235b-a22b-2507,None,Horizon Collapse,140
+qwen.qwen3-235b-a22b-2507,Semantic Interpretation Failure,Semantic Interpretation Failure,223
+qwen.qwen3-235b-a22b-2507,State Tracking Failure,Horizon Collapse,3
+qwen.qwen3-235b-a22b-2507,State Tracking Failure,State Tracking Failure,49
+qwen.qwen3-235b-a22b-2507,Transition Rule Failure,Transition Rule Failure,12
+qwen.qwen3-coder-480b-a35b-v1:0,Horizon Collapse,Horizon Collapse,1
+qwen.qwen3-coder-480b-a35b-v1:0,Horizon Collapse,None,27
+qwen.qwen3-coder-480b-a35b-v1:0,None,Horizon Collapse,75
+qwen.qwen3-coder-480b-a35b-v1:0,State Tracking Failure,Horizon Collapse,2
+qwen.qwen3-coder-480b-a35b-v1:0,State Tracking Failure,State Tracking Failure,2031
+qwen.qwen3-coder-480b-a35b-v1:0,Transition Rule Failure,Transition Rule Failure,24
+zai.glm-5,Horizon Collapse,None,26
+zai.glm-5,None,Horizon Collapse,368
+zai.glm-5,State Tracking Failure,Horizon Collapse,6
+zai.glm-5,State Tracking Failure,State Tracking Failure,2224
+zai.glm-5,Transition Rule Failure,Transition Rule Failure,15

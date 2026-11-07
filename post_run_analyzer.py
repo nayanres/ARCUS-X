@@ -943,11 +943,11 @@ def _parse_transition_rules(rules_str: str) -> Optional[Dict[str, Dict[str, int]
         return None
 
 
-def _score_probe(entry: Dict[str, Any]) -> Dict[str, Any]:
+def _score_probe(entry: Dict[str, Any], coordinate_count: bool = False) -> Dict[str, Any]:
     """Compute the full trajectory metric bundle for a single parsed probe.
 
-    Mirrors ``BenchmarkRunner._evaluate_depth_batch`` scoring so that the
-    post-run report is identical to a live run.
+    By default this mirrors live-run scoring. ``coordinate_count`` instead
+    evaluates the prompt's requested number of coordinates post hoc.
     """
     z = entry.get("z", 0)
     gravity = entry.get("gravity", 0.0)
@@ -959,6 +959,10 @@ def _score_probe(entry: Dict[str, Any]) -> Dict[str, Any]:
 
     predicted_path = extract_model_path(raw_output)
     ground_truth_path = _parse_coord_block(ground_truth_block)
+    if coordinate_count:
+        if z < 1 or len(ground_truth_path) != z + 1:
+            raise ValueError(f"Expected {z + 1} reference coordinates at z={z}")
+        ground_truth_path = ground_truth_path[:z]
 
     traj = compare_trajectories(predicted_path, ground_truth_path)
 
@@ -971,6 +975,10 @@ def _score_probe(entry: Dict[str, Any]) -> Dict[str, Any]:
 
     transition_rules = _parse_transition_rules(entry.get("transition_rules", "") or "")
     actions = _parse_actions(entry.get("actions", "") or "")
+    if coordinate_count:
+        if len(actions) != z:
+            raise ValueError(f"Expected {z} actions at z={z}, got {len(actions)}")
+        actions = actions[:z - 1]
     grid_width, grid_height = _parse_grid(entry.get("grid", "") or "")
 
     tax = classify_from_result(
@@ -984,14 +992,17 @@ def _score_probe(entry: Dict[str, Any]) -> Dict[str, Any]:
         raw_output,
     )
     error_mode = tax.legacy_mode.value if tax.valid else "Unknown"
-    if tax.valid and tax.legacy_mode.value == "None" and (traj.step_accuracy < 1.0 or not traj.exact_match):
+    if tax.valid and tax.legacy_mode.value == "None" and not traj.exact_match:
         error_mode = "Unknown"
 
     generated_depth = max(0, len(predicted_path) - 1)
-    horizon_compliance = HorizonCompliance.calculate(z, generated_depth)
+    if coordinate_count:
+        horizon_compliance = min(len(predicted_path), z) / max(len(predicted_path), z)
+    else:
+        horizon_compliance = HorizonCompliance.calculate(z, generated_depth)
 
     output_tokens = int(entry.get("output_tokens", 0) or 0)
-    baseline_tokens = estimated_optimal_path_length(z)
+    baseline_tokens = estimated_optimal_path_length(z - 1 if coordinate_count else z)
     gbi = GenerationBloatIndex.calculate(output_tokens, baseline_tokens)
     generation_efficiency = GenerationEfficiency.calculate(gbi)
 
@@ -1029,13 +1040,14 @@ def _score_probe(entry: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def process_txt_file(filepath: str, last_run_only: bool = False) -> Dict[str, Any]:
+def process_txt_file(filepath: str, last_run_only: bool = False,
+                     coordinate_count: bool = False) -> Dict[str, Any]:
     """Parse an ARCUS-X absolute raw data TXT log into a results matrix.
 
     Each ``=== RAW STREAM ENTRY ===`` block is parsed for its environment
-    metadata, then scored with the real evaluation pipeline (the same
-    ``compare_trajectories`` / ``classify_from_result`` / efficiency metrics the
-    live runner uses) so the post-run report is faithful to a live run.
+    metadata, then scored using the selected trajectory and taxonomy policy.
+    The default policy matches the live runner; coordinate-count scoring is
+    a separate post-hoc interpretation and does not change AFS decisions.
     """
     results_matrix: Dict[str, Any] = {}
     model = None
@@ -1090,10 +1102,10 @@ def process_txt_file(filepath: str, last_run_only: bool = False) -> Dict[str, An
             i += 1
 
         # Parse the structured fields within the block.
-        section = None  # "output" | "truth" | None
+        section = None  # "prompt" | "output" | "truth" | None
         for bl in block_lines:
             bl_stripped = bl.strip()
-            if bl_stripped.startswith("EnvironmentMetadata:"):
+            if section is None and bl_stripped.startswith("EnvironmentMetadata:"):
                 meta_str = bl_stripped.split(":", 1)[1]
                 for item in meta_str.split(","):
                     if "=" in item:
@@ -1121,7 +1133,7 @@ def process_txt_file(filepath: str, last_run_only: bool = False) -> Dict[str, An
                                 pass
                         elif k == "grid_key":
                             entry["grid_key"] = v
-            elif bl_stripped.startswith("Parameters:"):
+            elif section is None and bl_stripped.startswith("Parameters:"):
                 param_str = bl_stripped.split(": ", 1)[1]
                 param_dict = {}
                 for p in param_str.split(","):
@@ -1140,29 +1152,31 @@ def process_txt_file(filepath: str, last_run_only: bool = False) -> Dict[str, An
                         entry["grid_key"] = param_dict["grid"]
                 except (KeyError, ValueError):
                     pass
-            elif bl_stripped.startswith("Grid:"):
+            elif section is None and bl_stripped.startswith("Grid:"):
                 entry["grid"] = bl_stripped.split(":", 1)[1].strip()
-            elif bl_stripped.startswith("InitialState:"):
+            elif section is None and bl_stripped.startswith("InitialState:"):
                 entry["initial_state"] = bl_stripped.split(":", 1)[1].strip()
-            elif bl_stripped.startswith("Actions:"):
+            elif section is None and bl_stripped.startswith("Actions:"):
                 entry["actions"] = bl_stripped.split(":", 1)[1].strip()
-            elif bl_stripped.startswith("TransitionRules:"):
+            elif section is None and bl_stripped.startswith("TransitionRules:"):
                 entry["transition_rules"] = bl_stripped.split(":", 1)[1].strip()
-            elif bl_stripped.startswith("Latency(ms):"):
+            elif section is None and bl_stripped.startswith("Latency(ms):"):
                 try:
                     entry["latency_ms"] = float(bl_stripped.split(":", 1)[1].strip())
                 except ValueError:
                     entry["latency_ms"] = 0.0
-            elif bl_stripped.startswith("InputTokens:"):
+            elif section is None and bl_stripped.startswith("InputTokens:"):
                 try:
                     entry["input_tokens"] = int(float(bl_stripped.split(":", 1)[1].strip()))
                 except ValueError:
                     entry["input_tokens"] = 0
-            elif bl_stripped.startswith("OutputTokens:"):
+            elif section is None and bl_stripped.startswith("OutputTokens:"):
                 try:
                     entry["output_tokens"] = int(float(bl_stripped.split(":", 1)[1].strip()))
                 except ValueError:
                     entry["output_tokens"] = 0
+            elif section is None and bl_stripped.startswith("[EXACT SENT PROMPT]:"):
+                section = "prompt"
             elif bl_stripped.startswith("[MODEL OUTPUT]:"):
                 section = "output"
                 # Capture any content on the same line after the marker.
@@ -1192,7 +1206,10 @@ def process_txt_file(filepath: str, last_run_only: bool = False) -> Dict[str, An
         combo_counter[combo] = probe_idx + 1
         key = f"{combo}_{probe_idx}"
 
-        results_matrix[key] = _score_probe(entry)
+        if coordinate_count:
+            results_matrix[key] = _score_probe(entry, coordinate_count=True)
+        else:
+            results_matrix[key] = _score_probe(entry)
         probe_count += 1
         if gravity is not None:
             gravities_set.add(gravity)
@@ -1345,6 +1362,13 @@ def main():
         help="Run post-run consistency audit checks (A, B, C, D, E)"
     )
     parser.add_argument(
+        "--coordinate-count",
+        action="store_true",
+        help=("For TXT logs, score the initial position and first z-1 transitions "
+              "against the prompt's z-coordinate request; historical prompts "
+              "must be verified separately. Default retains original scoring.")
+    )
+    parser.add_argument(
         "--density",
         action="store_true",
         help="Include the percentage of all probes at each horizon"
@@ -1380,9 +1404,12 @@ def main():
         print(f"\n{'=' * 60}\nProcessing: {filepath}\n{'=' * 60}")
         try:
             if filepath.endswith(".json"):
+                if args.coordinate_count:
+                    raise ValueError("--coordinate-count requires raw TXT logs with task metadata")
                 data = load_json_file(filepath)
             elif filepath.endswith(".txt"):
-                data = process_txt_file(filepath, last_run_only=last_run_only)
+                data = process_txt_file(filepath, last_run_only=last_run_only,
+                                        coordinate_count=args.coordinate_count)
             else:
                 raise ValueError(f"Unsupported file type: {filepath}")
             report = _render_report(
@@ -1390,6 +1417,9 @@ def main():
                 show_density=args.density,
                 show_error_density=args.error_density,
             )
+            if args.coordinate_count:
+                print("SCORING POLICY: z coordinates including the initial position; "
+                      "historical prompt wording assumed, not verified by the raw log.")
             print(report)
             if args.audit:
                 aggregated = _compute_aggregated_metrics(data.get("results_matrix", {}), data.get("seeds", [42]), data.get("fracture_cache"))
@@ -1421,6 +1451,8 @@ def main():
                 print("=" * 60)
         except Exception as exc:
             print(f"Failed to analyze {filepath}: {exc}")
+            if args.coordinate_count:
+                raise
             continue
 
 

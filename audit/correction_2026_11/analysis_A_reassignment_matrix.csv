@@ -1,0 +1,101 @@
+model,original_category,corrected_category,root_cause,count,valid_denominator,proportion_valid,changed
+GPT-5-mini,Horizon Collapse,Horizon Collapse,unchanged,2111,5066,0.4166995657323332,False
+GPT-5-mini,None,Horizon Collapse,perfect_step_accuracy_reporting_override,1,5066,0.00019739439399921041,True
+GPT-5-mini,None,None,unchanged,2422,5066,0.47808922226608763,False
+GPT-5-mini,State Tracking Failure,State Tracking Failure,unchanged,529,5066,0.10442163442558232,False
+GPT-5-mini,Transition Rule Failure,Transition Rule Failure,unchanged,3,5066,0.0005921831819976313,False
+MAI-Thinking-1,Horizon Collapse,Horizon Collapse,unchanged,492,3113,0.15804690009637007,False
+MAI-Thinking-1,None,Horizon Collapse,perfect_step_accuracy_reporting_override,3,3113,0.0009637006103437199,True
+MAI-Thinking-1,None,None,unchanged,2520,3113,0.8095085126887247,False
+MAI-Thinking-1,State Tracking Failure,State Tracking Failure,unchanged,97,3113,0.031159653067780277,False
+MAI-Thinking-1,Transition Rule Failure,Transition Rule Failure,unchanged,1,3113,0.00032123353678124,False
+minimax.minimax-m2.5,Formatting Failure,Formatting Failure,unchanged,3,221,0.013574660633484163,False
+minimax.minimax-m2.5,Horizon Collapse,Horizon Collapse,unchanged,12,221,0.05429864253393665,False
+minimax.minimax-m2.5,None,None,unchanged,204,221,0.9230769230769231,False
+minimax.minimax-m2.5,State Tracking Failure,State Tracking Failure,unchanged,1,221,0.004524886877828055,False
+minimax.minimax-m2.5,Transition Rule Failure,Transition Rule Failure,unchanged,1,221,0.004524886877828055,False
+ministral-14b-2512,Formatting Failure,Formatting Failure,unchanged,30,4126,0.007270964614638876,False
+ministral-14b-2512,Horizon Collapse,Horizon Collapse,unchanged,276,4126,0.06689287445467765,False
+ministral-14b-2512,Horizon Collapse,State Tracking Failure,classifier_precedence_or_parser_correction,3,4126,0.0007270964614638875,True
+ministral-14b-2512,None,Horizon Collapse,perfect_step_accuracy_reporting_override,435,4126,0.1054289869122637,True
+ministral-14b-2512,None,None,unchanged,700,4126,0.16965584100824044,False
+ministral-14b-2512,None,State Tracking Failure,model_output_actions_metadata_corruption,1,4126,0.0002423654871546292,True
+ministral-14b-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,53,4126,0.012845370819195347,False
+ministral-14b-2512,State Tracking Failure,State Tracking Failure,unchanged,2172,4126,0.5264178380998545,False
+ministral-14b-2512,Transition Rule Failure,Transition Rule Failure,unchanged,456,4126,0.11051866214251091,False
+ministral-3b-2512,Formatting Failure,Formatting Failure,unchanged,96,1825,0.0526027397260274,False
+ministral-3b-2512,Horizon Collapse,Horizon Collapse,unchanged,189,1825,0.10356164383561643,False
+ministral-3b-2512,Horizon Collapse,State Tracking Failure,classifier_precedence_or_parser_correction,1,1825,0.000547945205479452,True
+ministral-3b-2512,None,Formatting Failure,noncanonical_coordinate_contract,1,1825,0.000547945205479452,True
+ministral-3b-2512,None,Horizon Collapse,perfect_step_accuracy_reporting_override,50,1825,0.0273972602739726,True
+ministral-3b-2512,None,None,unchanged,230,1825,0.12602739726027398,False
+ministral-3b-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,126,1825,0.06904109589041096,False
+ministral-3b-2512,State Tracking Failure,State Tracking Failure,unchanged,1049,1825,0.5747945205479452,False
+ministral-3b-2512,Transition Rule Failure,Transition Rule Failure,unchanged,83,1825,0.04547945205479452,False
+ministral-8b-2512,Formatting Failure,Formatting Failure,unchanged,8,2457,0.003256003256003256,False
+ministral-8b-2512,Horizon Collapse,Horizon Collapse,unchanged,23,2457,0.009361009361009361,False
+ministral-8b-2512,None,Horizon Collapse,perfect_step_accuracy_reporting_override,639,2457,0.2600732600732601,True
+ministral-8b-2512,None,None,unchanged,173,2457,0.0704110704110704,False
+ministral-8b-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,8,2457,0.003256003256003256,False
+ministral-8b-2512,State Tracking Failure,State Tracking Failure,unchanged,615,2457,0.2503052503052503,False
+ministral-8b-2512,Transition Rule Failure,Transition Rule Failure,unchanged,991,2457,0.4033374033374033,False
+mistral-large-2512,Formatting Failure,Formatting Failure,unchanged,135,3300,0.04090909090909091,False
+mistral-large-2512,Horizon Collapse,Horizon Collapse,unchanged,13,3300,0.00393939393939394,False
+mistral-large-2512,Horizon Collapse,State Tracking Failure,classifier_precedence_or_parser_correction,23,3300,0.0069696969696969695,True
+mistral-large-2512,Horizon Collapse,Transition Rule Failure,classifier_precedence_or_parser_correction,41,3300,0.012424242424242424,True
+mistral-large-2512,None,Horizon Collapse,perfect_step_accuracy_reporting_override,1469,3300,0.44515151515151513,True
+mistral-large-2512,None,None,unchanged,37,3300,0.011212121212121211,False
+mistral-large-2512,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,338,3300,0.10242424242424242,False
+mistral-large-2512,State Tracking Failure,State Tracking Failure,unchanged,466,3300,0.1412121212121212,False
+mistral-large-2512,Transition Rule Failure,Transition Rule Failure,unchanged,778,3300,0.23575757575757575,False
+mistral-small-2603,Formatting Failure,Formatting Failure,unchanged,1,2185,0.0004576659038901602,False
+mistral-small-2603,Horizon Collapse,Horizon Collapse,unchanged,18,2185,0.008237986270022883,False
+mistral-small-2603,None,Horizon Collapse,perfect_step_accuracy_reporting_override,515,2185,0.23569794050343248,True
+mistral-small-2603,None,None,unchanged,108,2185,0.0494279176201373,False
+mistral-small-2603,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,7,2185,0.003203661327231121,False
+mistral-small-2603,State Tracking Failure,State Tracking Failure,unchanged,1152,2185,0.5272311212814645,False
+mistral-small-2603,Transition Rule Failure,Transition Rule Failure,unchanged,384,2185,0.1757437070938215,False
+mistral.devstral-2-123b,Formatting Failure,Formatting Failure,unchanged,30,3798,0.007898894154818325,False
+mistral.devstral-2-123b,Horizon Collapse,Horizon Collapse,unchanged,3,3798,0.0007898894154818325,False
+mistral.devstral-2-123b,None,Horizon Collapse,perfect_step_accuracy_reporting_override,1670,3798,0.43970510795155343,True
+mistral.devstral-2-123b,None,None,unchanged,4,3798,0.00105318588730911,False
+mistral.devstral-2-123b,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,28,3798,0.00737230121116377,False
+mistral.devstral-2-123b,State Tracking Failure,State Tracking Failure,unchanged,1162,3798,0.30595050026329645,False
+mistral.devstral-2-123b,Transition Rule Failure,Transition Rule Failure,unchanged,901,3798,0.23723012111637704,False
+moonshotai.kimi-k2.5,Formatting Failure,Formatting Failure,unchanged,366,6245,0.058606885508406724,False
+moonshotai.kimi-k2.5,Horizon Collapse,Horizon Collapse,unchanged,242,6245,0.03875100080064051,False
+moonshotai.kimi-k2.5,Horizon Collapse,State Tracking Failure,classifier_precedence_or_parser_correction,2,6245,0.0003202562049639712,True
+moonshotai.kimi-k2.5,None,Formatting Failure,noncanonical_coordinate_contract,1,6245,0.0001601281024819856,True
+moonshotai.kimi-k2.5,None,Horizon Collapse,perfect_step_accuracy_reporting_override,691,6245,0.11064851881505204,True
+moonshotai.kimi-k2.5,None,None,unchanged,2575,6245,0.41232986389111287,False
+moonshotai.kimi-k2.5,None,Semantic Interpretation Failure,perfect_step_accuracy_reporting_override,2,6245,0.0003202562049639712,True
+moonshotai.kimi-k2.5,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,1447,6245,0.23170536429143315,False
+moonshotai.kimi-k2.5,State Tracking Failure,State Tracking Failure,unchanged,670,6245,0.10728582866293035,False
+moonshotai.kimi-k2.5,Transition Rule Failure,Transition Rule Failure,unchanged,249,6245,0.03987189751801441,False
+nvidia.nemotron-super-3-120b,Formatting Failure,Formatting Failure,unchanged,5,2263,0.002209456473707468,False
+nvidia.nemotron-super-3-120b,Horizon Collapse,Horizon Collapse,unchanged,14,2263,0.0061864781263809105,False
+nvidia.nemotron-super-3-120b,Horizon Collapse,State Tracking Failure,classifier_precedence_or_parser_correction,1,2263,0.0004418912947414936,True
+nvidia.nemotron-super-3-120b,None,None,unchanged,113,2263,0.04993371630578878,False
+nvidia.nemotron-super-3-120b,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,1,2263,0.0004418912947414936,False
+nvidia.nemotron-super-3-120b,State Tracking Failure,State Tracking Failure,unchanged,2104,2263,0.9297392841361025,False
+nvidia.nemotron-super-3-120b,Transition Rule Failure,Transition Rule Failure,unchanged,25,2263,0.01104728236853734,False
+qwen.qwen3-235b-a22b-2507,Formatting Failure,Formatting Failure,unchanged,66,604,0.10927152317880795,False
+qwen.qwen3-235b-a22b-2507,Horizon Collapse,Horizon Collapse,unchanged,8,604,0.013245033112582781,False
+qwen.qwen3-235b-a22b-2507,None,Horizon Collapse,perfect_step_accuracy_reporting_override,99,604,0.16390728476821192,True
+qwen.qwen3-235b-a22b-2507,None,None,unchanged,143,604,0.2367549668874172,False
+qwen.qwen3-235b-a22b-2507,None,Semantic Interpretation Failure,perfect_step_accuracy_reporting_override,3,604,0.004966887417218543,True
+qwen.qwen3-235b-a22b-2507,Semantic Interpretation Failure,Formatting Failure,classifier_precedence_or_parser_correction,1,604,0.0016556291390728477,True
+qwen.qwen3-235b-a22b-2507,Semantic Interpretation Failure,Semantic Interpretation Failure,unchanged,219,604,0.36258278145695366,False
+qwen.qwen3-235b-a22b-2507,State Tracking Failure,Semantic Interpretation Failure,classifier_precedence_or_parser_correction,1,604,0.0016556291390728477,True
+qwen.qwen3-235b-a22b-2507,State Tracking Failure,State Tracking Failure,unchanged,52,604,0.08609271523178808,False
+qwen.qwen3-235b-a22b-2507,Transition Rule Failure,Transition Rule Failure,unchanged,12,604,0.019867549668874173,False
+qwen.qwen3-coder-480b-a35b-v1:0,Horizon Collapse,Horizon Collapse,unchanged,27,2165,0.012471131639722863,False
+qwen.qwen3-coder-480b-a35b-v1:0,Horizon Collapse,State Tracking Failure,classifier_precedence_or_parser_correction,3,2165,0.0013856812933025404,True
+qwen.qwen3-coder-480b-a35b-v1:0,None,Horizon Collapse,perfect_step_accuracy_reporting_override,1,2165,0.00046189376443418013,True
+qwen.qwen3-coder-480b-a35b-v1:0,None,None,unchanged,80,2165,0.03695150115473441,False
+qwen.qwen3-coder-480b-a35b-v1:0,State Tracking Failure,State Tracking Failure,unchanged,2030,2165,0.9376443418013857,False
+qwen.qwen3-coder-480b-a35b-v1:0,Transition Rule Failure,Transition Rule Failure,unchanged,24,2165,0.011085450346420323,False
+zai.glm-5,Horizon Collapse,Horizon Collapse,unchanged,26,2644,0.009833585476550681,False
+zai.glm-5,None,None,unchanged,373,2644,0.14107413010590014,False
+zai.glm-5,State Tracking Failure,State Tracking Failure,unchanged,2230,2644,0.8434190620272315,False
+zai.glm-5,Transition Rule Failure,Transition Rule Failure,unchanged,15,2644,0.0056732223903177,False

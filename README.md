@@ -151,6 +151,12 @@ primary metrics but never used as the sole success criterion):
 - **Error Taxonomy** — classifies *why* a trajectory failed:
   `State Tracking Failure`, `Transition Rule Failure`,
   `Semantic Interpretation Failure`, `Horizon Collapse`, `Formatting Failure`.
+  `None` is reserved for a valid, complete trajectory that matches the
+  reference path, including its initial state and required length. Perfect
+  Step Accuracy alone does not imply Exact Match or `None`; a full-length
+  modulo-equivalent path with noncanonical coordinates is a formatting failure
+  unless its out-of-range steps are explained by unwrapped transition-rule
+  violations, which retain Transition Failure precedence.
 - **Fracture Depth** — the canonical reporting detector returns the first
   *sampled* horizon whose step accuracy is strictly below `0.5` and has no
   recovery within the next three sampled points. This look-ahead belongs to
@@ -414,12 +420,27 @@ python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.t
 # Analyze ONLY the most recent run in a TXT log file with multiple appended runs
 python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --lastrun
 
+# Optional: score z requested coordinates, including the initial position
+python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --coordinate-count
+
 # Include the share of all probes at each horizon
 python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --density
 
 # Include non-zero error rates and error codes at each horizon
 python post_run_analyzer.py --input outputs/absolute_raw_data_local_gpt_5_mini.txt --error-density
 ```
+
+`--coordinate-count` is an alternative post-hoc policy for raw TXT logs whose
+prompt requested z coordinates including the initial position. It scores the
+first z-1 transitions (leaving the final supplied action unscored), compares
+output length with z coordinates, and adjusts the token allowance accordingly.
+At z=1 there are no scored transitions; the existing metric implementation
+records step accuracy and continuity as zero, which is not evidence of failed
+transition execution. Verify the prompt for the runs being analyzed: older raw
+logs do not preserve it, and requesting z coordinates while supplying z actions
+is ambiguous. Default scoring remains the original z transitions so existing
+reports and JSON analysis are not silently redefined. This option does not
+replay or alter the original adaptive-search decisions.
 
 - **`--lastrun`** — filters TXT logs to parse only the most recent run session (starting from the final `ARCUS-X RUN START` block).
 - **`--density`** — adds the percentage of total probes represented by each horizon (for example, `z=3: 3.0%`).
@@ -521,8 +542,8 @@ python quickstart_api.py --model google/gemini-2.5-flash-lite --probes 5
 
 > **Note:** `run_framework.sh` is a bash script, so on Windows use
 > `python -m arcus.experiments.quickstart` (or `python quickstart_api.py`)
-> instead — they are exactly equivalent and go through the same
-> `BenchmarkRunner.run()`.
+> instead. Both Python entry points use `BenchmarkRunner.run()` for normal runs.
+> `--minitest` uses a separate fixed-horizon path without the live UX.
 
 **4. What you'll see**
 
@@ -552,6 +573,20 @@ Two additional scheduling flags are documented in
 `--parallel-seeds "1"|N|auto"` (concurrent seed execution; `auto` = `min(cpu_count,
 n_seeds)`) and `--resume <path>` (continue an interrupted run from its absolute
 raw stream, skipping already-completed probes by identity).
+
+For four illustrative probes (one per tier at z=50, seed 3157), run:
+
+```bash
+python quickstart_api.py --api-base https://openrouter.ai/api/v1 --model MODEL --minitest
+```
+
+Set `OPENROUTER_API_KEY` or supply `--api-key`. The run appends to
+`outputs/minitests_<model>.txt`; each raw entry includes the exact user prompt
+sent to the API, followed by the response and ground truth. The same file also
+contains per-tier chain comparisons. Prompts are not added to normal raw logs.
+Treat the minitest file as potentially sensitive if your prompts contain
+private information. This run makes four model requests and is not a
+statistical evaluation.
 
 **Multi-seed variance (`--master-seeds`)**
 
@@ -814,7 +849,7 @@ Archived copies are in `archive/`.
 [`post_run_analyzer.py`](post_run_analyzer.py) scores benchmark runs from raw output logs with strict validation invariants:
 1. **Validity Partition**: $N_{\text{valid}} + N_{\text{invalid}} = N_{\text{completed}}$
 2. **Taxonomy Summation**: $\sum_{\text{taxonomy buckets}} N_i = N_{\text{valid probes}}$
-3. **Strict Correctness for "None"**: Unverified or unmapped failure modes are routed to `"Unknown / Unmapped"` rather than silently misclassified as `"None"`.
+3. **Strict Correctness for "None"**: Only valid, complete reference trajectories are labeled `"None"`; unverified or unmapped failure modes are routed to `"Unknown / Unmapped"`.
 
 ## Error Code Reference
 

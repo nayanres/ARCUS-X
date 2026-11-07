@@ -1,0 +1,625 @@
+model,policy,taxonomy,count,valid,changed
+qwen.qwen3-235b-a22b-2507,primary,None,8,599,0
+qwen.qwen3-235b-a22b-2507,primary,Horizon Collapse,241,599,0
+qwen.qwen3-235b-a22b-2507,primary,State Tracking Failure,49,599,0
+qwen.qwen3-235b-a22b-2507,primary,Transition Rule Failure,12,599,0
+qwen.qwen3-235b-a22b-2507,primary,Semantic Interpretation Failure,223,599,0
+qwen.qwen3-235b-a22b-2507,primary,Formatting Failure,66,599,0
+qwen.qwen3-235b-a22b-2507,primary,Unknown / Unmapped,0,599,0
+qwen.qwen3-235b-a22b-2507,primary,Unclassified,0,599,0
+qwen.qwen3-235b-a22b-2507,horizon_first,None,8,599,324
+qwen.qwen3-235b-a22b-2507,horizon_first,Horizon Collapse,565,599,324
+qwen.qwen3-235b-a22b-2507,horizon_first,State Tracking Failure,26,599,324
+qwen.qwen3-235b-a22b-2507,horizon_first,Transition Rule Failure,0,599,324
+qwen.qwen3-235b-a22b-2507,horizon_first,Semantic Interpretation Failure,0,599,324
+qwen.qwen3-235b-a22b-2507,horizon_first,Formatting Failure,0,599,324
+qwen.qwen3-235b-a22b-2507,horizon_first,Unknown / Unmapped,0,599,324
+qwen.qwen3-235b-a22b-2507,horizon_first,Unclassified,0,599,324
+qwen.qwen3-235b-a22b-2507,transition_first,None,8,599,46
+qwen.qwen3-235b-a22b-2507,transition_first,Horizon Collapse,241,599,46
+qwen.qwen3-235b-a22b-2507,transition_first,State Tracking Failure,3,599,46
+qwen.qwen3-235b-a22b-2507,transition_first,Transition Rule Failure,58,599,46
+qwen.qwen3-235b-a22b-2507,transition_first,Semantic Interpretation Failure,223,599,46
+qwen.qwen3-235b-a22b-2507,transition_first,Formatting Failure,66,599,46
+qwen.qwen3-235b-a22b-2507,transition_first,Unknown / Unmapped,0,599,46
+qwen.qwen3-235b-a22b-2507,transition_first,Unclassified,0,599,46
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,None,8,599,0
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,Horizon Collapse,241,599,0
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,State Tracking Failure,49,599,0
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,Transition Rule Failure,12,599,0
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,Semantic Interpretation Failure,223,599,0
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,Formatting Failure,66,599,0
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,Unknown / Unmapped,0,599,0
+qwen.qwen3-235b-a22b-2507,conservative_unclassified,Unclassified,0,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,None,8,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,Horizon Collapse,241,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,State Tracking Failure,49,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,Transition Rule Failure,12,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,Semantic Interpretation Failure,223,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,Formatting Failure,66,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,Unknown / Unmapped,0,599,0
+qwen.qwen3-235b-a22b-2507,fallback_state_tracking,Unclassified,0,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,None,8,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,Horizon Collapse,241,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,State Tracking Failure,49,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,Transition Rule Failure,12,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,Semantic Interpretation Failure,223,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,Formatting Failure,66,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,Unknown / Unmapped,0,599,0
+qwen.qwen3-235b-a22b-2507,modulo_equivalent,Unclassified,0,599,0
+moonshotai.kimi-k2.5,primary,None,4,6240,0
+moonshotai.kimi-k2.5,primary,Horizon Collapse,3502,6240,0
+moonshotai.kimi-k2.5,primary,State Tracking Failure,668,6240,0
+moonshotai.kimi-k2.5,primary,Transition Rule Failure,248,6240,0
+moonshotai.kimi-k2.5,primary,Semantic Interpretation Failure,1449,6240,0
+moonshotai.kimi-k2.5,primary,Formatting Failure,366,6240,0
+moonshotai.kimi-k2.5,primary,Unknown / Unmapped,3,6240,0
+moonshotai.kimi-k2.5,primary,Unclassified,0,6240,0
+moonshotai.kimi-k2.5,horizon_first,None,4,6240,2659
+moonshotai.kimi-k2.5,horizon_first,Horizon Collapse,6161,6240,2659
+moonshotai.kimi-k2.5,horizon_first,State Tracking Failure,66,6240,2659
+moonshotai.kimi-k2.5,horizon_first,Transition Rule Failure,1,6240,2659
+moonshotai.kimi-k2.5,horizon_first,Semantic Interpretation Failure,8,6240,2659
+moonshotai.kimi-k2.5,horizon_first,Formatting Failure,0,6240,2659
+moonshotai.kimi-k2.5,horizon_first,Unknown / Unmapped,0,6240,2659
+moonshotai.kimi-k2.5,horizon_first,Unclassified,0,6240,2659
+moonshotai.kimi-k2.5,transition_first,None,4,6240,657
+moonshotai.kimi-k2.5,transition_first,Horizon Collapse,3502,6240,657
+moonshotai.kimi-k2.5,transition_first,State Tracking Failure,13,6240,657
+moonshotai.kimi-k2.5,transition_first,Transition Rule Failure,905,6240,657
+moonshotai.kimi-k2.5,transition_first,Semantic Interpretation Failure,1449,6240,657
+moonshotai.kimi-k2.5,transition_first,Formatting Failure,366,6240,657
+moonshotai.kimi-k2.5,transition_first,Unknown / Unmapped,1,6240,657
+moonshotai.kimi-k2.5,transition_first,Unclassified,0,6240,657
+moonshotai.kimi-k2.5,conservative_unclassified,None,4,6240,3
+moonshotai.kimi-k2.5,conservative_unclassified,Horizon Collapse,3502,6240,3
+moonshotai.kimi-k2.5,conservative_unclassified,State Tracking Failure,668,6240,3
+moonshotai.kimi-k2.5,conservative_unclassified,Transition Rule Failure,248,6240,3
+moonshotai.kimi-k2.5,conservative_unclassified,Semantic Interpretation Failure,1449,6240,3
+moonshotai.kimi-k2.5,conservative_unclassified,Formatting Failure,366,6240,3
+moonshotai.kimi-k2.5,conservative_unclassified,Unknown / Unmapped,0,6240,3
+moonshotai.kimi-k2.5,conservative_unclassified,Unclassified,3,6240,3
+moonshotai.kimi-k2.5,fallback_state_tracking,None,4,6240,2
+moonshotai.kimi-k2.5,fallback_state_tracking,Horizon Collapse,3502,6240,2
+moonshotai.kimi-k2.5,fallback_state_tracking,State Tracking Failure,670,6240,2
+moonshotai.kimi-k2.5,fallback_state_tracking,Transition Rule Failure,248,6240,2
+moonshotai.kimi-k2.5,fallback_state_tracking,Semantic Interpretation Failure,1449,6240,2
+moonshotai.kimi-k2.5,fallback_state_tracking,Formatting Failure,366,6240,2
+moonshotai.kimi-k2.5,fallback_state_tracking,Unknown / Unmapped,1,6240,2
+moonshotai.kimi-k2.5,fallback_state_tracking,Unclassified,0,6240,2
+moonshotai.kimi-k2.5,modulo_equivalent,None,4,6240,0
+moonshotai.kimi-k2.5,modulo_equivalent,Horizon Collapse,3502,6240,0
+moonshotai.kimi-k2.5,modulo_equivalent,State Tracking Failure,668,6240,0
+moonshotai.kimi-k2.5,modulo_equivalent,Transition Rule Failure,248,6240,0
+moonshotai.kimi-k2.5,modulo_equivalent,Semantic Interpretation Failure,1449,6240,0
+moonshotai.kimi-k2.5,modulo_equivalent,Formatting Failure,366,6240,0
+moonshotai.kimi-k2.5,modulo_equivalent,Unknown / Unmapped,3,6240,0
+moonshotai.kimi-k2.5,modulo_equivalent,Unclassified,0,6240,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,None,27,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,Horizon Collapse,78,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,State Tracking Failure,2031,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,Transition Rule Failure,24,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,Semantic Interpretation Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,Formatting Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,Unknown / Unmapped,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,primary,Unclassified,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,None,27,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,Horizon Collapse,696,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,State Tracking Failure,1422,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,Transition Rule Failure,15,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,Semantic Interpretation Failure,0,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,Formatting Failure,0,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,Unknown / Unmapped,0,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,horizon_first,Unclassified,0,2160,618
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,None,27,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,Horizon Collapse,78,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,State Tracking Failure,37,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,Transition Rule Failure,2018,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,Semantic Interpretation Failure,0,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,Formatting Failure,0,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,Unknown / Unmapped,0,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,transition_first,Unclassified,0,2160,1994
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,None,27,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,Horizon Collapse,78,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,State Tracking Failure,2031,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,Transition Rule Failure,24,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,Semantic Interpretation Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,Formatting Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,Unknown / Unmapped,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,conservative_unclassified,Unclassified,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,None,27,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,Horizon Collapse,78,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,State Tracking Failure,2031,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,Transition Rule Failure,24,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,Semantic Interpretation Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,Formatting Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,Unknown / Unmapped,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,fallback_state_tracking,Unclassified,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,None,27,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,Horizon Collapse,78,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,State Tracking Failure,2031,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,Transition Rule Failure,24,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,Semantic Interpretation Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,Formatting Failure,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,Unknown / Unmapped,0,2160,0
+qwen.qwen3-coder-480b-a35b-v1:0,modulo_equivalent,Unclassified,0,2160,0
+mistral-small-2603,primary,None,14,2180,0
+mistral-small-2603,primary,Horizon Collapse,731,2180,0
+mistral-small-2603,primary,State Tracking Failure,1043,2180,0
+mistral-small-2603,primary,Transition Rule Failure,384,2180,0
+mistral-small-2603,primary,Semantic Interpretation Failure,7,2180,0
+mistral-small-2603,primary,Formatting Failure,1,2180,0
+mistral-small-2603,primary,Unknown / Unmapped,0,2180,0
+mistral-small-2603,primary,Unclassified,0,2180,0
+mistral-small-2603,horizon_first,None,14,2180,669
+mistral-small-2603,horizon_first,Horizon Collapse,1400,2180,669
+mistral-small-2603,horizon_first,State Tracking Failure,766,2180,669
+mistral-small-2603,horizon_first,Transition Rule Failure,0,2180,669
+mistral-small-2603,horizon_first,Semantic Interpretation Failure,0,2180,669
+mistral-small-2603,horizon_first,Formatting Failure,0,2180,669
+mistral-small-2603,horizon_first,Unknown / Unmapped,0,2180,669
+mistral-small-2603,horizon_first,Unclassified,0,2180,669
+mistral-small-2603,transition_first,None,14,2180,1040
+mistral-small-2603,transition_first,Horizon Collapse,731,2180,1040
+mistral-small-2603,transition_first,State Tracking Failure,3,2180,1040
+mistral-small-2603,transition_first,Transition Rule Failure,1424,2180,1040
+mistral-small-2603,transition_first,Semantic Interpretation Failure,7,2180,1040
+mistral-small-2603,transition_first,Formatting Failure,1,2180,1040
+mistral-small-2603,transition_first,Unknown / Unmapped,0,2180,1040
+mistral-small-2603,transition_first,Unclassified,0,2180,1040
+mistral-small-2603,conservative_unclassified,None,14,2180,0
+mistral-small-2603,conservative_unclassified,Horizon Collapse,731,2180,0
+mistral-small-2603,conservative_unclassified,State Tracking Failure,1043,2180,0
+mistral-small-2603,conservative_unclassified,Transition Rule Failure,384,2180,0
+mistral-small-2603,conservative_unclassified,Semantic Interpretation Failure,7,2180,0
+mistral-small-2603,conservative_unclassified,Formatting Failure,1,2180,0
+mistral-small-2603,conservative_unclassified,Unknown / Unmapped,0,2180,0
+mistral-small-2603,conservative_unclassified,Unclassified,0,2180,0
+mistral-small-2603,fallback_state_tracking,None,14,2180,0
+mistral-small-2603,fallback_state_tracking,Horizon Collapse,731,2180,0
+mistral-small-2603,fallback_state_tracking,State Tracking Failure,1043,2180,0
+mistral-small-2603,fallback_state_tracking,Transition Rule Failure,384,2180,0
+mistral-small-2603,fallback_state_tracking,Semantic Interpretation Failure,7,2180,0
+mistral-small-2603,fallback_state_tracking,Formatting Failure,1,2180,0
+mistral-small-2603,fallback_state_tracking,Unknown / Unmapped,0,2180,0
+mistral-small-2603,fallback_state_tracking,Unclassified,0,2180,0
+mistral-small-2603,modulo_equivalent,None,14,2180,0
+mistral-small-2603,modulo_equivalent,Horizon Collapse,731,2180,0
+mistral-small-2603,modulo_equivalent,State Tracking Failure,1043,2180,0
+mistral-small-2603,modulo_equivalent,Transition Rule Failure,384,2180,0
+mistral-small-2603,modulo_equivalent,Semantic Interpretation Failure,7,2180,0
+mistral-small-2603,modulo_equivalent,Formatting Failure,1,2180,0
+mistral-small-2603,modulo_equivalent,Unknown / Unmapped,0,2180,0
+mistral-small-2603,modulo_equivalent,Unclassified,0,2180,0
+mistral-large-2512,primary,None,13,3295,0
+mistral-large-2512,primary,Horizon Collapse,1628,3295,0
+mistral-large-2512,primary,State Tracking Failure,365,3295,0
+mistral-large-2512,primary,Transition Rule Failure,816,3295,0
+mistral-large-2512,primary,Semantic Interpretation Failure,337,3295,0
+mistral-large-2512,primary,Formatting Failure,136,3295,0
+mistral-large-2512,primary,Unknown / Unmapped,0,3295,0
+mistral-large-2512,primary,Unclassified,0,3295,0
+mistral-large-2512,horizon_first,None,13,3295,1626
+mistral-large-2512,horizon_first,Horizon Collapse,3254,3295,1626
+mistral-large-2512,horizon_first,State Tracking Failure,19,3295,1626
+mistral-large-2512,horizon_first,Transition Rule Failure,5,3295,1626
+mistral-large-2512,horizon_first,Semantic Interpretation Failure,4,3295,1626
+mistral-large-2512,horizon_first,Formatting Failure,0,3295,1626
+mistral-large-2512,horizon_first,Unknown / Unmapped,0,3295,1626
+mistral-large-2512,horizon_first,Unclassified,0,3295,1626
+mistral-large-2512,transition_first,None,13,3295,364
+mistral-large-2512,transition_first,Horizon Collapse,1628,3295,364
+mistral-large-2512,transition_first,State Tracking Failure,1,3295,364
+mistral-large-2512,transition_first,Transition Rule Failure,1180,3295,364
+mistral-large-2512,transition_first,Semantic Interpretation Failure,337,3295,364
+mistral-large-2512,transition_first,Formatting Failure,136,3295,364
+mistral-large-2512,transition_first,Unknown / Unmapped,0,3295,364
+mistral-large-2512,transition_first,Unclassified,0,3295,364
+mistral-large-2512,conservative_unclassified,None,13,3295,0
+mistral-large-2512,conservative_unclassified,Horizon Collapse,1628,3295,0
+mistral-large-2512,conservative_unclassified,State Tracking Failure,365,3295,0
+mistral-large-2512,conservative_unclassified,Transition Rule Failure,816,3295,0
+mistral-large-2512,conservative_unclassified,Semantic Interpretation Failure,337,3295,0
+mistral-large-2512,conservative_unclassified,Formatting Failure,136,3295,0
+mistral-large-2512,conservative_unclassified,Unknown / Unmapped,0,3295,0
+mistral-large-2512,conservative_unclassified,Unclassified,0,3295,0
+mistral-large-2512,fallback_state_tracking,None,13,3295,0
+mistral-large-2512,fallback_state_tracking,Horizon Collapse,1628,3295,0
+mistral-large-2512,fallback_state_tracking,State Tracking Failure,365,3295,0
+mistral-large-2512,fallback_state_tracking,Transition Rule Failure,816,3295,0
+mistral-large-2512,fallback_state_tracking,Semantic Interpretation Failure,337,3295,0
+mistral-large-2512,fallback_state_tracking,Formatting Failure,136,3295,0
+mistral-large-2512,fallback_state_tracking,Unknown / Unmapped,0,3295,0
+mistral-large-2512,fallback_state_tracking,Unclassified,0,3295,0
+mistral-large-2512,modulo_equivalent,None,13,3295,0
+mistral-large-2512,modulo_equivalent,Horizon Collapse,1628,3295,0
+mistral-large-2512,modulo_equivalent,State Tracking Failure,365,3295,0
+mistral-large-2512,modulo_equivalent,Transition Rule Failure,816,3295,0
+mistral-large-2512,modulo_equivalent,Semantic Interpretation Failure,337,3295,0
+mistral-large-2512,modulo_equivalent,Formatting Failure,136,3295,0
+mistral-large-2512,modulo_equivalent,Unknown / Unmapped,0,3295,0
+mistral-large-2512,modulo_equivalent,Unclassified,0,3295,0
+mistral.devstral-2-123b,primary,None,3,3793,0
+mistral.devstral-2-123b,primary,Horizon Collapse,1931,3793,0
+mistral.devstral-2-123b,primary,State Tracking Failure,898,3793,0
+mistral.devstral-2-123b,primary,Transition Rule Failure,905,3793,0
+mistral.devstral-2-123b,primary,Semantic Interpretation Failure,27,3793,0
+mistral.devstral-2-123b,primary,Formatting Failure,29,3793,0
+mistral.devstral-2-123b,primary,Unknown / Unmapped,0,3793,0
+mistral.devstral-2-123b,primary,Unclassified,0,3793,0
+mistral.devstral-2-123b,horizon_first,None,3,3793,1746
+mistral.devstral-2-123b,horizon_first,Horizon Collapse,3677,3793,1746
+mistral.devstral-2-123b,horizon_first,State Tracking Failure,111,3793,1746
+mistral.devstral-2-123b,horizon_first,Transition Rule Failure,2,3793,1746
+mistral.devstral-2-123b,horizon_first,Semantic Interpretation Failure,0,3793,1746
+mistral.devstral-2-123b,horizon_first,Formatting Failure,0,3793,1746
+mistral.devstral-2-123b,horizon_first,Unknown / Unmapped,0,3793,1746
+mistral.devstral-2-123b,horizon_first,Unclassified,0,3793,1746
+mistral.devstral-2-123b,transition_first,None,3,3793,882
+mistral.devstral-2-123b,transition_first,Horizon Collapse,1931,3793,882
+mistral.devstral-2-123b,transition_first,State Tracking Failure,16,3793,882
+mistral.devstral-2-123b,transition_first,Transition Rule Failure,1787,3793,882
+mistral.devstral-2-123b,transition_first,Semantic Interpretation Failure,27,3793,882
+mistral.devstral-2-123b,transition_first,Formatting Failure,29,3793,882
+mistral.devstral-2-123b,transition_first,Unknown / Unmapped,0,3793,882
+mistral.devstral-2-123b,transition_first,Unclassified,0,3793,882
+mistral.devstral-2-123b,conservative_unclassified,None,3,3793,0
+mistral.devstral-2-123b,conservative_unclassified,Horizon Collapse,1931,3793,0
+mistral.devstral-2-123b,conservative_unclassified,State Tracking Failure,898,3793,0
+mistral.devstral-2-123b,conservative_unclassified,Transition Rule Failure,905,3793,0
+mistral.devstral-2-123b,conservative_unclassified,Semantic Interpretation Failure,27,3793,0
+mistral.devstral-2-123b,conservative_unclassified,Formatting Failure,29,3793,0
+mistral.devstral-2-123b,conservative_unclassified,Unknown / Unmapped,0,3793,0
+mistral.devstral-2-123b,conservative_unclassified,Unclassified,0,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,None,3,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,Horizon Collapse,1931,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,State Tracking Failure,898,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,Transition Rule Failure,905,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,Semantic Interpretation Failure,27,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,Formatting Failure,29,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,Unknown / Unmapped,0,3793,0
+mistral.devstral-2-123b,fallback_state_tracking,Unclassified,0,3793,0
+mistral.devstral-2-123b,modulo_equivalent,None,3,3793,0
+mistral.devstral-2-123b,modulo_equivalent,Horizon Collapse,1931,3793,0
+mistral.devstral-2-123b,modulo_equivalent,State Tracking Failure,898,3793,0
+mistral.devstral-2-123b,modulo_equivalent,Transition Rule Failure,905,3793,0
+mistral.devstral-2-123b,modulo_equivalent,Semantic Interpretation Failure,27,3793,0
+mistral.devstral-2-123b,modulo_equivalent,Formatting Failure,29,3793,0
+mistral.devstral-2-123b,modulo_equivalent,Unknown / Unmapped,0,3793,0
+mistral.devstral-2-123b,modulo_equivalent,Unclassified,0,3793,0
+ministral-14b-2512,primary,None,265,4121,0
+ministral-14b-2512,primary,Horizon Collapse,1234,4121,0
+ministral-14b-2512,primary,State Tracking Failure,2086,4121,0
+ministral-14b-2512,primary,Transition Rule Failure,456,4121,0
+ministral-14b-2512,primary,Semantic Interpretation Failure,52,4121,0
+ministral-14b-2512,primary,Formatting Failure,28,4121,0
+ministral-14b-2512,primary,Unknown / Unmapped,0,4121,0
+ministral-14b-2512,primary,Unclassified,0,4121,0
+ministral-14b-2512,horizon_first,None,265,4121,1636
+ministral-14b-2512,horizon_first,Horizon Collapse,2870,4121,1636
+ministral-14b-2512,horizon_first,State Tracking Failure,924,4121,1636
+ministral-14b-2512,horizon_first,Transition Rule Failure,61,4121,1636
+ministral-14b-2512,horizon_first,Semantic Interpretation Failure,1,4121,1636
+ministral-14b-2512,horizon_first,Formatting Failure,0,4121,1636
+ministral-14b-2512,horizon_first,Unknown / Unmapped,0,4121,1636
+ministral-14b-2512,horizon_first,Unclassified,0,4121,1636
+ministral-14b-2512,transition_first,None,265,4121,2071
+ministral-14b-2512,transition_first,Horizon Collapse,1234,4121,2071
+ministral-14b-2512,transition_first,State Tracking Failure,15,4121,2071
+ministral-14b-2512,transition_first,Transition Rule Failure,2527,4121,2071
+ministral-14b-2512,transition_first,Semantic Interpretation Failure,52,4121,2071
+ministral-14b-2512,transition_first,Formatting Failure,28,4121,2071
+ministral-14b-2512,transition_first,Unknown / Unmapped,0,4121,2071
+ministral-14b-2512,transition_first,Unclassified,0,4121,2071
+ministral-14b-2512,conservative_unclassified,None,265,4121,0
+ministral-14b-2512,conservative_unclassified,Horizon Collapse,1234,4121,0
+ministral-14b-2512,conservative_unclassified,State Tracking Failure,2086,4121,0
+ministral-14b-2512,conservative_unclassified,Transition Rule Failure,456,4121,0
+ministral-14b-2512,conservative_unclassified,Semantic Interpretation Failure,52,4121,0
+ministral-14b-2512,conservative_unclassified,Formatting Failure,28,4121,0
+ministral-14b-2512,conservative_unclassified,Unknown / Unmapped,0,4121,0
+ministral-14b-2512,conservative_unclassified,Unclassified,0,4121,0
+ministral-14b-2512,fallback_state_tracking,None,265,4121,0
+ministral-14b-2512,fallback_state_tracking,Horizon Collapse,1234,4121,0
+ministral-14b-2512,fallback_state_tracking,State Tracking Failure,2086,4121,0
+ministral-14b-2512,fallback_state_tracking,Transition Rule Failure,456,4121,0
+ministral-14b-2512,fallback_state_tracking,Semantic Interpretation Failure,52,4121,0
+ministral-14b-2512,fallback_state_tracking,Formatting Failure,28,4121,0
+ministral-14b-2512,fallback_state_tracking,Unknown / Unmapped,0,4121,0
+ministral-14b-2512,fallback_state_tracking,Unclassified,0,4121,0
+ministral-14b-2512,modulo_equivalent,None,265,4121,0
+ministral-14b-2512,modulo_equivalent,Horizon Collapse,1234,4121,0
+ministral-14b-2512,modulo_equivalent,State Tracking Failure,2086,4121,0
+ministral-14b-2512,modulo_equivalent,Transition Rule Failure,456,4121,0
+ministral-14b-2512,modulo_equivalent,Semantic Interpretation Failure,52,4121,0
+ministral-14b-2512,modulo_equivalent,Formatting Failure,28,4121,0
+ministral-14b-2512,modulo_equivalent,Unknown / Unmapped,0,4121,0
+ministral-14b-2512,modulo_equivalent,Unclassified,0,4121,0
+ministral-8b-2512,primary,None,22,2452,0
+ministral-8b-2512,primary,Horizon Collapse,903,2452,0
+ministral-8b-2512,primary,State Tracking Failure,520,2452,0
+ministral-8b-2512,primary,Transition Rule Failure,991,2452,0
+ministral-8b-2512,primary,Semantic Interpretation Failure,7,2452,0
+ministral-8b-2512,primary,Formatting Failure,9,2452,0
+ministral-8b-2512,primary,Unknown / Unmapped,0,2452,0
+ministral-8b-2512,primary,Unclassified,0,2452,0
+ministral-8b-2512,horizon_first,None,22,2452,1455
+ministral-8b-2512,horizon_first,Horizon Collapse,2358,2452,1455
+ministral-8b-2512,horizon_first,State Tracking Failure,67,2452,1455
+ministral-8b-2512,horizon_first,Transition Rule Failure,5,2452,1455
+ministral-8b-2512,horizon_first,Semantic Interpretation Failure,0,2452,1455
+ministral-8b-2512,horizon_first,Formatting Failure,0,2452,1455
+ministral-8b-2512,horizon_first,Unknown / Unmapped,0,2452,1455
+ministral-8b-2512,horizon_first,Unclassified,0,2452,1455
+ministral-8b-2512,transition_first,None,22,2452,502
+ministral-8b-2512,transition_first,Horizon Collapse,903,2452,502
+ministral-8b-2512,transition_first,State Tracking Failure,18,2452,502
+ministral-8b-2512,transition_first,Transition Rule Failure,1493,2452,502
+ministral-8b-2512,transition_first,Semantic Interpretation Failure,7,2452,502
+ministral-8b-2512,transition_first,Formatting Failure,9,2452,502
+ministral-8b-2512,transition_first,Unknown / Unmapped,0,2452,502
+ministral-8b-2512,transition_first,Unclassified,0,2452,502
+ministral-8b-2512,conservative_unclassified,None,22,2452,0
+ministral-8b-2512,conservative_unclassified,Horizon Collapse,903,2452,0
+ministral-8b-2512,conservative_unclassified,State Tracking Failure,520,2452,0
+ministral-8b-2512,conservative_unclassified,Transition Rule Failure,991,2452,0
+ministral-8b-2512,conservative_unclassified,Semantic Interpretation Failure,7,2452,0
+ministral-8b-2512,conservative_unclassified,Formatting Failure,9,2452,0
+ministral-8b-2512,conservative_unclassified,Unknown / Unmapped,0,2452,0
+ministral-8b-2512,conservative_unclassified,Unclassified,0,2452,0
+ministral-8b-2512,fallback_state_tracking,None,22,2452,0
+ministral-8b-2512,fallback_state_tracking,Horizon Collapse,903,2452,0
+ministral-8b-2512,fallback_state_tracking,State Tracking Failure,520,2452,0
+ministral-8b-2512,fallback_state_tracking,Transition Rule Failure,991,2452,0
+ministral-8b-2512,fallback_state_tracking,Semantic Interpretation Failure,7,2452,0
+ministral-8b-2512,fallback_state_tracking,Formatting Failure,9,2452,0
+ministral-8b-2512,fallback_state_tracking,Unknown / Unmapped,0,2452,0
+ministral-8b-2512,fallback_state_tracking,Unclassified,0,2452,0
+ministral-8b-2512,modulo_equivalent,None,22,2452,0
+ministral-8b-2512,modulo_equivalent,Horizon Collapse,903,2452,0
+ministral-8b-2512,modulo_equivalent,State Tracking Failure,520,2452,0
+ministral-8b-2512,modulo_equivalent,Transition Rule Failure,991,2452,0
+ministral-8b-2512,modulo_equivalent,Semantic Interpretation Failure,7,2452,0
+ministral-8b-2512,modulo_equivalent,Formatting Failure,9,2452,0
+ministral-8b-2512,modulo_equivalent,Unknown / Unmapped,0,2452,0
+ministral-8b-2512,modulo_equivalent,Unclassified,0,2452,0
+ministral-3b-2512,primary,None,186,1820,0
+ministral-3b-2512,primary,Horizon Collapse,294,1820,0
+ministral-3b-2512,primary,State Tracking Failure,1035,1820,0
+ministral-3b-2512,primary,Transition Rule Failure,83,1820,0
+ministral-3b-2512,primary,Semantic Interpretation Failure,117,1820,0
+ministral-3b-2512,primary,Formatting Failure,104,1820,0
+ministral-3b-2512,primary,Unknown / Unmapped,1,1820,0
+ministral-3b-2512,primary,Unclassified,0,1820,0
+ministral-3b-2512,horizon_first,None,186,1820,629
+ministral-3b-2512,horizon_first,Horizon Collapse,923,1820,629
+ministral-3b-2512,horizon_first,State Tracking Failure,666,1820,629
+ministral-3b-2512,horizon_first,Transition Rule Failure,40,1820,629
+ministral-3b-2512,horizon_first,Semantic Interpretation Failure,5,1820,629
+ministral-3b-2512,horizon_first,Formatting Failure,0,1820,629
+ministral-3b-2512,horizon_first,Unknown / Unmapped,0,1820,629
+ministral-3b-2512,horizon_first,Unclassified,0,1820,629
+ministral-3b-2512,transition_first,None,186,1820,1010
+ministral-3b-2512,transition_first,Horizon Collapse,294,1820,1010
+ministral-3b-2512,transition_first,State Tracking Failure,25,1820,1010
+ministral-3b-2512,transition_first,Transition Rule Failure,1093,1820,1010
+ministral-3b-2512,transition_first,Semantic Interpretation Failure,117,1820,1010
+ministral-3b-2512,transition_first,Formatting Failure,104,1820,1010
+ministral-3b-2512,transition_first,Unknown / Unmapped,1,1820,1010
+ministral-3b-2512,transition_first,Unclassified,0,1820,1010
+ministral-3b-2512,conservative_unclassified,None,186,1820,1
+ministral-3b-2512,conservative_unclassified,Horizon Collapse,294,1820,1
+ministral-3b-2512,conservative_unclassified,State Tracking Failure,1035,1820,1
+ministral-3b-2512,conservative_unclassified,Transition Rule Failure,83,1820,1
+ministral-3b-2512,conservative_unclassified,Semantic Interpretation Failure,117,1820,1
+ministral-3b-2512,conservative_unclassified,Formatting Failure,104,1820,1
+ministral-3b-2512,conservative_unclassified,Unknown / Unmapped,0,1820,1
+ministral-3b-2512,conservative_unclassified,Unclassified,1,1820,1
+ministral-3b-2512,fallback_state_tracking,None,186,1820,1
+ministral-3b-2512,fallback_state_tracking,Horizon Collapse,294,1820,1
+ministral-3b-2512,fallback_state_tracking,State Tracking Failure,1036,1820,1
+ministral-3b-2512,fallback_state_tracking,Transition Rule Failure,83,1820,1
+ministral-3b-2512,fallback_state_tracking,Semantic Interpretation Failure,117,1820,1
+ministral-3b-2512,fallback_state_tracking,Formatting Failure,104,1820,1
+ministral-3b-2512,fallback_state_tracking,Unknown / Unmapped,0,1820,1
+ministral-3b-2512,fallback_state_tracking,Unclassified,0,1820,1
+ministral-3b-2512,modulo_equivalent,None,190,1820,4
+ministral-3b-2512,modulo_equivalent,Horizon Collapse,294,1820,4
+ministral-3b-2512,modulo_equivalent,State Tracking Failure,1035,1820,4
+ministral-3b-2512,modulo_equivalent,Transition Rule Failure,79,1820,4
+ministral-3b-2512,modulo_equivalent,Semantic Interpretation Failure,117,1820,4
+ministral-3b-2512,modulo_equivalent,Formatting Failure,104,1820,4
+ministral-3b-2512,modulo_equivalent,Unknown / Unmapped,1,1820,4
+ministral-3b-2512,modulo_equivalent,Unclassified,0,1820,4
+nvidia.nemotron-super-3-120b,primary,None,13,2258,0
+nvidia.nemotron-super-3-120b,primary,Horizon Collapse,122,2258,0
+nvidia.nemotron-super-3-120b,primary,State Tracking Failure,2092,2258,0
+nvidia.nemotron-super-3-120b,primary,Transition Rule Failure,25,2258,0
+nvidia.nemotron-super-3-120b,primary,Semantic Interpretation Failure,1,2258,0
+nvidia.nemotron-super-3-120b,primary,Formatting Failure,5,2258,0
+nvidia.nemotron-super-3-120b,primary,Unknown / Unmapped,0,2258,0
+nvidia.nemotron-super-3-120b,primary,Unclassified,0,2258,0
+nvidia.nemotron-super-3-120b,horizon_first,None,13,2258,1034
+nvidia.nemotron-super-3-120b,horizon_first,Horizon Collapse,1156,2258,1034
+nvidia.nemotron-super-3-120b,horizon_first,State Tracking Failure,1074,2258,1034
+nvidia.nemotron-super-3-120b,horizon_first,Transition Rule Failure,15,2258,1034
+nvidia.nemotron-super-3-120b,horizon_first,Semantic Interpretation Failure,0,2258,1034
+nvidia.nemotron-super-3-120b,horizon_first,Formatting Failure,0,2258,1034
+nvidia.nemotron-super-3-120b,horizon_first,Unknown / Unmapped,0,2258,1034
+nvidia.nemotron-super-3-120b,horizon_first,Unclassified,0,2258,1034
+nvidia.nemotron-super-3-120b,transition_first,None,13,2258,2050
+nvidia.nemotron-super-3-120b,transition_first,Horizon Collapse,122,2258,2050
+nvidia.nemotron-super-3-120b,transition_first,State Tracking Failure,42,2258,2050
+nvidia.nemotron-super-3-120b,transition_first,Transition Rule Failure,2075,2258,2050
+nvidia.nemotron-super-3-120b,transition_first,Semantic Interpretation Failure,1,2258,2050
+nvidia.nemotron-super-3-120b,transition_first,Formatting Failure,5,2258,2050
+nvidia.nemotron-super-3-120b,transition_first,Unknown / Unmapped,0,2258,2050
+nvidia.nemotron-super-3-120b,transition_first,Unclassified,0,2258,2050
+nvidia.nemotron-super-3-120b,conservative_unclassified,None,13,2258,0
+nvidia.nemotron-super-3-120b,conservative_unclassified,Horizon Collapse,122,2258,0
+nvidia.nemotron-super-3-120b,conservative_unclassified,State Tracking Failure,2092,2258,0
+nvidia.nemotron-super-3-120b,conservative_unclassified,Transition Rule Failure,25,2258,0
+nvidia.nemotron-super-3-120b,conservative_unclassified,Semantic Interpretation Failure,1,2258,0
+nvidia.nemotron-super-3-120b,conservative_unclassified,Formatting Failure,5,2258,0
+nvidia.nemotron-super-3-120b,conservative_unclassified,Unknown / Unmapped,0,2258,0
+nvidia.nemotron-super-3-120b,conservative_unclassified,Unclassified,0,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,None,13,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,Horizon Collapse,122,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,State Tracking Failure,2092,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,Transition Rule Failure,25,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,Semantic Interpretation Failure,1,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,Formatting Failure,5,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,Unknown / Unmapped,0,2258,0
+nvidia.nemotron-super-3-120b,fallback_state_tracking,Unclassified,0,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,None,13,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,Horizon Collapse,122,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,State Tracking Failure,2092,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,Transition Rule Failure,25,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,Semantic Interpretation Failure,1,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,Formatting Failure,5,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,Unknown / Unmapped,0,2258,0
+nvidia.nemotron-super-3-120b,modulo_equivalent,Unclassified,0,2258,0
+zai.glm-5,primary,None,26,2639,0
+zai.glm-5,primary,Horizon Collapse,374,2639,0
+zai.glm-5,primary,State Tracking Failure,2224,2639,0
+zai.glm-5,primary,Transition Rule Failure,15,2639,0
+zai.glm-5,primary,Semantic Interpretation Failure,0,2639,0
+zai.glm-5,primary,Formatting Failure,0,2639,0
+zai.glm-5,primary,Unknown / Unmapped,0,2639,0
+zai.glm-5,primary,Unclassified,0,2639,0
+zai.glm-5,horizon_first,None,26,2639,1033
+zai.glm-5,horizon_first,Horizon Collapse,1407,2639,1033
+zai.glm-5,horizon_first,State Tracking Failure,1197,2639,1033
+zai.glm-5,horizon_first,Transition Rule Failure,9,2639,1033
+zai.glm-5,horizon_first,Semantic Interpretation Failure,0,2639,1033
+zai.glm-5,horizon_first,Formatting Failure,0,2639,1033
+zai.glm-5,horizon_first,Unknown / Unmapped,0,2639,1033
+zai.glm-5,horizon_first,Unclassified,0,2639,1033
+zai.glm-5,transition_first,None,26,2639,2132
+zai.glm-5,transition_first,Horizon Collapse,374,2639,2132
+zai.glm-5,transition_first,State Tracking Failure,92,2639,2132
+zai.glm-5,transition_first,Transition Rule Failure,2147,2639,2132
+zai.glm-5,transition_first,Semantic Interpretation Failure,0,2639,2132
+zai.glm-5,transition_first,Formatting Failure,0,2639,2132
+zai.glm-5,transition_first,Unknown / Unmapped,0,2639,2132
+zai.glm-5,transition_first,Unclassified,0,2639,2132
+zai.glm-5,conservative_unclassified,None,26,2639,0
+zai.glm-5,conservative_unclassified,Horizon Collapse,374,2639,0
+zai.glm-5,conservative_unclassified,State Tracking Failure,2224,2639,0
+zai.glm-5,conservative_unclassified,Transition Rule Failure,15,2639,0
+zai.glm-5,conservative_unclassified,Semantic Interpretation Failure,0,2639,0
+zai.glm-5,conservative_unclassified,Formatting Failure,0,2639,0
+zai.glm-5,conservative_unclassified,Unknown / Unmapped,0,2639,0
+zai.glm-5,conservative_unclassified,Unclassified,0,2639,0
+zai.glm-5,fallback_state_tracking,None,26,2639,0
+zai.glm-5,fallback_state_tracking,Horizon Collapse,374,2639,0
+zai.glm-5,fallback_state_tracking,State Tracking Failure,2224,2639,0
+zai.glm-5,fallback_state_tracking,Transition Rule Failure,15,2639,0
+zai.glm-5,fallback_state_tracking,Semantic Interpretation Failure,0,2639,0
+zai.glm-5,fallback_state_tracking,Formatting Failure,0,2639,0
+zai.glm-5,fallback_state_tracking,Unknown / Unmapped,0,2639,0
+zai.glm-5,fallback_state_tracking,Unclassified,0,2639,0
+zai.glm-5,modulo_equivalent,None,27,2639,1
+zai.glm-5,modulo_equivalent,Horizon Collapse,374,2639,1
+zai.glm-5,modulo_equivalent,State Tracking Failure,2224,2639,1
+zai.glm-5,modulo_equivalent,Transition Rule Failure,14,2639,1
+zai.glm-5,modulo_equivalent,Semantic Interpretation Failure,0,2639,1
+zai.glm-5,modulo_equivalent,Formatting Failure,0,2639,1
+zai.glm-5,modulo_equivalent,Unknown / Unmapped,0,2639,1
+zai.glm-5,modulo_equivalent,Unclassified,0,2639,1
+GPT-5-mini,primary,None,2052,5061,0
+GPT-5-mini,primary,Horizon Collapse,2478,5061,0
+GPT-5-mini,primary,State Tracking Failure,528,5061,0
+GPT-5-mini,primary,Transition Rule Failure,3,5061,0
+GPT-5-mini,primary,Semantic Interpretation Failure,0,5061,0
+GPT-5-mini,primary,Formatting Failure,0,5061,0
+GPT-5-mini,primary,Unknown / Unmapped,0,5061,0
+GPT-5-mini,primary,Unclassified,0,5061,0
+GPT-5-mini,horizon_first,None,2052,5061,143
+GPT-5-mini,horizon_first,Horizon Collapse,2621,5061,143
+GPT-5-mini,horizon_first,State Tracking Failure,388,5061,143
+GPT-5-mini,horizon_first,Transition Rule Failure,0,5061,143
+GPT-5-mini,horizon_first,Semantic Interpretation Failure,0,5061,143
+GPT-5-mini,horizon_first,Formatting Failure,0,5061,143
+GPT-5-mini,horizon_first,Unknown / Unmapped,0,5061,143
+GPT-5-mini,horizon_first,Unclassified,0,5061,143
+GPT-5-mini,transition_first,None,2052,5061,524
+GPT-5-mini,transition_first,Horizon Collapse,2478,5061,524
+GPT-5-mini,transition_first,State Tracking Failure,4,5061,524
+GPT-5-mini,transition_first,Transition Rule Failure,527,5061,524
+GPT-5-mini,transition_first,Semantic Interpretation Failure,0,5061,524
+GPT-5-mini,transition_first,Formatting Failure,0,5061,524
+GPT-5-mini,transition_first,Unknown / Unmapped,0,5061,524
+GPT-5-mini,transition_first,Unclassified,0,5061,524
+GPT-5-mini,conservative_unclassified,None,2052,5061,0
+GPT-5-mini,conservative_unclassified,Horizon Collapse,2478,5061,0
+GPT-5-mini,conservative_unclassified,State Tracking Failure,528,5061,0
+GPT-5-mini,conservative_unclassified,Transition Rule Failure,3,5061,0
+GPT-5-mini,conservative_unclassified,Semantic Interpretation Failure,0,5061,0
+GPT-5-mini,conservative_unclassified,Formatting Failure,0,5061,0
+GPT-5-mini,conservative_unclassified,Unknown / Unmapped,0,5061,0
+GPT-5-mini,conservative_unclassified,Unclassified,0,5061,0
+GPT-5-mini,fallback_state_tracking,None,2052,5061,0
+GPT-5-mini,fallback_state_tracking,Horizon Collapse,2478,5061,0
+GPT-5-mini,fallback_state_tracking,State Tracking Failure,528,5061,0
+GPT-5-mini,fallback_state_tracking,Transition Rule Failure,3,5061,0
+GPT-5-mini,fallback_state_tracking,Semantic Interpretation Failure,0,5061,0
+GPT-5-mini,fallback_state_tracking,Formatting Failure,0,5061,0
+GPT-5-mini,fallback_state_tracking,Unknown / Unmapped,0,5061,0
+GPT-5-mini,fallback_state_tracking,Unclassified,0,5061,0
+GPT-5-mini,modulo_equivalent,None,2052,5061,0
+GPT-5-mini,modulo_equivalent,Horizon Collapse,2478,5061,0
+GPT-5-mini,modulo_equivalent,State Tracking Failure,528,5061,0
+GPT-5-mini,modulo_equivalent,Transition Rule Failure,3,5061,0
+GPT-5-mini,modulo_equivalent,Semantic Interpretation Failure,0,5061,0
+GPT-5-mini,modulo_equivalent,Formatting Failure,0,5061,0
+GPT-5-mini,modulo_equivalent,Unknown / Unmapped,0,5061,0
+GPT-5-mini,modulo_equivalent,Unclassified,0,5061,0
+MAI-Thinking-1,primary,None,490,3110,0
+MAI-Thinking-1,primary,Horizon Collapse,2525,3110,0
+MAI-Thinking-1,primary,State Tracking Failure,94,3110,0
+MAI-Thinking-1,primary,Transition Rule Failure,1,3110,0
+MAI-Thinking-1,primary,Semantic Interpretation Failure,0,3110,0
+MAI-Thinking-1,primary,Formatting Failure,0,3110,0
+MAI-Thinking-1,primary,Unknown / Unmapped,0,3110,0
+MAI-Thinking-1,primary,Unclassified,0,3110,0
+MAI-Thinking-1,horizon_first,None,490,3110,78
+MAI-Thinking-1,horizon_first,Horizon Collapse,2603,3110,78
+MAI-Thinking-1,horizon_first,State Tracking Failure,17,3110,78
+MAI-Thinking-1,horizon_first,Transition Rule Failure,0,3110,78
+MAI-Thinking-1,horizon_first,Semantic Interpretation Failure,0,3110,78
+MAI-Thinking-1,horizon_first,Formatting Failure,0,3110,78
+MAI-Thinking-1,horizon_first,Unknown / Unmapped,0,3110,78
+MAI-Thinking-1,horizon_first,Unclassified,0,3110,78
+MAI-Thinking-1,transition_first,None,490,3110,91
+MAI-Thinking-1,transition_first,Horizon Collapse,2525,3110,91
+MAI-Thinking-1,transition_first,State Tracking Failure,3,3110,91
+MAI-Thinking-1,transition_first,Transition Rule Failure,92,3110,91
+MAI-Thinking-1,transition_first,Semantic Interpretation Failure,0,3110,91
+MAI-Thinking-1,transition_first,Formatting Failure,0,3110,91
+MAI-Thinking-1,transition_first,Unknown / Unmapped,0,3110,91
+MAI-Thinking-1,transition_first,Unclassified,0,3110,91
+MAI-Thinking-1,conservative_unclassified,None,490,3110,0
+MAI-Thinking-1,conservative_unclassified,Horizon Collapse,2525,3110,0
+MAI-Thinking-1,conservative_unclassified,State Tracking Failure,94,3110,0
+MAI-Thinking-1,conservative_unclassified,Transition Rule Failure,1,3110,0
+MAI-Thinking-1,conservative_unclassified,Semantic Interpretation Failure,0,3110,0
+MAI-Thinking-1,conservative_unclassified,Formatting Failure,0,3110,0
+MAI-Thinking-1,conservative_unclassified,Unknown / Unmapped,0,3110,0
+MAI-Thinking-1,conservative_unclassified,Unclassified,0,3110,0
+MAI-Thinking-1,fallback_state_tracking,None,490,3110,0
+MAI-Thinking-1,fallback_state_tracking,Horizon Collapse,2525,3110,0
+MAI-Thinking-1,fallback_state_tracking,State Tracking Failure,94,3110,0
+MAI-Thinking-1,fallback_state_tracking,Transition Rule Failure,1,3110,0
+MAI-Thinking-1,fallback_state_tracking,Semantic Interpretation Failure,0,3110,0
+MAI-Thinking-1,fallback_state_tracking,Formatting Failure,0,3110,0
+MAI-Thinking-1,fallback_state_tracking,Unknown / Unmapped,0,3110,0
+MAI-Thinking-1,fallback_state_tracking,Unclassified,0,3110,0
+MAI-Thinking-1,modulo_equivalent,None,490,3110,0
+MAI-Thinking-1,modulo_equivalent,Horizon Collapse,2525,3110,0
+MAI-Thinking-1,modulo_equivalent,State Tracking Failure,94,3110,0
+MAI-Thinking-1,modulo_equivalent,Transition Rule Failure,1,3110,0
+MAI-Thinking-1,modulo_equivalent,Semantic Interpretation Failure,0,3110,0
+MAI-Thinking-1,modulo_equivalent,Formatting Failure,0,3110,0
+MAI-Thinking-1,modulo_equivalent,Unknown / Unmapped,0,3110,0
+MAI-Thinking-1,modulo_equivalent,Unclassified,0,3110,0

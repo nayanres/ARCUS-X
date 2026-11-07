@@ -1,0 +1,279 @@
+﻿python.exe : WARNING:root:transformers not available - tokenizer approximation only
+At line:2 char:396
++ ... '); $text = & python 'post_run_analyzer.py' $file.FullName --audit -- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING:root:tr...roximation only:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+============================================================
+Processing: C:\Users\games\python\arcus-x\outputs\absolute_raw_data_local_ministral_3b_2512.txt
+============================================================
+
+============================================================
+ARCUS-X RUN SUMMARY
+============================================================
+Model:               ministral-3b-2512
+Run Status:          COMPLETE
+Completed Probes:    2225 / 2225
+Accuracy:            42.4%
+
+Per-Horizon Accuracy:
+  z=3   : 80.0%
+  z=10  : 60.0%
+  z=15  : 60.0%
+  z=17  : 60.0%
+  z=18  : 70.0%
+  z=19  : 60.0%
+  z=20  : 50.0%
+  z=21  : 60.0%
+  z=22  : 50.0%
+  z=23  : 40.0%
+  z=24  : 40.0%
+  z=25  : 50.0%
+  z=26  : 40.0%
+  z=27  : 40.0%
+  z=28  : 30.0%
+  z=29  : 40.0%
+  z=30  : 40.0%
+  z=31  : 40.0%
+  z=32  : 40.0%
+  z=33  : 30.0%
+  z=34  : 30.0%
+  z=35  : 30.0%
+  z=36  : 30.0%
+  z=37  : 20.0%
+  z=39  : 30.0%
+  z=44  : 10.0%
+  z=45  : 10.0%
+
+Probe Density by Horizon:
+  z=3   : 0.2%
+  z=10  : 2.7%
+  z=15  : 2.7%
+  z=17  : 2.7%
+  z=18  : 2.7%
+  z=19  : 2.7%
+  z=20  : 13.5%
+  z=21  : 0.9%
+  z=22  : 2.7%
+  z=23  : 1.8%
+  z=24  : 0.9%
+  z=25  : 8.1%
+  z=26  : 4.5%
+  z=27  : 6.3%
+  z=28  : 2.7%
+  z=29  : 5.4%
+  z=30  : 15.3%
+  z=31  : 4.5%
+  z=32  : 5.4%
+  z=33  : 2.7%
+  z=34  : 2.7%
+  z=35  : 3.6%
+  z=36  : 1.8%
+  z=37  : 0.9%
+  z=39  : 0.9%
+  z=44  : 0.9%
+  z=45  : 0.9%
+
+Error Density by Horizon:
+  z=10     60 probes   E100: 0   E101: 9   E102: 0   E103: 0   E104: 0   error density: 15.0%
+  z=15     60 probes   E100: 0   E101: 3   E102: 0   E103: 0   E104: 0   error density: 5.0%
+  z=17     60 probes   E100: 0   E101: 7   E102: 0   E103: 0   E104: 0   error density: 11.7%
+  z=18     60 probes   E100: 0   E101: 1   E102: 0   E103: 0   E104: 0   error density: 1.7%
+  z=19     60 probes   E100: 0   E101: 8   E102: 0   E103: 0   E104: 0   error density: 13.3%
+  z=20    300 probes   E100: 0   E101: 23   E102: 0   E103: 0   E104: 0   error density: 7.7%
+  z=22     60 probes   E100: 0   E101: 10   E102: 0   E103: 0   E104: 0   error density: 16.7%
+  z=23     40 probes   E100: 0   E101: 7   E102: 0   E103: 0   E104: 0   error density: 17.5%
+  z=24     20 probes   E100: 0   E101: 1   E102: 0   E103: 0   E104: 0   error density: 5.0%
+  z=25    180 probes   E100: 1   E101: 20   E102: 0   E103: 0   E104: 0   error density: 11.7%
+  z=26    100 probes   E100: 0   E101: 21   E102: 0   E103: 0   E104: 0   error density: 21.0%
+  z=27    140 probes   E100: 0   E101: 35   E102: 0   E103: 0   E104: 0   error density: 25.0%
+  z=28     60 probes   E100: 0   E101: 18   E102: 0   E103: 0   E104: 0   error density: 30.0%
+  z=29    120 probes   E100: 0   E101: 26   E102: 0   E103: 0   E104: 0   error density: 21.7%
+  z=30    340 probes   E100: 1   E101: 70   E102: 0   E103: 0   E104: 0   error density: 20.9%
+  z=31    100 probes   E100: 0   E101: 18   E102: 0   E103: 0   E104: 0   error density: 18.0%
+  z=32    120 probes   E100: 1   E101: 25   E102: 0   E103: 0   E104: 0   error density: 21.7%
+  z=33     60 probes   E100: 0   E101: 14   E102: 0   E103: 0   E104: 0   error density: 23.3%
+  z=34     60 probes   E100: 1   E101: 15   E102: 0   E103: 0   E104: 0   error density: 26.7%
+  z=35     80 probes   E100: 0   E101: 24   E102: 0   E103: 0   E104: 0   error density: 30.0%
+  z=36     40 probes   E100: 0   E101: 8   E102: 0   E103: 0   E104: 0   error density: 20.0%
+  z=37     20 probes   E100: 0   E101: 10   E102: 0   E103: 0   E104: 0   error density: 50.0%
+  z=39     20 probes   E100: 0   E101: 4   E102: 0   E103: 0   E104: 0   error density: 20.0%
+  z=44     20 probes   E100: 0   E101: 9   E102: 0   E103: 0   E104: 0   error density: 45.0%
+  z=45     20 probes   E100: 0   E101: 10   E102: 0   E103: 0   E104: 0   error density: 50.0%
+
+Per-Gravity Accuracy:
+  gravity=0.0 : 80.0%
+  gravity=0.5 : 42.9%
+  gravity=3.0 : 40.0%
+  gravity=15.0: 45.3%
+
+Per-Tier Accuracy:
+  tier_0  : 41.8%
+  tier_1  : 43.5%
+  tier_2  : 41.4%
+  tier_3  : 43.0%
+
+Total Provider Cost: 0.0000
+Average Output Tokens: 1633.5
+Maximum Output Tokens: 8192.0
+Average Latency:       9612.742
+Failure Count:         1595
+
+Multi-Seed Variance (mean +/- std across master seeds):
+  Seeds:               [219, 472, 2190, 5396, 6430]
+  CRI:                 0.500 +/- 0.029
+
+Response Validity:
+  VALID:   1825 (82.0%)
+  INVALID: 400 (18.0%)
+
+Invalid Breakdown:
+  E100  Exception Token  4
+  E101  Empty Output       396
+  E102  Parse Failure      0
+  E103  Provider Error     0
+  E104  Unknown            0
+
+Latency Diagnostics:
+------------------------------------------------------------
+Mean Latency:        9612.742 ms
+Median Latency:      7606.640 ms
+P95 Latency:         21627.766 ms
+Maximum Latency:     62641.018 ms
+Mean Output Tokens/sec: 172.970
+Mean Correct Steps/sec: 1.562
+
+Normalized Efficiency:
+  ALE: 0.0676
+  Correct Steps/sec: 1.562
+
+Latency by Horizon:
+  z=3:
+    Mean Latency: 5375.250 ms
+    Correct Steps/sec: 0.731
+  z=10:
+    Mean Latency: 4779.409 ms
+    Correct Steps/sec: 1.445
+  z=15:
+    Mean Latency: 5319.568 ms
+    Correct Steps/sec: 2.180
+  z=17:
+    Mean Latency: 6388.692 ms
+    Correct Steps/sec: 2.101
+  z=18:
+    Mean Latency: 5719.994 ms
+    Correct Steps/sec: 2.818
+  z=19:
+    Mean Latency: 5663.698 ms
+    Correct Steps/sec: 2.309
+  z=20:
+    Mean Latency: 6882.640 ms
+    Correct Steps/sec: 1.980
+  z=21:
+    Mean Latency: 6113.170 ms
+    Correct Steps/sec: 2.301
+  z=22:
+    Mean Latency: 8083.290 ms
+    Correct Steps/sec: 1.580
+  z=23:
+    Mean Latency: 9518.108 ms
+    Correct Steps/sec: 1.363
+  z=24:
+    Mean Latency: 8789.301 ms
+    Correct Steps/sec: 1.295
+  z=25:
+    Mean Latency: 10294.256 ms
+    Correct Steps/sec: 1.607
+  z=26:
+    Mean Latency: 10111.249 ms
+    Correct Steps/sec: 1.324
+  z=27:
+    Mean Latency: 11839.935 ms
+    Correct Steps/sec: 1.205
+  z=28:
+    Mean Latency: 10918.897 ms
+    Correct Steps/sec: 1.110
+  z=29:
+    Mean Latency: 10608.727 ms
+    Correct Steps/sec: 1.655
+  z=30:
+    Mean Latency: 10981.145 ms
+    Correct Steps/sec: 1.326
+  z=31:
+    Mean Latency: 10584.950 ms
+    Correct Steps/sec: 1.416
+  z=32:
+    Mean Latency: 10718.817 ms
+    Correct Steps/sec: 1.507
+  z=33:
+    Mean Latency: 10721.784 ms
+    Correct Steps/sec: 1.601
+  z=34:
+    Mean Latency: 14562.733 ms
+    Correct Steps/sec: 1.155
+  z=35:
+    Mean Latency: 11471.253 ms
+    Correct Steps/sec: 1.171
+  z=36:
+    Mean Latency: 9403.211 ms
+    Correct Steps/sec: 1.490
+  z=37:
+    Mean Latency: 10164.650 ms
+    Correct Steps/sec: 0.906
+  z=39:
+    Mean Latency: 16065.391 ms
+    Correct Steps/sec: 1.040
+  z=44:
+    Mean Latency: 12533.708 ms
+    Correct Steps/sec: 0.509
+  z=45:
+    Mean Latency: 17312.477 ms
+    Correct Steps/sec: 0.451
+============================================================
+
+================================================================
+ARCUS-X EVALUATION CHART
+================================================================
+
+Headline Metrics:
+  Step Accuracy          ████████░░░░░░░░░░░░  42.4%
+  Exact Match            ██░░░░░░░░░░░░░░░░░░  10.3%
+  Continuity             ████████░░░░░░░░░░░░  39.1%
+  Horizon Compliance     ██████████████░░░░░░  71.5%
+  Efficiency             ████░░░░░░░░░░░░░░░░  22.2%
+
+  GBI                      4.72  (lower is better)
+  CRI                     0.487
+  Trajectory Fidelity     0.350
+  Horizon Robustness      0.398
+  Semantic Robustness     0.997
+  Generation Efficiency   0.222
+
+Per-Tier Fracture Depth:
+  tier_0                 ████░░░░░░░░░░░░░░░░  22.0
+  tier_1                 █████░░░░░░░░░░░░░░░  26.0
+  tier_2                 ████░░░░░░░░░░░░░░░░  21.0
+  tier_3                 █████░░░░░░░░░░░░░░░  23.0
+
+Error Taxonomy (failure distribution):
+  State Tracking Failure         ████████████░░░░░░░░  57.5%
+  Transition Rule Failure        █░░░░░░░░░░░░░░░░░░░   4.5%
+  Semantic Interpretation Failure █░░░░░░░░░░░░░░░░░░░   6.9%
+  Horizon Collapse               ███░░░░░░░░░░░░░░░░░  13.1%
+  Formatting Failure             █░░░░░░░░░░░░░░░░░░░   5.3%
+  Unknown / Unmapped             ░░░░░░░░░░░░░░░░░░░░   0.0%
+  None                           ███░░░░░░░░░░░░░░░░░  12.6%
+================================================================
+
+============================================================
+ARCUS-X POST-RUN AUDIT CONSISTENCY REPORT
+============================================================
+  A) Coverage (completed/scheduled) [PASS]
+  B) Taxonomy counts sum to valid count [PASS]
+  B1) None is SSOT-grounded      [PASS]
+  C) Valid + Invalid == Completed [PASS]
+  D) Fracture depth consistency  [PASS]
+  E) CRI and component bounds valid [PASS]
+============================================================

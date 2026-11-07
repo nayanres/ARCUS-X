@@ -23,12 +23,31 @@ from arcus.analysis.taxonomy import (
     E101_EMPTY_OUTPUT,
     E102_PARSE_FAILURE,
 )
+from audit.analyze_artifacts import _transition_first_matches
 
 
 GRID_W = 12
 GRID_H = 12
 RULES = {"east": {"dx": 1, "dy": 0}}
 ACTIONS = ["east"] * 10
+
+
+def test_transition_first_candidate_uses_signed_rule_deltas():
+    rules = {
+        "north": {"dx": 0, "dy": 1},
+        "south": {"dx": 0, "dy": -1},
+    }
+    actions = ["north", "north", "south"]
+    ground_truth = ["[6,1]", "[6,2]", "[6,3]", "[6,2]"]
+
+    assert not _transition_first_matches(
+        ground_truth, ground_truth, rules, actions, width=8, height=5
+    )
+
+    incorrect = ground_truth[:-1] + ["[7,3]"]
+    assert _transition_first_matches(
+        incorrect, ground_truth, rules, actions, width=8, height=5
+    )
 
 
 def _tokens(coords):
@@ -131,6 +150,22 @@ def test_success_exact_match():
     assert res.outcome == Outcome.SUCCESS
     assert res.mechanism == FailureMechanism.NONE
     assert res.probe_classification.valid is True
+
+
+def test_noncanonical_modulo_equivalent_coordinate_is_not_success():
+    gt = ["[0,0]", "[0,1]"]
+    pred = ["[0,0]", "[0,11]"]
+    res = classify_trajectory(
+        pred, gt, {"north": {"dx": 0, "dy": 1}}, ["north"],
+        grid_width=5, grid_height=10,
+    )
+
+    assert res.outcome == Outcome.FAILURE
+    assert res.mechanism == FailureMechanism.OUTPUT_FORMAT_FAILURE
+    assert res.subtype == FailureSubtype.ORF_INVALID_COORDINATE
+    assert res.probe_classification.valid is True
+    assert res.probe_classification.trajectory_correct is False
+    assert res.probe_classification.exact_match is False
 
 
 def test_toroidal_distance():
